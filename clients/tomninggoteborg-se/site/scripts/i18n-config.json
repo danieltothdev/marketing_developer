@@ -1,0 +1,219 @@
+{
+  "defaultLocale": "sv",
+  "siteUrl": "https://tomninggoteborg.se",
+  "serviceSlugMap": {
+    "tomning-i-goteborg": "professional-clearance-gothenburg",
+    "bortforsling-i-goteborg": "junk-removal-gothenburg",
+    "dodsbotomning-i-goteborg": "estate-clearance-gothenburg",
+    "lagenhetstomning-i-goteborg": "apartment-clearance-gothenburg",
+    "forradstomning-i-goteborg": "storage-clearance-gothenburg",
+    "akut-hjalp-tomning": "emergency-clearance-gothenburg",
+    "grovsopor-foreningar": "bulk-waste-housing-associations-gothenburg",
+    "villatomning-i-goteborg": "villa-clearance-gothenburg",
+    "radhusstomning-i-goteborg": "townhouse-clearance-gothenburg",
+    "garage-kallartomning-i-goteborg": "garage-basement-clearance-gothenburg",
+    "foretagstomning-i-goteborg": "business-clearance-gothenburg",
+    "kontorsrojning-i-goteborg": "office-clearance-gothenburg",
+    "fastighetsrojning-i-goteborg": "property-clearance-gothenburg"
+  },
+  "serviceNav": {
+    "sv": {
+      "overview": { "slug": "tomning-i-goteborg", "label": "Alla tjänster – översikt" },
+      "groups": [
+        {
+          "label": "Privatpersoner",
+          "items": [
+            { "slug": "lagenhetstomning-i-goteborg", "label": "Lägenhetstömning" },
+            { "slug": "villatomning-i-goteborg", "label": "Villatömning" },
+            { "slug": "radhusstomning-i-goteborg", "label": "Radhustömning" },
+            { "slug": "dodsbotomning-i-goteborg", "label": "Dödsbotömning" },
+            { "slug": "forradstomning-i-goteborg", "label": "Förrådstömning" },
+            { "slug": "garage-kallartomning-i-goteborg", "label": "Garage- & källartömning" },
+            { "slug": "bortforsling-i-goteborg", "label": "Bortforsling" },
+            { "slug": "akut-hjalp-tomning", "label": "Akut hjälp & tömning" }
+          ]
+        },
+        {
+          "label": "Företag & BRF",
+          "items": [
+            { "slug": "foretagstomning-i-goteborg", "label": "Företagstömning" },
+            { "slug": "kontorsrojning-i-goteborg", "label": "Kontorsröjning" },
+            { "slug": "grovsopor-foreningar", "label": "Grovsopor för BRF" },
+            { "slug": "fastighetsrojning-i-goteborg", "label": "Fastighetsröjning" }
+          ]
+        }
+      ]
+    },
+    "en": {
+      "overview": { "slug": "tomning-i-goteborg", "label": "All services – overview" },
+      "groups": [
+        {
+          "label": "Private customers",
+          "items": [
+            { "slug": "lagenhetstomning-i-goteborg", "label": "Apartment clearance" },
+            { "slug": "villatomning-i-goteborg", "label": "Villa clearance" },
+            { "slug": "radhusstomning-i-goteborg", "label": "Townhouse clearance" },
+            { "slug": "dodsbotomning-i-goteborg", "label": "Estate clearance" },
+            { "slug": "forradstomning-i-goteborg", "label": "Storage clearance" },
+            { "slug": "garage-kallartomning-i-goteborg", "label": "Garage & basement clearance" },
+            { "slug": "bortforsling-i-goteborg", "label": "Junk removal" },
+            { "slug": "akut-hjalp-tomning", "label": "Emergency clearance" }
+          ]
+        },
+        {
+          "label": "Business & housing associations",
+          "items": [
+            { "slug": "foretagstomning-i-goteborg", "label": "Business clearance" },
+            { "slug": "kontorsrojning-i-goteborg", "label": "Office clearance" },
+            { "slug": "grovsopor-foreningar", "label": "Bulk waste for associations" },
+            { "slug": "fastighetsrojning-i-goteborg", "label": "Property clearance" }
+          ]
+        }
+      ]
+    }
+  },
+  "staticPages": {
+    "index": { "sv": "index.html", "en": "en/index.html" },
+    "offert": { "sv": "offert.html", "en": "en/quote.html" },
+    "priser": { "sv": "priser.html", "en": "en/pricing.html" },
+    "omraden": { "sv": "omraden.html", "en": "en/areas.html" },
+    "kontakt": { "sv": "kontakt.html", "en": "en/contact.html" },
+    "integritetspolicy": { "sv": "integritetspolicy.html", "en": "en/privacy-policy.html" }
+  },
+  "locales": {
+    "sv": {
+      "htmlLang": "sv",
+      "ogLocale": "sv_SE",
+      "pathPrefix": "",
+      "servicesDir": "tjanster",
+      "areasDir": "omraden",
+      "assetPrefix": "",
+      "canonicalPrefix": ""
+    },
+    "en": {
+      "htmlLang": "en",
+      "ogLocale": "en_GB",
+      "pathPrefix": "en/",
+      "servicesDir": "services",
+      "areasDir": "areas",
+      "assetPrefix": "../",
+      "canonicalPrefix": "en/"
+    }
+  },
+  "ui": {
+    "sv": {
+      "brand": "Alfa Tömning",
+      "navHome": "Hem",
+      "navServices": "Tjänster",
+      "navPricing": "Priser",
+      "navAreas": "Områden",
+      "navContact": "Kontakt",
+      "navQuote": "Begär Offert",
+      "navMenu": "Meny",
+      "langSv": "Svenska",
+      "langEn": "English",
+      "heroQuote": "Begär Offert Nu",
+      "formTitle": "Få snabb offert",
+      "formSubtitle": "Fyll i formuläret så återkommer vi inom kort.",
+      "serviceEyebrow": "Tjänst · Göteborg",
+      "areaEyebrow": "Område",
+      "overviewEyebrow": "Översikt",
+      "servicesEyebrow": "Tjänster",
+      "processEyebrow": "Process",
+      "situationsEyebrow": "Situationer",
+      "pricingEyebrow": "Transparent prissättning",
+      "whyEyebrow": "Trygg partner",
+      "casesEyebrow": "Resultat",
+      "pipelineEyebrow": "Hela kedjan",
+      "faqEyebrow": "FAQ",
+      "relatedEyebrow": "Mer hjälp",
+      "areasSectionEyebrow": "Områden",
+      "readMore": "Läs mer",
+      "challenge": "Utmaning:",
+      "solution": "Lösning:",
+      "footerQuote": "Begär offert",
+      "footerRights": "Alla rättigheter förbehållna.",
+      "privacy": "Integritetspolicy",
+      "ctaReady": "Redo att komma igång?",
+      "ctaLead": "Få en kostnadsfri offert inom 1–5 minuter. Inga dolda avgifter.",
+      "areasTitle": "Vi täcker hela Göteborg",
+      "relatedTitle": "Relaterade tjänster",
+      "faqTitle": "Vanliga frågor",
+      "home": "Hem",
+      "areasList": "Områden",
+      "defaultHeroBullets": [
+        "Gratis offert inom 1–5 minuter",
+        "Fast pris utan dolda avgifter",
+        "Miljövänlig återvinning",
+        "Akutjour vid behov"
+      ],
+      "defaultHeroBadges": ["14+ års erfarenhet", "Lokala experter", "Nöjd-kund-garanti"],
+      "mobileCtaLabel": "Snabbkontakt",
+      "mobileCall": "Ring",
+      "mobileQuote": "Begär offert",
+      "processDefaultIntro": "Transparent och strukturerad process – du vet alltid vad som händer härnäst.",
+      "casesDefaultTitle": "Från kaos till ordning – verkliga exempel",
+      "situationsDefaultTitle": "Vanliga situationer vi hanterar",
+      "pipelineTitle": "Från tömning till återvinning",
+      "pipelineIntro": "En miljövänlig process där inget lämnas åt slumpen – transport och sluthantering ingår.",
+      "pricingList": ["Volym (kubikmeter)", "Fordon & arbetstid", "Tipp- och hanteringsavgifter", "Fast pris efter besiktning"]
+    },
+    "en": {
+      "brand": "Alfa Tömning",
+      "navHome": "Home",
+      "navServices": "Services",
+      "navPricing": "Pricing",
+      "navAreas": "Areas",
+      "navContact": "Contact",
+      "navQuote": "Get a Quote",
+      "navMenu": "Menu",
+      "langSv": "Svenska",
+      "langEn": "English",
+      "heroQuote": "Get a Free Quote",
+      "formTitle": "Get a quick quote",
+      "formSubtitle": "Fill in the form and we will get back to you shortly.",
+      "serviceEyebrow": "Service · Gothenburg",
+      "areaEyebrow": "Area",
+      "overviewEyebrow": "Overview",
+      "servicesEyebrow": "Services",
+      "processEyebrow": "Process",
+      "situationsEyebrow": "Situations",
+      "pricingEyebrow": "Transparent pricing",
+      "whyEyebrow": "Trusted partner",
+      "casesEyebrow": "Results",
+      "pipelineEyebrow": "Full chain",
+      "faqEyebrow": "FAQ",
+      "relatedEyebrow": "More help",
+      "areasSectionEyebrow": "Areas",
+      "readMore": "Read more",
+      "challenge": "Challenge:",
+      "solution": "Solution:",
+      "footerQuote": "Get a quote",
+      "footerRights": "All rights reserved.",
+      "privacy": "Privacy policy",
+      "ctaReady": "Ready to get started?",
+      "ctaLead": "Get a free quote within 1–5 minutes. No hidden fees.",
+      "areasTitle": "We cover all of Gothenburg",
+      "relatedTitle": "Related services",
+      "faqTitle": "Frequently asked questions",
+      "home": "Home",
+      "areasList": "Areas",
+      "defaultHeroBullets": [
+        "Free quote within 1–5 minutes",
+        "Fixed price with no hidden fees",
+        "Eco-friendly recycling",
+        "Emergency service when needed"
+      ],
+      "defaultHeroBadges": ["14+ years of experience", "Local experts", "100% satisfaction guarantee"],
+      "mobileCtaLabel": "Quick contact",
+      "mobileCall": "Call",
+      "mobileQuote": "Get a quote",
+      "processDefaultIntro": "A transparent, structured process – you always know what happens next.",
+      "casesDefaultTitle": "From chaos to order – real examples",
+      "situationsDefaultTitle": "Common situations we handle",
+      "pipelineTitle": "From clearance to recycling",
+      "pipelineIntro": "An eco-friendly process where nothing is left to chance – transport and final handling included.",
+      "pricingList": ["Volume (cubic metres)", "Vehicle & labour time", "Disposal & handling fees", "Fixed price after inspection"]
+    }
+  }
+}

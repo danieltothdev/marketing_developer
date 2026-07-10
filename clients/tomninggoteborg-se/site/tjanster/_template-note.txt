@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{TITLE}} | Alfa Tömning Göteborg</title>
+  <meta name="description" content="{{DESCRIPTION}}" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="../index.html" class="nav-brand"><img src="../assets/favicon.svg" alt="" width="36" height="36" /><span>Alfa Tömning</span></a>
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="../index.html">Hem</a></li>
+        <li><a href="dodsbotomning.html" aria-current="page">Tjänster</a></li>
+        <li><a href="../priser.html">Priser</a></li>
+        <li><a href="../omraden.html">Områden</a></li>
+        <li><a href="../kontakt.html">Kontakt</a></li>
+      </ul>
+      <div class="nav-actions"><a class="btn btn-primary" href="../kontakt.html#offert">Begär Offert</a></div>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero"><div class="container"><h1>{{H1}}</h1><p>{{LEAD}}</p></div></section>
+    <section class="section"><div class="container" style="max-width:760px">
+      {{BODY}}
+      <div class="cta-band" style="margin-top:2rem"><div><h2>Behöver du hjälp?</h2><p style="color:var(--muted)">Gratis offert inom kort – fast pris utan dolda avgifter.</p></div><a class="btn btn-primary" href="../kontakt.html#offert">Begär offert</a></div>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><p>© Alfa Tömning Göteborg</p></div></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

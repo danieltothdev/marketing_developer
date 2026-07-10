@@ -1,0 +1,280 @@
+[
+  {
+    "slug": "villatomning-i-goteborg",
+    "pageTitle": "Villatömning Göteborg | Professionell & Snabb | Alfa Tömning",
+    "meta": "Villatömning i Göteborg – hela huset, garage och trädgård. Fast pris, miljövänlig återvinning och erfarna team i hela regionen.",
+    "service": "Villatömning i Göteborg",
+    "breadcrumb": "Villatömning i Göteborg",
+    "h1": "Villatömning Göteborg – från källare till trädgård",
+    "lead": "Stora volymer, tunga möbler och ibland utomhusutrymmen kräver rätt fordon och erfarenhet. Vi tömmer villor i hela Göteborgsregionen med fast pris och miljövänlig hantering.",
+    "heroBadges": ["Stora volymer", "Tunga lyft", "Fast pris"],
+    "introTitle": "Professionell villatömning i Göteborg",
+    "introText": "Vi sköter sortering rum för rum, bär ut tunga möbler och transporterar allt till godkänd återvinning – inklusive garage, källare och förråd vid behov.",
+    "introImageKey": "foto-tradgard",
+    "introParagraphs": [
+      "Att tömma en villa är ett större projekt än en lägenhet. Fler våningsplan, större ytor och ofta källare, garage och trädgårdsutrymmen kräver planering, rätt fordon och ett team som kan hantera tunga lyft.",
+      "Vi hjälper vid flytt, försäljning, dödsbo, renovering och när ett hus ska förberedas för ny ägare. Du får alltid fast offert efter besiktning – sortering, bortforsling och valfri städning kan ingå."
+    ],
+    "typesTitle": "Vanliga villatömningar vi gör",
+    "typesIntro": "Oavsett storlek eller läge i Göteborg – vi anpassar team och fordon efter ditt uppdrag.",
+    "types": [
+      { "letter": "A", "title": "Hel villa inför försäljning", "text": "Tom och visningsklar bostad – inklusive källare, garage och förråd.", "imageKey": "foto-lagenhet" },
+      { "letter": "B", "title": "Flytt & downsizing", "text": "Du tar med det viktigaste – vi tömmer resten och återvinner miljövänligt.", "imageKey": "foto-transport-lastbil" },
+      { "letter": "C", "title": "Dödsbo i villa", "text": "Varsam hantering med respekt för minnessaker och familjens tempo.", "link": "dodsbotomning-i-goteborg", "imageKey": "foto-tradgard-avfall" },
+      { "letter": "D", "title": "Renovering", "text": "Rensa ytor innan hantverkare börjar – byggavfall och bohag transporteras bort.", "imageKey": "foto-transport-lada" }
+    ],
+    "processTitle": "Så går villatömningen till",
+    "processIntro": "Strukturerad process från besiktning till tom och redo villa.",
+    "process": [
+      { "title": "Besiktning & offert", "text": "Vi bedömer volym, tillgänglighet och vilka utrymmen som ska tömmas – fast pris innan start." },
+      { "title": "Planering & fordon", "text": "Rätt team och fordon för tunga möbler, smala entréer och trädgårdsgångar." },
+      { "title": "Sortering på plats", "text": "Återbruk, återvinning och deponi separeras metodiskt i varje rum." },
+      { "title": "Transport & sluthantering", "text": "Allt transporteras till certifierad mottagning – inget lämnas åt slumpen." }
+    ],
+    "situationsTitle": "När behöver du villatömning?",
+    "situations": [
+      { "title": "Försäljning av villa", "text": "Mäklare och köpare vill se en tom bostad – vi tömmer snabbt och ordentligt." },
+      { "title": "Arv och dödsbo", "text": "Känsligt uppdrag med diskretion – vi anpassar tempot efter familjen." },
+      { "title": "Flytt utomlands", "text": "När hela hushållet ska lämnas kvar tömmer vi villa, garage och förråd." }
+    ],
+    "pricing": { "title": "Transparent prissättning", "text": "Priset baseras på volym, tillgänglighet och typ av material. Fast offert efter besiktning – inga dolda avgifter.", "cta": "Begär kostnadsfri offert" },
+    "showPipeline": true,
+    "faq": [
+      { "q": "Vad kostar villatömning i Göteborg?", "a": "Priset beror på storlek, volym och tillgänglighet. Du får alltid fast offert efter besiktning." },
+      { "q": "Tömmer ni garage och källare i samband med villatömning?", "a": "Ja, vi kan ta hela uppdraget inklusive garage, källare, vind och förråd." },
+      { "q": "Hur lång tid tar en villatömning?", "a": "Från en dag till flera dagar beroende på storlek och volym – vi ger tydlig tidsplan i offerten." }
+    ],
+    "relatedServices": [
+      { "label": "Radhustömning", "slug": "radhusstomning-i-goteborg", "desc": "Smidig tömning i radhusområden med trånga gångvägar." },
+      { "label": "Dödsbotömning", "slug": "dodsbotomning-i-goteborg", "desc": "Varsam hantering av dödsbo i villa." },
+      { "label": "Bortforsling", "slug": "bortforsling-i-goteborg", "desc": "Transport och återvinning av tunga möbler och grovsopor." }
+    ]
+  },
+  {
+    "slug": "radhusstomning-i-goteborg",
+    "pageTitle": "Radhustömning Göteborg – Snabb Service | Alfa Tömning",
+    "meta": "Radhustömning i Göteborg och regionen. Erfarna team, rätt fordon för smala gångvägar och fast pris.",
+    "service": "Radhustömning i Göteborg",
+    "breadcrumb": "Radhustömning i Göteborg",
+    "h1": "Radhustömning Göteborg – smidigt i radhusområden",
+    "lead": "Radhusområden kan innebära utmaningar med parkering, smala gångvägar och flera våningsplan. Vi har fordonen och personalen för en effektiv radhustömning.",
+    "heroBadges": ["Radhus-expertis", "Smidig logistik", "Fast pris"],
+    "introTitle": "Radhustömning med lokal erfarenhet",
+    "introText": "Vi känner till logistiken i Göteborgs radhusområden – från parkering till bärvägar – och tömmer hela bostaden inklusive förråd och garage vid behov.",
+    "introParagraphs": [
+      "Radhus kombinerar ofta flera våningsplan med begränsade parkeringsmöjligheter och delade gångytor. Det kräver planering så att grannar inte störs och inget skadas under transport.",
+      "Vi hjälper vid flytt, försäljning, dödsbo och renovering. Fast offert efter besiktning – sortering och miljövänlig bortforsling ingår."
+    ],
+    "introImageKey": "foto-tradgard",
+    "typesTitle": "Typiska radhusuppdrag",
+    "typesIntro": "Vanliga situationer vi hanterar i radhusområden runt Göteborg.",
+    "types": [
+      { "letter": "A", "title": "Flytt & försäljning", "text": "Töm hela radhuset inför ny ägare eller hyresgäst.", "imageKey": "foto-lagenhet" },
+      { "letter": "B", "title": "Förråd & garage", "text": "Rensa källarförråd, garage och vind i samma uppdrag.", "link": "garage-kallartomning-i-goteborg", "imageKey": "foto-vind" },
+      { "letter": "C", "title": "Dödsbo", "text": "Varsam radhustömning med respekt för anhöriga.", "link": "dodsbotomning-i-goteborg", "imageKey": "foto-transport-lastbil" },
+      { "letter": "D", "title": "Renovering", "text": "Töm ytor innan ombyggnad – byggavfall och bohag bortforslas.", "imageKey": "foto-tradgard-avfall" }
+    ],
+    "processTitle": "Så fungerar radhustömningen",
+    "process": [
+      { "title": "Bedömning & offert", "text": "Vi tittar på volym, parkering och bärvägar – fast pris innan start." },
+      { "title": "Skydd & sortering", "text": "Ytor skyddas, material sorteras för återbruk och återvinning." },
+      { "title": "Tömning & transport", "text": "Effektiv utbärning och lastning med rätt fordon för området." }
+    ],
+    "situationsTitle": "Vanliga situationer",
+    "situations": [
+      { "title": "Försäljning av radhus", "text": "Tom bostad inför visning och tillträde." },
+      { "title": "Hyresvärd efter hyresgäst", "text": "Snabb tömning när ny uthyrning ska ske." }
+    ],
+    "pricing": { "title": "Fast pris", "text": "Offert baserad på volym och tillgänglighet – inga överraskningar.", "cta": "Begär offert" },
+    "showPipeline": true,
+    "faq": [
+      { "q": "Kan ni parkera nära radhuset?", "a": "Vi planerar alltid parkering och bärvägar i förväg – erfarenhet från radhusområden i hela regionen." },
+      { "q": "Tömmer ni flera våningsplan?", "a": "Ja, vi hanterar hela radhuset inklusive källare, vind och garage." }
+    ],
+    "relatedServices": [
+      { "label": "Villatömning", "slug": "villatomning-i-goteborg", "desc": "Större villor och tomter – samma trygga process." },
+      { "label": "Lägenhetstömning", "slug": "lagenhetstomning-i-goteborg", "desc": "Tömning av lägenheter inför flytt eller försäljning." }
+    ]
+  },
+  {
+    "slug": "garage-kallartomning-i-goteborg",
+    "pageTitle": "Garage- & Källartömning Göteborg | Snabb | Alfa Tömning",
+    "meta": "Garage- och källartömning i Göteborg. Farligt avfall hanteras säkert. Fast pris och miljövänlig bortforsling.",
+    "service": "Garage- & källartömning i Göteborg",
+    "breadcrumb": "Garage- & källartömning",
+    "h1": "Garage- och källartömning Göteborg",
+    "lead": "Fullt garage, fuktig källare eller proppfullt förråd? Vi rensar ut, sorterar och forslar bort allt – inklusive säker hantering av farligt avfall.",
+    "heroBadges": ["Farligt avfall", "Snabb hjälp", "Miljövänligt"],
+    "introTitle": "Professionell garage- och källartömning",
+    "introText": "Källare och garage samlar ofta gammalt skräp, färg, däck och möbler. Vi tömmer, sorterar och transporterar enligt gällande miljökrav.",
+    "introParagraphs": [
+      "Garagetömning kräver ibland hantering av farligt avfall som färg och kemikalier. Källartömning innebär ofta trånga passager, fukt och damm – vi har erfarenhet och utrustning för båda.",
+      "Vi hjälper privatpersoner, hyresvärdar och BRF:er i hela Göteborgsregionen. Fast offert efter besiktning – inget du behöver sortera själv."
+    ],
+    "introImageKey": "foto-tradgard-avfall",
+    "typesTitle": "Vad vi tömmer",
+    "typesIntro": "Vanliga utrymmen och material vi hanterar dagligen.",
+    "types": [
+      { "letter": "A", "title": "Garage", "text": "Möbler, däck, cyklar, färg och bråte – säker bortforsling.", "imageKey": "foto-transport-lada" },
+      { "letter": "B", "title": "Källare", "text": "Fuktiga källare, kartonger, vitvaror och gemensamt bråte.", "imageKey": "foto-vind" },
+      { "letter": "C", "title": "Källarförråd", "text": "Privata förråd i flerfamiljshus – snabb och diskret hjälp.", "link": "forradstomning-i-goteborg", "imageKey": "foto-lagenhet" },
+      { "letter": "D", "title": "BRF-gemensamma utrymmen", "text": "Källare och förråd i förening – dokumentation vid behov.", "link": "fastighetsrojning-i-goteborg", "imageKey": "foto-kontor" }
+    ],
+    "processTitle": "Så går det till",
+    "process": [
+      { "title": "Offert", "text": "Beskriv utrymmet eller skicka bilder – fast pris snabbt." },
+      { "title": "Sortering", "text": "Farligt avfall, återvinning och deponi separeras på plats." },
+      { "title": "Bortforsling", "text": "Allt transporteras till godkänd mottagning." }
+    ],
+    "situationsTitle": "Vanliga behov",
+    "situations": [
+      { "title": "Inför försäljning", "text": "Rensa garage och källare så köpare ser en fräsch bostad." },
+      { "title": "BRF-städdag", "text": "Vi hjälper föreningen tömma gemensamma källare och förråd." }
+    ],
+    "pricing": { "title": "Transparent prissättning", "text": "Pris efter volym och typ av avfall – fast offert innan start.", "cta": "Begär offert" },
+    "showPipeline": true,
+    "faq": [
+      { "q": "Hanterar ni farligt avfall i garaget?", "a": "Ja, färg, kemikalier och liknande sorteras och lämnas enligt regler." },
+      { "q": "Kan ni tömma både garage och källare samma dag?", "a": "Ja, vi planerar uppdraget så att allt hanteras i ett svep." }
+    ],
+    "relatedServices": [
+      { "label": "Förrådstömning", "slug": "forradstomning-i-goteborg", "desc": "Vind, förråd och magasin – komplett hjälp." },
+      { "label": "Bortforsling", "slug": "bortforsling-i-goteborg", "desc": "Skrymmande avfall efter tömning." }
+    ]
+  },
+  {
+    "slug": "foretagstomning-i-goteborg",
+    "pageTitle": "Företagstömning Göteborg – Kontor & Lager | Alfa Tömning",
+    "meta": "Företagstömning i Göteborg – kontor, lager och lokaler. Fast pris, faktura och dokumentation för företag.",
+    "service": "Företagstömning i Göteborg",
+    "breadcrumb": "Företagstömning",
+    "h1": "Företagstömning Göteborg – effektivt för företag",
+    "lead": "Flytt, avveckling eller omorganisation? Vi tömmer kontor, lager och lokaler med minimal störning för verksamheten – faktura och dokumentation ingår.",
+    "heroBadges": ["Faktura", "Dokumentation", "Minimal störning"],
+    "introTitle": "Företagstömning med affärsmässig precision",
+    "introText": "Vi planerar tömning utanför arbetstid vid behov, hanterar IT-skåp, möbler och lager – och lämnar kvitto och återvinningsunderlag.",
+    "introParagraphs": [
+      "Företagstömning kräver punktlighet och diskretion. Vi koordinerar med fastighetsägare, flyttfirmor och IT-leverantörer så att verksamheten kan fortsätta så smidigt som möjligt.",
+      "Från mindre kontor till större lager – fast offert, fakturering till företag och spårbar sluthantering enligt miljökrav."
+    ],
+    "introImageKey": "foto-kontor",
+    "typesTitle": "Företagstömning vi erbjuder",
+    "types": [
+      { "letter": "A", "title": "Kontorsflytt", "text": "Töm gamla lokaler inför ny adress – möbler och skräp bortforslas.", "link": "kontorsrojning-i-goteborg", "imageKey": "foto-transport-lastbil" },
+      { "letter": "B", "title": "Lager & verkstad", "text": "Större volymer, pallar och industrimaterial – rätt fordon och team.", "imageKey": "foto-transport-lada" },
+      { "letter": "C", "title": "Avveckling", "text": "När verksamheten läggs ned – hela lokalen töms och dokumenteras.", "imageKey": "foto-tradgard-avfall" },
+      { "letter": "D", "title": "Butik & showroom", "text": "Snabb tömning inför ny hyresgäst eller renovering.", "imageKey": "foto-lagenhet" }
+    ],
+    "processTitle": "Process för företag",
+    "process": [
+      { "title": "Behovsanalys", "text": "Volym, tidsplan och tillgång – offert anpassad för företag." },
+      { "title": "Genomförande", "text": "Tömning enligt plan – ofta kvällar eller helger vid önskemål." },
+      { "title": "Dokumentation", "text": "Kvitto, återvinningsunderlag och faktura till ekonomiavdelningen." }
+    ],
+    "situationsTitle": "När företag anlitar oss",
+    "situations": [
+      { "title": "Kontorsflytt", "text": "Gamla möbler och skräp ska bort innan nya hyresgäster flyttar in." },
+      { "title": "Konkurs & avveckling", "text": "Snabb och strukturerad tömning av lokal och lager." }
+    ],
+    "pricing": { "title": "Företagsoffert", "text": "Volymbaserat fast pris med faktura – inga dolda avgifter.", "cta": "Begär företagsoffert" },
+    "showPipeline": true,
+    "faq": [
+      { "q": "Kan ni fakturera företag?", "a": "Ja, vi erbjuder faktura och tydlig specifikation för bokföring." },
+      { "q": "Jobbar ni utanför kontorstid?", "a": "Ja, vi kan planera tömning kvällar och helger för minimal störning." }
+    ],
+    "relatedServices": [
+      { "label": "Kontorsröjning", "slug": "kontorsrojning-i-goteborg", "desc": "Röjning och tömning av kontorslokaler." },
+      { "label": "Fastighetsröjning", "slug": "fastighetsrojning-i-goteborg", "desc": "Större fastighets- och BRF-uppdrag." }
+    ]
+  },
+  {
+    "slug": "kontorsrojning-i-goteborg",
+    "pageTitle": "Kontorsröjning Göteborg – Tömning | Alfa Tömning",
+    "meta": "Kontorsröjning i Göteborg – möbler, skräp och utrustning. Snabb service, faktura och miljövänlig återvinning.",
+    "service": "Kontorsröjning i Göteborg",
+    "breadcrumb": "Kontorsröjning",
+    "h1": "Kontorsröjning Göteborg – tomt kontor snabbt",
+    "lead": "Gammal kontorsinredning, skåp och skräp ska bort? Vi röjer och forslar bort allt så lokalen är redo för nästa steg – med faktura och fast pris.",
+    "heroBadges": ["Kontors-expertis", "Snabb leverans", "Faktura"],
+    "introTitle": "Professionell kontorsröjning",
+    "introText": "Vi hanterar skrivbord, stolar, skåp, IT-utrustning och skräp – sortering och återvinning enligt regler.",
+    "introParagraphs": [
+      "Kontorsröjning är ofta sista steget vid flytt, downsizing eller när en hyresgäst lämnar lokalen. Vi bär, lastar och dokumenterar så fastighetsägaren får en tom yta.",
+      "Vi arbetar i hela Göteborgsregionen – från enstaka kontorsrum till hela våningsplan. Offert inom kort, genomförande enligt överenskommen tid."
+    ],
+    "introImageKey": "foto-kontor",
+    "typesTitle": "Vad ingår i kontorsröjning?",
+    "types": [
+      { "letter": "A", "title": "Kontorsmöbler", "text": "Skrivbord, stolar, skåp och skärmar – bortforslas och återvinns.", "imageKey": "foto-transport-lada" },
+      { "letter": "B", "title": "Konferens & pausrum", "text": "Soffor, kylskåp och inredning – allt i ett uppdrag.", "imageKey": "foto-transport-lastbil" },
+      { "letter": "C", "title": "Arkiv & papper", "text": "Vi kan koordinera säker destruktion vid behov tillsammans med partner." },
+      { "letter": "D", "title": "Hel våning", "text": "Större kontorsytor – flera team och fordon för snabb leverans.", "imageKey": "foto-lagenhet" }
+    ],
+    "processTitle": "Så jobbar vi",
+    "process": [
+      { "title": "Offert & tidplan", "text": "Fast pris och tidsfönster som passar er verksamhet." },
+      { "title": "Röjning & lastning", "text": "Systematiskt arbete med minimal störning." },
+      { "title": "Återvinning & kvitto", "text": "Material till rätt mottagning – underlag till er bokföring." }
+    ],
+    "situationsTitle": "Typiska uppdrag",
+    "situations": [
+      { "title": "Hyresgäst flyttar ut", "text": "Fastighetsägare behöver tom lokal snabbt – vi levererar." },
+      { "title": "Omorganisation", "text": "Gammal inredning ska bort när nya kontorsplatser byggs." }
+    ],
+    "pricing": { "title": "Fast företagspris", "text": "Offert baserad på yta och volym – faktura till företag.", "cta": "Begär offert" },
+    "showPipeline": true,
+    "faq": [
+      { "q": "Tar ni IT-utrustning?", "a": "Ja, datorer och skärmar sorteras för godkänd elektronikåtervinning." },
+      { "q": "Kan ni jobba efter kontorstid?", "a": "Ja, vi anpassar tiden så verksamheten inte störs i onödan." }
+    ],
+    "relatedServices": [
+      { "label": "Företagstömning", "slug": "foretagstomning-i-goteborg", "desc": "Helhetslösning för företag och lager." },
+      { "label": "Bortforsling", "slug": "bortforsling-i-goteborg", "desc": "Transport och återvinning av kontorsmöbler." }
+    ]
+  },
+  {
+    "slug": "fastighetsrojning-i-goteborg",
+    "pageTitle": "Fastighetsröjning Göteborg – BRF | Alfa Tömning",
+    "meta": "Fastighetsröjning i Göteborg för BRF:er och fastighetsägare. Källare, vind, miljörum och gemensamma utrymmen – fast pris och dokumentation.",
+    "service": "Fastighetsröjning i Göteborg",
+    "breadcrumb": "Fastighetsröjning",
+    "h1": "Fastighetsröjning Göteborg – för BRF och fastighetsägare",
+    "lead": "Gemensamma källare, vindar, miljörum och innergårdar behöver regelbunden röjning. Vi hjälper styrelser och fastighetsägare med planerade insatser och akut hjälp.",
+    "heroBadges": ["BRF-specialist", "Dokumentation", "Brand & ordning"],
+    "introTitle": "Fastighetsröjning med erfarenhet av BRF",
+    "introText": "Vi tömmer gemensamma utrymmen, hanterar grovsopor och lämnar dokumentation som underlag för styrelsen – miljövänligt och enligt avtal.",
+    "introParagraphs": [
+      "Fastighetsröjning omfattar allt från planerade städdagar till akuta situationer när boende dumpat möbler i miljörum. Vi känner kraven på ordning, brandsäkerhet och spårbar avfallshantering.",
+      "Styrelser och förvaltare får fast pris, tydlig kommunikation och kvitton – ofta i kombination med vår tjänst grovsopor för BRF."
+    ],
+    "introImageKey": "foto-vind",
+    "typesTitle": "Fastighetsröjning vi utför",
+    "types": [
+      { "letter": "A", "title": "Källare & vind", "text": "Tömning av gemensamma förråd och källarutrymmen.", "imageKey": "foto-lagenhet" },
+      { "letter": "B", "title": "Miljörum & innergård", "text": "Illegalt dumpat skräp – snabb insats och dokumentation.", "link": "grovsopor-foreningar", "imageKey": "foto-tradgard-avfall" },
+      { "letter": "C", "title": "Cykelrum & förråd", "text": "Röjning enligt föreningens regler och tidsplan.", "imageKey": "foto-kontor" },
+      { "letter": "D", "title": "Planerad städdag", "text": "Koordinerat uppdrag för hela föreningen – fast pris i förväg.", "imageKey": "foto-transport-lastbil" }
+    ],
+    "processTitle": "Så samarbetar vi med styrelsen",
+    "process": [
+      { "title": "Offert till styrelsen", "text": "Volym och omfattning – fast pris för beslut på stämma eller styrelsemöte." },
+      { "title": "Genomförande", "text": "Diskret och effektiv insats – boende informeras enligt era önskemål." },
+      { "title": "Dokumentation", "text": "Kvitto och återvinningsunderlag till ekonomiansvarig." }
+    ],
+    "situationsTitle": "Vanliga BRF-uppdrag",
+    "situations": [
+      { "title": "Dumpade möbler i miljörum", "text": "Akut hämtning så att ordning återställs samma vecka." },
+      { "title": "Årlig städdag", "text": "Planerad röjning av källare och vind – bokas i förväg." }
+    ],
+    "pricing": { "title": "Pris för föreningar", "text": "Volymbaserad offert med faktura till BRF – inga dolda avgifter.", "cta": "Begär BRF-offert" },
+    "showPipeline": true,
+    "faq": [
+      { "q": "Kan ni fakturera BRF direkt?", "a": "Ja, vi skickar faktura till föreningen med tydlig specifikation." },
+      { "q": "Ingår grovsopor?", "a": "Grovsopor och större partier hanteras via vår tjänst grovsopor för BRF – kan kombineras i samma uppdrag." }
+    ],
+    "relatedServices": [
+      { "label": "Grovsopor för BRF", "slug": "grovsopor-foreningar", "desc": "Hämtning av grovsopor för föreningar." },
+      { "label": "Garage- & källartömning", "slug": "garage-kallartomning-i-goteborg", "desc": "Källare och garage i fastigheten." }
+    ]
+  }
+]

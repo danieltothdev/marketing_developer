@@ -1,0 +1,54 @@
+window.SERVICE_OPTIONS = [
+  {
+    "value": "Lägenhetstömning",
+    "slug": "lagenhetstomning-i-goteborg"
+  },
+  {
+    "value": "Villatömning i Göteborg",
+    "slug": "villatomning-i-goteborg"
+  },
+  {
+    "value": "Radhustömning i Göteborg",
+    "slug": "radhusstomning-i-goteborg"
+  },
+  {
+    "value": "Dödsbotömning i Göteborg",
+    "slug": "dodsbotomning-i-goteborg"
+  },
+  {
+    "value": "Förrådstömning",
+    "slug": "forradstomning-i-goteborg"
+  },
+  {
+    "value": "Garage- & källartömning i Göteborg",
+    "slug": "garage-kallartomning-i-goteborg"
+  },
+  {
+    "value": "Bortforsling i Göteborg",
+    "slug": "bortforsling-i-goteborg"
+  },
+  {
+    "value": "Akut hjälp & tömning",
+    "slug": "akut-hjalp-tomning"
+  },
+  {
+    "value": "Företagstömning i Göteborg",
+    "slug": "foretagstomning-i-goteborg"
+  },
+  {
+    "value": "Kontorsröjning i Göteborg",
+    "slug": "kontorsrojning-i-goteborg"
+  },
+  {
+    "value": "Grovsopor för föreningar",
+    "slug": "grovsopor-foreningar"
+  },
+  {
+    "value": "Fastighetsröjning i Göteborg",
+    "slug": "fastighetsrojning-i-goteborg"
+  },
+  {
+    "value": "Annat",
+    "slug": ""
+  }
+];

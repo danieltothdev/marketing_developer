@@ -1,0 +1,22 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Legacy slug redirects
+RedirectMatch 301 ^/tjanster/dodsbotomning/?$ /tjanster/dodsbotomning-i-goteborg
+RedirectMatch 301 ^/tjanster/lagenhetstomning/?$ /tjanster/lagenhetstomning-i-goteborg
+RedirectMatch 301 ^/tjanster/forradstomning/?$ /tjanster/forradstomning-i-goteborg
+RedirectMatch 301 ^/tjanster/bortforsling/?$ /tjanster/bortforsling-i-goteborg
+
+# Live site service slugs → static pages
+RedirectMatch 301 ^/tomning-goteborg/?$ /tjanster/tomning-i-goteborg
+RedirectMatch 301 ^/bortforsling-goteborg/?$ /tjanster/bortforsling-i-goteborg
+RedirectMatch 301 ^/dodsbo-goteborg/?$ /tjanster/dodsbotomning-i-goteborg
+RedirectMatch 301 ^/tomning-lagenhet-goteborg/?$ /tjanster/lagenhetstomning-i-goteborg
+RedirectMatch 301 ^/tomning-forrad-goteborg/?$ /tjanster/forradstomning-i-goteborg
+RedirectMatch 301 ^/akut-tomning-goteborg/?$ /tjanster/akut-hjalp-tomning
+RedirectMatch 301 ^/grovsopor-goteborg/?$ /tjanster/grovsopor-foreningar
+
+DirectoryIndex index.html

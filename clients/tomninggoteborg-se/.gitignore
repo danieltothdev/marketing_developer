@@ -1,0 +1,3 @@
+site/scripts/node_modules/
+.env
+.env.local
