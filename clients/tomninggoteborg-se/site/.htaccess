@@ -1,5 +1,14 @@
 RewriteEngine On
 
+# Kanonikus host: www -> nem-www (a GSC szerint mindkét variáns indexelve volt)
+RewriteCond %{HTTP_HOST} ^www\.tomninggoteborg\.se$ [NC]
+RewriteRule ^(.*)$ https://tomninggoteborg.se/$1 [L,R=301]
+
+# Kanonikus URL: explicit .html kérés -> kiterjesztés nélküli verzió
+# (GSC-ben duplikátumként indexelve volt pl. /omraden/molndal ÉS /omraden/molndal.html)
+RewriteCond %{THE_REQUEST} \s/+([^?\s]+)\.html[?\s]
+RewriteRule ^ /%1 [R=301,L]
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
@@ -18,5 +27,35 @@ RedirectMatch 301 ^/tomning-lagenhet-goteborg/?$ /tjanster/lagenhetstomning-i-go
 RedirectMatch 301 ^/tomning-forrad-goteborg/?$ /tjanster/forradstomning-i-goteborg
 RedirectMatch 301 ^/akut-tomning-goteborg/?$ /tjanster/akut-hjalp-tomning
 RedirectMatch 301 ^/grovsopor-goteborg/?$ /tjanster/grovsopor-foreningar
+
+# GSC "Indexelve" export (2026-07) alapján azonosított, még redirect nélküli régi URL-ek.
+# Egyértelmű 1:1 megfeleltetések:
+RedirectMatch 301 ^/tomning-dodsbo-goteborg/?$ /tjanster/dodsbotomning-i-goteborg
+RedirectMatch 301 ^/tomning-kallare-goteborg/?$ /tjanster/garage-kallartomning-i-goteborg
+RedirectMatch 301 ^/villatomning-goteborg/?$ /tjanster/villatomning-i-goteborg
+RedirectMatch 301 ^/radhustomning-goteborg/?$ /tjanster/radhusstomning-i-goteborg
+RedirectMatch 301 ^/bortforsling-byggavfall-goteborg/?$ /tjanster/bortforsling-i-goteborg
+RedirectMatch 301 ^/bortforsling-grovsopor-goteborg/?$ /tjanster/grovsopor-foreningar
+RedirectMatch 301 ^/grovsopor-foreningar/?$ /tjanster/grovsopor-foreningar
+RedirectMatch 301 ^/fastighetsagare-planerad-tomning/?$ /tjanster/fastighetsrojning-i-goteborg
+RedirectMatch 301 ^/tomning-av-hushall/?$ /tjanster/lagenhetstomning-i-goteborg
+
+# Terület oldalak (a régi oldal városrész-szintre bontott, az új konszolidált /omraden/ oldalakra megy)
+RedirectMatch 301 ^/stadsdel/centrum/?$ /omraden/centrum
+RedirectMatch 301 ^/stadsdel/heden/?$ /omraden/centrum
+RedirectMatch 301 ^/stadsdel/vasastan/?$ /omraden/centrum
+RedirectMatch 301 ^/stadsdel/hisingen/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/vastra-frolunda/?$ /omraden/vastra-goteborg
+RedirectMatch 301 ^/omraden/goteborg-stadsdelar/?$ /omraden
+RedirectMatch 301 ^/flyttfirma-hisingen/?$ /omraden/hisingen
+RedirectMatch 301 ^/flyttfirma-partille/?$ /omraden/partille
+
+# Blog / FAQ tartalom, aminek nincs 1:1 új megfelelője — főoldalra megy, hogy ne 404-ezzen.
+# TODO Dániel: érdemes lehet ezekre dedikált tartalmat visszaépíteni, mert indexelve voltak (volt rájuk forgalom).
+RedirectMatch 301 ^/faq/?$ /
+RedirectMatch 301 ^/blogg(/.*)?$ /
+RedirectMatch 301 ^/bohagsflytt-goteborg/?$ /
+RedirectMatch 301 ^/flyttstadning-goteborg/?$ /
+RedirectMatch 301 ^/tjanster/flyttstadning/?$ /
 
 DirectoryIndex index.html

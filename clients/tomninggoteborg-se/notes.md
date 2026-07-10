@@ -67,13 +67,51 @@ volt/van és kap forgalmat vagy backlinket, azt kötelező 301-gyel átirányít
 oldalára. A jelenlegi `.htaccess` csak néhány kézzel felvett legacy slugot fed le, a fenti mintázatok
 (pl. `flyttfirma-lerum` → melyik új oldalra?) még nincsenek benne.
 
+## GSC export #2 — "Indexelve" (2026-07-10, 88 URL)
+Fájl: `seo-data/gsc-indexed-2026-07.csv`
+
+**Jó hír:** a legfrissebb crawl-dátumú URL-ek (2026-06-17 – 2026-06-30) pontosan az ÚJ Cursor-oldal
+struktúráját követik (`/omraden/vastra-goteborg`, `/tjanster/tomning-i-goteborg`, `/en/...` stb.) —
+tehát **az új oldal már él és a Google már aktívan indexeli**. A migráció ténylegesen folyamatban van,
+nem csak terv.
+
+**3 technikai hiba, amit ez az export lelepezett — ezeket a `.htaccess`-ben már ki is javítottam
+(2026-07-10-i commit), Dánielnek csak fel kell töltenie SFTP-vel/WinSCP-vel az élő szerverre:**
+
+1. **www / non-www duplikáció:** `https://www.tomninggoteborg.se/` és `https://www.tomninggoteborg.se/tomning-goteborg`
+   is indexelve volt a `https://tomninggoteborg.se/...` (www nélküli) verziók mellett. → Hozzáadva egy
+   301-es host-redirect: `www.tomninggoteborg.se` → `tomninggoteborg.se`.
+2. **`.html` / kiterjesztés nélküli duplikáció:** `/omraden/molndal` ÉS `/omraden/molndal.html` is
+   indexelve volt ugyanarra a tartalomra. → Hozzáadva egy szabály, ami minden explicit `.html` végű
+   kérést 301-gyel a kiterjesztés nélküli verzióra visz.
+3. **Redirect nélküli régi URL-ek**, amik ténylegesen indexelve voltak (tehát volt/van rájuk forgalom
+   vagy backlink), de a régi `.htaccess` nem kezelte őket. Hozzáadva kb. 17 új `RedirectMatch` szabály:
+   - Egyértelmű 1:1 megfeleltetések (pl. `/villatomning-goteborg` → `/tjanster/villatomning-i-goteborg`,
+     `/tomning-dodsbo-goteborg` → `/tjanster/dodsbotomning-i-goteborg`)
+   - Városrész-szintű régi oldalak (`/stadsdel/centrum`, `/stadsdel/heden`, `/stadsdel/vasastan`) az
+     új konszolidált `/omraden/centrum`-ra
+   - `/omraden/vastra-frolunda` → `/omraden/vastra-goteborg` (Frölunda a Västra Göteborg terület része)
+
+**Nyitott kérdés Dánielnek — tartalmi döntés, nem technikai:** `/faq`, `/blogg/*`,
+`/bohagsflytt-goteborg`, `/flyttstadning-goteborg`, `/tjanster/flyttstadning` indexelve voltak
+(volt rájuk forgalom), de az új oldalon **nincs nekik megfelelő tartalom** (nincs blog, nincs FAQ, a
+flytt/takarítás pedig nem a fő profil). Egyelőre a főoldalra irányítottam át őket 301-gyel, hogy ne
+legyen 404, de érdemes megfontolni:
+- Vissza kellene-e hozni egy FAQ oldalt (volt rá kereslet)?
+- A blog tartalom (`dodsbotomning-goteborg`, `professionella-tomningsprojekt-goteborg`) újraírható-e
+  az új design/stílusban — ez organikus forgalmat hozott korábban.
+
 ## Következő lépések (SEO/indexelési terv vázlat)
-1. Redirect-térkép lezárása: régi Hostinger URL-ek → új statikus URL-ek, mind 301-gyel.
-2. Search Console: property hozzáadása/ellenőrzése az új verzióhoz, sitemap beküldése, kulcsoldalak
-   manuális "Indexelés kérése".
-3. Structured data (LocalBusiness/Schema) ellenőrzése/kiegészítése minden oldaltípuson.
-4. Belső linkelés és NAP (Name/Address/Phone) konzisztencia ellenőrzése az oldalakon és a Google Cégem
+1. ~~Redirect-térkép lezárása~~ → **kész a `.htaccess`-ben (2026-07-10)**, de Dánielnek fel kell töltenie
+   élesre (WinSCP/SFTP a Rackhost/jelenlegi szerverre) — helyben a repóban lévő fájl önmagában nem él.
+2. Search Console: property hozzáadása/ellenőrzése (ha még nincs) az élő domainre, sitemap beküldése,
+   a most hozzáadott redirectek után pár nappal ellenőrizni a "Kizárva" riportot, csökkent-e a hibás
+   URL-ek száma.
+3. Döntés a FAQ / blog tartalom sorsáról (ld. fent) — ha kell, új tartalom írása a régi, jól teljesítő
+   témákra.
+4. Structured data (LocalBusiness/Schema) ellenőrzése/kiegészítése minden oldaltípuson.
+5. Belső linkelés és NAP (Name/Address/Phone) konzisztencia ellenőrzése az oldalakon és a Google Cégem
    profillal.
-5. "tömma dödsbo göteborg" célkulcsszóra dedikált landing oldal (korábban egyeztetett, Cursor prompt
+6. "tömma dödsbo göteborg" célkulcsszóra dedikált landing oldal (korábban egyeztetett, Cursor prompt
    kész volt hozzá) — ellenőrizni, hogy ez a build már tartalmazza-e (`dodsbotomning-i-goteborg.html`
    erre utalhat, meg kell nézni tartalmilag).
