@@ -34,6 +34,39 @@ Google-indexelése és rangsorolása, hogy nőjön az organikus foglalások szá
 4. Supabase projekt admin hozzáférés, ha az Edge Function / email-küldés finomhangolására is szükség lesz.
 5. Van-e már Google Cégem (Google Business Profile) bejegyzés a céghez — lokális SEO-hoz kritikus.
 
+## GSC export #1 — "Kizárva: noindex címke miatt" (2026-07-10, 108 URL)
+Fájl: `seo-data/gsc-excluded-noindex-2026-07.csv`
+
+**Fontos:** ez NEM az indexelt oldalak listája — ez a "Kizárva egy „noindex” címke miatt" riport
+(lásd a fájl "Metaadat" fülét). Vagyis ez a 108 URL a régi Hostinger AI-oldalon úgy jött létre, hogy a
+rendszer maga tiltotta le az indexelésüket — **ezek jelenleg NEM rangsorolnak a Google-ben**, tehát
+migrációkor nincs SEO-érték (link equity), amit itt redirecttel meg kellene menteni. Sürgősségi
+szempontból alacsony prioritásúak.
+
+Amit viszont elárul ez a lista:
+- A régi oldal **rengeteg hiperlokális oldalt generált** eltérő URL-mintázatokkal: `/omraden/X`,
+  `/stadsdel/X`, `/kommun/X`, `/region/X`, `/flyttfirma-X`, `/tomning-dodsbo-X`, `/tomma-dodsbo-X` —
+  ugyanarra a városrészre/településre több variáció is (pl. `bagaregarden` kétszer, `utby` kétszer).
+  Ez tipikus AI-generált duplikált/thin content minta, ami miatt valószínűleg a platform vagy egy
+  korábbi SEO-intézkedés noindexelte őket.
+- **Rossz témaillesztés:** rengeteg `flyttfirma-*`, `kontorsflytt`, `bohagsflytt`, `flyttpaket-goteborg`,
+  `akut-flyttstadning` jellegű oldal — ezek **költöztetési (flytt) szolgáltatás** tartalmak, miközben az
+  üzlet fő profilja **tömning/dödsbo (ürítés/lomtalanítás)**. Ez arra utal, hogy a Hostinger AI-generátor
+  vegyítette a két rokon, de eltérő szolgáltatást — hitelességi/relevancia kockázat volt.
+- **Hibás dinamikus route-ok éltek ki nyilvánosan:** `/foretagsflytt-:slug`, `/kontorsflytt-:slug`,
+  `/omraden/:slug`, `/kundfall/:slug`, `/foretagsflytt-{dynamic}` — szó szerint feloldatlan template
+  placeholderek URL-ként. Ez konkrét technikai hiba volt a régi oldalon.
+- Az új Cursor-oldal ezzel szemben **12 tömör, minőségi terület-oldalt** tartalmaz
+  (`centrum, hisingen, kungalv, kungsbacka, landvetter, lerum, majorna-linne, molndal, molnlycke,
+  orgryte-harlanda, partille, vastra-goteborg`) — ez helyes SEO-irány a szétforgácsolt, thin
+  hiperlokális oldaltömeg helyett.
+
+**Még hiányzik:** a ténylegesen **indexelt** oldalak listája (GSC → Indexelés → Oldalak →
+"Indexelve" fül export). Ez adja meg a valós redirect-prioritást — ha egy régi URL tényleg indexelve
+volt/van és kap forgalmat vagy backlinket, azt kötelező 301-gyel átirányítani az új oldal megfelelő
+oldalára. A jelenlegi `.htaccess` csak néhány kézzel felvett legacy slugot fed le, a fenti mintázatok
+(pl. `flyttfirma-lerum` → melyik új oldalra?) még nincsenek benne.
+
 ## Következő lépések (SEO/indexelési terv vázlat)
 1. Redirect-térkép lezárása: régi Hostinger URL-ek → új statikus URL-ek, mind 301-gyel.
 2. Search Console: property hozzáadása/ellenőrzése az új verzióhoz, sitemap beküldése, kulcsoldalak
