@@ -50,10 +50,17 @@ RedirectMatch 301 ^/omraden/goteborg-stadsdelar/?$ /omraden
 RedirectMatch 301 ^/flyttfirma-hisingen/?$ /omraden/hisingen
 RedirectMatch 301 ^/flyttfirma-partille/?$ /omraden/partille
 
-# Blog / FAQ tartalom, aminek nincs 1:1 új megfelelője — főoldalra megy, hogy ne 404-ezzen.
-# TODO Dániel: érdemes lehet ezekre dedikált tartalmat visszaépíteni, mert indexelve voltak (volt rájuk forgalom).
-RedirectMatch 301 ^/faq/?$ /
-RedirectMatch 301 ^/blogg(/.*)?$ /
+# FAQ és blogg: 2026-07-10-től VALÓDI tartalom él ezeken az URL-eken (faq.html, blogg/index.html,
+# blogg/dodsbotomning-goteborg.html, blogg/professionella-tomningsprojekt-goteborg.html) — nincs
+# szükség redirectre, a fenti .html-strip szabály kiszolgálja őket kiterjesztés nélkül.
+
+# Régi blog slugok, amiknek nincs 1:1 új cikk-megfelelőjük — a blog főoldalára mennek.
+RedirectMatch 301 ^/blogg/tomning-dodsbo-goteborg-vastra-gotaland-guide-2025/?$ /blogg/dodsbotomning-goteborg
+RedirectMatch 301 ^/blogg/tomning-goteborg-omnejd-dodsbo-flytt-akut/?$ /blogg/dodsbotomning-goteborg
+RedirectMatch 301 ^/blogg/professionell-tomning-utan-rut/?$ /blogg
+RedirectMatch 301 ^/blogg/\*$ /blogg
+
+# Off-topic (flytt/städ) tartalom, aminek nincs megfelelője a jelenlegi (tömning-fókuszú) profilban.
 RedirectMatch 301 ^/bohagsflytt-goteborg/?$ /
 RedirectMatch 301 ^/flyttstadning-goteborg/?$ /
 RedirectMatch 301 ^/tjanster/flyttstadning/?$ /
