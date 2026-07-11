@@ -1,13 +1,22 @@
 RewriteEngine On
 
-# Kanonikus host: www -> nem-www (a GSC szerint mindkét variáns indexelve volt)
+# Kanonikus host + URL normalizálás EGY lépésben (nincs redirect chain akkor sem, ha egy URL
+# egyszerre www ÉS .html hibás, pl. www.tomninggoteborg.se/omraden/molndal.html -> 1 db 301).
 RewriteCond %{HTTP_HOST} ^www\.tomninggoteborg\.se$ [NC]
-RewriteRule ^(.*)$ https://tomninggoteborg.se/$1 [L,R=301]
+RewriteRule ^ - [E=CANON_HOST:1]
 
-# Kanonikus URL: explicit .html kérés -> kiterjesztés nélküli verzió
-# (GSC-ben duplikátumként indexelve volt pl. /omraden/molndal ÉS /omraden/molndal.html)
 RewriteCond %{THE_REQUEST} \s/+([^?\s]+)\.html[?\s]
-RewriteRule ^ /%1 [R=301,L]
+RewriteRule ^ - [E=CANON_PATH:%1]
+
+RewriteCond %{ENV:CANON_HOST} =1
+RewriteCond %{ENV:CANON_PATH} ^(.+)$
+RewriteRule ^ https://tomninggoteborg.se/%{ENV:CANON_PATH} [R=301,L]
+
+RewriteCond %{ENV:CANON_HOST} =1
+RewriteRule ^(.*)$ https://tomninggoteborg.se/$1 [R=301,L]
+
+RewriteCond %{ENV:CANON_PATH} ^(.+)$
+RewriteRule ^ https://tomninggoteborg.se/%{ENV:CANON_PATH} [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f

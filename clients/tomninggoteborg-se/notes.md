@@ -125,16 +125,39 @@ mert azokhoz egyelőre nincs angol FAQ/blog tartalom.
 `/tjanster/flyttstadning` továbbra is a főoldalra redirectelnek — ezek flytt/takarítás témájúak, nem a
 tömning-profil része, szándékosan nem pótoltam őket tartalommal.
 
+## Ügyfél "Semrush" audit átnézve — csak 4 pont volt valós és megerősített (2026-07-11)
+Az ügyfél átküldött egy 24 pontos "Semrush elemzést". Ellenőriztem a kód alapján: **több állítása
+bizonyíthatóan hamis erre a site-ra** (pl. "138 versengő LocalBusiness objektum" — valójában 93 oldalon
+ugyanaz az `@id`, ez a helyes gyakorlat; "a footer több száz linkes linkfarm" — valójában 2 soros).
+Ez alapján ez inkább egy generikus/sablonos audit-checklist, nem egy erről a konkrét site-ról készült
+valódi crawl-riport. Dánielnek szóltam, hogy kérje el a nyers Semrush Site Audit exportot (konkrét
+URL-listával, hibaszámokkal), mielőtt a többi 20 pontot elkezdenénk.
+
+**4 állítást viszont a kód megerősített, ezeket kijavítottam:**
+1. **Duplikált title tag** — `index.html` és `tjanster/tomning-i-goteborg.html` ugyanazt használta.
+   A tomning-i-goteborg.html title-je most: "Tömningstjänster i Göteborg – Alla våra tjänster | Alfa Tömning".
+2. **Hiányzó meta description** — pótolva az `integritetspolicy.html`-en (GDPR-tájékoztató szöveg).
+3. **Redirect chain a `.htaccess`-ben** — ha egy URL egyszerre volt `www` ÉS `.html` hibás (pl.
+   `www.tomninggoteborg.se/omraden/molndal.html`), az korábban 2 külön 301-ugrással jutott célba.
+   Most env-változós (`E=CANON_HOST`/`E=CANON_PATH`) logikával mindhárom eset (www-only, html-only,
+   mindkettő) EGY 301-es lépésben landol a végleges URL-en. Éles Apache-on még érdemes leellenőrizni
+   (itt a sandboxban nem volt telepíthető Apache a teszteléshez, csak a logikát vezettem le kézzel).
+4. **`inLanguage` property a LocalBusiness objektumban** — kivéve mind a 34 érintett fájlból (a
+   Service/BlogPosting objektumok saját `inLanguage`-át NEM bántottam, az ott jogos). JSON-LD validitás
+   utólag ellenőrizve, minden fájl valid JSON maradt.
+
 ## Következő lépések (SEO/indexelési terv vázlat)
-1. ~~Redirect-térkép lezárása~~ → **kész a `.htaccess`-ben (2026-07-10)**, de Dánielnek fel kell töltenie
-   élesre (WinSCP/SFTP a Rackhost/jelenlegi szerverre) — helyben a repóban lévő fájl önmagában nem él.
+1. ~~Redirect-térkép lezárása~~ → **kész a `.htaccess`-ben (2026-07-10, finomítva 2026-07-11)**, fel kell
+   tölteni élesre (WinSCP/SFTP a Rackhost/jelenlegi szerverre) — helyben a repóban lévő fájl önmagában nem él.
 2. ~~FAQ + blog tartalom pótlása~~ → **kész (2026-07-10)**, szintén feltöltésre vár élesre
    (`faq.html`, `blogg/` mappa, frissített `.htaccess`, `sitemap.xml`, és a 31 nav-frissített oldal).
-3. Search Console: property hozzáadása/ellenőrzése (ha még nincs) az élő domainre, sitemap újra
+3. ~~4 megerősített Semrush-pont javítása~~ → **kész (2026-07-11)**, ld. fent.
+4. Nyers Semrush Site Audit export bekérése az ügyféltől a maradék 20 ponthoz (tartalom, belső linkelés,
+   Core Web Vitals, GA4 audit stb.) — ne generikus checklistából dolgozzunk tovább.
+5. Search Console: property hozzáadása/ellenőrzése (ha még nincs) az élő domainre, sitemap újra
    beküldése (a 4 új URL miatt is), a redirectek után pár nappal ellenőrizni a "Kizárva" riportot.
-4. Structured data (LocalBusiness/Schema) ellenőrzése/kiegészítése minden oldaltípuson.
-5. Belső linkelés és NAP (Name/Address/Phone) konzisztencia ellenőrzése az oldalakon és a Google Cégem
+6. Belső linkelés és NAP (Name/Address/Phone) konzisztencia ellenőrzése az oldalakon és a Google Cégem
    profillal.
-6. "tömma dödsbo göteborg" célkulcsszóra dedikált landing oldal (korábban egyeztetett, Cursor prompt
+7. "tömma dödsbo göteborg" célkulcsszóra dedikált landing oldal (korábban egyeztetett, Cursor prompt
    kész volt hozzá) — ellenőrizni, hogy ez a build már tartalmazza-e (`dodsbotomning-i-goteborg.html`
    erre utalhat, meg kell nézni tartalmilag).
