@@ -161,3 +161,25 @@ URL-listával, hibaszámokkal), mielőtt a többi 20 pontot elkezdenénk.
 7. "tömma dödsbo göteborg" célkulcsszóra dedikált landing oldal (korábban egyeztetett, Cursor prompt
    kész volt hozzá) — ellenőrizni, hogy ez a build már tartalmazza-e (`dodsbotomning-i-goteborg.html`
    erre utalhat, meg kell nézni tartalmilag).
+
+## Semrush audit technikai fázis végrehajtva (2026-07-11)
+Részletes összefoglaló: `semrush-audit-technikai-osszefoglalo.md` (átadható deliverable).
+
+Röviden, mit csináltam ebben a körben az audit alapján:
+- **`.htaccess` teljes újraírás:** egy-lépéses (chain nélküli) 301 normalizálás (http→https, www→non-www,
+  .html→extensionless, index.html→/, trailing-slash). **KRITIKUS bug javítva:** `/omraden` és `/en/areas`
+  korábban törött volt (könyvtár elfedte a landing fájlt) — most 200.
+- **2096 belső link** relatív `.html`-ről abszolút végleges (extensionless) URL-re állítva.
+- **i18n nyelvváltó (JS) javítva:** korábban extensionless URL-en rossz oldalra vitt; most a helyes
+  SV↔EN megfelelőre. main.js area-grid + offert fallback szintén végleges URL-ekre.
+- **BreadcrumbList JSON-LD** minden oldalra (54 db), + a `tjanster/`/`en/services/` breadcrumb 3-szintűvé
+  téve. `inLanguage` már korábban kivéve a LocalBusiness-ből (121 JSON-LD blokk mind valid).
+- **Ellenőrzés:** Apache-mimic szerver + headless böngésző: minden végleges URL 200, minden belső link
+  200 (0 redirect, 0 404), nyelvváltó/area-grid/FAQ/űrlap működik, 0 JS console hiba, sitemap 66/66 URL 200.
+
+**Feltöltéskor figyelni:** a `.htaccess` `Options -MultiViews` + `DirectorySlash Off` sorokat használ
+(Hostinger jellemzően engedi). Ha 500-at ad az első feltöltés után, ez a két sor a gyanús — ld. az
+összefoglaló "Fontos a feltöltéskor" szakaszát.
+
+**Következő fázis (nem ebben a körben):** tartalmi megerősítés (audit 13–18), BRF/B2B struktúra (15),
+Core Web Vitals + CSS/JS minifikálás (12, 21), GA4/konverziómérés (22–23).

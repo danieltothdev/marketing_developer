@@ -3,20 +3,42 @@
 
   var STORAGE_KEY = "siteLang";
   var routes = null;
+  var cleanMap = null;
 
-  function normalizePath(pathname) {
-    var path = pathname.replace(/\\/g, "/");
-    if (path.endsWith("/")) path += "index.html";
-    if (path.startsWith("/")) path = path.slice(1);
-    return path || "index.html";
+  // Egy route-bejegyzést (pl. "en/services/foo.html", "index.html") a végleges,
+  // abszolút, kiterjesztés nélküli URL-re alakít ("/en/services/foo", "/").
+  function toFinal(entry) {
+    var p = entry.replace(/\\/g, "/");
+    if (p.charAt(0) !== "/") p = "/" + p;
+    if (/\/index\.html$/.test(p)) {
+      p = p.replace(/index\.html$/, ""); // ".../" könyvtár
+      if (p !== "/" && p !== "/en/") p = p.replace(/\/$/, ""); // /blogg/ -> /blogg
+      return p;
+    }
+    return p.replace(/\.html$/, "");
   }
 
-  function invertRoutes(map) {
-    var inv = {};
-    Object.keys(map).forEach(function (sv) {
-      inv[map[sv]] = sv;
+  // Az aktuális böngésző-útvonalat a végleges alakra normalizálja.
+  function normalizePath(pathname) {
+    var p = (pathname || "/").replace(/\\/g, "/");
+    if (p.charAt(0) !== "/") p = "/" + p;
+    if (/\/index\.html$/.test(p)) return toFinal(p);
+    p = p.replace(/\.html$/, "");
+    if (p !== "/" && p !== "/en/") p = p.replace(/\/$/, "");
+    return p || "/";
+  }
+
+  function getCleanMap() {
+    if (cleanMap) return cleanMap;
+    var raw = getRoutes();
+    cleanMap = { sv2en: {}, en2sv: {} };
+    Object.keys(raw).forEach(function (sv) {
+      var svF = toFinal(sv);
+      var enF = toFinal(raw[sv]);
+      cleanMap.sv2en[svF] = enF;
+      cleanMap.en2sv[enF] = svF;
     });
-    return inv;
+    return cleanMap;
   }
 
   function getRoutes() {
@@ -56,19 +78,17 @@
 
   function currentLang() {
     var path = normalizePath(window.location.pathname);
-    return path.startsWith("en/") ? "en" : "sv";
+    return path === "/en" || path === "/en/" || path.indexOf("/en/") === 0 ? "en" : "sv";
   }
 
   function counterpartPath(fromLang, toLang) {
     var path = normalizePath(window.location.pathname);
-    var map = getRoutes();
-    var inv = invertRoutes(map);
-
+    var m = getCleanMap();
     if (fromLang === "sv" && toLang === "en") {
-      return map[path] || "en/index.html";
+      return m.sv2en[path] || "/en/";
     }
     if (fromLang === "en" && toLang === "sv") {
-      return inv[path] || "index.html";
+      return m.en2sv[path] || "/";
     }
     return path;
   }
@@ -80,28 +100,19 @@
     document.documentElement.lang = lang === "en" ? "en" : "sv";
   }
 
-  function rootPrefix() {
-    var path = normalizePath(window.location.pathname);
-    var depth = path.split("/").length - 1;
-    return depth === 0 ? "./" : "../".repeat(depth);
-  }
-
   function switchLang(lang) {
     var from = currentLang();
     if (from === lang) return;
     setLang(lang);
-    var path = normalizePath(window.location.pathname);
-    var map = getRoutes();
-    var inv = invertRoutes(map);
-    var target = lang === "en" ? map[path] || "en/index.html" : inv[path] || "index.html";
-    window.location.href = rootPrefix() + target;
+    // A végleges, abszolút, kiterjesztés nélküli megfelelő oldalra navigálunk.
+    window.location.href = counterpartPath(from, lang);
   }
 
   function resolveHref(targetPath) {
     var lang = currentLang();
-    if (lang === "en" && !targetPath.startsWith("en/") && !targetPath.startsWith("http") && !targetPath.startsWith("#")) {
-      var map = getRoutes();
-      return map[targetPath] || targetPath;
+    if (lang === "en" && targetPath.indexOf("/en/") !== 0 && targetPath.indexOf("http") !== 0 && targetPath.charAt(0) !== "#") {
+      var m = getCleanMap();
+      return m.sv2en[normalizePath(targetPath)] || targetPath;
     }
     return targetPath;
   }

@@ -9,7 +9,7 @@
       return "#offert";
     }
     const navOffert = document.querySelector('.nav-actions a[href*="offert"], .nav-actions a[href*="quote"]');
-    return navOffert?.getAttribute("href") || (document.documentElement.lang === "en" ? "quote.html" : "offert.html");
+    return navOffert?.getAttribute("href") || (document.documentElement.lang === "en" ? "/en/quote" : "/offert");
   }
 
   function uiStrings() {
@@ -129,14 +129,14 @@
 
   function renderAreaGrid(container) {
     const areas = window.AREA_LINKS || [];
-    const prefix = container.dataset.areaPrefix || "omraden/";
+    const prefix = container.dataset.areaPrefix || "/omraden/";
     container.innerHTML = areas
       .map(function (area) {
         return (
           '<a class="area-card" href="' +
           prefix +
           area.slug +
-          '.html">' +
+          '">' +
           '<span class="area-card__left">' +
           '<span class="area-card__pin">' +
           pinIcon() +

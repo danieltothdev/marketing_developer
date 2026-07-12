@@ -1,34 +1,73 @@
 RewriteEngine On
 
-# Kanonikus host + URL normalizálás EGY lépésben (nincs redirect chain akkor sem, ha egy URL
-# egyszerre www ÉS .html hibás, pl. www.tomninggoteborg.se/omraden/molndal.html -> 1 db 301).
+# Ne találgasson kiterjesztést, és ne tegyen automatikus könyvtár-slasht (a collision
+# oldalakat (/omraden, /en/areas) mi kezeljük kézzel lentebb).
+Options -MultiViews
+DirectorySlash Off
+
+# =====================================================================
+# 1) KANONIKUS NORMALIZÁLÁS — minden hibás variáns EGY 301-es lépésben
+#    a végleges (https, non-www, extensionless, index nélküli) URL-re.
+# =====================================================================
+
+# .html vagy index.html a kért útvonalban -> tiszta útvonal kiszámítása env-be.
+# index.html -> a könyvtár gyökere (pl. /  , /en/  , /blogg/ ), majd a trailing-slash
+# szabály lentebb rendezi a nem-root eseteket.
+RewriteCond %{THE_REQUEST} \s/+(.*?)index\.html[\s?] [NC]
+RewriteRule ^ - [E=CLEANURI:/%1]
+
+# egyéb .html -> extensionless
+RewriteCond %{ENV:CLEANURI} =""
+RewriteCond %{THE_REQUEST} \s/+([^\s?]+?)\.html[\s?] [NC]
+RewriteRule ^ - [E=CLEANURI:/%1]
+
+# Ha volt .html/index.html hiba: EGY 301 a végleges https + non-www URL-re
+# (a www és a http egyszerre is ide, egyetlen ugrással).
+RewriteCond %{ENV:CLEANURI} !=""
+RewriteRule ^ https://tomninggoteborg.se%{ENV:CLEANURI} [R=301,L]
+
+# www -> non-www (ha nem volt .html hiba) — egy lépésben https-re is.
 RewriteCond %{HTTP_HOST} ^www\.tomninggoteborg\.se$ [NC]
-RewriteRule ^ - [E=CANON_HOST:1]
+RewriteRule ^ https://tomninggoteborg.se%{REQUEST_URI} [R=301,L]
 
-RewriteCond %{THE_REQUEST} \s/+([^?\s]+)\.html[?\s]
-RewriteRule ^ - [E=CANON_PATH:%1]
+# http -> https (ha nem volt www és nem volt .html hiba).
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://tomninggoteborg.se%{REQUEST_URI} [R=301,L]
 
-RewriteCond %{ENV:CANON_HOST} =1
-RewriteCond %{ENV:CANON_PATH} ^(.+)$
-RewriteRule ^ https://tomninggoteborg.se/%{ENV:CANON_PATH} [R=301,L]
+# Trailing slash eltávolítása a nem-root oldalakról (a collision-könyvtárak is ide).
+# Kivétel: / és /en/ (ezek valódi könyvtár-főoldalak, marad a slash).
+RewriteRule ^(omraden|blogg)/$ /$1 [R=301,L]
+RewriteRule ^en/areas/$ /en/areas [R=301,L]
+RewriteCond %{REQUEST_URI} !^/en/$
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
 
-RewriteCond %{ENV:CANON_HOST} =1
-RewriteRule ^(.*)$ https://tomninggoteborg.se/$1 [R=301,L]
+# =====================================================================
+# 2) VÉGLEGES URL-EK KISZOLGÁLÁSA 200-zal
+#    (a könyvtárral ütköző landing oldalak: a könyvtár elfedné a fájlt)
+# =====================================================================
+RewriteRule ^omraden/?$ omraden.html [L]
+RewriteRule ^en/areas/?$ en/areas.html [L]
+RewriteRule ^blogg/?$ blogg/index.html [L]
+RewriteRule ^en/?$ en/index.html [L]
 
-RewriteCond %{ENV:CANON_PATH} ^(.+)$
-RewriteRule ^ https://tomninggoteborg.se/%{ENV:CANON_PATH} [R=301,L]
-
+# Extensionless -> valódi .html fájl (normál oldalak)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
 
-# Legacy slug redirects
+# =====================================================================
+# 3) LEGACY 301 ÁTIRÁNYÍTÁSOK (régi Hostinger URL-ekről az új struktúrára)
+# =====================================================================
+
+# Régi slug -> új slug
 RedirectMatch 301 ^/tjanster/dodsbotomning/?$ /tjanster/dodsbotomning-i-goteborg
 RedirectMatch 301 ^/tjanster/lagenhetstomning/?$ /tjanster/lagenhetstomning-i-goteborg
 RedirectMatch 301 ^/tjanster/forradstomning/?$ /tjanster/forradstomning-i-goteborg
 RedirectMatch 301 ^/tjanster/bortforsling/?$ /tjanster/bortforsling-i-goteborg
 
-# Live site service slugs → static pages
+# Élő oldal régi szolgáltatás-slugjai -> statikus oldalak
 RedirectMatch 301 ^/tomning-goteborg/?$ /tjanster/tomning-i-goteborg
 RedirectMatch 301 ^/bortforsling-goteborg/?$ /tjanster/bortforsling-i-goteborg
 RedirectMatch 301 ^/dodsbo-goteborg/?$ /tjanster/dodsbotomning-i-goteborg
@@ -37,19 +76,17 @@ RedirectMatch 301 ^/tomning-forrad-goteborg/?$ /tjanster/forradstomning-i-gotebo
 RedirectMatch 301 ^/akut-tomning-goteborg/?$ /tjanster/akut-hjalp-tomning
 RedirectMatch 301 ^/grovsopor-goteborg/?$ /tjanster/grovsopor-foreningar
 
-# GSC "Indexelve" export (2026-07) alapján azonosított, még redirect nélküli régi URL-ek.
-# Egyértelmű 1:1 megfeleltetések:
+# GSC "Indexelve" export (2026-07) alapján azonosított, régi indexelt URL-ek.
 RedirectMatch 301 ^/tomning-dodsbo-goteborg/?$ /tjanster/dodsbotomning-i-goteborg
 RedirectMatch 301 ^/tomning-kallare-goteborg/?$ /tjanster/garage-kallartomning-i-goteborg
 RedirectMatch 301 ^/villatomning-goteborg/?$ /tjanster/villatomning-i-goteborg
 RedirectMatch 301 ^/radhustomning-goteborg/?$ /tjanster/radhusstomning-i-goteborg
 RedirectMatch 301 ^/bortforsling-byggavfall-goteborg/?$ /tjanster/bortforsling-i-goteborg
 RedirectMatch 301 ^/bortforsling-grovsopor-goteborg/?$ /tjanster/grovsopor-foreningar
-RedirectMatch 301 ^/grovsopor-foreningar/?$ /tjanster/grovsopor-foreningar
 RedirectMatch 301 ^/fastighetsagare-planerad-tomning/?$ /tjanster/fastighetsrojning-i-goteborg
 RedirectMatch 301 ^/tomning-av-hushall/?$ /tjanster/lagenhetstomning-i-goteborg
 
-# Terület oldalak (a régi oldal városrész-szintre bontott, az új konszolidált /omraden/ oldalakra megy)
+# Régi városrész-szintű oldalak -> új konszolidált /omraden/ oldalak
 RedirectMatch 301 ^/stadsdel/centrum/?$ /omraden/centrum
 RedirectMatch 301 ^/stadsdel/heden/?$ /omraden/centrum
 RedirectMatch 301 ^/stadsdel/vasastan/?$ /omraden/centrum
@@ -59,17 +96,12 @@ RedirectMatch 301 ^/omraden/goteborg-stadsdelar/?$ /omraden
 RedirectMatch 301 ^/flyttfirma-hisingen/?$ /omraden/hisingen
 RedirectMatch 301 ^/flyttfirma-partille/?$ /omraden/partille
 
-# FAQ és blogg: 2026-07-10-től VALÓDI tartalom él ezeken az URL-eken (faq.html, blogg/index.html,
-# blogg/dodsbotomning-goteborg.html, blogg/professionella-tomningsprojekt-goteborg.html) — nincs
-# szükség redirectre, a fenti .html-strip szabály kiszolgálja őket kiterjesztés nélkül.
-
-# Régi blog slugok, amiknek nincs 1:1 új cikk-megfelelőjük — a blog főoldalára mennek.
+# Régi blog slugok, amiknek nincs 1:1 új cikk-megfelelőjük
 RedirectMatch 301 ^/blogg/tomning-dodsbo-goteborg-vastra-gotaland-guide-2025/?$ /blogg/dodsbotomning-goteborg
 RedirectMatch 301 ^/blogg/tomning-goteborg-omnejd-dodsbo-flytt-akut/?$ /blogg/dodsbotomning-goteborg
 RedirectMatch 301 ^/blogg/professionell-tomning-utan-rut/?$ /blogg
-RedirectMatch 301 ^/blogg/\*$ /blogg
 
-# Off-topic (flytt/städ) tartalom, aminek nincs megfelelője a jelenlegi (tömning-fókuszú) profilban.
+# Off-topic (flytt/städ) tartalom, aminek nincs megfelelője a tömning-profilban
 RedirectMatch 301 ^/bohagsflytt-goteborg/?$ /
 RedirectMatch 301 ^/flyttstadning-goteborg/?$ /
 RedirectMatch 301 ^/tjanster/flyttstadning/?$ /
