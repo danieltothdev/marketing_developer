@@ -106,4 +106,119 @@ RedirectMatch 301 ^/bohagsflytt-goteborg/?$ /
 RedirectMatch 301 ^/flyttstadning-goteborg/?$ /
 RedirectMatch 301 ^/tjanster/flyttstadning/?$ /
 
+
+# =====================================================================
+# 4) NOINDEX EXPORT (GSC 2026-07, 108 régi AI-URL) -> új oldalak / 410 Gone
+# =====================================================================
+RedirectMatch 301 ^/akut-flytt/?$ /tjanster/akut-hjalp-tomning
+RedirectMatch 301 ^/akut-flytthjalp-goteborg/?$ /tjanster/akut-hjalp-tomning
+RedirectMatch 301 ^/akut-flyttstadning/?$ /tjanster/akut-hjalp-tomning
+RedirectMatch 301 ^/akut-utrymning-hyresvard/?$ /tjanster/akut-hjalp-tomning
+RedirectMatch 301 ^/bortforsling-av-byggavfall/?$ /tjanster/bortforsling-i-goteborg
+RedirectMatch 301 ^/bortforsling-av-kontor/?$ /tjanster/bortforsling-i-goteborg
+RedirectMatch 301 ^/bortforsling-av-lokal-lager/?$ /tjanster/bortforsling-i-goteborg
+RedirectMatch 301 ^/bortforsling-av-mobiler/?$ /tjanster/bortforsling-i-goteborg
+RedirectMatch 301 ^/bortforsling-av-skrap/?$ /tjanster/bortforsling-i-goteborg
+RedirectMatch 301 ^/bortforsling-av-vitvaror/?$ /tjanster/bortforsling-i-goteborg
+RedirectMatch 301 ^/flytt-i-centrum/?$ /omraden/centrum
+RedirectMatch 301 ^/flyttfirma-angered/?$ /omraden/hisingen
+RedirectMatch 301 ^/flyttfirma-askim/?$ /omraden/vastra-goteborg
+RedirectMatch 301 ^/flyttfirma-frolunda/?$ /omraden/vastra-goteborg
+RedirectMatch 301 ^/flyttfirma-hovas/?$ /omraden/vastra-goteborg
+RedirectMatch 301 ^/flyttfirma-kortedala/?$ /omraden/orgryte-harlanda
+RedirectMatch 301 ^/flyttfirma-lerum/?$ /omraden/lerum
+RedirectMatch 301 ^/flyttfirma-molndal/?$ /omraden/molndal
+RedirectMatch 301 ^/flyttfirma-torslanda/?$ /omraden/hisingen
+RedirectMatch 301 ^/flyttpaket-goteborg/?$ /
+RedirectMatch 301 ^/kommun/bohus/?$ /omraden
+RedirectMatch 301 ^/kommun/kungalv/?$ /omraden/kungalv
+RedirectMatch 301 ^/kommun/kungsbacka/?$ /omraden/kungsbacka
+RedirectMatch 301 ^/kommun/lerum/?$ /omraden/lerum
+RedirectMatch 301 ^/kommun/partille-inkl-savedalen/?$ /omraden
+RedirectMatch 301 ^/kommun/surte/?$ /omraden
+RedirectMatch 301 ^/lokal-kontorsutrymning/?$ /tjanster/kontorsrojning-i-goteborg
+RedirectMatch 301 ^/omraden/ale/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/alingsas/?$ /omraden
+RedirectMatch 301 ^/omraden/askim/?$ /omraden/vastra-goteborg
+RedirectMatch 301 ^/omraden/backaplan/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/bagaregarden/?$ /omraden/orgryte-harlanda
+RedirectMatch 301 ^/omraden/bellevue/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/brunnsbo/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/frihamnen/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/gardsas/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/hjallbo/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/hovas/?$ /omraden/vastra-goteborg
+RedirectMatch 301 ^/omraden/ockero/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/ringon/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/saltholmen/?$ /omraden/vastra-goteborg
+RedirectMatch 301 ^/omraden/sannegarden/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/sisjon/?$ /omraden/vastra-goteborg
+RedirectMatch 301 ^/omraden/slottsberget/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/slottsskogen/?$ /omraden/majorna-linne
+RedirectMatch 301 ^/omraden/torslanda/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/tuve/?$ /omraden/hisingen
+RedirectMatch 301 ^/omraden/utby/?$ /omraden/hisingen
+RedirectMatch 301 ^/orgryte/?$ /omraden/orgryte-harlanda
+RedirectMatch 301 ^/region/lilla-edet/?$ /omraden
+RedirectMatch 301 ^/region/orust/?$ /omraden
+RedirectMatch 301 ^/region/stenungsund/?$ /omraden
+RedirectMatch 301 ^/region/tjorn/?$ /omraden
+RedirectMatch 301 ^/region/trollhattan/?$ /omraden
+RedirectMatch 301 ^/region/uddevalla/?$ /omraden
+RedirectMatch 301 ^/region/vargarda/?$ /omraden
+RedirectMatch 301 ^/stadsdel/angered/?$ /omraden/hisingen
+RedirectMatch 301 ^/stadsdel/bagaregarden/?$ /omraden/orgryte-harlanda
+RedirectMatch 301 ^/stadsdel/gamlestaden/?$ /omraden/orgryte-harlanda
+RedirectMatch 301 ^/stadsdel/garda/?$ /omraden/centrum
+RedirectMatch 301 ^/stadsdel/guldheden/?$ /omraden/centrum
+RedirectMatch 301 ^/stadsdel/hammarkullen/?$ /omraden/hisingen
+RedirectMatch 301 ^/stadsdel/hogsbo/?$ /omraden/vastra-goteborg
+RedirectMatch 301 ^/stadsdel/johanneberg/?$ /omraden/centrum
+RedirectMatch 301 ^/stadsdel/kalltorp/?$ /omraden/orgryte-harlanda
+RedirectMatch 301 ^/stadsdel/karra/?$ /omraden/hisingen
+RedirectMatch 301 ^/stadsdel/kortedala/?$ /omraden/orgryte-harlanda
+RedirectMatch 301 ^/stadsdel/krokslatt/?$ /omraden/molndal
+RedirectMatch 301 ^/stadsdel/kungsladugard/?$ /omraden/majorna-linne
+RedirectMatch 301 ^/stadsdel/langedrag/?$ /omraden/vastra-goteborg
+RedirectMatch 301 ^/stadsdel/lindholmen/?$ /omraden/hisingen
+RedirectMatch 301 ^/stadsdel/nordstan/?$ /omraden/centrum
+RedirectMatch 301 ^/stadsdel/olskroken/?$ /omraden/orgryte-harlanda
+RedirectMatch 301 ^/stadsdel/onnered/?$ /omraden/vastra-goteborg
+RedirectMatch 301 ^/stadsdel/tynnered/?$ /omraden/vastra-goteborg
+RedirectMatch 301 ^/stadsdel/utby/?$ /omraden/hisingen
+RedirectMatch 301 ^/tjanster/akut-flytt/?$ /tjanster/akut-hjalp-tomning
+RedirectMatch 301 ^/tjanster/akut-flytt-och-stad/?$ /tjanster/akut-hjalp-tomning
+RedirectMatch 301 ^/tjanster/akut-flyttstadning/?$ /tjanster/akut-hjalp-tomning
+RedirectMatch 301 ^/tjanster/akut-tomning/?$ /tjanster/akut-hjalp-tomning
+RedirectMatch 301 ^/tjanster/bohagsflytt/?$ /
+RedirectMatch 301 ^/tjanster/bortforsling-atervinning/?$ /tjanster/bortforsling-i-goteborg
+RedirectMatch 301 ^/tjanster/garage-vind-tomning/?$ /tjanster/garage-kallartomning-i-goteborg
+RedirectMatch 301 ^/tjanster/kontorsflytt/?$ /tjanster/kontorsrojning-i-goteborg
+RedirectMatch 301 ^/tjanster/packhjalp/?$ /
+RedirectMatch 301 ^/tjanster/tomning-av-hushall/?$ /tjanster/lagenhetstomning-i-goteborg
+RedirectMatch 301 ^/tomma-dodsbo-kungsbacka/?$ /tjanster/dodsbotomning-i-goteborg
+RedirectMatch 301 ^/tomma-dodsbo-lindome/?$ /tjanster/dodsbotomning-i-goteborg
+RedirectMatch 301 ^/tomma-forrad-goteborg/?$ /tjanster/forradstomning-i-goteborg
+RedirectMatch 301 ^/tomning-av-radhus/?$ /tjanster/radhusstomning-i-goteborg
+RedirectMatch 301 ^/tomning-dodsbo-frolunda/?$ /tjanster/dodsbotomning-i-goteborg
+RedirectMatch 301 ^/tomning-dodsbo-hisingen/?$ /tjanster/dodsbotomning-i-goteborg
+RedirectMatch 301 ^/tomning-dodsbo-kungalv/?$ /tjanster/dodsbotomning-i-goteborg
+RedirectMatch 301 ^/tomning-dodsbo-lerum/?$ /tjanster/dodsbotomning-i-goteborg
+RedirectMatch 301 ^/tomning-dodsbo-partille/?$ /tjanster/dodsbotomning-i-goteborg
+RedirectMatch 301 ^/tomning-forrad-garage-kallare-vind/?$ /tjanster/forradstomning-i-goteborg
+RedirectMatch 301 ^/tomning-kungalv/?$ /tjanster/tomning-i-goteborg
+RedirectMatch 301 ^/tomning-lagenhet-molndal/?$ /tjanster/lagenhetstomning-i-goteborg
+
+# Csupasz /tjanster és régi /omraden/goteborg -> értelmes cél (különben 404 lenne)
+RedirectMatch 301 ^/tjanster/?$ /tjanster/tomning-i-goteborg
+RedirectMatch 301 ^/omraden/goteborg/?$ /omraden
+
+# Hibás, SZÓ SZERINTI placeholder URL-ek (a régi AI feloldatlanul tette ki őket) -> 410 Gone.
+# FONTOS: csak a literál ":slug"/"{dynamic}" stringre illeszkedik, a valós oldalakra NEM.
+RedirectMatch 410 ^/foretagsflytt-:slug/?$
+RedirectMatch 410 ^/foretagsflytt-\{dynamic\}/?$
+RedirectMatch 410 ^/kontorsflytt-:slug/?$
+RedirectMatch 410 ^/kundfall/:slug/?$
+RedirectMatch 410 ^/omraden/:slug/?$
+
 DirectoryIndex index.html
