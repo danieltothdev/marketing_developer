@@ -38,7 +38,7 @@ RewriteRule ^ https://tomninggoteborg.se%{REQUEST_URI} [R=301,L]
 # Trailing slash eltávolítása a nem-root oldalakról (a collision-könyvtárak is ide).
 # Kivétel: / és /en/ (ezek valódi könyvtár-főoldalak, marad a slash).
 RewriteRule ^(omraden|blogg)/$ /$1 [R=301,L]
-RewriteRule ^en/areas/$ /en/areas [R=301,L]
+RewriteRule ^en/(areas|blog)/$ /en/$1 [R=301,L]
 RewriteCond %{REQUEST_URI} !^/en/$
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)/$ /$1 [R=301,L]
@@ -50,6 +50,7 @@ RewriteRule ^(.+)/$ /$1 [R=301,L]
 RewriteRule ^omraden/?$ omraden.html [L]
 RewriteRule ^en/areas/?$ en/areas.html [L]
 RewriteRule ^blogg/?$ blogg/index.html [L]
+RewriteRule ^en/blog/?$ en/blog/index.html [L]
 RewriteRule ^en/?$ en/index.html [L]
 
 # Extensionless -> valódi .html fájl (normál oldalak)

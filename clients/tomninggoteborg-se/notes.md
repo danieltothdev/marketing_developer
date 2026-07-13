@@ -183,3 +183,18 @@ Röviden, mit csináltam ebben a körben az audit alapján:
 
 **Következő fázis (nem ebben a körben):** tartalmi megerősítés (audit 13–18), BRF/B2B struktúra (15),
 Core Web Vitals + CSS/JS minifikálás (12, 21), GA4/konverziómérés (22–23).
+
+## Blog bővítés SV+EN + nyelvváltó bugfix (2026-07-11)
+- **Nyelvváltó bug javítva:** az `en/index.html` a JS-t rossz útvonalon (`js/` a `../js/` helyett) töltötte → 404 → az egész JS (nyelvváltó + űrlap) halott volt az angol főoldalon. Plusz az `index.html` üres i18n-routes térképe pótolva. Most SV↔EN oda-vissza működik a főoldalon is.
+- **2 új SV cikk:** `vad-kostar-tomning-goteborg` (árguide, RUT), `checklista-lagenhetstomning`.
+- **Teljes EN blog szekció** (`/en/blog`): index + mind a 4 cikk angolul (a 2 meglévő + 2 új EN párja).
+- Minden cikk: űrlap, BlogPosting + BreadcrumbList schema, hreflang SV↔EN, meglévő fotók (assets/images).
+- EN nav-ba "Blog" link (30 oldal), SV blog index 4 kártyára bővítve.
+- i18n-routes globálisan frissítve a blog párokkal (73 oldal) → nyelvváltó működik a blog oldalakon.
+- `.htaccess`: `/en/blog` collision-serve + trailing-slash 301. sitemap: 66→73 URL.
+- **Ellenőrzés:** minden új URL 200, JSON-LD valid, nyelvváltás helyes párokra, űrlap 11 mezővel renderel, EN blog kártyák jó linkeken.
+
+## Supabase / űrlap-integráció státusz (2026-07-11)
+- Kód szinten HELYES: űrlap (64/66 oldal) → `submit-lead` edge function → DB insert + email a tulajnak + auto-válasz.
+- **NEM tesztelhető innen:** a tomninggoteborg.se másik Supabase projektet (`pavleectcuwzkuttvmbq`) használ, ami nincs a csatlakoztatott fiókban. Dániel maga teszteli élőben.
+- Élő működéshez a Supabase oldalán kell: (1) submit-lead deploy, (2) leads tábla + RLS insert policy, (3) secrets: RESEND_API_KEY, NOTIFY_EMAIL, NOTIFY_FROM. Az `on-lead-insert-email.sql`-ben placeholder maradt (alternatív trigger-út, nem szükséges ha submit-lead küldi az emailt).
