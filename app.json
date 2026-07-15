@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "KKV Boost",
+    "slug": "kkv-boost",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "kkvboost",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "hu.kkvboost.app"
+    },
+    "android": {
+      "package": "hu.kkvboost.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0B1220"
+      }
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": false
+    },
+    "extra": {
+      "eas": {
+        "projectId": ""
+      }
+    }
+  }
+}
