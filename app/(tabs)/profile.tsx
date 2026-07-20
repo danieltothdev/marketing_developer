@@ -1,7 +1,7 @@
 import { useRouter } from "expo-router";
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { Badge, Button, Card, SectionTitle } from "@/components/ui";
+import { Badge, BrandMark, Button, Card, SectionTitle } from "@/components/ui";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { COURSES } from "@/data/courses";
 import { DEEP_AUDIT_PRODUCT, getShopProduct } from "@/data/products";
@@ -88,11 +88,17 @@ export default function ProfileScreen() {
 
       <SectionTitle>Az appról</SectionTitle>
       <Card>
-        <Text style={styles.about}>
-          KKV Boost — AI-alapú marketing, tanulás és automatizáció magyar kis-
-          és középvállalkozásoknak.
+        <View style={{ alignItems: "center", marginBottom: spacing.sm }}>
+          <BrandMark size={56} />
+          <Text style={styles.brandFooterName}>TD-AI & Marketing Ügynökség</Text>
+        </View>
+        <Text style={[styles.about, { textAlign: "center" }]}>
+          AI-alapú marketing, tanulás és automatizáció magyar kis- és
+          középvállalkozásoknak — a TD-AI & Marketing Ügynökség terméke.
         </Text>
-        <Text style={[styles.about, { marginTop: spacing.sm }]}>
+        <Text
+          style={[styles.about, { marginTop: spacing.sm, textAlign: "center" }]}
+        >
           Backend: {isBackendConfigured ? "Supabase (éles)" : "demó mód"} · v1.0.0
         </Text>
       </Card>
@@ -132,4 +138,10 @@ const styles = StyleSheet.create({
   statValue: { color: colors.text, fontWeight: "700", fontSize: 14 },
   ownedItem: { color: colors.text, lineHeight: 24, fontSize: 14 },
   about: { color: colors.textMuted, lineHeight: 20, fontSize: 13 },
+  brandFooterName: {
+    color: colors.primary,
+    fontWeight: "800",
+    marginTop: spacing.sm,
+    letterSpacing: 1,
+  },
 });

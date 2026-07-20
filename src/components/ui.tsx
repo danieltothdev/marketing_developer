@@ -46,12 +46,14 @@ export function Button({
   disabled?: boolean;
   style?: ViewStyle;
 }) {
+  // TD-AI arculat: az arany gombokon sötét szöveg ül, mint a logó érme-felületén.
   const bg =
     variant === "primary"
       ? colors.primary
       : variant === "gold"
         ? colors.accent
         : colors.cardAlt;
+  const fg = variant === "secondary" ? colors.text : colors.onGold;
   return (
     <Pressable
       onPress={onPress}
@@ -63,16 +65,9 @@ export function Button({
       ]}
     >
       {loading ? (
-        <ActivityIndicator color={colors.text} />
+        <ActivityIndicator color={fg} />
       ) : (
-        <Text
-          style={[
-            styles.buttonText,
-            variant === "gold" && { color: "#1F1500" },
-          ]}
-        >
-          {title}
-        </Text>
+        <Text style={[styles.buttonText, { color: fg }]}>{title}</Text>
       )}
     </Pressable>
   );
@@ -86,10 +81,10 @@ export function Badge({
   tone?: "primary" | "gold" | "muted" | "success";
 }) {
   const map = {
-    primary: { bg: colors.primarySoft, fg: "#C7D2FE" },
-    gold: { bg: colors.accentSoft, fg: "#FCD34D" },
+    primary: { bg: colors.primarySoft, fg: colors.accent },
+    gold: { bg: colors.accentSoft, fg: "#F6D584" },
     muted: { bg: colors.cardAlt, fg: colors.textMuted },
-    success: { bg: "#064E3B", fg: colors.success },
+    success: { bg: "#22301A", fg: colors.success },
   } as const;
   const t = map[tone];
   return (
@@ -101,6 +96,33 @@ export function Badge({
 
 export function SectionTitle({ children }: { children: string }) {
   return <Text style={styles.sectionTitle}>{children}</Text>;
+}
+
+// TD-AI embléma: arany gyűrűs "érme" az életfával. Élesben a logó képfájl
+// kerül ide (assets/logo.png + <Image>), addig stilizált változat.
+export function BrandMark({ size = 44 }: { size?: number }) {
+  return (
+    <View
+      style={[
+        styles.brandCircle,
+        { width: size, height: size, borderRadius: size / 2 },
+      ]}
+    >
+      <Text style={{ fontSize: size * 0.5 }}>🌳</Text>
+    </View>
+  );
+}
+
+export function BrandHeader() {
+  return (
+    <View style={styles.brandRow}>
+      <BrandMark />
+      <View style={{ marginLeft: spacing.sm }}>
+        <Text style={styles.brandName}>TD-AI</Text>
+        <Text style={styles.brandSub}>& Marketing Ügynökség</Text>
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -136,5 +158,28 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     marginTop: spacing.md,
     marginBottom: spacing.sm,
+  },
+  brandCircle: {
+    backgroundColor: colors.card,
+    borderWidth: 2,
+    borderColor: colors.primary,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  brandRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: spacing.md,
+  },
+  brandName: {
+    color: colors.primary,
+    fontSize: 20,
+    fontWeight: "800",
+    letterSpacing: 3,
+  },
+  brandSub: {
+    color: colors.textMuted,
+    fontSize: 11,
+    letterSpacing: 1,
   },
 });

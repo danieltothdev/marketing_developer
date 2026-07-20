@@ -1,7 +1,7 @@
 import { useRouter } from "expo-router";
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { Badge, Button, Card, SectionTitle } from "@/components/ui";
+import { Badge, BrandHeader, Button, Card, SectionTitle } from "@/components/ui";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { COURSES } from "@/data/courses";
 import { colors, spacing } from "@/theme";
@@ -14,6 +14,7 @@ export default function HomeScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      <BrandHeader />
       <Text style={styles.hello}>Szia! 👋</Text>
       <Text style={styles.subtitle}>
         Mit hozzunk ki ma a marketingedből?
