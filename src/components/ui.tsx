@@ -1,6 +1,7 @@
 import React from "react";
 import {
   ActivityIndicator,
+  Image,
   Pressable,
   StyleSheet,
   Text,
@@ -98,18 +99,18 @@ export function SectionTitle({ children }: { children: string }) {
   return <Text style={styles.sectionTitle}>{children}</Text>;
 }
 
-// TD-AI embléma: arany gyűrűs "érme" az életfával. Élesben a logó képfájl
-// kerül ide (assets/logo.png + <Image>), addig stilizált változat.
+// TD-AI életfa logó az assets/logo.png fájlból. A fájl cseréjével
+// (ugyanezen a néven) azonnal a valódi logó jelenik meg mindenhol.
 export function BrandMark({ size = 44 }: { size?: number }) {
   return (
-    <View
+    <Image
+      source={require("../../assets/logo.png")}
       style={[
         styles.brandCircle,
         { width: size, height: size, borderRadius: size / 2 },
       ]}
-    >
-      <Text style={{ fontSize: size * 0.5 }}>🌳</Text>
-    </View>
+      resizeMode="cover"
+    />
   );
 }
 
@@ -163,8 +164,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.card,
     borderWidth: 2,
     borderColor: colors.primary,
-    alignItems: "center",
-    justifyContent: "center",
   },
   brandRow: {
     flexDirection: "row",

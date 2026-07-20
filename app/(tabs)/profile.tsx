@@ -2,6 +2,7 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Badge, BrandMark, Button, Card, SectionTitle } from "@/components/ui";
+import { useAuth } from "@/context/AuthContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { COURSES } from "@/data/courses";
 import { DEEP_AUDIT_PRODUCT, getShopProduct } from "@/data/products";
@@ -23,8 +24,25 @@ export default function ProfileScreen() {
 
   const totalLessons = COURSES.reduce((n, c) => n + c.lessons.length, 0);
 
+  const { user, signOut } = useAuth();
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      <SectionTitle>Fiókod</SectionTitle>
+      <Card>
+        <Text style={styles.planName}>{user?.name ?? "Vendég"}</Text>
+        <Text style={styles.planPrice}>{user?.email}</Text>
+        {user?.businessName && (
+          <Text style={styles.planPrice}>{user.businessName}</Text>
+        )}
+        <Button
+          title="Kijelentkezés"
+          variant="secondary"
+          onPress={signOut}
+          style={{ marginTop: spacing.sm }}
+        />
+      </Card>
+
       <SectionTitle>Előfizetésed</SectionTitle>
       <Card>
         <View style={styles.rowBetween}>

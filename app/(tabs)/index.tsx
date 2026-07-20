@@ -2,20 +2,25 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Badge, BrandHeader, Button, Card, SectionTitle } from "@/components/ui";
+import { useAuth } from "@/context/AuthContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { COURSES } from "@/data/courses";
 import { colors, spacing } from "@/theme";
 
 export default function HomeScreen() {
   const router = useRouter();
+  const { user } = useAuth();
   const { plan, creditsRemaining, isPremium, completedLessons } = useSubscription();
+  const firstName = user?.name.split(" ").pop();
 
   const totalLessons = COURSES.reduce((n, c) => n + c.lessons.length, 0);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <BrandHeader />
-      <Text style={styles.hello}>Szia! 👋</Text>
+      <Text style={styles.hello}>
+        Szia{firstName ? `, ${firstName}` : ""}! 👋
+      </Text>
       <Text style={styles.subtitle}>
         Mit hozzunk ki ma a marketingedből?
       </Text>
