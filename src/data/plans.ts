@@ -1,5 +1,7 @@
 export type PlanId = "free" | "starter" | "pro" | "business";
 
+export type BillingPeriod = "monthly" | "yearly";
+
 export interface Plan {
   id: PlanId;
   name: string;
@@ -9,6 +11,22 @@ export interface Plan {
   tagline: string;
   features: string[];
   highlighted?: boolean;
+}
+
+// Éves ár: 10 havi díj (2 hónap ajándék).
+export function yearlyPrice(plan: Plan): number {
+  return plan.priceHuf * 10;
+}
+
+export function formatHuf(amount: number): string {
+  return `${amount.toLocaleString("hu-HU")} Ft`;
+}
+
+export function priceLabelFor(plan: Plan, period: BillingPeriod): string {
+  if (plan.priceHuf === 0) return "0 Ft";
+  return period === "yearly"
+    ? `${formatHuf(yearlyPrice(plan))} / év`
+    : `${formatHuf(plan.priceHuf)} / hó`;
 }
 
 export const PLANS: Plan[] = [

@@ -40,19 +40,34 @@ export default function AuditScreen() {
           ))}
         </Card>
 
+        <Card style={{ borderColor: colors.accent }}>
+          <Text style={styles.upsellTitle}>
+            🔬 Kell egy részletes diagnózis?
+          </Text>
+          <Text style={styles.upsellDesc}>
+            A Mélyaudit 30 kérdéssel, 6 területen világítja át a marketinged:
+            területenkénti pontszám, erősség-gyengeség térkép és személyre
+            szabott javaslatok — egyszeri díjért, előfizetés nélkül.
+          </Text>
+          <Button
+            title="Mélyaudit megnyitása"
+            variant="gold"
+            onPress={() => router.push("/deep-audit")}
+            style={{ marginTop: spacing.sm }}
+          />
+        </Card>
+
         {!isPremium && (
-          <Card style={{ borderColor: colors.accent }}>
-            <Text style={styles.upsellTitle}>
-              🚀 Kell egy részletes, személyre szabott akcióterv?
-            </Text>
+          <Card>
+            <Text style={styles.upsellTitle}>🚀 Vagy inkább előfizetnél?</Text>
             <Text style={styles.upsellDesc}>
-              A Pro csomagban az AI a válaszaid alapján részletes, iparág-specifikus
-              marketingtervet készít — a Business csomagban pedig havi élő
-              konzultáción megyünk végig rajta együtt.
+              A Pro csomagban korlátlan AI-generálás és az összes kurzus jár —
+              a Business csomagban pedig havi élő konzultáción megyünk végig a
+              terveden együtt.
             </Text>
             <Button
               title="Csomagok megtekintése"
-              variant="gold"
+              variant="secondary"
               onPress={() => router.push("/paywall")}
               style={{ marginTop: spacing.sm }}
             />

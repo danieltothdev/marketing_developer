@@ -85,6 +85,15 @@ export default function HomeScreen() {
           programozás nélkül.
         </Text>
       </Card>
+
+      <Card onPress={() => router.push("/shop")}>
+        <Badge label="Bolt" tone="gold" />
+        <Text style={styles.itemTitle}>🛒 Sablonbolt és mélyaudit</Text>
+        <Text style={styles.itemDesc}>
+          Posztsablonok, e-mail szekvencia, hirdetés-formulák és a részletes
+          mélyaudit — egyszeri vásárlással, előfizetés nélkül.
+        </Text>
+      </Card>
     </ScrollView>
   );
 }

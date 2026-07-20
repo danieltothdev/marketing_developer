@@ -23,6 +23,9 @@ export default function RootLayout() {
           options={{ title: "Lecke" }}
         />
         <Stack.Screen name="audit" options={{ title: "AI Marketing Audit" }} />
+        <Stack.Screen name="deep-audit" options={{ title: "Mélyaudit" }} />
+        <Stack.Screen name="shop" options={{ title: "Bolt" }} />
+        <Stack.Screen name="product/[id]" options={{ title: "Csomag" }} />
         <Stack.Screen
           name="paywall"
           options={{ title: "Előfizetés", presentation: "modal" }}
