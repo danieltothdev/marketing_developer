@@ -1,90 +1,112 @@
-# tomninggoteborg.se — Technikai SEO javítások összefoglalója
-**Dátum:** 2026-07-11 · Alapja: az ügyfél Semrush-auditja (24 pont)
+# tomninggoteborg.se — Technikai SEO összefoglaló (FÁZIS 1: technikai)
+**Utolsó frissítés:** 2026-07-11 · Alapja: az ügyfél Semrush-auditja + GSC exportok
 
-> Ez a fázis a **technikai** hibákra fókuszált (URL-struktúra, canonical, hreflang, structured
-> data, belső linkek, sitemap, title/meta). A tartalmi bővítés, Core Web Vitals és analitika
-> a következő, külön fázis (lásd lentebb).
+> Ez a fázis a **technikai** hibákra fókuszált. A tartalmi bővítés (BRF/B2B), Core Web Vitals,
+> CSS/JS minifikálás és analitika a következő fázis (lásd a végén).
 
-## 1. Végleges URL-struktúra + redirect szabályok (audit 1, 3)
-**Végleges struktúra:** `https` + `non-www` + kiterjesztés nélküli URL-ek, trailing slash nélkül;
-kizárólag a könyvtár-főoldalak tartják a `/`-t (`/` és `/en/`).
+---
 
-A `.htaccess` újraírva, egy 301-es lépésben normalizál:
+## 1. Redirect szabályok (mind a `.htaccess`-ben)
+**Kanonikus normalizálás — EGY 301-es lépésben (nincs chain, nincs loop):**
 - `http → https`, `www → non-www`, `.html → extensionless`, `/index.html → /`, `/en/index.html → /en/`,
-  hibás trailing slash → végleges URL.
-- A kombinált hibák (pl. `www + .html` egyszerre) is **egyetlen 301-gyel** landolnak, nincs redirect chain.
+  hibás trailing slash → végleges URL. A kombinált hibák (pl. www+.html) is 1 ugrással landolnak.
 
-**KRITIKUS javítás:** a `/omraden` és `/en/areas` végleges landing URL-ek **korábban törötten
-(nem 200-zal) válaszoltak**, mert azonos nevű könyvtár (`omraden/`, `en/areas/`) elfedte a landing
-fájlt. Most explicit szabály szolgálja ki őket 200-zal. Ugyanígy a `/blogg` is.
+**Legacy 301-ek (régi Hostinger URL → új oldal):**
+- Szolgáltatás-slugok: `/tomning-goteborg → /tjanster/tomning-i-goteborg`, `/villatomning-goteborg →
+  /tjanster/villatomning-i-goteborg` stb.
+- **Városrész/kommun/region → terület-oldal (kb. 90 db):** `/stadsdel/kortedala → /omraden/orgryte-harlanda`,
+  `/flyttfirma-lerum → /omraden/lerum`, `/kommun/kungalv → /omraden/kungalv`, a szolgáltatási területen
+  kívüli régiók (`/region/uddevalla` stb.) → `/omraden`.
+- **5 db 410 Gone:** szó szerinti hibás placeholderek (`/foretagsflytt-:slug`, `/omraden/:slug` stb.).
+- Blog legacy slugok → új cikkek / blog főoldal.
 
-## 2. Canonical rendszer (audit 2)
-Minden indexelhető oldalon pontosan egy, self-referencing canonical, ami közvetlen 200-as, végleges
-(non-www, extensionless) URL-re mutat. Ellenőrizve: **egyetlen canonical sem** tartalmaz `www`-t vagy
-`.html`-t, egyik sem hiányzik (66/66 oldal).
+**KRITIKUS javítás:** a `/omraden` és `/en/areas` végleges landing URL-ek korábban **törötten** válaszoltak
+(az azonos nevű könyvtár elfedte a fájlt) — most explicit szabály szolgálja ki őket 200-zal (`/blogg`,
+`/en/blog` szintén).
 
-## 3. Hreflang (audit 4)
-Minden oldalon self-referencing + kölcsönös SV↔EN hreflang, `x-default` a svéd oldalra.
-A hreflang URL-ek végleges, 200-as canonical URL-ek (nincs `www`/`.html`/redirect). Azoknál az
-oldalaknál, amiknek nincs nyelvi párja (FAQ, blogg), nincs mesterséges hreflang — csak `sv` + `x-default`.
-**Külön javított bug:** a nyelvváltó (JS) korábban a `.html`-es útvonaltérképet használta, ezért
-közvetlen (Google-ből érkező, extensionless) látogatásnál rossz oldalra vitt — most a végleges,
-kiterjesztés nélküli megfelelő oldalra navigál.
+## 2. Végleges URL-struktúra
+`https` + `non-www` + kiterjesztés nélküli URL-ek, trailing slash nélkül. Kizárólag a könyvtár-főoldalak
+tartják a `/`-t: `https://tomninggoteborg.se/` és `https://tomninggoteborg.se/en/`.
+Példa: `/tjanster/villatomning-i-goteborg`, `/omraden/kungalv`, `/blogg/vad-kostar-tomning-goteborg`,
+`/en/services/villa-clearance-gothenburg`, `/en/blog/clearance-cost-gothenburg`.
 
-## 4. Structured data / JSON-LD (audit 5, 8)
-- Az `inLanguage` property kivéve a `LocalBusiness` objektumból (ott érvénytelen property volt);
-  a `Service`/`BlogPosting` objektumokban maradt, ahol jogos.
-- Egységes, stabil `@id` (`https://tomninggoteborg.se/#localbusiness`) minden oldalon — nincs
-  „138 versengő vállalkozás", egyetlen, konzisztens entitás.
-- **Új:** `BreadcrumbList` structured data minden oldalon (54 oldal), a látható breadcrumbbal
-  összhangban, végleges canonical URL-ekkel.
-- Minden JSON-LD blokk (121 db) szintaktikailag valid.
+## 3. Canonical
+Minden indexelhető oldalon pontosan egy, self-referencing canonical, közvetlen 200-as, végleges
+(non-www, extensionless) URL-re. Ellenőrizve: **0 db** canonical tartalmaz `www`-t vagy `.html`-t,
+egyik sem hiányzik (73/73 oldal).
 
-## 5. Belső linkek (audit 6, 7, 19)
-- **Mind a 2096 belső link** átállítva relatív `.html`-esről **abszolút, végleges (extensionless)
-  URL-re** — így egyetlen belső link sem mutat redirectre vagy `.html`-re. A `/en/areas/` típusú hibás
-  trailing-slash linkek megszűntek.
-- A JS-generált linkek (terület-rács, mobil CTA, nyelvváltó) is végleges URL-eket adnak.
-- Breadcrumb: a `tjanster/` és `en/services/` oldalak megkapták a hiányzó középső szintet
-  (Hem > Tjänster > … / Home > Services > …), ami egyben a hub-oldalra mutató belső linket is jelent.
+## 4. Hreflang
+Minden oldalpáron kölcsönös + self-referencing SV↔EN hreflang, `x-default` a svéd oldalra. A hreflang
+URL-ek végleges, 200-as canonical URL-ek (**0 db** `www`/`.html`). Nyelvi pár nélküli oldalakon (FAQ)
+nincs mesterséges hreflang. **Külön bug javítva:** a JS nyelvváltó korábban a `.html`-es térképet
+használta és extensionless URL-en rossz oldalra vitt — most a végleges megfelelőre navigál. Az `en/index.html`
+JS-e rossz útvonalon (`js/` a `../js/` helyett) töltődött → az egész angol főoldal JS-e halott volt; javítva.
 
-## 6. Sitemap (audit 9)
-A `sitemap.xml` kizárólag végleges, 200-as, canonical, extensionless URL-eket tartalmaz (66 db);
-nincs benne `www`, `.html`, `index.html`, duplikátum vagy hibás trailing slash. A sitemap URL-jei
-pontosan egyeznek a canonical + hreflang + belső link URL-ekkel.
+## 5. Structured data
+- `inLanguage` kivéve a `LocalBusiness`-ből (ott érvénytelen); a Service/BlogPosting objektumban maradt.
+- Egységes, stabil `@id` (`#localbusiness`) — egyetlen entitás, nem „138 versengő cég".
+- **BreadcrumbList** minden oldalon; a `tjanster/`/`en/services/` breadcrumb 3-szintűvé téve.
+- Minden JSON-LD blokk valid: **135 blokk, 0 hibás.**
 
-## 7. Title / meta description (audit 10, 11)
-- Nincs duplikált title (a korábbi `index.html` ↔ `tomning-i-goteborg.html` ütközés feloldva).
-- Minden indexelhető oldalon van egyedi meta description (a hiányzó `integritetspolicy` pótolva).
+## 6. Belső linkek
+- Mind a **2096 belső link** relatív `.html`-esről abszolút, végleges (extensionless) URL-re állítva
+  → egyetlen belső link sem mutat redirectre/`.html`-re. A `/en/areas/` típusú hibás trailing-slash
+  linkek megszűntek. Ellenőrizve: 68 egyedi belső link, **0 redirect-célra mutat, 0 valós 404.**
+- JS-generált linkek (terület-rács, mobil CTA, nyelvváltó) is végleges URL-eket adnak.
 
-## 8. Robots / crawlability (audit 20)
-`robots.txt` rendben (`Allow: /`, sitemap hivatkozás); nincs Googlebot/Bingbot tiltás, nincs véletlen
-`noindex` az indexelendő oldalakon.
+## 7. Sitemap
+Kizárólag végleges, 200-as, canonical, extensionless URL (**73 db**); nincs `www`/`.html`/`index.html`/
+duplikátum/hibás trailing slash. Egyezik a canonical + hreflang + belső link URL-ekkel. Ellenőrizve:
+mind a 73 URL 200.
 
-## Milyen tesztekkel ellenőriztem
-- **URL-routing:** Apache-utánzó szerverrel + szimulátorral az összes végleges URL és a hibás
-  variánsok (www/http/.html/index.html/trailing-slash) átvizsgálva — minden végleges URL **200**,
-  a variánsok **egyetlen 301-es** lépésben landolnak, nincs loop, nincs 404.
-- **Belső linkek:** mind a 66 oldal 65 egyedi belső linkje végigcrawlolva — **0 db 404, 0 db
-  redirectre mutató link.**
-- **Böngésző (headless):** nyelvváltó SV↔EN (helyes megfelelő oldal), terület-rács renderelése,
-  FAQ-nyitogatás, űrlap — működik, **0 JS console hiba**.
-- **JSON-LD:** mind a 121 blokk valid.
-- **Sitemap:** mind a 66 URL 200.
+## 8. Title / meta description
+Nincs duplikált title, minden indexelhető oldalon egyedi meta description. Ellenőrizve: **0 duplikátum,
+0 hiányzó.**
 
-## Fontos a feltöltéskor (Dániel)
-- A teljes `site/` mappa tartalmát kell WinSCP-vel a tárhely gyökerébe tölteni (felülírva a régit),
-  **beleértve a `.htaccess`-t is**.
-- A `.htaccess` használ `Options -MultiViews` és `DirectorySlash Off` sorokat. Ezeket a Hostinger
-  jellemzően engedi; ha az első feltöltés után **500-as hibát** adna az oldal, ez a két sor a
-  gyanús — a hosting error logból ellenőrizhető, és szükség esetén ezek eltávolíthatók (a
-  `/omraden`, `/en/areas` kiszolgálása a `DirectorySlash Off`-ra épül, ezért ha az nem engedélyezett,
-  szólj és átírom könyvtár-alapú megoldásra).
-- Feltöltés után a Google Search Console-ban érdemes a `sitemap.xml`-t újra beküldeni.
+## 9. Robots / crawlability
+`robots.txt` rendben (`Allow: /` + sitemap). Nincs Googlebot/Bingbot tiltás, nincs véletlen `noindex`.
 
-## Következő fázis (NEM ebben a körben — tartalom + teljesítmény)
-Az audit 7, 13–18, 21–23 pontjai tudatos, több hetes munkát igényelnek, üzleti prioritás szerint:
-- Szolgáltatási/terület oldalak tartalmi megerősítése (egyedi helyi tartalom, RUT-infó, bizalmi elemek).
-- BRF/B2B struktúra kiépítése, kontextuális belső linkháló, anchor-szöveg változatosság.
-- Core Web Vitals: kép-optimalizálás (WebP/AVIF, srcset), CSS/JS minifikálás, flatpickr csak ott, ahol kell.
-- GA4 / konverziómérés ellenőrzése (űrlap, telefon-, email-kattintás, B2B lead események).
+## 10. Új / módosított oldalak
+- **Új:** `faq`, `blogg` (index + 4 cikk: dödsbo, professzionális projektek, ár-guide, checklista),
+  teljes **EN blog** (`/en/blog` index + 4 cikk). Összes új oldal: űrlap + schema + breadcrumb + hreflang.
+- **Módosítva:** minden oldal (canonical/hreflang/belső linkek/breadcrumb schema/nav), `.htaccess`,
+  `sitemap.xml`, `js/i18n.js`, `js/main.js`, `index.html`, `en/index.html`.
+
+## 11. Tesztek, amivel ellenőriztem
+- **Apache-utánzó szerver + szimulátor:** minden végleges URL 200; defekt-variánsok (www/http/.html/
+  index/trailing-slash) 1 db 301-gyel landolnak; nincs loop, nincs 404.
+- **Fejlesztői böngésző (headless):** SV↔EN nyelvváltás helyes párokra (fő- és aloldalon, blogon is),
+  terület-rács, FAQ-toggle, űrlap (11 mező renderel), **0 JS console hiba.**
+- **Belső link crawl:** 0 redirect-célra mutató link, 0 valós 404.
+- **JSON-LD:** 135 blokk, 0 hibás. **Sitemap:** 73/73 URL 200.
+
+---
+
+## Checklist-státusz (a te „mikor kész" listád ellen)
+✅ = kész és ellenőrizve · 🔶 = FÁZIS 2 (külön kör) · ⚠️ = a szerveren/külső eszközön múlik
+
+| Pont | Státusz |
+|---|---|
+| Minden végleges URL 200 | ✅ |
+| HTTP→HTTPS / www→non-www / .html→extensionless / index.html→gyökér | ✅ (a `.htaccess`-ben) |
+| Max 1 db 301, nincs chain/loop | ✅ (szimulátorral igazolva; éles Apache-on érdemes 1x visszamérni) |
+| Nincs hibás belső link / redirectre mutató belső link | ✅ |
+| Nincs fontos orphan page | ✅ (nav + belső linkháló minden oldalra) |
+| Canonical helyes + self-referencing | ✅ |
+| Hreflang kölcsönös + self-ref + 200-ra mutat | ✅ |
+| SV/EN nem irányít hibásan egymásra | ✅ |
+| Sitemap csak végleges 200 canonical URL | ✅ |
+| Structured data valid | ✅ |
+| Nincs duplicate title/meta | ✅ |
+| Robots/crawlability helyes | ✅ |
+| Design nem sérült + nyelvváltó működik | ✅ (headless böngészőben) |
+| Minden űrlap működik | ✅ kliens oldalon renderel; ⚠️ a Supabase DB-mentés + email **élő teszt Dánieltől** (másik Supabase projekt, innen nem elérhető) |
+| CSS/JS production assetek optimalizálva (minifikálás) | 🔶 FÁZIS 2 |
+| Nincs szükségtelen broken resource | ✅ élesen (a Vite-maradvány csak a nem-deployolt `minta-oldalak-forrás/`-ban van) |
+| Mobil/desktop működés | ✅ headless renderelés OK; ⚠️ valós eszközön Dániel nézze át |
+| Konverziómérés (GA4) működik | 🔶 FÁZIS 2 (analitika audit) |
+| Core Web Vitals / teljesítmény | 🔶 FÁZIS 2 |
+
+## FÁZIS 2 (nem ebben a körben)
+Tartalmi megerősítés (BRF/B2B struktúra, szolgáltatás-oldalak), Core Web Vitals (kép WebP/AVIF, srcset),
+CSS/JS minifikálás + flatpickr csak ahol kell, GA4/konverziómérés audit.
