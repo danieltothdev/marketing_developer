@@ -215,3 +215,14 @@ kontextuális belső linkek a 4 lakossági kulcsoldal bevezetőjében (villa/rad
 **Regressziós QA:** sitemap 73/73→200, belső linkek+webp srcset 0 hiba, JSON-LD 135/135 valid,
 nyelvváltó SV↔EN OK, B2B szekció+űrlap (11 mező) renderel, priser-tartalom renderel, FAQ toggle OK,
 mobil CTA sáv OK. Éles oldalon 0 törött hivatkozás.
+
+## KRITIKUS javítás: svéd tartalom az angol oldalakon (2026-07-11)
+**Hiba (jogos ügyfél/Dániel reklamáció):** 10 EN szolgáltatás-oldalon a hero angol volt, de a teljes
+body-tartalom SVÉDÜL maradt — ez az eredeti Cursor-generátorból örökölt hiba, amit a korábbi QA-m nem
+fogott meg, mert csak technikai elemeket ellenőrzött (linkek, schema, nyelvváltó), tartalom-nyelvet nem.
+**Javítás:** mind a 173 svéd szövegdarab kinyerve, ~160 lefordítva angolra (a cégnevek — Alfa Tömning,
+Alfa Flytt & Städ AB — és földrajzi nevek szándékosan maradtak); pontos szöveg-node cserével, HTML-t
+nem érintve. "Härryda kommun" → "Härryda municipality". Utó-audit: 0 maradék svéd szöveg (åäö-s ÉS
+ékezet nélküli svéd szavakra is szűrve), JSON-LD 100% valid, záró tagek épek.
+**TANULSÁG (rögzítve):** a QA-checklista mostantól kötelezően tartalmazza a TARTALOM-NYELV ellenőrzést
+nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz nyelven van.
