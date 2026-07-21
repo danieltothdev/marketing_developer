@@ -1,0 +1,17 @@
+/**
+ * Områdeslänkar – slug matchar mappen omraden/
+ */
+window.AREA_LINKS = [
+  { name: "Västra Göteborg", slug: "vastra-goteborg" },
+  { name: "Hisingen", slug: "hisingen" },
+  { name: "Centrum", slug: "centrum" },
+  { name: "Majorna-Linné", slug: "majorna-linne" },
+  { name: "Örgryte-Härlanda", slug: "orgryte-harlanda" },
+  { name: "Mölndal", slug: "molndal" },
+  { name: "Partille", slug: "partille" },
+  { name: "Kungälv", slug: "kungalv" },
+  { name: "Lerum", slug: "lerum" },
+  { name: "Kungsbacka", slug: "kungsbacka" },
+  { name: "Mölnlycke", slug: "molnlycke" },
+  { name: "Landvetter", slug: "landvetter" },
+];

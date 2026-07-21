@@ -13,9 +13,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/main.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" /></noscript>
   <link rel="stylesheet" href="../css/flatpickr-dark.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://tomninggoteborg.se/#localbusiness","name":"Alfa Tömning Göteborg","url":"https://tomninggoteborg.se/","telephone":"+46707293986","email":"info@tomninggoteborg.se","image":"https://tomninggoteborg.se/assets/logo.png","logo":"https://tomninggoteborg.se/assets/logo.png","address":{"@type":"PostalAddress","addressLocality":"Göteborg","addressCountry":"SE"},"areaServed":"Hisingen","description":"Tömning och bortforsling på Hisingen – Eriksberg, Lindholmen, Biskopsgården och hela ön. Snabb offert och fast pris."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://tomninggoteborg.se/"},{"@type":"ListItem","position":2,"name":"Områden","item":"https://tomninggoteborg.se/omraden"},{"@type":"ListItem","position":3,"name":"Hisingen","item":"https://tomninggoteborg.se/omraden/hisingen"}]}</script>
@@ -197,15 +201,15 @@
       <p class="footer-powered">Powered by <a class="footer-powered__link" href="https://alfaflyttstad.se/sv/" target="_blank" rel="noopener noreferrer">Alfa Flytt &amp; Städ AB</a></p>
     </div></footer>
   <script type="application/json" id="i18n-routes">{"index.html":"en/index.html","offert.html":"en/quote.html","priser.html":"en/pricing.html","omraden.html":"en/areas.html","kontakt.html":"en/contact.html","integritetspolicy.html":"en/privacy-policy.html","tjanster/tomning-i-goteborg.html":"en/services/professional-clearance-gothenburg.html","tjanster/bortforsling-i-goteborg.html":"en/services/junk-removal-gothenburg.html","tjanster/dodsbotomning-i-goteborg.html":"en/services/estate-clearance-gothenburg.html","tjanster/lagenhetstomning-i-goteborg.html":"en/services/apartment-clearance-gothenburg.html","tjanster/forradstomning-i-goteborg.html":"en/services/storage-clearance-gothenburg.html","tjanster/akut-hjalp-tomning.html":"en/services/emergency-clearance-gothenburg.html","tjanster/grovsopor-foreningar.html":"en/services/bulk-waste-housing-associations-gothenburg.html","tjanster/villatomning-i-goteborg.html":"en/services/villa-clearance-gothenburg.html","tjanster/radhusstomning-i-goteborg.html":"en/services/townhouse-clearance-gothenburg.html","tjanster/garage-kallartomning-i-goteborg.html":"en/services/garage-basement-clearance-gothenburg.html","tjanster/foretagstomning-i-goteborg.html":"en/services/business-clearance-gothenburg.html","tjanster/kontorsrojning-i-goteborg.html":"en/services/office-clearance-gothenburg.html","tjanster/fastighetsrojning-i-goteborg.html":"en/services/property-clearance-gothenburg.html","omraden/vastra-goteborg.html":"en/areas/vastra-goteborg.html","omraden/hisingen.html":"en/areas/hisingen.html","omraden/centrum.html":"en/areas/centrum.html","omraden/majorna-linne.html":"en/areas/majorna-linne.html","omraden/orgryte-harlanda.html":"en/areas/orgryte-harlanda.html","omraden/molndal.html":"en/areas/molndal.html","omraden/partille.html":"en/areas/partille.html","omraden/kungalv.html":"en/areas/kungalv.html","omraden/lerum.html":"en/areas/lerum.html","omraden/kungsbacka.html":"en/areas/kungsbacka.html","omraden/molnlycke.html":"en/areas/molnlycke.html","omraden/landvetter.html":"en/areas/landvetter.html","blogg/index.html":"en/blog/index.html","blogg/dodsbotomning-goteborg.html":"en/blog/estate-clearance-guide-gothenburg.html","blogg/professionella-tomningsprojekt-goteborg.html":"en/blog/professional-clearance-projects-gothenburg.html","blogg/vad-kostar-tomning-goteborg.html":"en/blog/clearance-cost-gothenburg.html","blogg/checklista-lagenhetstomning.html":"en/blog/apartment-clearance-checklist.html"}</script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/sv.js"></script>
-  <script src="../js/services-data.js"></script>
-  <script src="../js/config.js"></script>
-  <script src="../js/form-i18n.js"></script>
-  <script src="../js/form-mount.js"></script>
-  <script src="../js/date-picker.js"></script>
-  <script src="../js/form-submit.js"></script>
-  <script src="../js/i18n.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/sv.js" defer></script>
+  <script src="../js/services-data.js" defer></script>
+  <script src="../js/config.js" defer></script>
+  <script src="../js/form-i18n.js" defer></script>
+  <script src="../js/form-mount.js" defer></script>
+  <script src="../js/date-picker.js" defer></script>
+  <script src="../js/form-submit.js" defer></script>
+  <script src="../js/i18n.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

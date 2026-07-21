@@ -12,12 +12,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/main.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" /></noscript>
   <link rel="stylesheet" href="../css/flatpickr-dark.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://tomninggoteborg.se/#localbusiness","name":"Alfa Tömning Göteborg","url":"https://tomninggoteborg.se/","telephone":"+46707293986","email":"info@tomninggoteborg.se","image":"https://tomninggoteborg.se/assets/logo.png","logo":"https://tomninggoteborg.se/assets/logo.png","address":{"@type":"PostalAddress","addressLocality":"Göteborg","addressCountry":"SE"},"areaServed":["Göteborg","Mölndal","Partille","Kungälv","Lerum","Kungsbacka"],"description":"Professionell tömning, dödsbotömning och bortforsling i Göteborgsregionen."},{"@type":"Service","name":"Dödsbotömning i Göteborg","description":"Dödsbotömning i Göteborg med respekt, diskretion och fullständig avlastning för anhöriga.","areaServed":"Göteborg","inLanguage":"sv-SE","provider":{"@id":"https://tomninggoteborg.se/#localbusiness"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://tomninggoteborg.se/"},{"@type":"ListItem","position":2,"name":"Tjänster","item":"https://tomninggoteborg.se/tjanster/tomning-i-goteborg"},{"@type":"ListItem","position":3,"name":"Dödsbotömning i Göteborg","item":"https://tomninggoteborg.se/tjanster/dodsbotomning-i-goteborg"}]}</script>
+  <link rel="preload" as="image" href="../assets/images/goteborg-hero.jpg" fetchpriority="high" />
 </head>
 <body>
   <header class="site-header">
@@ -106,9 +111,10 @@
         <h2 class="section-title">En trygg hand i en svår tid</h2>
           <p>Vi förstår att detta är en tung stund. Vårt team möter er med respekt och tålamod – utan stress eller påträngande tempo. Ni bestämmer vad som ska sparas, vad som ska doneras och vad som ska forslas bort.</p>
           <p>Från första samtalet till färdigstädad bostad hanterar vi sortering, packning, bortforsling och miljövänlig återvinning. Ni behöver inte vara närvarande under arbetet om ni föredrar det – nycklar och tydliga instruktioner räcker ofta.</p>
+          <p>I samband med dödsbo hjälper vi ofta även till med <a href="/tjanster/forradstomning-i-goteborg">tömning av förråd</a>, <a href="/tjanster/villatomning-i-goteborg">hela villor</a> och <a href="/tjanster/bortforsling-i-goteborg">varsam bortforsling</a>. Läs vår <a href="/blogg/dodsbotomning-goteborg">kompletta guide för anhöriga</a> eller se <a href="/priser">prisöversikten</a>.</p>
       </div>
       <div class="split-section__media">
-        <img src="../assets/images/foto-transport-lastbil.jpg" alt="Dödsbotömning i Göteborg – varsam bortforsling av bohag i lastbil" loading="lazy" decoding="async" width="600" height="450" />
+        <picture><source type="image/webp" srcset="../assets/images/foto-transport-lastbil.webp" /><img src="../assets/images/foto-transport-lastbil.jpg" alt="Dödsbotömning i Göteborg – varsam bortforsling av bohag i lastbil" loading="lazy" decoding="async" width="600" height="450" /></picture>
       </div>
     </div>
   </section>
@@ -132,7 +138,7 @@
           </article>
           <article class="type-tile type-tile--static">
             <div class="type-tile__media">
-              <img src="../assets/images/sortering.jpg" alt="Sortering och återvinning vid tömning i Göteborg" loading="lazy" decoding="async" width="400" height="250" />
+              <picture><source type="image/webp" srcset="../assets/images/sortering.webp" /><img src="../assets/images/sortering.jpg" alt="Sortering och återvinning vid tömning i Göteborg" loading="lazy" decoding="async" width="400" height="250" /></picture>
               <span class="type-tile__letter" aria-hidden="true">B</span>
             </div>
             <div class="type-tile__body">
@@ -144,7 +150,7 @@
           </article>
           <article class="type-tile type-tile--static">
             <div class="type-tile__media">
-              <img src="../assets/images/foto-lagenhet-bortforsling.jpg" alt="Lägenhetstömning i Göteborg – bortforsling av soffa och madrass" loading="lazy" decoding="async" width="400" height="250" />
+              <picture><source type="image/webp" srcset="../assets/images/foto-lagenhet-bortforsling.webp" /><img src="../assets/images/foto-lagenhet-bortforsling.jpg" alt="Lägenhetstömning i Göteborg – bortforsling av soffa och madrass" loading="lazy" decoding="async" width="400" height="250" /></picture>
               <span class="type-tile__letter" aria-hidden="true">C</span>
             </div>
             <div class="type-tile__body">
@@ -156,7 +162,7 @@
           </article>
           <article class="type-tile type-tile--static">
             <div class="type-tile__media">
-              <img src="../assets/images/foto-transport-lada.jpg" alt="Transport vid bortforsling i Göteborg – flyttlådor i lastbil" loading="lazy" decoding="async" width="400" height="250" />
+              <picture><source type="image/webp" srcset="../assets/images/foto-transport-lada.webp" /><img src="../assets/images/foto-transport-lada.jpg" alt="Transport vid bortforsling i Göteborg – flyttlådor i lastbil" loading="lazy" decoding="async" width="400" height="250" /></picture>
               <span class="type-tile__letter" aria-hidden="true">D</span>
             </div>
             <div class="type-tile__body">
@@ -291,7 +297,7 @@
       <div class="case-cards-grid">
           <article class="case-card">
             <div class="case-card__media">
-              <img src="../assets/images/foto-tradgard-villa.jpg" alt="Villatömning i Göteborg – radhusområde med trädgård och gräsmatta" loading="lazy" decoding="async" width="400" height="250" />
+              <picture><source type="image/webp" srcset="../assets/images/foto-tradgard-villa.webp" /><img src="../assets/images/foto-tradgard-villa.jpg" alt="Villatömning i Göteborg – radhusområde med trädgård och gräsmatta" loading="lazy" decoding="async" width="400" height="250" /></picture>
             </div>            <div class="case-card__body">
               <h3>Värdig hantering av föräldrahem</h3>
               <p><strong>Utmaning:</strong> Ett hus fyllt med 50 års minnen och bohag – familjen behövde avlastning utan att vara närvarande dagligen.</p>
@@ -412,15 +418,15 @@
       <p class="footer-powered">Powered by <a class="footer-powered__link" href="https://alfaflyttstad.se/sv/" target="_blank" rel="noopener noreferrer">Alfa Flytt &amp; Städ AB</a></p>
     </div></footer>
   <script type="application/json" id="i18n-routes">{"index.html":"en/index.html","offert.html":"en/quote.html","priser.html":"en/pricing.html","omraden.html":"en/areas.html","kontakt.html":"en/contact.html","integritetspolicy.html":"en/privacy-policy.html","tjanster/tomning-i-goteborg.html":"en/services/professional-clearance-gothenburg.html","tjanster/bortforsling-i-goteborg.html":"en/services/junk-removal-gothenburg.html","tjanster/dodsbotomning-i-goteborg.html":"en/services/estate-clearance-gothenburg.html","tjanster/lagenhetstomning-i-goteborg.html":"en/services/apartment-clearance-gothenburg.html","tjanster/forradstomning-i-goteborg.html":"en/services/storage-clearance-gothenburg.html","tjanster/akut-hjalp-tomning.html":"en/services/emergency-clearance-gothenburg.html","tjanster/grovsopor-foreningar.html":"en/services/bulk-waste-housing-associations-gothenburg.html","tjanster/villatomning-i-goteborg.html":"en/services/villa-clearance-gothenburg.html","tjanster/radhusstomning-i-goteborg.html":"en/services/townhouse-clearance-gothenburg.html","tjanster/garage-kallartomning-i-goteborg.html":"en/services/garage-basement-clearance-gothenburg.html","tjanster/foretagstomning-i-goteborg.html":"en/services/business-clearance-gothenburg.html","tjanster/kontorsrojning-i-goteborg.html":"en/services/office-clearance-gothenburg.html","tjanster/fastighetsrojning-i-goteborg.html":"en/services/property-clearance-gothenburg.html","omraden/vastra-goteborg.html":"en/areas/vastra-goteborg.html","omraden/hisingen.html":"en/areas/hisingen.html","omraden/centrum.html":"en/areas/centrum.html","omraden/majorna-linne.html":"en/areas/majorna-linne.html","omraden/orgryte-harlanda.html":"en/areas/orgryte-harlanda.html","omraden/molndal.html":"en/areas/molndal.html","omraden/partille.html":"en/areas/partille.html","omraden/kungalv.html":"en/areas/kungalv.html","omraden/lerum.html":"en/areas/lerum.html","omraden/kungsbacka.html":"en/areas/kungsbacka.html","omraden/molnlycke.html":"en/areas/molnlycke.html","omraden/landvetter.html":"en/areas/landvetter.html","blogg/index.html":"en/blog/index.html","blogg/dodsbotomning-goteborg.html":"en/blog/estate-clearance-guide-gothenburg.html","blogg/professionella-tomningsprojekt-goteborg.html":"en/blog/professional-clearance-projects-gothenburg.html","blogg/vad-kostar-tomning-goteborg.html":"en/blog/clearance-cost-gothenburg.html","blogg/checklista-lagenhetstomning.html":"en/blog/apartment-clearance-checklist.html"}</script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/sv.js"></script>
-  <script src="../js/services-data.js"></script>
-  <script src="../js/config.js"></script>
-  <script src="../js/form-i18n.js"></script>
-  <script src="../js/form-mount.js"></script>
-  <script src="../js/date-picker.js"></script>
-  <script src="../js/form-submit.js"></script>
-  <script src="../js/i18n.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/sv.js" defer></script>
+  <script src="../js/services-data.js" defer></script>
+  <script src="../js/config.js" defer></script>
+  <script src="../js/form-i18n.js" defer></script>
+  <script src="../js/form-mount.js" defer></script>
+  <script src="../js/date-picker.js" defer></script>
+  <script src="../js/form-submit.js" defer></script>
+  <script src="../js/i18n.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

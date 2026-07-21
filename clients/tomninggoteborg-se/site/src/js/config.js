@@ -1,0 +1,32 @@
+window.SITE_CONFIG = {
+  domain: "tomninggoteborg.se",
+  businessName: "Alfa Tömning Göteborg",
+  phone: "0707293986",
+  phoneDisplay: "070 729 39 86",
+  email: "info@tomninggoteborg.se",
+  city: "Göteborg",
+  country: "SE",
+};
+
+window.SUPABASE_CONFIG = {
+  url: "https://pavleectcuwzkuttvmbq.supabase.co",
+  anonKey: "sb_publishable_swELOvoSNEx7HhiJ3rHjZA_BqZYNUhy",
+  table: "leads",
+  submitVia: "edge",
+  submitLeadFunction: "submit-lead",
+  columnMap: {
+    name: "name",
+    address: "address",
+    city: "city",
+    postal_code: "postal_code",
+    phone: "phone",
+    email: "email",
+    service: "service",
+    preferred_date: "preferred_date",
+    message: "message",
+    site_domain: "site_domain",
+  },
+  extraFields: {
+    site_domain: "tomninggoteborg.se",
+  },
+};

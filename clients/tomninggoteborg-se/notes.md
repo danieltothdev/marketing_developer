@@ -198,3 +198,20 @@ Core Web Vitals + CSS/JS minifikálás (12, 21), GA4/konverziómérés (22–23)
 - Kód szinten HELYES: űrlap (64/66 oldal) → `submit-lead` edge function → DB insert + email a tulajnak + auto-válasz.
 - **NEM tesztelhető innen:** a tomninggoteborg.se másik Supabase projektet (`pavleectcuwzkuttvmbq`) használ, ami nincs a csatlakoztatott fiókban. Dániel maga teszteli élőben.
 - Élő működéshez a Supabase oldalán kell: (1) submit-lead deploy, (2) leads tábla + RLS insert policy, (3) secrets: RESEND_API_KEY, NOTIFY_EMAIL, NOTIFY_FROM. Az `on-lead-insert-email.sql`-ben placeholder maradt (alternatív trigger-út, nem szükséges ha submit-lead küldi az emailt).
+
+## FÁZIS 2 végrehajtva: teljesítmény + BRF/B2B tartalom (2026-07-11)
+**1) Képek (Core Web Vitals):** 25 WebP generálva (JPG-k maradtak fallbacknek; 3,6MB→2,1MB, -42%);
+mind a 126 `<img>` `<picture>` wrapperben WebP source-szal; hero JPG 104K→79K újratömörítve (URL változatlan);
+hero preload + fetchpriority=high 37 oldalon. Böngészőben igazolva: a WebP töltődik be (currentSrc).
+**2) CSS/JS:** main.css 56K→44K (csso), minden js/ minifikálva (terser, szintaxis-ellenőrizve);
+olvasható források a repóban: `site/src/css/`, `site/src/js/` (deploy zip-ből kizárva).
+Minden script `defer`; flatpickr CDN CSS nem-blokkoló (media=print trükk + noscript fallback);
+preconnect (fonts.googleapis/gstatic, jsdelivr) 72 oldalon; `.htaccess`-ben mod_expires/mod_deflate
+cache+gzip blokk IfModule-védelemmel.
+**3) BRF/B2B tartalom:** "Återkommande uppdrag & avtal" szekció a 4 SV B2B oldalon + a 4 EN páron
+(löpande avtal, fix kontakt, dokumentáció, 24-48h prioritás) + kontextuális linkek természetes
+anchorral; priser + en/pricing: "Vad påverkar priset" (4 tényező) + RUT-magyarázat + linkek;
+kontextuális belső linkek a 4 lakossági kulcsoldal bevezetőjében (villa/radhus/dödsbo/lägenhet).
+**Regressziós QA:** sitemap 73/73→200, belső linkek+webp srcset 0 hiba, JSON-LD 135/135 valid,
+nyelvváltó SV↔EN OK, B2B szekció+űrlap (11 mező) renderel, priser-tartalom renderel, FAQ toggle OK,
+mobil CTA sáv OK. Éles oldalon 0 törött hivatkozás.
