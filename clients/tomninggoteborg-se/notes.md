@@ -233,3 +233,12 @@ nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz
 - OK: a korábbi inLanguage-eltávolítás csak a SV-oldalak LocalBusiness-ét érintette (`sv-SE` minta), az EN-sablon (`en-GB`) és az index.html kimaradt; a Service objektumokat egyáltalán nem érintette.
 - JAVÍTÁS: JSON-szintű parse, `inLanguage` törlése KIZÁRÓLAG a LocalBusiness és Service objektumokból. A BlogPosting `inLanguage` (10 db) ÉRINTETLEN — ott érvényes (CreativeWork domain).
 - EREDMÉNY: 45 fájl módosítva, 32 LB + 26 Service inLanguage eltávolítva, 0 hibás JSON-LD, BlogPosting 10 megmaradt. Nyelvet a `<html lang>` + hreflang jelzi, nem az inLanguage — funkcionálisan semmi nem vész el.
+
+## 2026-07-22 — Hero cím "fehér doboz" bug javítás
+- Tünet: az index.html hero H1 (.display-title) fehér téglalapként jelent meg a cím szövege helyett.
+- OK: a CSS-minifikáló (csso) kiemelte a `background-clip:text` deklarációt egy külön, a `background:linear-gradient(...)` shorthand ELÉ helyezett szabályba. A `background` shorthand alaphelyzetbe állítja a `background-clip`-et (border-box), így a gradiens az egész elem-dobozt kitöltötte, a szöveg (color:transparent) pedig eltűnt → fehér doboz.
+- JAVÍTÁS (2 szint):
+  1. Live css/main.css: helyes sorrend + a `background` shorthand helyett `background-image` longhand (ez nem nullázza a background-clip-et), plusz `-webkit-text-fill-color:transparent`.
+  2. Forrás src/css/main.css: ugyanez, hogy ÚJRA-minifikáláskor se térjen vissza a hiba.
+- Ellenőrzés: Playwright render — computed `-webkit-background-clip: text`, gradiens megvan, szöveg a glyph-ekre klippel, nincs fehér doboz.
+- TANULSÁG: minifikálás után KÖTELEZŐ vizuális (böngészős) ellenőrzés a gradiens-szöveg / background-clip elemeknél, nem elég a technikai diff.
