@@ -226,3 +226,10 @@ nem érintve. "Härryda kommun" → "Härryda municipality". Utó-audit: 0 marad
 ékezet nélküli svéd szavakra is szűrve), JSON-LD 100% valid, záró tagek épek.
 **TANULSÁG (rögzítve):** a QA-checklista mostantól kötelezően tartalmazza a TARTALOM-NYELV ellenőrzést
 nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz nyelven van.
+
+## 2026-07-22 — Semrush "Invalid structured data" (inLanguage) javítás
+- Semrush jelzés: 42 db "Invalid structured data", séma LocalBusiness, mező `inLanguage` — a Schema.org szótár nem ismeri.
+- ELLENŐRZÉS (javítás előtt): a hiba VALÓS. `inLanguage` bent volt 32 LocalBusiness objektumban (minden en/* oldal + index.html) ÉS 26 Service objektumban (en/services/* + tjanster/*). Ez utóbbi is érvénytelen — a Service sem tartalmazza az inLanguage tulajdonságot a Schema.org domainjében, csak a Semrush a LocalBusiness-re panaszkodott.
+- OK: a korábbi inLanguage-eltávolítás csak a SV-oldalak LocalBusiness-ét érintette (`sv-SE` minta), az EN-sablon (`en-GB`) és az index.html kimaradt; a Service objektumokat egyáltalán nem érintette.
+- JAVÍTÁS: JSON-szintű parse, `inLanguage` törlése KIZÁRÓLAG a LocalBusiness és Service objektumokból. A BlogPosting `inLanguage` (10 db) ÉRINTETLEN — ott érvényes (CreativeWork domain).
+- EREDMÉNY: 45 fájl módosítva, 32 LB + 26 Service inLanguage eltávolítva, 0 hibás JSON-LD, BlogPosting 10 megmaradt. Nyelvet a `<html lang>` + hreflang jelzi, nem az inLanguage — funkcionálisan semmi nem vész el.
