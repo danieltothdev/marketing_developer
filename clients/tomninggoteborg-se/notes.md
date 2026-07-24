@@ -249,3 +249,10 @@ nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz
 - Estate clearance EN (en/services/estate-clearance-gothenburg): tükör-tartalom angolul, EN belső linkekkel. 1787 szó, 19 link, 15 GYIK, FAQPage séma.
 - Ez a SABLON — ugyanez a szerkezet gördül a többi szolgáltatás- és terület-oldalra.
 - Ellenőrzés: Playwright render, FAQ-harmonika működik, minden JSON-LD érvényes, nincs nyelvi keveredés.
+
+## 2026-07-24 — A 13 "low word count" oldal javítása (Semrush CSV)
+- Típusra szabott bővítés (nem szószám-tömés): hub, form, jogi, terület.
+- SV: omraden (271w), blogg/index (282w), offert (225w), kontakt (209w), integritetspolicy (222w, teljes GDPR), omraden/majorna-linne (324w), omraden/partille (303w), priser (367w).
+- EN: en/areas (283w), en/blog/index (306w), en/quote (252w), en/contact (227w), en/privacy-policy (254w, GDPR).
+- FAQ + FAQPage séma minden hub/form/terület/ár oldalon (AEO). Jogi oldalak: bővített GDPR-szöveg, FAQ nélkül.
+- Erős belső linkelés minden oldalon. Ellenőrzés: minden JSON-LD érvényes, 0 törött belső link, FAQ-harmonika renderel. (A szószámok a main-re; a Semrush a nav/láblécet is számolja, tehát még magasabb.)
