@@ -242,3 +242,10 @@ nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz
   2. Forrás src/css/main.css: ugyanez, hogy ÚJRA-minifikáláskor se térjen vissza a hiba.
 - Ellenőrzés: Playwright render — computed `-webkit-background-clip: text`, gradiens megvan, szöveg a glyph-ekre klippel, nincs fehér doboz.
 - TANULSÁG: minifikálás után KÖTELEZŐ vizuális (böngészős) ellenőrzés a gradiens-szöveg / background-clip elemeknél, nem elég a technikai diff.
+
+## 2026-07-24 — Tartalmi mélyítés: Dödsbotömning (zászlóshajó minta)
+- Stratégia: nem szószám-tömés, hanem teljes topikális lefedés (SEO+AEO). Célsávok: fő szolgáltatásoldal 1500–2500 szó, 10–15 GYIK, 10–20 belső link.
+- Dödsbotömning SV (tjanster/dodsbotomning-i-goteborg): meglévő jó váz MEGTARTVA + új szekciók: "Vad är dödsbotömning?" (definíciós, AEO), "Vad ingår?", "Dödsbo i praktiken" (bouppteckning→arvskifte jogi/gyakorlati lépések), ár-mélység (RUT), GYIK 4→15 + FAQPage séma. Eredmény: 1746 szó, 21 belső link, 15 GYIK.
+- Estate clearance EN (en/services/estate-clearance-gothenburg): tükör-tartalom angolul, EN belső linkekkel. 1787 szó, 19 link, 15 GYIK, FAQPage séma.
+- Ez a SABLON — ugyanez a szerkezet gördül a többi szolgáltatás- és terület-oldalra.
+- Ellenőrzés: Playwright render, FAQ-harmonika működik, minden JSON-LD érvényes, nincs nyelvi keveredés.
