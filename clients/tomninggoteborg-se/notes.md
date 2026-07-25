@@ -282,3 +282,15 @@ nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz
 - JAVÍTVA: mind a 4 cikk (SV+EN) a valós táblához igazítva, a látható szövegben ÉS a FAQPage sémában is (2-2 példány fájlonként). A garage-cikkből a kitalált szám kivéve (nincs rá ügyféladat), helyette összehasonlítás a valós radhus-árral.
 - TANULSÁG: ügyfél-specifikus SZÁMOT (ár, határidő, kapacitás) soha nem találok ki. Ha nincs adat: vagy az oldalon már meglévő valós adatra hivatkozom, vagy kihagyom és bekérem.
 - MÓDSZERTANI TANULSÁG: "nincs ár az oldalon" állítást 2 oldal alapján tettem — az egész site-ot kellett volna nézni. Állítás előtt teljes körű keresés kötelező.
+
+## 2026-07-25 — Sürgős hibajavítás: törött képek az 5 EN blogcikken (Semrush "5 internal images are broken")
+- OK: a generátorom az EN blog fájlokat (en/blog/, DEPTH-2) a rossz relatív mélységgel (../assets/) írta, a helyes ../../assets/ helyett. A meglévő 4 kép-hivatkozás jó volt (preload, related stb.), csak az ÁLTALAM beszúrt intro-kép + előtte a preload sor volt rossz (3 db/fájl).
+- JAVÍTVA mind az 5 fájlban + az en/blog/index.html 5 új kártyáján (ugyanaz a hiba a kártya-generátorban).
+- A build_articles.py generátor is javítva (EN ágon automatikus ../assets -> ../../assets csere), hogy új cikkeknél ne térjen vissza.
+- Ellenőrzés: minden blog kép-hivatkozás (SV+EN) valós fájlra oldódik fel.
+
+## 2026-07-25 — Ártáblázat átemelve a priser oldalra + Offer séma
+- A valós ártáblázat (Litet radhus 3-5e, Mellanstort 5-8e, Stort 8-12e, Villatömning 10-15e kr) eddig csak az akut-hjalp-tomning oldalon volt - a legrosszabb helyen ár-kereséshez. Átemelve a priser.html-re (a hero után, "Vad påverkar priset" elé), ugyanazzal a pricing-tiers komponenssel. Az akut oldalon is megmaradt.
+- Hozzáadva: Service+Offer+PriceSpecification JSON-LD séma (4 db, SEK, min/max ár) - AI/AEO idézhetőséghez.
+- NEM találtam ki lakás/flyttstädning árat - azoknál marad "prissätts individuellt", link az offerthez.
+- Ellenőrzés: Playwright render OK, JSON-LD érvényes.
