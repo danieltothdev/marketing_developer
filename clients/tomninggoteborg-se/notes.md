@@ -303,3 +303,11 @@ nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz
 - Minden árszám a MEGLÉVŐ valós táblát tükrözi (3-5e/5-8e/8-12e/10-15e kr) — semmi kitalálva.
 - Bekötve: blog lista SV+EN, sitemap (83->87), i18n-routes mind a 87 oldalon, llms.txt.
 - Teljes Semrush-audit újrafuttatva mind a 87 oldalra: 0 hiba (kép-feloldás VALÓS fájlrendszerrel ellenőrizve, nem csak string-mintával).
+
+## 2026-07-25 — Semrush "informative content" + szemantikai szavak: omraden/partille.html
+- A Semrush a /flyttfirma-partille URL-t auditálta - ez egy 301-es redirect a MEGLÉVŐ omraden/partille.html-re (canonical), nem külön oldal. Csak ezt az egy oldalt javítottam, ahogy kérve volt.
+- Hiányzó szemantikai szavak a konkurenciához képest: "komma fram", "tunga lyft", "oavsett om det gäller", "säkert sätt".
+- Új, valóban informatív szakasz: "Erfarenhet av Partilles gator, trapphus och backar" - helyi útviszonyok (Sävedalen/Björndammen dombok, szűk utcák), nehéz tárgyak emelése (kassaskåp, pianon, garderober), biztonságos kivitelezés, biztosítás. Nem kulcsszó-tömés - valós, releváns tartalom.
+- +1 GYIK (tunga lyft kérdés) + FAQPage séma szinkronban frissítve (3->4 kérdés).
+- Szószám: 425 -> 638. Mind a 4 kifejezés természetesen jelen van.
+- Ellenőrzés: JSON-LD érvényes, Playwright render OK, FAQ harmonika működik.
