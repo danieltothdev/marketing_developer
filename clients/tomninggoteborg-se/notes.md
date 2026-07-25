@@ -294,3 +294,12 @@ nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz
 - Hozzáadva: Service+Offer+PriceSpecification JSON-LD séma (4 db, SEK, min/max ár) - AI/AEO idézhetőséghez.
 - NEM találtam ki lakás/flyttstädning árat - azoknál marad "prissätts individuellt", link az offerthez.
 - Ellenőrzés: Playwright render OK, JSON-LD érvényes.
+
+## 2026-07-25 — 2 új dödsbo-ár cikk a konkurencia alapján (SV+EN)
+- A konkurencia-elemzés kimutatta: a "vad kostar det att tömma ett dödsbo" AEO-keresésre a saját oldal nem jelenik meg, mert nincs dödsbo-SPECIFIKUS ár-cikk (a meglévő "vad kostar en tömning" cím általánosabb).
+- Új cikkek (SV+EN, 1000-1165 szó, 10 GYIK + FAQPage séma):
+  1. dodsbo-pris-goteborg / estate-clearance-cost-gothenburg — "Prisguide 2026" cím (a konkurencia mind évszámot használ), konkrét ártáblázat (ugyanaz mint priser.html), RUT dödsbónál, hogyan csökkenthető érékbecsléssel.
+  2. vardera-salja-dodsbo-goteborg / valuing-selling-estate-gothenburg — mi az, aminek értéke van, hogyan megy a värdering, nem ajánlunk konkrét auktionsfirma-t (tisztesség).
+- Minden árszám a MEGLÉVŐ valós táblát tükrözi (3-5e/5-8e/8-12e/10-15e kr) — semmi kitalálva.
+- Bekötve: blog lista SV+EN, sitemap (83->87), i18n-routes mind a 87 oldalon, llms.txt.
+- Teljes Semrush-audit újrafuttatva mind a 87 oldalra: 0 hiba (kép-feloldás VALÓS fájlrendszerrel ellenőrizve, nem csak string-mintával).
