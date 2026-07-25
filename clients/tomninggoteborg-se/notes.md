@@ -311,3 +311,15 @@ nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz
 - +1 GYIK (tunga lyft kérdés) + FAQPage séma szinkronban frissítve (3->4 kérdés).
 - Szószám: 425 -> 638. Mind a 4 kifejezés természetesen jelen van.
 - Ellenőrzés: JSON-LD érvényes, Playwright render OK, FAQ harmonika működik.
+
+## 2026-07-25 — Semrush 3 kép alapján: hreflang, séma, kulcsszó/tartalom
+- Kép 1 (2x "incorrect hreflang links", broken 404): blogg/dodsbo-pris-goteborg + vardera-salja-dodsbo-goteborg (SV) / estate-clearance-cost-gothenburg + valuing-selling-estate-gothenburg (EN). ELLENŐRIZVE: mind a 4 fájl létezik, sitemapban benne van, canonical/hreflang helyes, robots nem tiltja. A Semrush crawl (11:24) a fájlok létrehozása (21:13) ELŐTT történt -> elavult crawl, nincs valódi hiba, deploy+rerun után eltűnik. Emellett QC: képútvonalak jók, JSON-LD érvényes, árak a valós táblát tükrözik (nincs kitalált szám), ~1000-1165 szó, 10 GYIK mindegyikben.
+- Kép 2 ("1 structured data item is invalid", LocalBusiness address hiányzik): priser.html Service sémájában a "provider" egy DUPLIKÁLT, hiányos LocalBusiness volt (csak name+telephone). Javítva: "provider":{"@id":"https://tomninggoteborg.se/#localbusiness"} referenciára (a minta, amit minden más oldal is használ) - a hiányos duplikátum helyett a teljes, address-szel rendelkező fő LocalBusiness-re mutat.
+- Kép 3 (akut-hjalp-tomning.html, cél kulcsszó "bärhjälp göteborg" hiányzik title/h1/meta/body-ból + "more informative content"): 
+  - Title: "Akut Tömning Göteborg – Samma Dag 24/7" -> "Akut Tömning & Bärhjälp Göteborg" (47 kar)
+  - Meta + Service séma description: "...tömning och bärhjälp i Göteborg..."
+  - H1: "Akut tömning Göteborg" -> "Akut tömning & bärhjälp i Göteborg"
+  - Új szakasz: "Bärhjälp i Göteborg när det är bråttom" - valós infó (bärremmar/trallor, ingyenes bärhjälp az árban, önálló bärhjälp is bookolható tömning nélkül)
+  - +1 GYIK (önálló bärhjälp bookolható-e) + FAQPage séma HOZZÁADVA (korábban egyáltalán nem volt ezen az oldalon, pedig volt látható GYIK)
+  - Szószám nőtt, 5 GYIK, JSON-LD érvényes, Playwright render OK.
+- Csak a képeken szereplő oldalak + az akut oldal érintve, ahogy kérve volt.
