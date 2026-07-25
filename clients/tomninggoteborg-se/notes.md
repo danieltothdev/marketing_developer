@@ -273,3 +273,12 @@ nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz
   JSON-LD érvényesség, törött belső link, árva oldal, GA4 pontosan 1x, cache-busting, img alt,
   canonical+hreflang, duplikált title/meta, sitemap 404, llms.txt 404.
 - Javítva közben: 6 túl hosszú title (61-62 -> <=53), 4 rövid oldal felhozva 371-429 szóra.
+
+## 2026-07-24 — HIBAJAVÍTÁS: kitalált árak a blogcikkekben
+- HIBA (az enyém): a "tömma hus" cikkbe 15 000–60 000 kr ársávot írtam, a garage-cikkbe "från 4 000 kr" — ezek KITALÁLT számok voltak, nem az ügyfél adatai.
+- A VALÓS ártáblázat az oldalon van, a tjanster/akut-hjalp-tomning.html oldalon:
+  Litet radhus 3 000–5 000 kr | Mellanstort radhus 5 000–8 000 kr | Stort radhus 8 000–12 000 kr | Villatömning 10 000–15 000 kr
+- A kitalált 15–60 e kr NÉGYSZERESE volt a valós villatömning árnak (10–15 e) → elriasztotta volna az érdeklődőket.
+- JAVÍTVA: mind a 4 cikk (SV+EN) a valós táblához igazítva, a látható szövegben ÉS a FAQPage sémában is (2-2 példány fájlonként). A garage-cikkből a kitalált szám kivéve (nincs rá ügyféladat), helyette összehasonlítás a valós radhus-árral.
+- TANULSÁG: ügyfél-specifikus SZÁMOT (ár, határidő, kapacitás) soha nem találok ki. Ha nincs adat: vagy az oldalon már meglévő valós adatra hivatkozom, vagy kihagyom és bekérem.
+- MÓDSZERTANI TANULSÁG: "nincs ár az oldalon" állítást 2 oldal alapján tettem — az egész site-ot kellett volna nézni. Állítás előtt teljes körű keresés kötelező.
