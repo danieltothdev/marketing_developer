@@ -256,3 +256,20 @@ nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz
 - EN: en/areas (283w), en/blog/index (306w), en/quote (252w), en/contact (227w), en/privacy-policy (254w, GDPR).
 - FAQ + FAQPage séma minden hub/form/terület/ár oldalon (AEO). Jogi oldalak: bővített GDPR-szöveg, FAQ nélkül.
 - Erős belső linkelés minden oldalon. Ellenőrzés: minden JSON-LD érvényes, 0 törött belső link, FAQ-harmonika renderel. (A szószámok a main-re; a Semrush a nav/láblécet is számolja, tehát még magasabb.)
+
+## 2026-07-24 — 5 új blogcikk (SV+EN) + teljes Semrush-újraellenőrzés
+- Kulcsszó-résanalízis alapján (nincs célzott oldal a title/H1-ben): kontorstömning, garagetömning, vindstömning, magasinstömning, tömma hus.
+- Új cikkek (mind SV+EN, 1000-1700 szó, 10 GYIK + FAQPage séma, BlogPosting séma):
+  1. tomma-hus-goteborg / clearing-a-house-gothenburg (tömma hus, hustömning)
+  2. tomma-garage-kallare-vind-goteborg / garage-basement-attic-clearance (4 rés egyszerre)
+  3. kontorstomning-goteborg / office-clearance-guide (B2B, GDPR + IT + återställning)
+  4. vad-hander-med-sakerna / what-happens-to-the-items (AEO + bizalom, återvinning)
+  5. tomning-rojning-bortforsling-skillnad / clearance-clear-out-junk-removal-difference (definíciós, AEO)
+- NEM írtam külön cikket a "tömma lägenhet" résre — kannibalizálta volna a meglévő checklista-cikket.
+- Bekötés: blog lista (SV+EN), sitemap.xml (73->83), i18n-routes mind a 83 oldalon, llms.txt.
+- Bloglista-kártyák nem-leíró "Läs artikeln"/"Read the article" linkjei javítva visually-hidden címmel.
+- Teljes Semrush-audit ÚJRAFUTTATVA mind a 83 oldalra: 0 hiba.
+  Ellenőrzött: title/meta/H1/H2 megléte, title<=60, szószám>=280, inLanguage csak BlogPosting-on,
+  JSON-LD érvényesség, törött belső link, árva oldal, GA4 pontosan 1x, cache-busting, img alt,
+  canonical+hreflang, duplikált title/meta, sitemap 404, llms.txt 404.
+- Javítva közben: 6 túl hosszú title (61-62 -> <=53), 4 rövid oldal felhozva 371-429 szóra.
