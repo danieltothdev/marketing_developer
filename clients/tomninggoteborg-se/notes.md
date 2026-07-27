@@ -323,3 +323,10 @@ nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz
   - +1 GYIK (önálló bärhjälp bookolható-e) + FAQPage séma HOZZÁADVA (korábban egyáltalán nem volt ezen az oldalon, pedig volt látható GYIK)
   - Szószám nőtt, 5 GYIK, JSON-LD érvényes, Playwright render OK.
 - Csak a képeken szereplő oldalak + az akut oldal érintve, ahogy kérve volt.
+
+## 2026-07-25 — Valódi Google Maps beágyazás (SV+EN főoldal)
+- Korábban OpenStreetMap iframe volt a "Hitta oss här" / "Find us" szekcióban (index.html, en/index.html) - egyetlen 2 hely az oldalon, ahol térkép volt.
+- share.google rövid linket a proxy blokkolja (google.com/share.google policy denial), és amúgy sem alkalmas iframe-beágyazásra (csak kattintható link lenne). Nincs rögzített utcai cím a projektben (séma csak "Göteborg" város-szintű).
+- Felhasználó megadta a valódi Google Maps "Embed a map" iframe kódot -> cím dekódolva: Bärbyvägen, 423 73 Göteborg.
+- Lecserélve mindkét meglévő térkép-előfordulás (SV index.html, EN en/index.html) a valódi Google Maps embed pb= URL-re, nyelvi paraméter (hl) svédre/angolra állítva a hu helyett. A .map-wrap CSS reszponzívan kezeli a méretezést, nem kellett hozzányúlni.
+- Sandbox proxy blokkolja a google.com-ot -> nem tudtam vizuálisan renderelni itt, csak strukturálisan ellenőrizni (érvényes URL, 1 előfordulás/fájl, iframe attribútumok). Élesben normálisan be fog töltődni.
