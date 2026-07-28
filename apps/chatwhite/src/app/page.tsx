@@ -156,8 +156,8 @@ export default function Home() {
         </Link>
       </header>
 
-      {/* HERO — full-bleed image plane */}
-      <section className="cw-hero-wash relative isolate min-h-[calc(100svh-4.5rem)] overflow-hidden">
+      {/* HERO — stacked until xl so copy never overlaps the visual */}
+      <section className="cw-hero-wash relative isolate overflow-hidden">
         <div className="cw-noise pointer-events-none absolute inset-0" aria-hidden />
         <div
           className="cw-glow pointer-events-none absolute -left-20 top-24 h-72 w-72 rounded-full bg-[var(--cw-lime)]/20 blur-3xl"
@@ -168,14 +168,14 @@ export default function Home() {
           aria-hidden
         />
 
-        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-6 pb-16 pt-8 lg:grid-cols-12 lg:gap-8 lg:pb-20">
-          <div className="lg:col-span-6">
+        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-8 xl:grid xl:grid-cols-2 xl:items-start xl:gap-12 xl:pb-20">
+          <div className="min-w-0 max-w-2xl xl:max-w-none">
             <p className="cw-rise mb-4 text-sm font-bold uppercase tracking-[0.24em] text-[var(--cw-lime)]">
               <Brand className="text-sm tracking-[0.08em]" /> · KKV chatbot
             </p>
-            <h1 className="cw-rise cw-rise-1 font-display text-[clamp(2.5rem,5.8vw,4.5rem)] font-extrabold leading-[1.02] tracking-tight text-white">
-              A hétvégi megkeresés
-              <span className="mt-1 block text-[var(--cw-lime)]">
+            <h1 className="cw-rise cw-rise-1 font-display text-[clamp(2.15rem,4.2vw,3.75rem)] font-extrabold leading-[1.08] tracking-tight break-words text-white">
+              A hétvégi megkeresés{" "}
+              <span className="text-[var(--cw-lime)]">
                 ne a konkurenciához menjen.
               </span>
             </h1>
@@ -202,24 +202,31 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="cw-rise cw-rise-2 relative lg:col-span-6">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[var(--cw-line)] shadow-[0_30px_80px_-40px_rgba(200,255,61,0.35)]">
+          <div className="cw-rise cw-rise-2 relative min-w-0 w-full shrink-0">
+            <div className="relative w-full overflow-hidden rounded-xl border border-[var(--cw-line)] shadow-[0_30px_80px_-40px_rgba(200,255,61,0.35)]">
               <Image
                 src="/images/chatwhite-hero.webp"
                 alt="ChatWhite chatbot éjszakai irodában — laptopon élő chat widget"
-                fill
+                width={1120}
+                height={700}
                 priority
-                sizes="(max-width: 1024px) 100vw, 560px"
-                className="object-cover"
+                sizes="(max-width: 1280px) 100vw, 560px"
+                className="h-auto w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--cw-ink)]/80 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="rounded-lg border border-white/10 bg-[var(--cw-ink)]/80 p-3 backdrop-blur-md">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[var(--cw-ink)] via-[var(--cw-ink)]/70 to-transparent p-4 pt-16 sm:p-5">
+                <div className="rounded-lg border border-white/10 bg-[var(--cw-ink)]/90 p-3 backdrop-blur-md">
+                  <div className="mb-2 flex items-center justify-between gap-2 text-[10px] text-white/55 sm:text-xs">
+                    <span className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--cw-lime)]" />
+                      Élő a weboldalon
+                    </span>
+                    <span>Szombat 22:41</span>
+                  </div>
                   <div className="space-y-2 text-xs leading-relaxed sm:text-sm">
-                    <p className="cw-bubble max-w-[90%] rounded-2xl rounded-tl-sm bg-white/10 px-3 py-2 text-white/90">
+                    <p className="cw-bubble max-w-[95%] rounded-2xl rounded-tl-sm bg-white/10 px-3 py-2 text-white/90">
                       Klímaszerelést keresek Debrecenben. Holnap tudnátok jönni?
                     </p>
-                    <p className="cw-bubble cw-bubble-2 ml-auto max-w-[88%] rounded-2xl rounded-tr-sm bg-[var(--cw-lime)]/20 px-3 py-2 text-[var(--cw-lime)]">
+                    <p className="cw-bubble cw-bubble-2 ml-auto max-w-[92%] rounded-2xl rounded-tr-sm bg-[var(--cw-lime)]/20 px-3 py-2 text-[var(--cw-lime)]">
                       Igen — 9–12 vagy 14–17. Milyen típusú klímáról van szó?
                     </p>
                   </div>
@@ -229,6 +236,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <p className="mt-3 text-center text-xs text-[var(--cw-muted)] xl:text-right">
+              Tipikus este: érdeklődő ír → bot kérdez → te reggel visszahívod
+            </p>
           </div>
         </div>
       </section>

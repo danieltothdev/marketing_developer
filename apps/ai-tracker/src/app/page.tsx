@@ -144,20 +144,18 @@ export default function Home() {
         </Link>
       </header>
 
-      {/* HERO with full-bleed image */}
-      <section className="at-radar relative isolate min-h-[calc(100svh-4.5rem)] overflow-hidden">
+      {/* HERO — stack until xl to prevent copy/visual overlap */}
+      <section className="at-radar relative isolate overflow-hidden">
         <div className="at-rings absolute inset-0" aria-hidden />
 
-        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-6 pb-16 pt-8 lg:grid-cols-12 lg:pb-20">
-          <div className="lg:col-span-6">
+        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-8 xl:grid xl:grid-cols-2 xl:items-start xl:gap-12 xl:pb-20">
+          <div className="min-w-0 max-w-2xl xl:max-w-none">
             <p className="at-rise mb-5 text-sm font-bold uppercase tracking-[0.22em] text-[var(--at-signal)]">
               AI Tracker HU · Első magyar AI kereső monitor
             </p>
-            <h1 className="at-rise at-rise-1 font-serif text-[clamp(2.4rem,5.4vw,4.1rem)] font-bold leading-[1.06] tracking-tight text-white">
-              A ChatGPT a konkurenciát ajánlja.
-              <span className="mt-1 block text-[var(--at-warn)]">
-                Téged nem.
-              </span>
+            <h1 className="at-rise at-rise-1 font-serif text-[clamp(2.15rem,4.2vw,3.75rem)] font-bold leading-[1.1] tracking-tight break-words text-white">
+              A ChatGPT a konkurenciát ajánlja.{" "}
+              <span className="text-[var(--at-warn)]">Téged nem.</span>
             </h1>
             <p className="at-rise at-rise-2 mt-6 max-w-xl text-lg leading-relaxed text-[var(--at-muted)] md:text-xl">
               Havi monitor magyar kulcsszavakra: megjelenik-e a céged a ChatGPT,
@@ -182,43 +180,47 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="at-rise at-rise-2 lg:col-span-6">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[var(--at-line)] shadow-[0_30px_80px_-36px_rgba(46,240,208,0.4)]">
+          <div className="at-rise at-rise-2 relative min-w-0 w-full shrink-0">
+            <div className="relative w-full overflow-hidden rounded-xl border border-[var(--at-line)] shadow-[0_30px_80px_-36px_rgba(46,240,208,0.4)]">
               <Image
                 src="/images/aitracker-hero.webp"
                 alt="AI Tracker dashboard — AI kereső láthatóság radar"
-                fill
+                width={1120}
+                height={700}
                 priority
-                sizes="(max-width: 1024px) 100vw, 560px"
-                className="object-cover"
+                sizes="(max-width: 1280px) 100vw, 560px"
+                className="h-auto w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--at-ink)] via-[var(--at-ink)]/20 to-transparent" />
-              <div className="absolute inset-x-3 bottom-3 overflow-hidden rounded-lg border border-white/10 bg-[var(--at-ink)]/85 p-2 backdrop-blur-md sm:inset-x-4 sm:bottom-4 sm:p-3">
-                <div className="mb-2 flex items-center justify-between gap-2 text-[10px] sm:text-xs">
-                  <span className="truncate text-white/70">
-                    „legjobb klímaszerelő Debrecen”
-                  </span>
-                  <span className="at-blink shrink-0 font-bold text-[var(--at-warn)]">
-                    Te: hiányzol
-                  </span>
-                </div>
-                {[
-                  { name: "Kovács Klíma Kft.", ok: true },
-                  { name: "Debrecen Cool Service", ok: true },
-                  { name: "A te céged", ok: false },
-                ].map((row) => (
-                  <div
-                    key={row.name}
-                    className={`flex items-center justify-between rounded-md px-2 py-1.5 text-xs sm:text-sm ${
-                      row.ok ? "text-white/80" : "bg-[var(--at-warn)]/20 text-[#ffc9a8]"
-                    }`}
-                  >
-                    <span>{row.name}</span>
-                    <span className="text-[10px] font-bold uppercase tracking-wide">
-                      {row.ok ? "említve" : "0/4"}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[var(--at-ink)] via-[var(--at-ink)]/80 to-transparent p-3 pt-14 sm:p-4">
+                <div className="overflow-hidden rounded-lg border border-white/10 bg-[var(--at-ink)]/90 p-2 backdrop-blur-md sm:p-3">
+                  <div className="mb-2 flex items-center justify-between gap-2 text-[10px] sm:text-xs">
+                    <span className="truncate text-white/70">
+                      „legjobb klímaszerelő Debrecen”
+                    </span>
+                    <span className="at-blink shrink-0 font-bold text-[var(--at-warn)]">
+                      Te: hiányzol
                     </span>
                   </div>
-                ))}
+                  {[
+                    { name: "Kovács Klíma Kft.", ok: true },
+                    { name: "Debrecen Cool Service", ok: true },
+                    { name: "A te céged", ok: false },
+                  ].map((row) => (
+                    <div
+                      key={row.name}
+                      className={`flex items-center justify-between rounded-md px-2 py-1.5 text-xs sm:text-sm ${
+                        row.ok
+                          ? "text-white/80"
+                          : "bg-[var(--at-warn)]/20 text-[#ffc9a8]"
+                      }`}
+                    >
+                      <span>{row.name}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-wide">
+                        {row.ok ? "említve" : "0/4"}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
