@@ -1,4 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
+
+function Brand({ className = "text-2xl" }: { className?: string }) {
+  return (
+    <span className={`font-display font-extrabold tracking-tight ${className}`}>
+      <span className="brand-chat">Chat</span>
+      <span className="brand-white">White</span>
+    </span>
+  );
+}
 
 const plans = [
   {
@@ -87,12 +97,6 @@ const jsonLd = {
           name: "Start",
           price: "7990",
           priceCurrency: "HUF",
-          priceSpecification: {
-            "@type": "UnitPriceSpecification",
-            price: "7990",
-            priceCurrency: "HUF",
-            billingDuration: "P1M",
-          },
         },
         {
           "@type": "Offer",
@@ -112,10 +116,7 @@ const jsonLd = {
       mainEntity: faqs.map((item) => ({
         "@type": "Question",
         name: item.q,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.a,
-        },
+        acceptedAnswer: { "@type": "Answer", text: item.a },
       })),
     },
   ],
@@ -123,224 +124,230 @@ const jsonLd = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-x-hidden text-[var(--cw-ink)]">
+    <div className="min-h-screen overflow-x-hidden bg-[var(--cw-ink)] text-[var(--cw-soft)]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <header className="relative z-20 mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        <a href="#" className="font-display text-2xl font-extrabold tracking-tight">
-          Chat<span className="text-[var(--cw-mint)]">White</span>
+      <header className="relative z-30 mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <a href="#">
+          <Brand />
         </a>
         <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--cw-muted)] md:flex">
-          <a href="#problem" className="hover:text-[var(--cw-ink)]">
+          <a href="#problem" className="hover:text-white">
             Probléma
           </a>
-          <a href="#how" className="hover:text-[var(--cw-ink)]">
+          <a href="#how" className="hover:text-white">
             Így működik
           </a>
-          <a href="#pricing" className="hover:text-[var(--cw-ink)]">
+          <a href="#pricing" className="hover:text-white">
             Árak
           </a>
-          <a href="#faq" className="hover:text-[var(--cw-ink)]">
+          <a href="#faq" className="hover:text-white">
             FAQ
           </a>
         </nav>
         <Link
           href="/dashboard"
-          className="rounded-md bg-[var(--cw-mint-deep)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[var(--cw-mint)]"
+          className="rounded-md bg-[var(--cw-lime)] px-4 py-2 text-sm font-bold text-[var(--cw-ink)] transition hover:bg-white"
         >
           14 nap próba
         </Link>
       </header>
 
-      {/* HERO — brand first, one composition, full-bleed atmosphere */}
-      <section className="cw-mesh relative isolate min-h-[calc(100svh-4.5rem)] overflow-hidden">
-        <div className="cw-grid absolute inset-0 opacity-60" aria-hidden />
+      {/* HERO — full-bleed image plane */}
+      <section className="cw-hero-wash relative isolate min-h-[calc(100svh-4.5rem)] overflow-hidden">
+        <div className="cw-noise pointer-events-none absolute inset-0" aria-hidden />
         <div
-          className="cw-drift pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-[var(--cw-mint)]/20 blur-3xl"
+          className="cw-glow pointer-events-none absolute -left-20 top-24 h-72 w-72 rounded-full bg-[var(--cw-lime)]/20 blur-3xl"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute -right-16 bottom-10 h-80 w-80 rounded-full bg-sky-300/25 blur-3xl"
+          className="pointer-events-none absolute -right-10 bottom-0 h-96 w-96 rounded-full bg-[var(--cw-coral)]/15 blur-3xl"
           aria-hidden
         />
 
-        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 pb-16 pt-10 lg:grid-cols-12 lg:gap-8 lg:pb-20 lg:pt-6">
+        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-6 pb-16 pt-8 lg:grid-cols-12 lg:gap-8 lg:pb-20">
           <div className="lg:col-span-6">
-            <p className="cw-rise mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-[var(--cw-mint-deep)]">
-              ChatWhite
+            <p className="cw-rise mb-4 text-sm font-bold uppercase tracking-[0.24em] text-[var(--cw-lime)]">
+              <Brand className="text-sm tracking-[0.08em]" /> · KKV chatbot
             </p>
-            <h1 className="cw-rise cw-rise-delay-1 font-display text-[clamp(2.4rem,5.5vw,4.25rem)] font-extrabold leading-[1.05] tracking-tight">
+            <h1 className="cw-rise cw-rise-1 font-display text-[clamp(2.5rem,5.8vw,4.5rem)] font-extrabold leading-[1.02] tracking-tight text-white">
               A hétvégi megkeresés
-              <span className="block text-[var(--cw-mint-deep)]">
+              <span className="mt-1 block text-[var(--cw-lime)]">
                 ne a konkurenciához menjen.
               </span>
             </h1>
-            <p className="cw-rise cw-rise-delay-2 mt-6 max-w-xl text-lg leading-relaxed text-[var(--cw-muted)] md:text-xl">
-              Magyar AI chatbot a weboldaladon: válaszol, leadet gyűjt, azonnal
-              értesít — akkor is, ha te alszol vagy a családdal vagy.
+            <p className="cw-rise cw-rise-2 mt-6 max-w-xl text-lg leading-relaxed text-[var(--cw-muted)] md:text-xl">
+              Magyar AI a weboldaladon: válaszol, leadet gyűjt, azonnal értesít —
+              akkor is, ha te alszol.
             </p>
-            <div className="cw-rise cw-rise-delay-3 mt-9 flex flex-wrap items-center gap-4">
+            <div className="cw-rise cw-rise-3 mt-9 flex flex-wrap items-center gap-4">
               <Link
                 href="/dashboard"
-                className="inline-flex items-center justify-center rounded-md bg-[var(--cw-mint-deep)] px-7 py-3.5 text-base font-semibold text-white shadow-[0_1px_0_rgba(255,255,255,0.2)_inset] transition hover:bg-[var(--cw-mint)]"
+                className="inline-flex items-center justify-center rounded-md bg-[var(--cw-lime)] px-7 py-3.5 text-base font-bold text-[var(--cw-ink)] transition hover:bg-white"
               >
                 Indítsd a 14 napos próbát
               </Link>
               <a
                 href="#how"
-                className="inline-flex items-center justify-center rounded-md border border-[var(--cw-line)] bg-white/50 px-6 py-3.5 text-base font-semibold text-[var(--cw-ink)] backdrop-blur-sm transition hover:border-[var(--cw-mint)]"
+                className="inline-flex items-center justify-center rounded-md border border-[var(--cw-line)] bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:border-[var(--cw-lime)]"
               >
                 Így működik
               </a>
             </div>
-            <p className="cw-rise cw-rise-delay-3 mt-4 text-sm text-[var(--cw-muted)]">
+            <p className="cw-rise cw-rise-3 mt-4 text-sm text-[var(--cw-muted)]">
               Bankkártya nélkül · 1 sor kód · Bármikor lemondható
             </p>
           </div>
 
-          {/* Product visual — edge-to-edge feel on large screens */}
-          <div className="cw-rise cw-rise-delay-2 relative lg:col-span-6">
-            <div className="relative mx-auto max-w-md lg:ml-auto lg:max-w-none">
-              <div className="overflow-hidden rounded-2xl border border-[var(--cw-line)] bg-[#0b1f1a] text-[#e8f5ef] shadow-[0_24px_60px_-28px_rgba(11,31,26,0.55)]">
-                <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-                  <div className="flex items-center gap-2">
-                    <span className="cw-pulse-dot h-2 w-2 rounded-full bg-[var(--cw-mint)]" />
-                    <span className="text-sm font-medium">Élő a weboldalon</span>
+          <div className="cw-rise cw-rise-2 relative lg:col-span-6">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[var(--cw-line)] shadow-[0_30px_80px_-40px_rgba(200,255,61,0.35)]">
+              <Image
+                src="/images/chatwhite-hero.webp"
+                alt="ChatWhite chatbot éjszakai irodában — laptopon élő chat widget"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 560px"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--cw-ink)]/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="rounded-lg border border-white/10 bg-[var(--cw-ink)]/80 p-3 backdrop-blur-md">
+                  <div className="space-y-2 text-xs leading-relaxed sm:text-sm">
+                    <p className="cw-bubble max-w-[90%] rounded-2xl rounded-tl-sm bg-white/10 px-3 py-2 text-white/90">
+                      Klímaszerelést keresek Debrecenben. Holnap tudnátok jönni?
+                    </p>
+                    <p className="cw-bubble cw-bubble-2 ml-auto max-w-[88%] rounded-2xl rounded-tr-sm bg-[var(--cw-lime)]/20 px-3 py-2 text-[var(--cw-lime)]">
+                      Igen — 9–12 vagy 14–17. Milyen típusú klímáról van szó?
+                    </p>
                   </div>
-                  <span className="text-xs text-white/50">Szombat 22:41</span>
-                </div>
-                <div className="space-y-3 p-4 text-sm leading-relaxed">
-                  <div className="cw-bubble max-w-[85%] rounded-2xl rounded-tl-sm bg-white/10 px-3.5 py-2.5">
-                    Szia! Klímaszerelést keresek Debrecenben. Holnap tudnátok
-                    jönni?
-                  </div>
-                  <div className="cw-bubble cw-bubble-2 ml-auto max-w-[88%] rounded-2xl rounded-tr-sm bg-[var(--cw-mint)]/25 px-3.5 py-2.5 text-[#d8ffe9]">
-                    Igen — Debrecenben és 30 km-es körzetben dolgozunk. Holnap
-                    9–12 vagy 14–17 között van szabad időnk. Milyen típusú
-                    klímáról van szó?
-                  </div>
-                  <div className="cw-bubble cw-bubble-3 max-w-[80%] rounded-2xl rounded-tl-sm bg-white/10 px-3.5 py-2.5">
-                    Split, 3,5 kW. A telefonom: 06 30 …
-                  </div>
-                </div>
-                <div className="border-t border-white/10 bg-white/5 px-4 py-3 text-xs text-[#9fd4bb]">
-                  Lead mentve · Email elküldve a tulajdonosnak · 12 mp alatt
+                  <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-[var(--cw-lime)]">
+                    Lead mentve · Email elküldve · 12 mp
+                  </p>
                 </div>
               </div>
-              <p className="mt-3 text-center text-xs text-[var(--cw-muted)] lg:text-right">
-                Tipikus este: érdeklődő ír → bot kérdez → te reggel visszahívod
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust / social proof strip */}
-      <section className="border-y border-[var(--cw-line)] bg-white/70">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-6 py-6 text-sm text-[var(--cw-muted)]">
+      <section className="border-y border-[var(--cw-line)] bg-[var(--cw-panel)]">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-6 py-5 text-sm text-[var(--cw-muted)]">
           <p>
-            <span className="font-semibold text-[var(--cw-ink)]">KKV-knak</span>{" "}
-            — szerelő, szépség, B2B szolgáltató
+            <span className="font-semibold text-white">KKV-knak</span> — szerelő,
+            szépség, B2B
           </p>
           <p>
-            <span className="font-semibold text-[var(--cw-ink)]">Magyar AI</span>{" "}
-            — nem angol fordítás
+            <span className="font-semibold text-[var(--cw-lime)]">Magyar AI</span>{" "}
+            — nem fordítás
           </p>
           <p>
-            <span className="font-semibold text-[var(--cw-ink)]">
-              TD-AI Marketing
-            </span>{" "}
-            — Debrecenből, országosan
+            <span className="font-semibold text-white">TD-AI Marketing</span> —
+            Debrecenből, országosan
           </p>
         </div>
       </section>
 
-      {/* PROBLEM — PAS */}
+      {/* PROBLEM + image */}
       <section id="problem" className="mx-auto max-w-6xl px-6 py-24">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--cw-mint-deep)]">
-          A valódi költség
-        </p>
-        <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold tracking-tight md:text-4xl">
-          A weboldalad éjjel is forgalmat kap. Te nem.
-        </h2>
-        <p className="mt-5 max-w-2xl text-lg text-[var(--cw-muted)]">
-          A látogató kérdez — te alszol, a családdal vagy, vagy a következő
-          munkán vagy. Másnap a telefonja már a következő találatot hívja.
-        </p>
-
-        <div className="mt-12 grid gap-10 md:grid-cols-3">
-          {[
-            {
-              title: "Elveszett lead = elveszett munka",
-              body: "Egy kihagyott ajánlatkérés gyakran 30–80 ezer Ft-nyi munka. Havi 4–5 ilyen, és a chatbot ára eltörpül.",
-            },
-            {
-              title: "A „majd visszahívom” nem stratégia",
-              body: "Ha a válasz több órát késik, a döntés máshol születik meg. Az ügyfél nem vár — keres.",
-            },
-            {
-              title: "A hirdetésed fizet a forgalomért",
-              body: "Google és Meta pénzt éget, ha a landing nem gyűjt leadet. A chatbot a forgalmat megkereséssé alakítja.",
-            },
-          ].map((item) => (
-            <div key={item.title} className="border-t border-[var(--cw-line)] pt-6">
-              <h3 className="font-display text-xl font-bold">{item.title}</h3>
-              <p className="mt-3 leading-relaxed text-[var(--cw-muted)]">
-                {item.body}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SOLUTION / benefits */}
-      <section className="cw-mesh border-y border-[var(--cw-line)]">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--cw-mint-deep)]">
-            A megoldás
-          </p>
-          <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold tracking-tight md:text-4xl">
-            Egy bot, ami a te nevedben beszél — és leadet ad át.
-          </h2>
-          <div className="mt-14 grid gap-12 lg:grid-cols-2">
-            {[
-              {
-                title: "Magyarul, a te szolgáltatásaiddal",
-                body: "Árak, területek, gyakori kérdések — a bot tudja, mit kínálsz. Nem „ChatGPT a weboldalon”, hanem a céged ügyfélszerzője.",
-              },
-              {
-                title: "Lead, nem csak csevegés",
-                body: "Név, telefon, email. Azonnali email neked. Opcionálisan CRM / Google Sheets webhook — hogy ne vesszen el a táblázatban.",
-              },
-              {
-                title: "1 sor kód — nincs IT projekt",
-                body: "Script a footerbe. Kész. Nincs bonyolult integráció, nincs hetekig tartó bevezetés.",
-              },
-              {
-                title: "White-label ügynökségeknek",
-                body: "A Partner csomaggal a saját márkád alatt adod el. Te számlázol, a ChatWhite a háttérben fut.",
-              },
-            ].map((item) => (
-              <div key={item.title}>
-                <h3 className="font-display text-2xl font-bold">{item.title}</h3>
-                <p className="mt-3 max-w-md leading-relaxed text-[var(--cw-muted)]">
-                  {item.body}
-                </p>
-              </div>
-            ))}
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--cw-coral)]">
+              A valódi költség
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
+              A weboldalad éjjel is forgalmat kap. Te nem.
+            </h2>
+            <p className="mt-5 text-lg text-[var(--cw-muted)]">
+              A látogató kérdez — te alszol. Másnap a telefonja már a következő
+              találatot hívja. Egy kihagyott ajánlatkérés gyakran 30–80 ezer Ft
+              munka.
+            </p>
+            <ul className="mt-8 space-y-4 text-[var(--cw-muted)]">
+              {[
+                "Elveszett lead = elveszett munka",
+                "A „majd visszahívom” nem stratégia",
+                "A hirdetésed fizet a forgalomért — a bot alakítja leadé",
+              ].map((line) => (
+                <li key={line} className="flex gap-3">
+                  <span className="mt-1 text-[var(--cw-coral)]">▸</span>
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[var(--cw-line)]">
+            <Image
+              src="/images/chatwhite-missed.webp"
+              alt="Üres recepció este — kihagyott hívások és elveszett megkeresések"
+              fill
+              sizes="(max-width: 1024px) 100vw, 520px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--cw-ink)]/50 to-transparent" />
+            <p className="absolute bottom-4 left-4 rounded-md bg-[var(--cw-coral)] px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
+              Este 22:41 — senki nem válaszol
+            </p>
           </div>
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
+      {/* SOLUTION */}
+      <section className="border-y border-[var(--cw-line)] bg-[var(--cw-panel)]">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-xl border border-[var(--cw-line)] lg:order-1">
+              <Image
+                src="/images/chatwhite-phone.webp"
+                alt="Okostelefon élő chat beszélgetéssel — ChatWhite lead gyűjtés"
+                fill
+                sizes="(max-width: 1024px) 100vw, 480px"
+                className="object-cover"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--cw-lime)]">
+                A megoldás
+              </p>
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
+                Egy bot, ami a te nevedben beszél — és leadet ad át.
+              </h2>
+              <div className="mt-8 space-y-6">
+                {[
+                  {
+                    t: "Magyarul, a te szolgáltatásaiddal",
+                    b: "Árak, területek, gyakori kérdések — a bot tudja, mit kínálsz.",
+                  },
+                  {
+                    t: "Lead, nem csak csevegés",
+                    b: "Név, telefon, email + azonnali értesítés. CRM webhook opcióval.",
+                  },
+                  {
+                    t: "1 sor kód — nincs IT projekt",
+                    b: "Script a footerbe. Kész. Mobilra is.",
+                  },
+                ].map((item) => (
+                  <div key={item.t} className="border-l-2 border-[var(--cw-lime)] pl-4">
+                    <h3 className="font-display text-lg font-bold text-white">
+                      {item.t}
+                    </h3>
+                    <p className="mt-1 text-[var(--cw-muted)]">{item.b}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW */}
       <section id="how" className="mx-auto max-w-6xl px-6 py-24">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--cw-mint-deep)]">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--cw-lime)]">
           Így működik
         </p>
-        <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-4xl">
+        <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
           Három lépés. Ma élhet.
         </h2>
         <ol className="mt-12 grid gap-8 md:grid-cols-3">
@@ -348,73 +355,68 @@ export default function Home() {
             {
               n: "01",
               title: "Regisztrálj és tanítsd",
-              body: "Megadod a szolgáltatásokat, területeket, hangnemet. 10 perc — nem kell programozni.",
+              body: "Szolgáltatások, területek, hangnem. 10 perc — nem kell programozni.",
             },
             {
               n: "02",
               title: "Beágyazod a scriptet",
-              body: "Egy sor a weboldaladra. A widget megjelenik — mobilra is optimalizálva.",
+              body: "Egy sor a weboldaladra. A widget megjelenik.",
             },
             {
               n: "03",
               title: "Lead érkezik — te hívsz",
-              body: "Értesítést kapsz. Visszahívod, amikor neked jó. A bot addig is válaszolt.",
+              body: "Értesítést kapsz. Visszahívod, amikor neked jó.",
             },
           ].map((step) => (
-            <li key={step.n} className="relative">
-              <span className="font-display text-5xl font-extrabold text-[var(--cw-mint)]/25">
+            <li key={step.n}>
+              <span className="font-display text-5xl font-extrabold text-[var(--cw-lime)]/25">
                 {step.n}
               </span>
-              <h3 className="mt-2 font-display text-xl font-bold">{step.title}</h3>
+              <h3 className="mt-2 font-display text-xl font-bold text-white">
+                {step.title}
+              </h3>
               <p className="mt-2 text-[var(--cw-muted)]">{step.body}</p>
             </li>
           ))}
         </ol>
-
-        <div className="mt-14 border border-[var(--cw-line)] bg-[#0b1f1a] p-6 text-[#9fd4bb] md:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--cw-mint)]">
+        <div className="mt-14 border border-[var(--cw-line)] bg-[var(--cw-panel)] p-6 md:p-8">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--cw-lime)]">
             Beágyazás
           </p>
-          <pre className="mt-3 overflow-x-auto text-sm leading-relaxed text-[#d8ffe9]">
+          <pre className="mt-3 overflow-x-auto text-sm text-[var(--cw-lime)]">
             {`<script src="https://chatwhite.hu/widget.js" data-key="YOUR_EMBED_KEY"></script>`}
           </pre>
         </div>
       </section>
 
-      {/* Before / After — BAB micro */}
-      <section className="border-y border-[var(--cw-line)] bg-white/80">
-        <div className="mx-auto grid max-w-6xl gap-0 px-6 md:grid-cols-2">
-          <div className="border-b border-[var(--cw-line)] py-14 md:border-b-0 md:border-r md:pr-12">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-red-700/70">
+      {/* Before / After */}
+      <section className="border-y border-[var(--cw-line)]">
+        <div className="mx-auto grid max-w-6xl md:grid-cols-2">
+          <div className="border-b border-[var(--cw-line)] bg-[var(--cw-panel)] px-6 py-14 md:border-b-0 md:border-r">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--cw-coral)]">
               Előtte
             </p>
-            <h3 className="mt-3 font-display text-2xl font-bold">
+            <h3 className="mt-3 font-display text-2xl font-bold text-white">
               Érdeklődő ír este → válasz holnap → már mást hívott
             </h3>
-            <p className="mt-4 text-[var(--cw-muted)]">
-              A hirdetés fizetett a kattintásért. A munka máshova ment.
-            </p>
           </div>
-          <div className="py-14 md:pl-12">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--cw-mint-deep)]">
+          <div className="bg-[var(--cw-panel-2)] px-6 py-14">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--cw-lime)]">
               Utána
             </p>
-            <h3 className="mt-3 font-display text-2xl font-bold">
+            <h3 className="mt-3 font-display text-2xl font-bold text-white">
               Érdeklődő ír este → bot válaszol → te reggel visszahívod
             </h3>
-            <p className="mt-4 text-[var(--cw-muted)]">
-              Ugyanabból a forgalomból több ajánlatkérés — mérhetően.
-            </p>
           </div>
         </div>
       </section>
 
       {/* PRICING */}
       <section id="pricing" className="mx-auto max-w-6xl px-6 py-24">
-        <p className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-[var(--cw-mint-deep)]">
+        <p className="text-center text-sm font-bold uppercase tracking-[0.2em] text-[var(--cw-lime)]">
           Árazás
         </p>
-        <h2 className="mt-3 text-center font-display text-3xl font-bold tracking-tight md:text-4xl">
+        <h2 className="mt-3 text-center font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
           Kevesebb, mint egy elszalasztott munka ára
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-center text-[var(--cw-muted)]">
@@ -427,18 +429,20 @@ export default function Home() {
               key={plan.name}
               className={`flex flex-col rounded-xl border p-8 ${
                 plan.featured
-                  ? "border-[var(--cw-mint)] bg-[var(--cw-foam)] ring-1 ring-[var(--cw-mint)]/40"
-                  : "border-[var(--cw-line)] bg-white/70"
+                  ? "border-[var(--cw-lime)] bg-[var(--cw-panel-2)] ring-1 ring-[var(--cw-lime)]/40"
+                  : "border-[var(--cw-line)] bg-[var(--cw-panel)]"
               }`}
             >
               {plan.featured && (
-                <span className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--cw-mint-deep)]">
+                <span className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[var(--cw-lime)]">
                   Ajánlott
                 </span>
               )}
-              <h3 className="font-display text-2xl font-bold">{plan.name}</h3>
+              <h3 className="font-display text-2xl font-bold text-white">
+                {plan.name}
+              </h3>
               <p className="mt-1 text-sm text-[var(--cw-muted)]">{plan.blurb}</p>
-              <p className="mt-6 font-display text-4xl font-extrabold tracking-tight">
+              <p className="mt-6 font-display text-4xl font-extrabold tracking-tight text-white">
                 {plan.price}
                 <span className="ml-1 text-base font-medium text-[var(--cw-muted)]">
                   Ft/hó
@@ -447,19 +451,17 @@ export default function Home() {
               <ul className="mt-6 flex-1 space-y-2.5 text-sm text-[var(--cw-muted)]">
                 {plan.features.map((f) => (
                   <li key={f} className="flex gap-2">
-                    <span className="text-[var(--cw-mint)]" aria-hidden>
-                      ✓
-                    </span>
+                    <span className="text-[var(--cw-lime)]">✓</span>
                     <span>{f}</span>
                   </li>
                 ))}
               </ul>
               <Link
                 href="/dashboard"
-                className={`mt-8 block rounded-md px-4 py-3 text-center text-sm font-semibold transition ${
+                className={`mt-8 block rounded-md px-4 py-3 text-center text-sm font-bold transition ${
                   plan.featured
-                    ? "bg-[var(--cw-mint-deep)] text-white hover:bg-[var(--cw-mint)]"
-                    : "border border-[var(--cw-line)] bg-white hover:border-[var(--cw-mint)]"
+                    ? "bg-[var(--cw-lime)] text-[var(--cw-ink)] hover:bg-white"
+                    : "border border-[var(--cw-line)] text-white hover:border-[var(--cw-lime)]"
                 }`}
               >
                 {plan.cta}
@@ -467,26 +469,21 @@ export default function Home() {
             </div>
           ))}
         </div>
-
-        <p className="mt-8 text-center text-sm text-[var(--cw-muted)]">
-          Garantáltan: ha 14 napon belül nem érzed hasznosnak, leállítod — nincs
-          kötbér, nincs „éves elköteleződés”.
-        </p>
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="border-t border-[var(--cw-line)] bg-white/60">
+      <section id="faq" className="border-t border-[var(--cw-line)] bg-[var(--cw-panel)]">
         <div className="mx-auto max-w-3xl px-6 py-24">
-          <h2 className="font-display text-3xl font-bold tracking-tight">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-white">
             Gyakori kérdések
           </h2>
           <div className="mt-10 divide-y divide-[var(--cw-line)]">
             {faqs.map((item) => (
               <details key={item.q} className="group py-5">
-                <summary className="cursor-pointer list-none font-display text-lg font-semibold marker:content-none [&::-webkit-details-marker]:hidden">
+                <summary className="cursor-pointer list-none font-display text-lg font-semibold text-white marker:content-none [&::-webkit-details-marker]:hidden">
                   <span className="flex items-start justify-between gap-4">
                     {item.q}
-                    <span className="text-[var(--cw-mint)] transition group-open:rotate-45">
+                    <span className="text-[var(--cw-lime)] transition group-open:rotate-45">
                       +
                     </span>
                   </span>
@@ -501,26 +498,25 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="cw-mesh relative overflow-hidden border-t border-[var(--cw-line)]">
+      <section className="cw-hero-wash relative overflow-hidden border-t border-[var(--cw-line)]">
         <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center">
-          <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
+          <Brand className="text-3xl md:text-4xl" />
+          <h2 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-white md:text-4xl">
             Ne veszíts el még egy esti megkeresést.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-[var(--cw-muted)]">
-            14 nap. Bankkártya nélkül. Ha nem hoz leadet — leállítod. Ha hoz —
-            megtartod.
+            14 nap. Bankkártya nélkül. Ha nem hoz leadet — leállítod.
           </p>
           <Link
             href="/dashboard"
-            className="mt-8 inline-flex rounded-md bg-[var(--cw-mint-deep)] px-8 py-4 text-base font-semibold text-white transition hover:bg-[var(--cw-mint)]"
+            className="mt-8 inline-flex rounded-md bg-[var(--cw-lime)] px-8 py-4 text-base font-bold text-[var(--cw-ink)] transition hover:bg-white"
           >
             Indítsd a ChatWhite próbát
           </Link>
           <p className="mt-4 text-sm text-[var(--cw-muted)]">
-            Kérdés?{" "}
             <a
               href="https://tdaimarketing.hu"
-              className="font-semibold text-[var(--cw-mint-deep)] underline-offset-2 hover:underline"
+              className="font-semibold text-[var(--cw-lime)] underline-offset-2 hover:underline"
             >
               tdaimarketing.hu
             </a>{" "}
@@ -529,15 +525,13 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-[var(--cw-line)] bg-white/80 py-10 text-center text-sm text-[var(--cw-muted)]">
-        <p className="font-display text-lg font-bold text-[var(--cw-ink)]">
-          Chat<span className="text-[var(--cw-mint)]">White</span>
-        </p>
+      <footer className="border-t border-[var(--cw-line)] bg-[var(--cw-ink)] py-10 text-center text-sm text-[var(--cw-muted)]">
+        <Brand className="text-xl" />
         <p className="mt-2">
           by{" "}
           <a
             href="https://tdaimarketing.hu"
-            className="font-medium text-[var(--cw-ink)] hover:text-[var(--cw-mint-deep)]"
+            className="font-medium text-white hover:text-[var(--cw-lime)]"
           >
             TD-AI & Marketing
           </a>

@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --cw-ink: #0b1f1a;
-  --cw-muted: #4a635c;
-  --cw-paper: #f3f7f5;
-  --cw-foam: #e4f2ec;
-  --cw-mint: #1a9b6c;
-  --cw-mint-deep: #0d6b4a;
-  --cw-line: #c5d9d0;
-  --background: var(--cw-paper);
-  --foreground: var(--cw-ink);
+  /* ChatWhite — ink + acid lime; "White" always #fff */
+  --cw-ink: #070b12;
+  --cw-panel: #101820;
+  --cw-panel-2: #162030;
+  --cw-line: #243044;
+  --cw-muted: #8fa0b5;
+  --cw-soft: #c5d0de;
+  --cw-lime: #c8ff3d;
+  --cw-lime-deep: #9fd400;
+  --cw-coral: #ff5a36;
+  --cw-white: #ffffff;
+  --background: var(--cw-ink);
+  --foreground: var(--cw-soft);
 }
 
 @theme inline {
@@ -33,25 +37,31 @@ body {
   font-family: var(--font-syne), Syne, sans-serif;
 }
 
-.cw-mesh {
-  background:
-    radial-gradient(ellipse 80% 60% at 12% 18%, rgba(26, 155, 108, 0.18), transparent 55%),
-    radial-gradient(ellipse 70% 50% at 88% 12%, rgba(120, 190, 210, 0.22), transparent 50%),
-    radial-gradient(ellipse 60% 45% at 70% 85%, rgba(26, 155, 108, 0.1), transparent 55%),
-    linear-gradient(165deg, #f7faf8 0%, #eef5f1 45%, #e6f0eb 100%);
+.brand-chat {
+  color: var(--cw-lime);
 }
 
-.cw-grid {
-  background-image:
-    linear-gradient(rgba(11, 31, 26, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11, 31, 26, 0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
+.brand-white {
+  color: var(--cw-white);
+  text-shadow: 0 0 24px rgba(255, 255, 255, 0.18);
+}
+
+.cw-hero-wash {
+  background:
+    radial-gradient(ellipse 90% 70% at 70% 20%, rgba(200, 255, 61, 0.14), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 10% 80%, rgba(255, 90, 54, 0.1), transparent 50%),
+    linear-gradient(165deg, #070b12 0%, #0c1420 50%, #0a1018 100%);
+}
+
+.cw-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+  opacity: 0.035;
 }
 
 @keyframes cw-rise {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -59,80 +69,63 @@ body {
   }
 }
 
-@keyframes cw-drift {
+@keyframes cw-glow {
   0%,
   100% {
-    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.55;
   }
   50% {
-    transform: translate3d(12px, -10px, 0) scale(1.04);
+    opacity: 1;
   }
 }
 
 @keyframes cw-bubble {
   from {
     opacity: 0;
-    transform: translateY(8px) scale(0.98);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes cw-pulse-dot {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.55;
-    transform: scale(0.85);
+    transform: translateY(0);
   }
 }
 
 .cw-rise {
-  animation: cw-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: cw-rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.cw-rise-delay-1 {
-  animation-delay: 0.12s;
+.cw-rise-1 {
+  animation-delay: 0.1s;
 }
 
-.cw-rise-delay-2 {
-  animation-delay: 0.24s;
+.cw-rise-2 {
+  animation-delay: 0.2s;
 }
 
-.cw-rise-delay-3 {
-  animation-delay: 0.36s;
+.cw-rise-3 {
+  animation-delay: 0.32s;
 }
 
-.cw-drift {
-  animation: cw-drift 14s ease-in-out infinite;
+.cw-glow {
+  animation: cw-glow 3.5s ease-in-out infinite;
 }
 
 .cw-bubble {
-  animation: cw-bubble 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: cw-bubble 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .cw-bubble-2 {
-  animation-delay: 0.35s;
+  animation-delay: 0.3s;
 }
 
 .cw-bubble-3 {
-  animation-delay: 0.7s;
-}
-
-.cw-pulse-dot {
-  animation: cw-pulse-dot 1.8s ease-in-out infinite;
+  animation-delay: 0.55s;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .cw-rise,
-  .cw-drift,
-  .cw-bubble,
-  .cw-pulse-dot {
+  .cw-glow,
+  .cw-bubble {
     animation: none;
   }
 }

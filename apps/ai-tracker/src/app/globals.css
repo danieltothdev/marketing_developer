@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --at-ink: #0b1220;
-  --at-muted: #4a5568;
-  --at-paper: #f2f5f9;
-  --at-signal: #0c7c7c;
-  --at-signal-deep: #095e5e;
-  --at-warn: #c45c26;
-  --at-line: #c8d2e0;
-  --at-panel: #e8eef6;
-  --background: var(--at-paper);
-  --foreground: var(--at-ink);
+  --at-ink: #05080f;
+  --at-panel: #0c121c;
+  --at-panel-2: #121a28;
+  --at-line: #243047;
+  --at-muted: #8b9bb3;
+  --at-soft: #d2dbe8;
+  --at-signal: #2ef0d0;
+  --at-signal-deep: #12c4a8;
+  --at-warn: #ff7a3d;
+  --background: var(--at-ink);
+  --foreground: var(--at-soft);
 }
 
 @theme inline {
@@ -36,31 +37,30 @@ body {
 
 .at-radar {
   background:
-    radial-gradient(ellipse 90% 70% at 50% -10%, rgba(12, 124, 124, 0.16), transparent 55%),
-    radial-gradient(ellipse 50% 40% at 100% 40%, rgba(196, 92, 38, 0.08), transparent 50%),
-    radial-gradient(circle at 20% 80%, rgba(12, 124, 124, 0.08), transparent 45%),
-    linear-gradient(180deg, #f7f9fc 0%, #eef2f8 50%, #e6ecf5 100%);
+    radial-gradient(ellipse 90% 70% at 55% 0%, rgba(46, 240, 208, 0.14), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 100% 50%, rgba(255, 122, 61, 0.1), transparent 50%),
+    linear-gradient(180deg, #05080f 0%, #0a101a 55%, #070b12 100%);
 }
 
 .at-rings {
   background-image: radial-gradient(
-    circle at center,
-    transparent 28%,
-    rgba(12, 124, 124, 0.07) 29%,
-    transparent 30%,
-    transparent 48%,
-    rgba(12, 124, 124, 0.06) 49%,
-    transparent 50%,
-    transparent 68%,
-    rgba(11, 18, 32, 0.05) 69%,
-    transparent 70%
+    circle at 70% 40%,
+    transparent 18%,
+    rgba(46, 240, 208, 0.07) 19%,
+    transparent 20%,
+    transparent 38%,
+    rgba(46, 240, 208, 0.05) 39%,
+    transparent 40%,
+    transparent 58%,
+    rgba(255, 255, 255, 0.03) 59%,
+    transparent 60%
   );
 }
 
 @keyframes at-rise {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -83,7 +83,7 @@ body {
     opacity: 1;
   }
   50% {
-    opacity: 0.35;
+    opacity: 0.4;
   }
 }
 
@@ -104,7 +104,7 @@ body {
 }
 
 .at-sweep {
-  animation: at-sweep 12s linear infinite;
+  animation: at-sweep 14s linear infinite;
   transform-origin: center;
 }
 

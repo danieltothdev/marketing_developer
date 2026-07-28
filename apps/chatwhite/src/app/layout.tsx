@@ -17,20 +17,13 @@ export const metadata: Metadata = {
   title: "ChatWhite — Magyar AI chatbot, ami leadet gyűjt, amíg te alszol",
   description:
     "Beágyazható, magyar nyelvű AI chatbot KKV-knak. 24/7 válaszol, összegyűjti a megkereséseket, azonnal értesít. 14 nap próba, bankkártya nélkül.",
-  keywords: [
-    "AI chatbot",
-    "magyar chatbot",
-    "KKV chatbot",
-    "lead gyűjtés",
-    "white-label chatbot",
-    "weboldal chatbot",
-  ],
   openGraph: {
     title: "ChatWhite — Lead gyűjtés, amíg te alszol",
     description:
       "Egy sor kód. Magyar AI. Azonnali értesítés minden megkeresésről.",
     locale: "hu_HU",
     type: "website",
+    images: [{ url: "/images/chatwhite-hero.webp" }],
   },
   robots: { index: true, follow: true },
 };

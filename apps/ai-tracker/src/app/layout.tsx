@@ -17,21 +17,13 @@ export const metadata: Metadata = {
   title: "AI Tracker HU — Megjelenik-e a céged a ChatGPT válaszaiban?",
   description:
     "Magyar AI kereső monitor: ChatGPT, Perplexity, Gemini, Google AI. Látod, kit ajánlanak helyetted — és mit kell javítanod. Első scan 14 900 Ft-tól.",
-  keywords: [
-    "AI SEO",
-    "AEO",
-    "ChatGPT láthatóság",
-    "Perplexity",
-    "AI kereső",
-    "magyar KKV",
-    "AI Tracker",
-  ],
   openGraph: {
     title: "AI Tracker HU — Ki nyer az AI keresőkben?",
     description:
       "Havi monitor: a ChatGPT a konkurenciát ajánlja, vagy téged? Magyar kulcsszavakra, javítási tervvel.",
     locale: "hu_HU",
     type: "website",
+    images: [{ url: "/images/aitracker-hero.webp" }],
   },
   robots: { index: true, follow: true },
 };
