@@ -1,0 +1,37 @@
+---
+description: TD-AI marketing ügynökség alapbeállítás — minden marketing feladatnál a marketing-skills router az első lépés. Olvasd be a .claude/product-marketing-context.md fájlt mielőtt marketing outputot generálsz.
+globs:
+alwaysApply: true
+---
+
+# Marketing-skills alap
+
+Ez a repo a **TD-AI & Marketing Ügynökség** (tdaimarketing.hu) munkaterülete.
+
+## Alapértelmezett viselkedés
+
+1. **Marketing feladat** → indulj a `marketing-skills` skill-lel (`.cursor/skills/marketing-skills/SKILL.md`)
+2. **Olvasd be** `.claude/product-marketing-context.md` — brand voice, ICP, versenytársak, árak
+3. **Egy skill / feladat** — ne tölts be egyszerre több marketing skill-t
+4. **Nem egyértelmű kérés** → `marketing-ops` routing
+5. **Nyelv** → magyar (kivéve ha a user mást kér)
+
+## TD-AI prioritások
+
+- Ajánlatkérés és bevétel mérése — nem csak kattintás
+- KKV célcsoport, Debrecen + országos
+- Konkrét számok, őszinte kommunikáció
+- Szolgáltatások: Google Ads, Meta, landing, AI chatbot, automatizáció, SEO
+
+## Gyors route
+
+| Feladat | Skill |
+|---------|-------|
+| SEO audit | seo-audit |
+| Helyi SEO | local-seo-manager |
+| AEO / AI kereső | aeo |
+| PPC | paid-ads |
+| Tartalom | content-production |
+| CRO | page-cro |
+| Analitika | analytics-tracking |
+| Ajánlat | contract-and-proposal-writer |
