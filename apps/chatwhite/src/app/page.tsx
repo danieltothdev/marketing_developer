@@ -235,7 +235,7 @@ export default function Home() {
         </Link>
       </header>
 
-      {/* HERO — stacked until xl so copy never overlaps the visual */}
+      {/* HERO — CSS animation + copy with fixed line breaks (no mid-word wrap) */}
       <section className="cw-hero-wash relative isolate overflow-hidden">
         <div className="cw-noise pointer-events-none absolute inset-0" aria-hidden />
         <div
@@ -247,27 +247,28 @@ export default function Home() {
           aria-hidden
         />
 
-        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-8 xl:grid xl:grid-cols-2 xl:items-start xl:gap-12 xl:pb-20">
-          <div className="min-w-0 max-w-2xl xl:max-w-none">
+        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 lg:pb-20">
+          <div className="min-w-0">
             <p className="cw-rise mb-4 text-sm font-bold uppercase tracking-[0.24em] text-[var(--cw-lime)]">
-              <Brand className="text-sm tracking-[0.08em]" /> · KKV chatbot
+              <Brand className="text-sm tracking-[0.08em]" />
             </p>
-            <h1 className="cw-rise cw-rise-1 font-display text-[clamp(2.15rem,4.2vw,3.75rem)] font-extrabold leading-[1.08] tracking-tight break-words text-white">
-              A hétvégi megkeresés{" "}
-              <span className="text-[var(--cw-lime)]">
-                ne a konkurenciához menjen.
+            <h1 className="cw-rise cw-rise-1 cw-h1 font-display text-[clamp(1.85rem,3.6vw,3.35rem)] font-extrabold leading-[1.15] tracking-tight text-white">
+              <span className="cw-h1-line">Este is jön</span>
+              <span className="cw-h1-line">a megkeresés.</span>
+              <span className="cw-h1-line text-[var(--cw-lime)]">
+                Ne a riválisé legyen.
               </span>
             </h1>
-            <p className="cw-rise cw-rise-2 mt-6 max-w-xl text-lg leading-relaxed text-[var(--cw-muted)] md:text-xl">
-              Magyar AI a weboldaladon: válaszol, leadet gyűjt, azonnal értesít —
-              akkor is, ha te alszol.
+            <p className="cw-rise cw-rise-2 mt-6 max-w-lg text-lg leading-relaxed text-[var(--cw-muted)] md:text-xl">
+              Magyar AI a weboldaladon. Válaszol, leadet gyűjt, azonnal értesít.
+              Akkor is, ha te alszol.
             </p>
             <div className="cw-rise cw-rise-3 mt-9 flex flex-wrap items-center gap-4">
               <Link
                 href="/dashboard"
                 className="inline-flex items-center justify-center rounded-md bg-[var(--cw-lime)] px-7 py-3.5 text-base font-bold text-[var(--cw-ink)] transition hover:bg-white"
               >
-                Indítsd a 14 napos próbát
+                14 napos próba
               </Link>
               <a
                 href="#how"
@@ -277,52 +278,31 @@ export default function Home() {
               </a>
             </div>
             <p className="cw-rise cw-rise-3 mt-4 text-sm text-[var(--cw-muted)]">
-              Bankkártya nélkül · 1 sor kód · Bármikor lemondható
+              Bankkártya nélkül · 1 sor kód · Bármikor leállítható
             </p>
           </div>
 
-          <div className="cw-rise cw-rise-2 relative min-w-0 w-full shrink-0 space-y-4">
-            {/* Clear animated photo — no overlays on the image */}
-            <div className="cw-hero-frame relative overflow-hidden rounded-xl border border-[var(--cw-line)]">
-              <div className="overflow-hidden">
-                <Image
-                  src="/images/chatwhite-hero.webp"
-                  alt="ChatWhite AI chatbot használat éjszakai irodában laptopon"
-                  width={1120}
-                  height={700}
-                  priority
-                  sizes="(max-width: 1280px) 100vw, 560px"
-                  className="cw-hero-img h-auto w-full object-cover"
-                />
+          <div className="cw-rise cw-rise-2 relative min-w-0 w-full" aria-hidden>
+            <div className="cw-anim-stage">
+              <div className="cw-anim-orbit">
+                <span className="cw-anim-dot" />
               </div>
+              <div className="cw-anim-orbit cw-anim-orbit-2">
+                <span className="cw-anim-dot cw-anim-dot-coral" />
+              </div>
+              <div className="cw-anim-bubble-a">
+                Holnap tudnátok jönni Debrecenbe?
+              </div>
+              <div className="cw-anim-bubble-b">
+                Igen, 9–12 vagy 14–17 között.
+              </div>
+              <div className="cw-anim-bubble-c">
+                Szuper. A számom: 06 30…
+              </div>
+              <div className="cw-anim-pulse" />
             </div>
-
-            {/* Separate product mockup — not layered on the photo */}
-            <div className="rounded-xl border border-[var(--cw-line)] bg-[var(--cw-panel)] p-4 shadow-[0_20px_50px_-30px_rgba(200,255,61,0.25)]">
-              <div className="mb-3 flex items-center justify-between gap-2 text-xs text-[var(--cw-muted)]">
-                <span className="flex items-center gap-2 font-medium text-white">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--cw-lime)]" />
-                  Élő a weboldalon
-                </span>
-                <span>Szombat 22:41</span>
-              </div>
-              <div className="space-y-2 text-xs leading-relaxed sm:text-sm">
-                <p className="cw-bubble max-w-[95%] rounded-2xl rounded-tl-sm bg-white/10 px-3 py-2 text-white/90">
-                  Klímaszerelést keresek Debrecenben. Holnap tudnátok jönni?
-                </p>
-                <p className="cw-bubble cw-bubble-2 ml-auto max-w-[92%] rounded-2xl rounded-tr-sm bg-[var(--cw-lime)]/20 px-3 py-2 text-[var(--cw-lime)]">
-                  Igen — 9–12 vagy 14–17. Milyen típusú klímáról van szó?
-                </p>
-                <p className="cw-bubble cw-bubble-3 max-w-[88%] rounded-2xl rounded-tl-sm bg-white/10 px-3 py-2 text-white/90">
-                  Split, 3,5 kW. Telefonom: 06 30 …
-                </p>
-              </div>
-              <p className="mt-3 border-t border-[var(--cw-line)] pt-3 text-[10px] font-semibold uppercase tracking-wider text-[var(--cw-lime)]">
-                Lead mentve · Email elküldve · 12 mp
-              </p>
-            </div>
-            <p className="text-center text-xs text-[var(--cw-muted)] xl:text-right">
-              Tipikus este: érdeklődő ír → bot kérdez → te reggel visszahívod
+            <p className="mt-3 text-center text-xs text-[var(--cw-muted)] lg:text-right">
+              Élő chat animáció · lead 12 mp alatt
             </p>
           </div>
         </div>
@@ -357,6 +337,37 @@ export default function Home() {
             összegyűjti a leadet (név, telefon, email), és azonnal értesít emaillel.
             Ára 7 990 Ft/hó-tól indul; 14 napos próba bankkártya nélkül elérhető.
           </p>
+        </div>
+      </section>
+
+      <section className="border-b border-[var(--cw-line)] bg-[var(--cw-panel)]">
+        <div className="mx-auto grid max-w-6xl gap-4 px-6 py-12 md:grid-cols-2">
+          <figure className="overflow-hidden rounded-xl border border-[var(--cw-line)]">
+            <Image
+              src="/images/chatwhite-hero.webp"
+              alt="Éjszakai iroda laptoppal: a ChatWhite bot dolgozik helyetted"
+              width={1120}
+              height={700}
+              sizes="(max-width: 768px) 100vw, 560px"
+              className="h-auto w-full object-cover"
+            />
+            <figcaption className="px-4 py-3 text-sm text-[var(--cw-muted)]">
+              Este is fut a weboldalad. A bot is.
+            </figcaption>
+          </figure>
+          <figure className="overflow-hidden rounded-xl border border-[var(--cw-line)]">
+            <Image
+              src="/images/chatwhite-phone.webp"
+              alt="Telefonos chat: érdeklődő és ChatWhite beszélgetés"
+              width={900}
+              height={700}
+              sizes="(max-width: 768px) 100vw, 560px"
+              className="h-auto w-full object-cover"
+            />
+            <figcaption className="px-4 py-3 text-sm text-[var(--cw-muted)]">
+              Lead a telefonodon: név, szám, üzenet.
+            </figcaption>
+          </figure>
         </div>
       </section>
 

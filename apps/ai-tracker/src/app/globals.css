@@ -141,12 +141,147 @@ body {
   opacity: 0.9;
 }
 
+.at-h1 {
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.at-h1-line {
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .at-h1-line {
+    white-space: normal;
+  }
+}
+
+/* Animated radar hero */
+.at-anim-stage {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid var(--at-line);
+  background:
+    radial-gradient(circle at center, rgba(46, 240, 208, 0.08), transparent 55%),
+    linear-gradient(165deg, #0a121c, #05080f 70%);
+}
+
+.at-anim-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(46, 240, 208, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 240, 208, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
+}
+
+.at-anim-scope {
+  position: absolute;
+  inset: 14%;
+  border-radius: 50%;
+  border: 1px solid rgba(46, 240, 208, 0.25);
+}
+
+.at-anim-scope::before,
+.at-anim-scope::after {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  border: 1px solid rgba(46, 240, 208, 0.18);
+}
+
+.at-anim-scope::after {
+  inset: 36%;
+  border-color: rgba(46, 240, 208, 0.28);
+}
+
+.at-anim-beam {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 48%;
+  height: 2px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, rgba(46, 240, 208, 0.85), transparent);
+  animation: at-beam 3.2s linear infinite;
+  box-shadow: 0 0 18px rgba(46, 240, 208, 0.45);
+}
+
+@keyframes at-beam {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.at-anim-blip {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--at-signal);
+  box-shadow: 0 0 12px rgba(46, 240, 208, 0.8);
+  animation: at-blip 2.8s ease-in-out infinite;
+}
+
+.at-anim-blip-1 {
+  top: 28%;
+  left: 62%;
+}
+
+.at-anim-blip-2 {
+  top: 55%;
+  left: 30%;
+  animation-delay: 0.7s;
+  background: var(--at-warn);
+  box-shadow: 0 0 12px rgba(255, 122, 61, 0.8);
+}
+
+.at-anim-blip-3 {
+  top: 40%;
+  left: 48%;
+  animation-delay: 1.4s;
+}
+
+@keyframes at-blip {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.7);
+  }
+  40%,
+  60% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.at-anim-label {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(46, 240, 208, 0.75);
+  white-space: nowrap;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .at-rise,
   .at-sweep,
   .at-blink,
   .at-hero-frame,
-  .at-hero-img {
+  .at-hero-img,
+  .at-anim-beam,
+  .at-anim-blip {
     animation: none;
   }
 }

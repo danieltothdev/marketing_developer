@@ -215,29 +215,30 @@ export default function Home() {
         </Link>
       </header>
 
-      {/* HERO — stack until xl to prevent copy/visual overlap */}
+      {/* HERO — radar animation + fixed headline lines */}
       <section className="at-radar relative isolate overflow-hidden">
         <div className="at-rings absolute inset-0" aria-hidden />
 
-        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-8 xl:grid xl:grid-cols-2 xl:items-start xl:gap-12 xl:pb-20">
-          <div className="min-w-0 max-w-2xl xl:max-w-none">
+        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 lg:pb-20">
+          <div className="min-w-0">
             <p className="at-rise mb-5 text-sm font-bold uppercase tracking-[0.22em] text-[var(--at-signal)]">
-              AI Tracker HU · Első magyar AI kereső monitor
+              AI Tracker HU
             </p>
-            <h1 className="at-rise at-rise-1 font-serif text-[clamp(2.15rem,4.2vw,3.75rem)] font-bold leading-[1.1] tracking-tight break-words text-white">
-              A ChatGPT a konkurenciát ajánlja.{" "}
-              <span className="text-[var(--at-warn)]">Téged nem.</span>
+            <h1 className="at-rise at-rise-1 at-h1 font-serif text-[clamp(1.85rem,3.6vw,3.35rem)] font-bold leading-[1.18] tracking-tight text-white">
+              <span className="at-h1-line">A ChatGPT</span>
+              <span className="at-h1-line">mást ajánl.</span>
+              <span className="at-h1-line text-[var(--at-warn)]">Téged nem.</span>
             </h1>
-            <p className="at-rise at-rise-2 mt-6 max-w-xl text-lg leading-relaxed text-[var(--at-muted)] md:text-xl">
-              Havi monitor magyar kulcsszavakra: megjelenik-e a céged a ChatGPT,
-              Perplexity, Gemini és Google AI válaszaiban — és kit említ helyetted.
+            <p className="at-rise at-rise-2 mt-6 max-w-lg text-lg leading-relaxed text-[var(--at-muted)] md:text-xl">
+              Havi monitor magyar kulcsszavakra. ChatGPT, Perplexity, Gemini,
+              Google AI. Látod, kit említ helyetted.
             </p>
             <div className="at-rise at-rise-3 mt-9 flex flex-wrap items-center gap-4">
               <Link
                 href="/dashboard"
                 className="inline-flex rounded-md bg-[var(--at-signal)] px-7 py-3.5 text-base font-bold text-[var(--at-ink)] transition hover:bg-white"
               >
-                Kérem az első AI auditot
+                Első AI audit
               </Link>
               <a
                 href="#pricing"
@@ -247,42 +248,36 @@ export default function Home() {
               </a>
             </div>
             <p className="at-rise at-rise-3 mt-4 text-sm text-[var(--at-muted)]">
-              Első scan 14 900 Ft · PDF riport · Javítási terv
+              14 900 Ft · PDF riport · Javítási terv
             </p>
           </div>
 
-          <div className="at-rise at-rise-2 relative min-w-0 w-full shrink-0 space-y-4">
-            <div className="at-hero-frame overflow-hidden rounded-xl border border-[var(--at-line)]">
-              <div className="overflow-hidden">
-                <Image
-                  src="/images/aitracker-hero.webp"
-                  alt="AI Tracker HU — AI kereső láthatóság dashboard monitor"
-                  width={1120}
-                  height={700}
-                  priority
-                  sizes="(max-width: 1280px) 100vw, 560px"
-                  className="at-hero-img h-auto w-full object-cover"
-                />
+          <div className="at-rise at-rise-2 relative min-w-0 w-full space-y-4">
+            <div className="at-anim-stage" aria-hidden>
+              <div className="at-anim-grid" />
+              <div className="at-anim-scope">
+                <div className="at-anim-beam" />
+                <span className="at-anim-blip at-anim-blip-1" />
+                <span className="at-anim-blip at-anim-blip-2" />
+                <span className="at-anim-blip at-anim-blip-3" />
               </div>
+              <p className="at-anim-label">AI kereső radar</p>
             </div>
-
             <div className="rounded-xl border border-[var(--at-line)] bg-[var(--at-panel)] p-3 sm:p-4">
-              <div className="mb-2 flex items-center justify-between gap-2 text-[10px] sm:text-xs">
-                <span className="truncate text-white/70">
-                  Prompt: „legjobb klímaszerelő Debrecen”
-                </span>
-                <span className="at-blink shrink-0 font-bold text-[var(--at-warn)]">
-                  Te: hiányzol
+              <div className="mb-2 flex items-center justify-between gap-2 text-xs">
+                <span className="text-white/70">„legjobb szerelő Debrecen”</span>
+                <span className="at-blink font-bold text-[var(--at-warn)]">
+                  Te: 0/4
                 </span>
               </div>
               {[
-                { name: "Kovács Klíma Kft.", ok: true },
-                { name: "Debrecen Cool Service", ok: true },
+                { name: "Kovács Klíma", ok: true },
+                { name: "Cool Service", ok: true },
                 { name: "A te céged", ok: false },
               ].map((row) => (
                 <div
                   key={row.name}
-                  className={`flex items-center justify-between rounded-md px-2 py-1.5 text-xs sm:text-sm ${
+                  className={`flex items-center justify-between rounded-md px-2 py-1.5 text-sm ${
                     row.ok
                       ? "text-white/80"
                       : "bg-[var(--at-warn)]/20 text-[#ffc9a8]"
@@ -290,7 +285,7 @@ export default function Home() {
                 >
                   <span>{row.name}</span>
                   <span className="text-[10px] font-bold uppercase tracking-wide">
-                    {row.ok ? "említve" : "0/4"}
+                    {row.ok ? "említve" : "hiányzol"}
                   </span>
                 </div>
               ))}
@@ -312,6 +307,37 @@ export default function Home() {
               </span>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-[var(--at-line)] bg-[var(--at-ink)]">
+        <div className="mx-auto grid max-w-6xl gap-4 px-6 py-12 md:grid-cols-2">
+          <figure className="overflow-hidden rounded-xl border border-[var(--at-line)]">
+            <Image
+              src="/images/aitracker-hero.webp"
+              alt="AI láthatóság dashboard: AI Tracker HU monitor"
+              width={1120}
+              height={700}
+              sizes="(max-width: 768px) 100vw, 560px"
+              className="h-auto w-full object-cover"
+            />
+            <figcaption className="px-4 py-3 text-sm text-[var(--at-muted)]">
+              Dashboard: platformonkénti említések.
+            </figcaption>
+          </figure>
+          <figure className="overflow-hidden rounded-xl border border-[var(--at-line)]">
+            <Image
+              src="/images/aitracker-radar.webp"
+              alt="Versenytárs radar: ki jelenik meg az AI válaszokban"
+              width={1120}
+              height={700}
+              sizes="(max-width: 768px) 100vw, 560px"
+              className="h-auto w-full object-cover"
+            />
+            <figcaption className="px-4 py-3 text-sm text-[var(--at-muted)]">
+              Ki van a radaron, és ki esik ki.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
