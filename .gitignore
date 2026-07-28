@@ -1,2 +1,8 @@
 # Source clone used for conversion — not needed in repo
 claude-skills/
+
+# SaaS apps
+apps/*/node_modules/
+apps/*/.next/
+apps/*/out/
+apps/*/.env.local
