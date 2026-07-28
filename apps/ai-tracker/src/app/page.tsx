@@ -79,24 +79,95 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://aitracker.hu/#organization",
+      name: "AI Tracker HU",
+      url: "https://aitracker.hu",
+      logo: "https://aitracker.hu/images/aitracker-hero.webp",
+      parentOrganization: {
+        "@type": "Organization",
+        name: "TD-AI & Marketing",
+        url: "https://tdaimarketing.hu",
+        telephone: "+36-30-352-7975",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+36-30-352-7975",
+        contactType: "customer service",
+        availableLanguage: ["Hungarian"],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitracker.hu/#website",
+      url: "https://aitracker.hu",
+      name: "AI Tracker HU",
+      inLanguage: "hu-HU",
+      publisher: { "@id": "https://aitracker.hu/#organization" },
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aitracker.hu/#webpage",
+      url: "https://aitracker.hu",
+      name: "AI Tracker HU — AI kereső láthatóság monitor",
+      isPartOf: { "@id": "https://aitracker.hu/#website" },
+      about: { "@id": "https://aitracker.hu/#software" },
+      inLanguage: "hu-HU",
+    },
+    {
       "@type": "SoftwareApplication",
+      "@id": "https://aitracker.hu/#software",
       name: "AI Tracker HU",
       applicationCategory: "BusinessApplication",
+      applicationSubCategory: "AI SEO / AEO Monitor",
       operatingSystem: "Web",
       inLanguage: "hu-HU",
       description:
-        "Magyar AI kereső láthatóság monitor: ChatGPT, Perplexity, Gemini és Google AI említések mérése kulcsszavanként.",
+        "Magyar AI kereső láthatóság monitor: ChatGPT, Perplexity, Gemini és Google AI említések mérése kulcsszavanként, versenytárs listával és javítási tervvel.",
+      featureList: [
+        "ChatGPT említés monitor",
+        "Perplexity scan",
+        "Gemini és Google AI",
+        "Magyar kulcsszavak",
+        "PDF riport és javítási terv",
+      ],
       offers: {
         "@type": "AggregateOffer",
         lowPrice: "14900",
         highPrice: "79900",
         priceCurrency: "HUF",
+        offerCount: "3",
+        availability: "https://schema.org/InStock",
+        url: "https://aitracker.hu/#pricing",
       },
-      provider: {
-        "@type": "Organization",
-        name: "TD-AI & Marketing",
-        url: "https://tdaimarketing.hu",
-      },
+      provider: { "@id": "https://aitracker.hu/#organization" },
+    },
+    {
+      "@type": "HowTo",
+      name: "Hogyan mérd az AI kereső láthatóságodat",
+      description:
+        "Domain és kulcsszavak beállítása után AI Tracker HU scanneli a fő AI platformokat.",
+      totalTime: "PT10M",
+      step: [
+        {
+          "@type": "HowToStep",
+          position: 1,
+          name: "Beállítod, mit figyeljünk",
+          text: "Domain, márkanév és 5–10 magyar kulcsszó.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 2,
+          name: "Scan a 4 AI platformon",
+          text: "ChatGPT, Perplexity, Gemini, Google AI — említés és versenytársak.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 3,
+          name: "Dashboard + PDF + teendők",
+          text: "Trend, versenytárs lista és konkrét javítási lépések.",
+        },
+      ],
     },
     {
       "@type": "FAQPage",
@@ -180,48 +251,49 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="at-rise at-rise-2 relative min-w-0 w-full shrink-0">
-            <div className="relative w-full overflow-hidden rounded-xl border border-[var(--at-line)] shadow-[0_30px_80px_-36px_rgba(46,240,208,0.4)]">
-              <Image
-                src="/images/aitracker-hero.webp"
-                alt="AI Tracker dashboard — AI kereső láthatóság radar"
-                width={1120}
-                height={700}
-                priority
-                sizes="(max-width: 1280px) 100vw, 560px"
-                className="h-auto w-full object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[var(--at-ink)] via-[var(--at-ink)]/80 to-transparent p-3 pt-14 sm:p-4">
-                <div className="overflow-hidden rounded-lg border border-white/10 bg-[var(--at-ink)]/90 p-2 backdrop-blur-md sm:p-3">
-                  <div className="mb-2 flex items-center justify-between gap-2 text-[10px] sm:text-xs">
-                    <span className="truncate text-white/70">
-                      „legjobb klímaszerelő Debrecen”
-                    </span>
-                    <span className="at-blink shrink-0 font-bold text-[var(--at-warn)]">
-                      Te: hiányzol
-                    </span>
-                  </div>
-                  {[
-                    { name: "Kovács Klíma Kft.", ok: true },
-                    { name: "Debrecen Cool Service", ok: true },
-                    { name: "A te céged", ok: false },
-                  ].map((row) => (
-                    <div
-                      key={row.name}
-                      className={`flex items-center justify-between rounded-md px-2 py-1.5 text-xs sm:text-sm ${
-                        row.ok
-                          ? "text-white/80"
-                          : "bg-[var(--at-warn)]/20 text-[#ffc9a8]"
-                      }`}
-                    >
-                      <span>{row.name}</span>
-                      <span className="text-[10px] font-bold uppercase tracking-wide">
-                        {row.ok ? "említve" : "0/4"}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+          <div className="at-rise at-rise-2 relative min-w-0 w-full shrink-0 space-y-4">
+            <div className="at-hero-frame overflow-hidden rounded-xl border border-[var(--at-line)]">
+              <div className="overflow-hidden">
+                <Image
+                  src="/images/aitracker-hero.webp"
+                  alt="AI Tracker HU — AI kereső láthatóság dashboard monitor"
+                  width={1120}
+                  height={700}
+                  priority
+                  sizes="(max-width: 1280px) 100vw, 560px"
+                  className="at-hero-img h-auto w-full object-cover"
+                />
               </div>
+            </div>
+
+            <div className="rounded-xl border border-[var(--at-line)] bg-[var(--at-panel)] p-3 sm:p-4">
+              <div className="mb-2 flex items-center justify-between gap-2 text-[10px] sm:text-xs">
+                <span className="truncate text-white/70">
+                  Prompt: „legjobb klímaszerelő Debrecen”
+                </span>
+                <span className="at-blink shrink-0 font-bold text-[var(--at-warn)]">
+                  Te: hiányzol
+                </span>
+              </div>
+              {[
+                { name: "Kovács Klíma Kft.", ok: true },
+                { name: "Debrecen Cool Service", ok: true },
+                { name: "A te céged", ok: false },
+              ].map((row) => (
+                <div
+                  key={row.name}
+                  className={`flex items-center justify-between rounded-md px-2 py-1.5 text-xs sm:text-sm ${
+                    row.ok
+                      ? "text-white/80"
+                      : "bg-[var(--at-warn)]/20 text-[#ffc9a8]"
+                  }`}
+                >
+                  <span>{row.name}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wide">
+                    {row.ok ? "említve" : "0/4"}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

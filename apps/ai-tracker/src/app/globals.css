@@ -87,6 +87,25 @@ body {
   }
 }
 
+@keyframes at-kenburns {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.12) translate3d(2%, -1%, 0);
+  }
+}
+
+@keyframes at-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
 .at-rise {
   animation: at-rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -112,10 +131,22 @@ body {
   animation: at-blink 2s ease-in-out infinite;
 }
 
+.at-hero-frame {
+  animation: at-float 8s ease-in-out infinite;
+}
+
+.at-hero-img {
+  animation: at-kenburns 24s ease-in-out infinite alternate;
+  will-change: transform;
+  opacity: 0.9;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .at-rise,
   .at-sweep,
-  .at-blink {
+  .at-blink,
+  .at-hero-frame,
+  .at-hero-img {
     animation: none;
   }
 }

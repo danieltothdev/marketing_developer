@@ -1,0 +1,23 @@
+# ChatWhite
+
+> Magyar AI chatbot SaaS KKV-knak — 24/7 lead gyűjtés a weboldalon.
+
+ChatWhite egy beágyazható, magyar nyelvű AI chatbot. Egy sor kóddal felkerül a weboldaladra, válaszol a szolgáltatásaidról, leadet gyűjt, és azonnal emailt küld.
+
+## Kulcsinformációk
+
+- Tulajdonos: TD-AI & Marketing (https://tdaimarketing.hu)
+- Célközönség: magyar KKV-k, helyi szolgáltatók, marketing ügynökségek (white-label)
+- Nyelv: magyar
+- Induló ár: 7 990 Ft/hó (Start)
+- Próba: 14 nap, bankkártya nélkül
+
+## Fontos oldalak
+
+- [Kezdőlap](https://chatwhite.hu/)
+- [Árazás](https://chatwhite.hu/#pricing): /pricing.md
+- [TD-AI Marketing](https://tdaimarketing.hu)
+
+## Opcionális
+
+- Partner (white-label) csomag: 99 990 Ft/hó, 20 chatbot

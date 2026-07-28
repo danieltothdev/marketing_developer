@@ -84,32 +84,111 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://chatwhite.hu/#organization",
+      name: "ChatWhite",
+      url: "https://chatwhite.hu",
+      logo: "https://chatwhite.hu/images/chatwhite-hero.webp",
+      parentOrganization: {
+        "@type": "Organization",
+        name: "TD-AI & Marketing",
+        url: "https://tdaimarketing.hu",
+        telephone: "+36-30-352-7975",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+36-30-352-7975",
+        contactType: "customer service",
+        availableLanguage: ["Hungarian"],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://chatwhite.hu/#website",
+      url: "https://chatwhite.hu",
+      name: "ChatWhite",
+      inLanguage: "hu-HU",
+      publisher: { "@id": "https://chatwhite.hu/#organization" },
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://chatwhite.hu/#webpage",
+      url: "https://chatwhite.hu",
+      name: "ChatWhite — Magyar AI chatbot KKV-knak",
+      isPartOf: { "@id": "https://chatwhite.hu/#website" },
+      about: { "@id": "https://chatwhite.hu/#software" },
+      inLanguage: "hu-HU",
+    },
+    {
       "@type": "SoftwareApplication",
+      "@id": "https://chatwhite.hu/#software",
       name: "ChatWhite",
       applicationCategory: "BusinessApplication",
+      applicationSubCategory: "AI Chatbot",
       operatingSystem: "Web",
       inLanguage: "hu-HU",
       description:
-        "Magyar nyelvű, beágyazható AI chatbot KKV-knak — 24/7 lead gyűjtés és azonnali értesítés.",
+        "Magyar nyelvű, beágyazható AI chatbot KKV-knak — 24/7 lead gyűjtés, azonnali email értesítés, white-label partner opció.",
+      featureList: [
+        "Magyar AI válaszok",
+        "Lead gyűjtés",
+        "Email értesítés",
+        "1 soros beágyazás",
+        "White-label partner csomag",
+      ],
       offers: [
         {
           "@type": "Offer",
           name: "Start",
           price: "7990",
           priceCurrency: "HUF",
+          availability: "https://schema.org/InStock",
+          url: "https://chatwhite.hu/#pricing",
         },
         {
           "@type": "Offer",
           name: "Pro",
           price: "14990",
           priceCurrency: "HUF",
+          availability: "https://schema.org/InStock",
+          url: "https://chatwhite.hu/#pricing",
+        },
+        {
+          "@type": "Offer",
+          name: "Partner",
+          price: "99990",
+          priceCurrency: "HUF",
+          availability: "https://schema.org/InStock",
+          url: "https://chatwhite.hu/#pricing",
         },
       ],
-      provider: {
-        "@type": "Organization",
-        name: "TD-AI & Marketing",
-        url: "https://tdaimarketing.hu",
-      },
+      provider: { "@id": "https://chatwhite.hu/#organization" },
+    },
+    {
+      "@type": "HowTo",
+      name: "Hogyan indíts ChatWhite chatbotot",
+      description: "Három lépésben élő magyar AI chatbot a weboldaladon.",
+      totalTime: "PT15M",
+      step: [
+        {
+          "@type": "HowToStep",
+          position: 1,
+          name: "Regisztrálj és tanítsd",
+          text: "Megadod a szolgáltatásokat, területeket és hangnemet — kb. 10 perc.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 2,
+          name: "Beágyazod a scriptet",
+          text: "Egy sor kódot teszél a weboldaladra; a widget megjelenik.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 3,
+          name: "Lead érkezik — te hívsz",
+          text: "Azonnali email értesítést kapsz; visszahívod, amikor neked jó.",
+        },
+      ],
     },
     {
       "@type": "FAQPage",
@@ -202,41 +281,47 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="cw-rise cw-rise-2 relative min-w-0 w-full shrink-0">
-            <div className="relative w-full overflow-hidden rounded-xl border border-[var(--cw-line)] shadow-[0_30px_80px_-40px_rgba(200,255,61,0.35)]">
-              <Image
-                src="/images/chatwhite-hero.webp"
-                alt="ChatWhite chatbot éjszakai irodában — laptopon élő chat widget"
-                width={1120}
-                height={700}
-                priority
-                sizes="(max-width: 1280px) 100vw, 560px"
-                className="h-auto w-full object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[var(--cw-ink)] via-[var(--cw-ink)]/70 to-transparent p-4 pt-16 sm:p-5">
-                <div className="rounded-lg border border-white/10 bg-[var(--cw-ink)]/90 p-3 backdrop-blur-md">
-                  <div className="mb-2 flex items-center justify-between gap-2 text-[10px] text-white/55 sm:text-xs">
-                    <span className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--cw-lime)]" />
-                      Élő a weboldalon
-                    </span>
-                    <span>Szombat 22:41</span>
-                  </div>
-                  <div className="space-y-2 text-xs leading-relaxed sm:text-sm">
-                    <p className="cw-bubble max-w-[95%] rounded-2xl rounded-tl-sm bg-white/10 px-3 py-2 text-white/90">
-                      Klímaszerelést keresek Debrecenben. Holnap tudnátok jönni?
-                    </p>
-                    <p className="cw-bubble cw-bubble-2 ml-auto max-w-[92%] rounded-2xl rounded-tr-sm bg-[var(--cw-lime)]/20 px-3 py-2 text-[var(--cw-lime)]">
-                      Igen — 9–12 vagy 14–17. Milyen típusú klímáról van szó?
-                    </p>
-                  </div>
-                  <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-[var(--cw-lime)]">
-                    Lead mentve · Email elküldve · 12 mp
-                  </p>
-                </div>
+          <div className="cw-rise cw-rise-2 relative min-w-0 w-full shrink-0 space-y-4">
+            {/* Clear animated photo — no overlays on the image */}
+            <div className="cw-hero-frame relative overflow-hidden rounded-xl border border-[var(--cw-line)]">
+              <div className="overflow-hidden">
+                <Image
+                  src="/images/chatwhite-hero.webp"
+                  alt="ChatWhite AI chatbot használat éjszakai irodában laptopon"
+                  width={1120}
+                  height={700}
+                  priority
+                  sizes="(max-width: 1280px) 100vw, 560px"
+                  className="cw-hero-img h-auto w-full object-cover"
+                />
               </div>
             </div>
-            <p className="mt-3 text-center text-xs text-[var(--cw-muted)] xl:text-right">
+
+            {/* Separate product mockup — not layered on the photo */}
+            <div className="rounded-xl border border-[var(--cw-line)] bg-[var(--cw-panel)] p-4 shadow-[0_20px_50px_-30px_rgba(200,255,61,0.25)]">
+              <div className="mb-3 flex items-center justify-between gap-2 text-xs text-[var(--cw-muted)]">
+                <span className="flex items-center gap-2 font-medium text-white">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--cw-lime)]" />
+                  Élő a weboldalon
+                </span>
+                <span>Szombat 22:41</span>
+              </div>
+              <div className="space-y-2 text-xs leading-relaxed sm:text-sm">
+                <p className="cw-bubble max-w-[95%] rounded-2xl rounded-tl-sm bg-white/10 px-3 py-2 text-white/90">
+                  Klímaszerelést keresek Debrecenben. Holnap tudnátok jönni?
+                </p>
+                <p className="cw-bubble cw-bubble-2 ml-auto max-w-[92%] rounded-2xl rounded-tr-sm bg-[var(--cw-lime)]/20 px-3 py-2 text-[var(--cw-lime)]">
+                  Igen — 9–12 vagy 14–17. Milyen típusú klímáról van szó?
+                </p>
+                <p className="cw-bubble cw-bubble-3 max-w-[88%] rounded-2xl rounded-tl-sm bg-white/10 px-3 py-2 text-white/90">
+                  Split, 3,5 kW. Telefonom: 06 30 …
+                </p>
+              </div>
+              <p className="mt-3 border-t border-[var(--cw-line)] pt-3 text-[10px] font-semibold uppercase tracking-wider text-[var(--cw-lime)]">
+                Lead mentve · Email elküldve · 12 mp
+              </p>
+            </div>
+            <p className="text-center text-xs text-[var(--cw-muted)] xl:text-right">
               Tipikus este: érdeklődő ír → bot kérdez → te reggel visszahívod
             </p>
           </div>
@@ -256,6 +341,21 @@ export default function Home() {
           <p>
             <span className="font-semibold text-white">TD-AI Marketing</span> —
             Debrecenből, országosan
+          </p>
+        </div>
+      </section>
+
+      {/* AEO extractable answer block */}
+      <section className="border-b border-[var(--cw-line)] bg-[var(--cw-ink)]" aria-labelledby="cw-what-is">
+        <div className="mx-auto max-w-3xl px-6 py-14">
+          <h2 id="cw-what-is" className="font-display text-2xl font-bold text-white md:text-3xl">
+            Mi az a ChatWhite?
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-[var(--cw-muted)]">
+            A ChatWhite egy magyar AI chatbot SaaS KKV-knak: egy sor kóddal
+            beágyazható a weboldaladra, 24/7 magyarul válaszol a szolgáltatásaidról,
+            összegyűjti a leadet (név, telefon, email), és azonnal értesít emaillel.
+            Ára 7 990 Ft/hó-tól indul; 14 napos próba bankkártya nélkül elérhető.
           </p>
         </div>
       </section>

@@ -1,0 +1,19 @@
+# AI Tracker HU
+
+> Magyar AI kereső láthatóság monitor — ChatGPT, Perplexity, Gemini, Google AI.
+
+Az AI Tracker HU megmutatja, megjelenik-e a márkád az AI válaszokban magyar kulcsszavakra, kit ajánlanak helyetted, és milyen lépésekkel javíthatod a láthatóságodat (AEO / AI SEO).
+
+## Kulcsinformációk
+
+- Tulajdonos: TD-AI & Marketing (https://tdaimarketing.hu)
+- Célközönség: magyar KKV-k, ügynökségek
+- Platformok: ChatGPT, Perplexity, Gemini, Google AI
+- Egyszeri audit: 14 900 Ft
+- Monitor: 19 900 Ft/hó
+
+## Fontos oldalak
+
+- [Kezdőlap](https://aitracker.hu/)
+- [Árazás](https://aitracker.hu/#pricing): /pricing.md
+- [TD-AI Marketing](https://tdaimarketing.hu)

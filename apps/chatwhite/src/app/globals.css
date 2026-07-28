@@ -90,6 +90,25 @@ body {
   }
 }
 
+@keyframes cw-kenburns {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.1) translate3d(-2.5%, -1.5%, 0);
+  }
+}
+
+@keyframes cw-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 .cw-rise {
   animation: cw-rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -122,10 +141,22 @@ body {
   animation-delay: 0.55s;
 }
 
+.cw-hero-frame {
+  animation: cw-float 7s ease-in-out infinite;
+}
+
+.cw-hero-img {
+  animation: cw-kenburns 22s ease-in-out infinite alternate;
+  will-change: transform;
+  opacity: 0.92;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cw-rise,
   .cw-glow,
-  .cw-bubble {
+  .cw-bubble,
+  .cw-hero-frame,
+  .cw-hero-img {
     animation: none;
   }
 }
