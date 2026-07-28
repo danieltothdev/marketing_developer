@@ -22,6 +22,22 @@ cd apps/ai-tracker && cp .env.example .env.local && npm run dev -- -p 3001
 - [ChatWhite PRODUCT.md](apps/chatwhite/PRODUCT.md)
 - [AI Tracker PRODUCT.md](apps/ai-tracker/PRODUCT.md)
 
+## Landing oldalak (skills)
+
+Mindkét termék landingje újraírva conversion-focused struktúrával:
+
+| Skill | Használat |
+|-------|-----------|
+| `copywriting` + `copy-frameworks` | PAS / BAB headline, section flow, CTA copy |
+| `cro` | Egy primary CTA, trust near CTA, FAQ objection handling |
+| `marketing-psychology` | Loss aversion, specificity, risk reversal |
+| `pricing` | Ajánlott tier kiemelés, value metric framing |
+| `offers` | Value equation, 14 nap / audit risk reversal |
+| `schema` | SoftwareApplication + FAQPage JSON-LD |
+| `ai-seo` | Extractable answer block, comparison table (AI Tracker) |
+| `landing-page-generator` | Next.js section order, SEO meta |
+| `product-marketing` | TD-AI hang, KKV nyelv |
+
 ## Következő lépések
 
 1. Supabase/Neon DB + Drizzle schema implementálás
