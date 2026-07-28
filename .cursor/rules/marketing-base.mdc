@@ -11,10 +11,11 @@ Ez a repo a **TD-AI & Marketing Ügynökség** (tdaimarketing.hu) munkaterülete
 ## Alapértelmezett viselkedés
 
 1. **Marketing feladat** → indulj a `marketing-skills` skill-lel (`.cursor/skills/marketing-skills/SKILL.md`)
-2. **Olvasd be** `.claude/product-marketing-context.md` — brand voice, ICP, versenytársak, árak
+2. **Olvasd be** `.claude/product-marketing-context.md` és `.agents/product-marketing.md` — brand voice, ICP, versenytársak, árak
 3. **Egy skill / feladat** — ne tölts be egyszerre több marketing skill-t
 4. **Nem egyértelmű kérés** → `marketing-ops` routing
 5. **Nyelv** → magyar (kivéve ha a user mást kér)
+6. **Két könyvtár**: `.cursor/skills/` (342) + `.agents/skills/` (49 coreyhaines31) — CRO/copy/ads/SEO-nál preferáld az `.agents/skills/` verziót
 
 ## TD-AI prioritások
 

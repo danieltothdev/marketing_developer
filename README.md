@@ -37,7 +37,23 @@ Minden marketing skill ezt olvassa automatikusan.
 
 ## Cursor Skills
 
-342 skill telepítve: `.cursor/skills/` — csak ebben a repóban aktív.
+Két marketing skill könyvtár telepítve — csak ebben a repóban aktív:
+
+| Könyvtár | Hely | Db | Forrás |
+|----------|------|-----|--------|
+| claude-skills | `.cursor/skills/` | 342 | [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) |
+| marketingskills | `.agents/skills/` | 49 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) |
+
+```bash
+# marketingskills frissítés
+npx skills add coreyhaines31/marketingskills -y
+
+# Egy skill telepítése
+npx skills add coreyhaines31/marketingskills --skill cro copywriting
+
+# Elérhető skill-ek listája
+npx skills add coreyhaines31/marketingskills --list
+```
 
 ### Frissítés
 

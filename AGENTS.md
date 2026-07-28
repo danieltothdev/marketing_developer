@@ -6,9 +6,37 @@ This repository is configured for **TD-AI & Marketing Ügynökség** (https://td
 
 For any marketing-related task, start from the **marketing-skills** router (`.cursor/skills/marketing-skills/SKILL.md`):
 
-1. Read `.claude/product-marketing-context.md` before any marketing output.
+1. Read `.claude/product-marketing-context.md` and `.agents/product-marketing.md` before any marketing output.
 2. Route to **one** specialist skill per task — never bulk-load multiple skills.
 3. If the request is ambiguous, use **marketing-ops** to pick the right skill.
+
+## Skill libraries (two sources)
+
+| Library | Location | Count | Source |
+|---------|----------|-------|--------|
+| **claude-skills** | `.cursor/skills/` | 342 | alirezarezvani/claude-skills |
+| **marketingskills** | `.agents/skills/` | 49 | coreyhaines31/marketingskills |
+
+When both libraries have a similar skill, prefer **marketingskills** (`.agents/skills/`) for CRO, copy, ads, SEO — they include evals and v2 workflows. Use **claude-skills** for TD-AI-specific tools (local-seo-manager, landing, contract-and-proposal-writer, Hungarian agency workflows).
+
+### marketingskills highlights (coreyhaines31)
+
+| Task | Skill (`.agents/skills/`) |
+|------|---------------------------|
+| CRO (any page) | `cro` |
+| Google/Meta ads strategy | `ads` |
+| Ad copy at scale | `ad-creative` |
+| AI search / AEO | `ai-seo` |
+| GA4 / GTM | `analytics` |
+| Marketing plan | `marketing-plan` |
+| Expert panel review | `marketing-council` |
+| Prospecting list | `prospecting` |
+| Cold email | `cold-email` |
+| Sales deck / one-pager | `sales-enablement` |
+| Lead magnets | `lead-magnets` |
+| RevOps / MQL handoff | `revops` |
+| Short-form video | `social` |
+| AI video production | `video` |
 
 ## Routing quick reference
 
