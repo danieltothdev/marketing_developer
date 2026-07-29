@@ -1,6 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BrandedImage } from "@/components/BrandedImage";
 import { HeroVisual } from "@/components/HeroVisual";
+import { tudastarArticles } from "@/data/tudastar";
 
 function Brand({ className = "text-2xl" }: { className?: string }) {
   return (
@@ -215,6 +216,24 @@ const jsonLd = {
         acceptedAnswer: { "@type": "Answer", text: item.a },
       })),
     },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://chatwhite.hu/#tudastar",
+      name: "ChatWhite Tudástár — AI chatbot KKV-knak",
+      description:
+        "Gyakorlati útmutatók lead gyűjtéshez, éjszakai megkeresésekhez és magyar webchat beállításhoz.",
+      inLanguage: "hu-HU",
+      hasPart: tudastarArticles.map((a) => ({
+        "@type": "Article",
+        "@id": `https://chatwhite.hu/#tudastar-${a.id}`,
+        headline: a.title,
+        description: a.summary,
+        articleBody: a.answer,
+        inLanguage: "hu-HU",
+        author: { "@id": "https://chatwhite.hu/#organization" },
+        publisher: { "@id": "https://chatwhite.hu/#organization" },
+      })),
+    },
   ],
 };
 
@@ -237,6 +256,9 @@ export default function Home() {
           <a href="#how" className="hover:text-white">
             Így működik
           </a>
+          <a href="#tudastar" className="hover:text-white">
+            Tudástár
+          </a>
           <a href="#pricing" className="hover:text-white">
             Árak
           </a>
@@ -252,8 +274,8 @@ export default function Home() {
         </Link>
       </header>
 
-      {/* HERO — stock video + live chat product demo */}
-      <section className="cw-hero-wash relative isolate overflow-hidden">
+      {/* HERO — CSS animáció + élő chat demo (videó nélkül) */}
+      <section className="cw-hero-wash relative isolate overflow-hidden" aria-labelledby="cw-hero-title">
         <div className="cw-noise pointer-events-none absolute inset-0" aria-hidden />
         <div
           className="cw-glow pointer-events-none absolute -left-20 top-24 h-72 w-72 rounded-full bg-[var(--cw-lime)]/20 blur-3xl"
@@ -269,14 +291,14 @@ export default function Home() {
             <p className="cw-rise mb-4 text-sm font-bold uppercase tracking-[0.24em] text-[var(--cw-lime)]">
               <Brand className="text-sm tracking-[0.08em]" />
             </p>
-            <h1 className="cw-rise cw-rise-1 cw-h1 font-display text-[clamp(1.85rem,3.6vw,3.35rem)] font-extrabold leading-[1.15] tracking-tight text-white">
-              <span className="cw-h1-line">Este is jön</span>
-              <span className="cw-h1-line">a megkeresés.</span>
-              <span className="cw-h1-line text-[var(--cw-lime)]">
-                Ne a riválisé legyen.
-              </span>
+            <h1
+              id="cw-hero-title"
+              className="cw-rise cw-rise-1 cw-h1 font-display text-[clamp(2rem,4vw,3.5rem)] font-extrabold leading-[1.2] tracking-tight text-white"
+            >
+              Este is jön a megkeresés —{" "}
+              <span className="text-[var(--cw-lime)]">ne a riválisé legyen</span>
             </h1>
-            <p className="cw-rise cw-rise-2 mt-6 max-w-lg text-lg leading-relaxed text-[var(--cw-muted)] md:text-xl">
+            <p className="cw-rise cw-rise-2 mt-6 max-w-lg text-lg leading-relaxed text-[var(--cw-soft)] md:text-xl">
               Magyar AI a weboldaladon. Válaszol, leadet gyűjt, azonnal értesít.
               Akkor is, ha te alszol.
             </p>
@@ -349,34 +371,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--cw-line)] bg-[var(--cw-panel)]">
-        <div className="mx-auto grid max-w-6xl gap-4 px-6 py-12 md:grid-cols-2">
-          <figure className="overflow-hidden rounded-xl border border-[var(--cw-line)]">
-            <Image
+      <section className="border-b border-[var(--cw-line)] bg-[var(--cw-panel)]" aria-labelledby="cw-gallery">
+        <div className="mx-auto max-w-6xl px-6 py-12">
+          <h2 id="cw-gallery" className="sr-only">
+            ChatWhite vizuális példák
+          </h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <BrandedImage
               src="/images/chatwhite-hero.webp"
-              alt="Érdeklődő este a telefonján: megkeresés, amikor te nem vagy elérhető"
-              width={1120}
-              height={700}
-              sizes="(max-width: 768px) 100vw, 560px"
-              className="h-auto w-full object-cover"
+              alt="ChatWhite: éjszakai lead értesítés és webchat a weboldalon"
+              caption="Este is dolgozik a bot — te alszol, a lead megérkezik."
+              priority
             />
-            <figcaption className="px-4 py-3 text-sm text-[var(--cw-muted)]">
-              Este 22:40 — az ügyfél a telefonján ír. Te alszol.
-            </figcaption>
-          </figure>
-          <figure className="overflow-hidden rounded-xl border border-[var(--cw-line)]">
-            <Image
+            <BrandedImage
               src="/images/chatwhite-phone.webp"
-              alt="Vállalkozó okostelefonnal: ChatWhite lead értesítés a zsebében"
-              width={900}
-              height={700}
-              sizes="(max-width: 768px) 100vw, 560px"
-              className="h-auto w-full object-cover"
+              alt="ChatWhite lead értesítés okostelefonon — név, telefon, igény"
+              caption="Azonnali értesítés: név, telefon, üzenet a zsebedben."
             />
-            <figcaption className="px-4 py-3 text-sm text-[var(--cw-muted)]">
-              Lead a telefonodon: név, szám, üzenet — azonnal.
-            </figcaption>
-          </figure>
+          </div>
         </div>
       </section>
 
@@ -493,18 +505,14 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[var(--cw-line)]">
-            <Image
+          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-[var(--cw-line)]">
+            <BrandedImage
               src="/images/chatwhite-missed.webp"
-              alt="Telefonos értesítés: az ügyfél írt, amíg senki nem válaszolt"
+              alt="ChatWhite: elveszett esti megkeresések listája"
               fill
               sizes="(max-width: 1024px) 100vw, 520px"
-              className="object-cover"
+              badge="Este 22:41 · senki nem válaszolt"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--cw-ink)]/55 to-transparent" />
-            <p className="absolute bottom-4 left-4 rounded-md bg-[var(--cw-coral)] px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
-              Este 22:41 · senki nem válaszol
-            </p>
           </div>
         </div>
       </section>
@@ -513,13 +521,12 @@ export default function Home() {
       <section className="border-y border-[var(--cw-line)] bg-[var(--cw-panel)]">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-xl border border-[var(--cw-line)] lg:order-1">
-              <Image
-                src="/images/chatwhite-phone.webp"
-                alt="Okostelefon élő chat beszélgetéssel — ChatWhite lead gyűjtés"
+            <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-2xl border border-[var(--cw-line)] lg:order-1">
+              <BrandedImage
+                src="/images/chatwhite-dashboard.webp"
+                alt="ChatWhite lead dashboard — esti lead számláló és válaszidő"
                 fill
                 sizes="(max-width: 1024px) 100vw, 480px"
-                className="object-cover"
               />
             </div>
             <div className="order-1 lg:order-2">
@@ -683,6 +690,70 @@ export default function Home() {
               </Link>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* TUDÁSTÁR — SEO / AEO content hub */}
+      <section id="tudastar" className="border-y border-[var(--cw-line)] bg-[var(--cw-ink)]">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--cw-lime)]">
+            Tudástár
+          </p>
+          <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
+            Gyakorlati útmutatók KKV tulajdonosoknak
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[var(--cw-soft)]">
+            Rövid, kiolvasható válaszok — lead gyűjtés, éjszakai megkeresések,
+            magyar chatbot, ROI. AI keresők és Google is idézheti ezeket a
+            blokkokat.
+          </p>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {tudastarArticles.map((article) => (
+              <article
+                key={article.id}
+                id={`tudastar-${article.id}`}
+                className="rounded-2xl border border-[var(--cw-line)] bg-[var(--cw-panel)] p-6 transition hover:border-[var(--cw-lime)]/40"
+                itemScope
+                itemType="https://schema.org/Article"
+              >
+                <meta itemProp="inLanguage" content="hu-HU" />
+                <h3
+                  className="font-display text-xl font-bold leading-snug text-white"
+                  itemProp="headline"
+                >
+                  {article.title}
+                </h3>
+                <p
+                  className="mt-3 text-base leading-relaxed text-[var(--cw-muted)]"
+                  itemProp="description"
+                >
+                  {article.summary}
+                </p>
+                <div className="mt-4 rounded-xl border border-[var(--cw-lime)]/20 bg-[var(--cw-lime)]/5 p-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--cw-lime)]">
+                    Válasz
+                  </p>
+                  <p
+                    className="cw-prose mt-2 text-[var(--cw-soft)]"
+                    itemProp="articleBody"
+                  >
+                    {article.answer}
+                  </p>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {article.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-[var(--cw-line)] px-2.5 py-0.5 text-xs text-[var(--cw-muted)]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

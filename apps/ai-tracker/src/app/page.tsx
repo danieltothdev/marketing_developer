@@ -1,6 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BrandedImage } from "@/components/BrandedImage";
 import { HeroVisual } from "@/components/HeroVisual";
+import { tudastarArticles } from "@/data/tudastar";
 
 const platforms = ["ChatGPT", "Perplexity", "Gemini", "Google AI"];
 
@@ -186,6 +187,24 @@ const jsonLd = {
         acceptedAnswer: { "@type": "Answer", text: item.a },
       })),
     },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://aitracker.hu/#tudastar",
+      name: "AI Tracker HU Tudástár — AEO és AI láthatóság",
+      description:
+        "Útmutatók az AI kereső láthatóságról, zero-click veszteségről és magyar prompt monitorozásról.",
+      inLanguage: "hu-HU",
+      hasPart: tudastarArticles.map((a) => ({
+        "@type": "Article",
+        "@id": `https://aitracker.hu/#tudastar-${a.id}`,
+        headline: a.title,
+        description: a.summary,
+        articleBody: a.answer,
+        inLanguage: "hu-HU",
+        author: { "@id": "https://aitracker.hu/#organization" },
+        publisher: { "@id": "https://aitracker.hu/#organization" },
+      })),
+    },
   ],
 };
 
@@ -212,6 +231,9 @@ export default function Home() {
           <a href="#how" className="hover:text-white">
             Így mérünk
           </a>
+          <a href="#tudastar" className="hover:text-white">
+            Tudástár
+          </a>
           <a href="#pricing" className="hover:text-white">
             Árak
           </a>
@@ -227,8 +249,8 @@ export default function Home() {
         </Link>
       </header>
 
-      {/* HERO — stock video + interactive AI scan */}
-      <section className="at-radar relative isolate overflow-hidden">
+      {/* HERO — CSS radar animáció + interaktív scan (videó nélkül) */}
+      <section className="at-radar relative isolate overflow-hidden" aria-labelledby="at-hero-title">
         <div className="at-rings absolute inset-0" aria-hidden />
         <div
           className="pointer-events-none absolute -left-16 top-20 h-72 w-72 rounded-full bg-[var(--at-signal)]/15 blur-3xl"
@@ -240,12 +262,14 @@ export default function Home() {
             <p className="at-rise mb-5 text-sm font-bold uppercase tracking-[0.22em] text-[var(--at-signal)]">
               AI Tracker HU
             </p>
-            <h1 className="at-rise at-rise-1 at-h1 font-serif text-[clamp(1.85rem,3.6vw,3.35rem)] font-bold leading-[1.18] tracking-tight text-white">
-              <span className="at-h1-line">A ChatGPT</span>
-              <span className="at-h1-line">mást ajánl.</span>
-              <span className="at-h1-line text-[var(--at-warn)]">Téged nem.</span>
+            <h1
+              id="at-hero-title"
+              className="at-rise at-rise-1 at-h1 font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.2] tracking-tight text-white"
+            >
+              A ChatGPT mást ajánl —{" "}
+              <span className="text-[var(--at-warn)]">téged nem</span>
             </h1>
-            <p className="at-rise at-rise-2 mt-6 max-w-lg text-lg leading-relaxed text-[var(--at-muted)] md:text-xl">
+            <p className="at-rise at-rise-2 mt-6 max-w-lg text-lg leading-relaxed text-[var(--at-soft)] md:text-xl">
               Havi monitor magyar kulcsszavakra. ChatGPT, Perplexity, Gemini,
               Google AI. Látod, kit említ helyetted.
             </p>
@@ -302,34 +326,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--at-line)] bg-[var(--at-ink)]">
-        <div className="mx-auto grid max-w-6xl gap-4 px-6 py-12 md:grid-cols-2">
-          <figure className="overflow-hidden rounded-xl border border-[var(--at-line)]">
-            <Image
+      <section className="border-b border-[var(--at-line)] bg-[var(--at-ink)]" aria-labelledby="at-gallery">
+        <div className="mx-auto max-w-6xl px-6 py-12">
+          <h2 id="at-gallery" className="sr-only">
+            AI Tracker HU vizuális példák
+          </h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <BrandedImage
               src="/images/aitracker-hero.webp"
-              alt="AI adatmátrix: AI Tracker HU láthatóság monitor"
-              width={1120}
-              height={700}
-              sizes="(max-width: 768px) 100vw, 560px"
-              className="h-auto w-full object-cover"
+              alt="AI Tracker HU radar: ki jelenik meg az AI válaszban"
+              caption="Radar nézet: hol vagy látható az AI keresőben."
+              priority
             />
-            <figcaption className="px-4 py-3 text-sm text-[var(--at-muted)]">
-              Digitális radar: hol jelenik meg a márkád az AI-ban.
-            </figcaption>
-          </figure>
-          <figure className="overflow-hidden rounded-xl border border-[var(--at-line)]">
-            <Image
+            <BrandedImage
               src="/images/aitracker-radar.webp"
-              alt="Neurális háló / AI hálózat: említések és kapcsolatok a kereső válaszokban"
-              width={1120}
-              height={700}
-              sizes="(max-width: 768px) 100vw, 560px"
-              className="h-auto w-full object-cover"
+              alt="AI Tracker platformonkénti versenytárs említések"
+              caption="4 platform · versenytárs lista · hiányzás jelzés."
             />
-            <figcaption className="px-4 py-3 text-sm text-[var(--at-muted)]">
-              Ki van a hálóban — és ki esik ki belőle.
-            </figcaption>
-          </figure>
+          </div>
         </div>
       </section>
 
@@ -339,7 +353,7 @@ export default function Home() {
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--at-warn)]">
             Ismerős kérdések
           </p>
-          <h2 className="mt-3 max-w-3xl font-serif text-3xl font-bold tracking-tight text-white md:text-4xl">
+          <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
             Ezeket kérdezik a vállalkozók. Az AI Tracker ezekre ad választ.
           </h2>
           <div className="mt-12 grid gap-4 md:grid-cols-2">
@@ -423,7 +437,7 @@ export default function Home() {
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--at-warn)]">
               Miért számít 2026-ban
             </p>
-            <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-white md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
               Az ügyfél már az AI-t kérdezi — nem csak a Google első oldalát.
             </h2>
             <p className="mt-5 text-lg text-[var(--at-muted)]">
@@ -443,25 +457,21 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[var(--at-line)]">
-            <Image
+          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-[var(--at-line)]">
+            <BrandedImage
               src="/images/aitracker-radar.webp"
-              alt="Digitális radar — versenytársak AI kereső említései"
+              alt="AI Tracker versenytárs radar — ki említett az AI válaszban"
               fill
               sizes="(max-width: 1024px) 100vw, 520px"
-              className="object-cover"
+              badge="Ki hiányzik a radarról?"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--at-ink)]/60 to-transparent" />
-            <p className="absolute bottom-4 left-4 right-4 text-sm font-semibold text-white">
-              Ki van a radaron — és ki esik ki belőle?
-            </p>
           </div>
         </div>
       </section>
 
       <section className="border-y border-[var(--at-line)] bg-[var(--at-panel)]">
         <div className="mx-auto max-w-3xl px-6 py-16">
-          <h2 className="font-serif text-2xl font-bold text-white md:text-3xl">
+          <h2 className="font-display text-2xl font-bold text-white md:text-3xl">
             Mi az az AI Tracker HU?
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[var(--at-muted)]">
@@ -480,7 +490,7 @@ export default function Home() {
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--at-signal)]">
               Így mérünk
             </p>
-            <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-white md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
               Domain + kulcsszavak → riport → terv
             </h2>
             <ol className="mt-10 space-y-8">
@@ -515,19 +525,14 @@ export default function Home() {
               ))}
             </ol>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[var(--at-line)]">
-            <Image
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[var(--at-line)]">
+            <BrandedImage
               src="/images/aitracker-report.webp"
-              alt="AI láthatóság riport és elemzés tableten"
+              alt="AI Tracker HU PDF riport — említés, versenytárs, javítási terv"
               fill
               sizes="(max-width: 1024px) 100vw, 480px"
-              className="object-cover"
+              badge="PDF riport + teendők"
             />
-            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[var(--at-ink)] to-transparent p-5">
-              <p className="text-sm font-semibold text-[var(--at-signal)]">
-                PDF riport + konkrét teendők — nem csak piros X
-              </p>
-            </div>
           </div>
         </div>
 
@@ -566,7 +571,7 @@ export default function Home() {
           <p className="text-center text-sm font-bold uppercase tracking-[0.2em] text-[var(--at-signal)]">
             Árazás
           </p>
-          <h2 className="mt-3 text-center font-serif text-3xl font-bold text-white md:text-4xl">
+          <h2 className="mt-3 text-center font-display text-3xl font-bold text-white md:text-4xl">
             Először láss — aztán dönts, javítasz-e
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-[var(--at-muted)]">
@@ -626,7 +631,7 @@ export default function Home() {
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--at-signal)]">
             Proof
           </p>
-          <h2 className="mt-3 font-serif text-3xl font-bold text-white">
+          <h2 className="mt-3 font-display text-3xl font-bold text-white">
             Először a saját domainünkön mérünk
           </h2>
           <p className="mt-4 text-lg text-[var(--at-muted)]">
@@ -635,9 +640,72 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TUDÁSTÁR — SEO / AEO content hub */}
+      <section id="tudastar" className="border-y border-[var(--at-line)] bg-[var(--at-ink)]">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--at-signal)]">
+            Tudástár
+          </p>
+          <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
+            AEO és AI láthatóság — kiolvasható válaszok
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[var(--at-soft)]">
+            Mit jelent az AEO, mi a zero-click veszteség, milyen magyar promptokat
+            érdemes figyelni — és mit tegyél, ha hiányzol az AI válaszból.
+          </p>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {tudastarArticles.map((article) => (
+              <article
+                key={article.id}
+                id={`tudastar-${article.id}`}
+                className="rounded-2xl border border-[var(--at-line)] bg-[var(--at-panel)] p-6 transition hover:border-[var(--at-signal)]/40"
+                itemScope
+                itemType="https://schema.org/Article"
+              >
+                <meta itemProp="inLanguage" content="hu-HU" />
+                <h3
+                  className="font-display text-xl font-bold leading-snug text-white"
+                  itemProp="headline"
+                >
+                  {article.title}
+                </h3>
+                <p
+                  className="mt-3 text-base leading-relaxed text-[var(--at-muted)]"
+                  itemProp="description"
+                >
+                  {article.summary}
+                </p>
+                <div className="mt-4 rounded-xl border border-[var(--at-signal)]/20 bg-[var(--at-signal)]/5 p-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--at-signal)]">
+                    Válasz
+                  </p>
+                  <p
+                    className="mt-2 text-base leading-relaxed text-[var(--at-soft)]"
+                    itemProp="articleBody"
+                  >
+                    {article.answer}
+                  </p>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {article.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-[var(--at-line)] px-2.5 py-0.5 text-xs text-[var(--at-muted)]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="faq" className="bg-[var(--at-panel)]">
         <div className="mx-auto max-w-3xl px-6 py-24">
-          <h2 className="font-serif text-3xl font-bold text-white">
+          <h2 className="font-display text-3xl font-bold text-white">
             Gyakori kérdések
           </h2>
           <div className="mt-10 divide-y divide-[var(--at-line)]">
@@ -662,7 +730,7 @@ export default function Home() {
 
       <section className="at-radar border-t border-[var(--at-line)]">
         <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-          <h2 className="font-serif text-3xl font-bold text-white md:text-4xl">
+          <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
             Ne derüljön ki fél év múlva, hogy az AI mást ajánlott.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-[var(--at-muted)]">

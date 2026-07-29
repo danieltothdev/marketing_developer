@@ -6,8 +6,8 @@
   --cw-panel: #101820;
   --cw-panel-2: #162030;
   --cw-line: #243044;
-  --cw-muted: #8fa0b5;
-  --cw-soft: #c5d0de;
+  --cw-muted: #a8b8cc;
+  --cw-soft: #e2e8f0;
   --cw-lime: #c8ff3d;
   --cw-lime-deep: #9fd400;
   --cw-coral: #ff5a36;
@@ -19,8 +19,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-dm-sans);
-  --font-display: var(--font-syne);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-jakarta);
 }
 
 html {
@@ -30,11 +30,24 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-dm-sans), "DM Sans", sans-serif;
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
 
 .font-display {
-  font-family: var(--font-syne), Syne, sans-serif;
+  font-family: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.cw-prose {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--cw-soft);
+}
+
+.cw-prose-muted {
+  color: var(--cw-muted);
 }
 
 .brand-chat {
@@ -151,24 +164,13 @@ body {
   opacity: 0.92;
 }
 
-/* Hero headline: never break words mid-token */
+/* Hero headline: readable wrapping, no mid-word breaks */
 .cw-h1 {
   hyphens: none;
   -webkit-hyphens: none;
-  word-break: keep-all;
-  overflow-wrap: normal;
-  white-space: normal;
-}
-
-.cw-h1-line {
-  display: block;
-  white-space: nowrap;
-}
-
-@media (max-width: 420px) {
-  .cw-h1-line {
-    white-space: normal;
-  }
+  word-break: normal;
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
 /* Animated chat hero (no photo) */
@@ -350,11 +352,6 @@ body {
   isolation: isolate;
 }
 
-.cw-hero-video {
-  animation: cw-kenburns 28s ease-in-out infinite alternate;
-  will-change: transform;
-}
-
 @keyframes cw-toast {
   from {
     opacity: 0;
@@ -376,7 +373,6 @@ body {
   .cw-bubble,
   .cw-hero-frame,
   .cw-hero-img,
-  .cw-hero-video,
   .cw-typing-dot,
   .cw-msg-in,
   .cw-toast {

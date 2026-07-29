@@ -70,8 +70,7 @@ export function HeroVisual() {
 
     const start = Date.now();
     const scanId = window.setInterval(() => {
-      const elapsed = Date.now() - start;
-      const p = Math.min(100, Math.round((elapsed / 2200) * 100));
+      const p = Math.min(100, Math.round(((Date.now() - start) / 2200) * 100));
       setProgress(p);
       setPlatformIdx(Math.min(3, Math.floor(p / 25)));
       if (p >= 100) {
@@ -87,8 +86,8 @@ export function HeroVisual() {
     runScan(PROMPTS[0]);
     const id = window.setInterval(() => {
       setPrompt((curr) => {
-        const i = PROMPTS.indexOf(curr);
-        const next = PROMPTS[(i + 1) % PROMPTS.length];
+        const idx = PROMPTS.indexOf(curr);
+        const next = PROMPTS[(idx + 1) % PROMPTS.length];
         window.setTimeout(() => runScan(next), 0);
         return next;
       });
@@ -100,39 +99,24 @@ export function HeroVisual() {
 
   return (
     <div className="at-hero-stage relative w-full">
-      <div className="relative aspect-[5/6] w-full overflow-hidden rounded-2xl border border-[var(--at-line)] bg-[var(--at-ink)] shadow-[0_40px_100px_-28px_rgba(46,240,208,0.5)] sm:aspect-[16/12] lg:aspect-[16/13]">
-        <video
-          className="at-hero-video absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/aitracker-hero-poster.jpg"
-        >
-          <source src="/videos/hero-ai.mp4" type="video/mp4" />
-        </video>
+      <div className="at-anim-stage at-hero-frame relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[var(--at-line)] shadow-[0_40px_100px_-28px_rgba(46,240,208,0.5)] sm:aspect-[16/12] lg:aspect-[16/11]">
+        {/* Animated radar — no video */}
+        <div className="at-anim-grid" aria-hidden />
+        <div className="at-anim-scope" aria-hidden>
+          <div className="at-anim-beam" aria-hidden />
+        </div>
+        <div className="at-anim-blip at-anim-blip-1" aria-hidden />
+        <div className="at-anim-blip at-anim-blip-2" aria-hidden />
+        <div className="at-anim-blip at-anim-blip-3" aria-hidden />
+        <p className="at-anim-label">AI scan · magyar promptok</p>
 
-        <div
-          className="absolute inset-0 bg-gradient-to-t from-[var(--at-ink)] via-[var(--at-ink)]/70 to-[var(--at-ink)]/40"
-          aria-hidden
-        />
-        <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(46,240,208,0.18),transparent_55%)]"
-          aria-hidden
-        />
-
-        <div className="absolute left-3 right-3 top-3 z-20 flex items-center justify-between gap-2 sm:left-4 sm:right-4 sm:top-4">
-          <div className="rounded-full border border-[var(--at-signal)]/35 bg-black/55 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--at-signal)] backdrop-blur-md">
-            Élő AI scan demo
-          </div>
-          <div className="rounded-full border border-white/10 bg-black/45 px-3 py-1.5 text-[10px] font-semibold text-white/70 backdrop-blur-md">
-            4 platform · magyar prompt
-          </div>
+        <div className="absolute left-4 top-4 z-20 rounded-full border border-[var(--at-signal)]/35 bg-black/55 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--at-signal)] backdrop-blur-md">
+          Élő scan demo
         </div>
 
-        <div className="absolute inset-x-3 bottom-3 z-20 sm:inset-x-4 sm:bottom-4">
-          <div className="rounded-2xl border border-white/12 bg-[rgba(6,10,18,0.9)] p-3 shadow-2xl backdrop-blur-2xl sm:p-4">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--at-muted)]">
+        <div className="absolute inset-x-4 bottom-4 z-20 sm:inset-x-5">
+          <div className="rounded-2xl border border-white/12 bg-[rgba(6,10,18,0.92)] p-4 shadow-2xl backdrop-blur-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--at-muted)]">
               Mit kérdez az ügyfél az AI-tól?
             </p>
 
@@ -152,10 +136,10 @@ export function HeroVisual() {
                   key={p}
                   type="button"
                   onClick={() => runScan(p)}
-                  className={`rounded-md border px-2 py-1 text-left text-[11px] transition ${
+                  className={`rounded-md border px-2.5 py-1.5 text-left text-xs transition ${
                     prompt === p
                       ? "border-[var(--at-signal)] bg-[var(--at-signal)]/15 text-[var(--at-signal)]"
-                      : "border-[var(--at-line)] text-white/65 hover:border-[var(--at-signal)]/45"
+                      : "border-[var(--at-line)] text-white/70 hover:border-[var(--at-signal)]/45"
                   }`}
                 >
                   {p}
@@ -177,7 +161,7 @@ export function HeroVisual() {
                     }`}
                   >
                     <p
-                      className={`text-[10px] font-bold uppercase tracking-wide ${
+                      className={`text-[10px] font-bold uppercase ${
                         active ? "text-[var(--at-signal)]" : "text-white/35"
                       }`}
                     >
@@ -197,13 +181,6 @@ export function HeroVisual() {
                 style={{ width: `${scanning ? progress : done ? 100 : 0}%` }}
               />
             </div>
-            <p className="mt-1.5 text-[10px] text-[var(--at-muted)]">
-              {scanning
-                ? `Scan fut… ${progress}%`
-                : done
-                  ? "Scan kész · említések összevetve"
-                  : "Indítás…"}
-            </p>
 
             {done && (
               <div className="at-results mt-3 space-y-1.5 text-sm">
@@ -213,20 +190,14 @@ export function HeroVisual() {
                     className="flex items-center justify-between rounded-lg bg-white/5 px-2.5 py-2 text-white/90"
                   >
                     <span>{r.name}</span>
-                    <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wide text-[var(--at-signal)]">
-                      <span className="inline-block h-1.5 w-10 overflow-hidden rounded-full bg-white/10">
-                        <span
-                          className="block h-full rounded-full bg-[var(--at-signal)]"
-                          style={{ width: `${r.score}%` }}
-                        />
-                      </span>
+                    <span className="text-[10px] font-bold uppercase text-[var(--at-signal)]">
                       említve
                     </span>
                   </div>
                 ))}
                 <div className="flex items-center justify-between rounded-lg border border-[var(--at-warn)]/40 bg-[var(--at-warn)]/15 px-2.5 py-2 text-[#ffc9a8]">
                   <span className="font-semibold">A te céged</span>
-                  <span className="text-[10px] font-bold uppercase tracking-wide">
+                  <span className="text-[10px] font-bold uppercase">
                     {result.you === "missing" ? "hiányzol" : "gyenge említés"}
                   </span>
                 </div>
@@ -235,11 +206,6 @@ export function HeroVisual() {
           </div>
         </div>
       </div>
-
-      <div
-        className="pointer-events-none absolute -bottom-6 left-1/2 h-16 w-3/4 -translate-x-1/2 rounded-full bg-[var(--at-signal)]/30 blur-3xl"
-        aria-hidden
-      />
     </div>
   );
 }
