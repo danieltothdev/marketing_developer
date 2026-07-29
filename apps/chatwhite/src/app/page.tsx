@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeroVisual } from "@/components/HeroVisual";
 
 function Brand({ className = "text-2xl" }: { className?: string }) {
   return (
@@ -56,27 +57,43 @@ const plans = [
 const faqs = [
   {
     q: "Mennyi idő, mire él a chatbot a weboldalamon?",
-    a: "Általában 10–15 perc. Bemásolod a scriptet, megadod a szolgáltatásaidat — a bot azonnal válaszol magyarul.",
+    a: "Általában 10–15 perc. Bemásolod a scriptet, megadod a szolgáltatásaidat. A bot azonnal válaszol magyarul.",
+  },
+  {
+    q: "Este és hétvégén is válaszol?",
+    a: "Igen. Pont ezért van: amikor te nem vagy a gépnél, a bot fogadja a megkeresést és leadet gyűjt.",
+  },
+  {
+    q: "Mi van, ha rossz választ ad?",
+    a: "A bot a te szolgáltatásaidra, áraidra és területeidre tanítható. Ha nem tud valamit, átadja neked leadként, nem találgat.",
   },
   {
     q: "Nem lesz gagyi, generikus válasz?",
-    a: "A bot a te áraidra, szolgáltatásaidra és gyakori kérdéseidre tanítható. Nem „általános AI”, hanem a céged hangja.",
+    a: "Nem „általános AI”. A céged hangja, árai és gyakori kérdései alapján válaszol.",
   },
   {
     q: "Mi történik, ha valaki ajánlatot kér este?",
-    a: "A bot összegyűjti a nevet, telefont, emailcímet, és azonnal emailt küld neked. Te döntöd el, mikor hívod vissza — a lead nem vész el.",
+    a: "Név, telefon, email összegyűlik, és azonnal emailt kapsz. Te döntöd el, mikor hívod vissza.",
   },
   {
     q: "Kell bankkártya a próbaidőhöz?",
-    a: "Nem. 14 napig ingyen kipróbálhatod. Ha nem jön be, egyszerűen leállítod — nincs kötbér.",
+    a: "Nem. 14 napig ingyen kipróbálhatod. Ha nem jön be, leállítod. Nincs kötbér.",
   },
   {
     q: "Ügynökségként eladhatom a saját nevem alatt?",
-    a: "Igen — a Partner csomag white-label: saját logo, színek, domain. Te számlázol az ügyfélnek.",
+    a: "Igen. A Partner csomag white-label: saját logo, színek, domain. Te számlázol az ügyfélnek.",
   },
   {
     q: "Miben más, mint a Facebook Messenger bot?",
-    a: "A ChatWhite a te weboldaladon él — ahol a hirdetésedből érkező látogató már érdeklődik. Nincs Messenger-függőség, és a lead nálad van.",
+    a: "A ChatWhite a te weboldaladon él, ahol a hirdetésből érkező látogató már érdeklődik. A lead nálad van.",
+  },
+  {
+    q: "Mennyi leadet veszítek el most chatbot nélkül?",
+    a: "Helyi szolgáltatóknál tipikus, hogy a megkeresések 30–50%-a este vagy hétvégén jön. Ha nincs válasz, máshova mennek.",
+  },
+  {
+    q: "Kell programozót hívnom a beállításhoz?",
+    a: "Nem. Egy script a weboldaladra, plusz a szolgáltatások leírása. IT projekt nélkül indul.",
   },
 ];
 
@@ -214,8 +231,8 @@ export default function Home() {
           <Brand />
         </a>
         <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--cw-muted)] md:flex">
-          <a href="#problem" className="hover:text-white">
-            Probléma
+          <a href="#problems" className="hover:text-white">
+            Problémák
           </a>
           <a href="#how" className="hover:text-white">
             Így működik
@@ -235,15 +252,11 @@ export default function Home() {
         </Link>
       </header>
 
-      {/* HERO — CSS animation + copy with fixed line breaks (no mid-word wrap) */}
+      {/* HERO — stock video + live chat demo */}
       <section className="cw-hero-wash relative isolate overflow-hidden">
         <div className="cw-noise pointer-events-none absolute inset-0" aria-hidden />
         <div
           className="cw-glow pointer-events-none absolute -left-20 top-24 h-72 w-72 rounded-full bg-[var(--cw-lime)]/20 blur-3xl"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute -right-10 bottom-0 h-96 w-96 rounded-full bg-[var(--cw-coral)]/15 blur-3xl"
           aria-hidden
         />
 
@@ -271,10 +284,10 @@ export default function Home() {
                 14 napos próba
               </Link>
               <a
-                href="#how"
+                href="#problems"
                 className="inline-flex items-center justify-center rounded-md border border-[var(--cw-line)] bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:border-[var(--cw-lime)]"
               >
-                Így működik
+                Ismerős a baj?
               </a>
             </div>
             <p className="cw-rise cw-rise-3 mt-4 text-sm text-[var(--cw-muted)]">
@@ -282,28 +295,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="cw-rise cw-rise-2 relative min-w-0 w-full" aria-hidden>
-            <div className="cw-anim-stage">
-              <div className="cw-anim-orbit">
-                <span className="cw-anim-dot" />
-              </div>
-              <div className="cw-anim-orbit cw-anim-orbit-2">
-                <span className="cw-anim-dot cw-anim-dot-coral" />
-              </div>
-              <div className="cw-anim-bubble-a">
-                Holnap tudnátok jönni Debrecenbe?
-              </div>
-              <div className="cw-anim-bubble-b">
-                Igen, 9–12 vagy 14–17 között.
-              </div>
-              <div className="cw-anim-bubble-c">
-                Szuper. A számom: 06 30…
-              </div>
-              <div className="cw-anim-pulse" />
-            </div>
-            <p className="mt-3 text-center text-xs text-[var(--cw-muted)] lg:text-right">
-              Élő chat animáció · lead 12 mp alatt
-            </p>
+          <div className="cw-rise cw-rise-2 relative min-w-0 w-full">
+            <HeroVisual />
           </div>
         </div>
       </section>
@@ -371,7 +364,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROBLEM + image */}
+      {/* PROBLEMS — business pain Qs */}
+      <section id="problems" className="border-b border-[var(--cw-line)] bg-[var(--cw-ink)]">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--cw-coral)]">
+            Ismerős kérdések
+          </p>
+          <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
+            Ezeket kérdezik a KKV tulajdonosok. A ChatWhite ezekre ad választ.
+          </h2>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {[
+              {
+                q: "Este 22:40-kor írnak a weboldalon. Ki válaszol?",
+                a: "A bot. Leadet gyűjt, te reggel visszahívod. A riválisnak nem megy el a munka.",
+              },
+              {
+                q: "Fizetek Google Ads-re. Miért nincs ajánlatkérés?",
+                a: "A forgalom megvan, de ha nincs azonnali válasz, a látogató továbbmegy. A bot a kattintást leaddé alakítja.",
+              },
+              {
+                q: "Hétvégén zárva vagyok. Akkor is jönnek megkeresések?",
+                a: "Igen, és pont akkor vesznek el. A ChatWhite 24/7 fogadja őket.",
+              },
+              {
+                q: "Mennyi egy elszalasztott lead?",
+                a: "Helyi szolgáltatóknál gyakran 30–80 ezer Ft munka. Havi pár ilyen, és a chatbot ára eltörpül.",
+              },
+              {
+                q: "A recepcióm csak 9–17 között elérhető. Ez baj?",
+                a: "Ha a forgalmad este is megy, igen. A bot kitölti a rést, amikor te nem vagy ott.",
+              },
+              {
+                q: "Messenger botom van. Az nem elég?",
+                a: "A hirdetésből érkező látogató a weboldalon van. Ott kell megszólítani, mielőtt bezárja a fület.",
+              },
+              {
+                q: "Honnan tudom, hogy megéri?",
+                a: "14 nap próba. Ha nem hoz leadet, leállítod. Ha hoz, látod a számokat a dashboardon.",
+              },
+              {
+                q: "Nem értek az AI-hoz. Túl bonyolult?",
+                a: "Nem. Megadod a szolgáltatásokat, beilleszted a scriptet. Programozó nélkül.",
+              },
+            ].map((item) => (
+              <article
+                key={item.q}
+                className="rounded-xl border border-[var(--cw-line)] bg-[var(--cw-panel)] p-6 transition hover:border-[var(--cw-lime)]/40"
+              >
+                <h3 className="font-display text-lg font-bold text-white">
+                  {item.q}
+                </h3>
+                <p className="mt-3 leading-relaxed text-[var(--cw-muted)]">
+                  <span className="font-semibold text-[var(--cw-lime)]">Megoldás: </span>
+                  {item.a}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROBLEM visual */}
       <section id="problem" className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
@@ -382,15 +437,14 @@ export default function Home() {
               A weboldalad éjjel is forgalmat kap. Te nem.
             </h2>
             <p className="mt-5 text-lg text-[var(--cw-muted)]">
-              A látogató kérdez — te alszol. Másnap a telefonja már a következő
-              találatot hívja. Egy kihagyott ajánlatkérés gyakran 30–80 ezer Ft
-              munka.
+              A látogató kérdez. Te alszol. Másnap a telefonja már a következő
+              találatot hívja.
             </p>
             <ul className="mt-8 space-y-4 text-[var(--cw-muted)]">
               {[
                 "Elveszett lead = elveszett munka",
                 "A „majd visszahívom” nem stratégia",
-                "A hirdetésed fizet a forgalomért — a bot alakítja leadé",
+                "A hirdetésed fizet a forgalomért. A bot alakítja leaddé.",
               ].map((line) => (
                 <li key={line} className="flex gap-3">
                   <span className="mt-1 text-[var(--cw-coral)]">▸</span>
@@ -402,14 +456,14 @@ export default function Home() {
           <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[var(--cw-line)]">
             <Image
               src="/images/chatwhite-missed.webp"
-              alt="Üres recepció este — kihagyott hívások és elveszett megkeresések"
+              alt="Üres recepció este: kihagyott hívások és elveszett megkeresések"
               fill
               sizes="(max-width: 1024px) 100vw, 520px"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-[var(--cw-ink)]/50 to-transparent" />
             <p className="absolute bottom-4 left-4 rounded-md bg-[var(--cw-coral)] px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
-              Este 22:41 — senki nem válaszol
+              Este 22:41 · senki nem válaszol
             </p>
           </div>
         </div>

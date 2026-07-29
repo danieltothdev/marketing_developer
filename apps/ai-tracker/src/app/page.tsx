@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeroVisual } from "@/components/HeroVisual";
 
 const platforms = ["ChatGPT", "Perplexity", "Gemini", "Google AI"];
 
@@ -51,27 +52,35 @@ const plans = [
 const faqs = [
   {
     q: "Mi az az AI kereső láthatóság?",
-    a: "Amikor valaki a ChatGPT-t, Perplexity-t vagy a Google AI-t kérdezi („ki a legjobb fogorvos Debrecenben?”), az AI neveket és forrásokat ajánl. Ha te nem vagy a listán, a megkeresés máshova megy — anélkül, hogy Google Ads-et látnál.",
+    a: "Amikor valaki a ChatGPT-t, Perplexity-t vagy a Google AI-t kérdezi, az AI neveket ajánl. Ha te nem vagy a listán, a megkeresés máshova megy.",
   },
   {
     q: "Ez nem ugyanaz, mint a klasszikus SEO?",
-    a: "Részben átfed. A Google AI Overviews még erősen a hagyományos rangsorra épül. A ChatGPT és a Perplexity viszont másképp válogat forrást: struktúra, E-E-A-T, harmadik fél említések. Az AI Tracker mindkét világot méri.",
+    a: "Részben átfed. A Google AI Overviews a rangsorra épül. A ChatGPT és a Perplexity másképp válogat. Az AI Tracker mindkettőt méri.",
+  },
+  {
+    q: "Honnan tudom, hogy engem említ az AI?",
+    a: "Sehonnan, amíg nem méred. Nincs Search Console az AI-ra. Ezért kell a Tracker.",
   },
   {
     q: "Milyen kulcsszavakat érdemes figyelni?",
-    a: "Azt, amit az ügyfeleid kérdeznek magyarul: szolgáltatás + város, „legjobb X”, „X ár”, „X ajánló”. Pl. „klímaszerelő Debrecen”, „marketing ügynökség KKV”.",
+    a: "Amit az ügyfeleid kérdeznek magyarul: szolgáltatás + város, „legjobb X”, „X ár”.",
   },
   {
     q: "Mit kapok, ha nem említenek?",
-    a: "Nem csak egy piros X-et: konkrét javítási listát (értékelések, schema, tartalom, forráshelyek). Ha kell, a TD-AI AEO csomaggal meg is csináljuk.",
+    a: "Konkrét javítási listát: értékelések, schema, tartalom, forráshelyek. Opcionálisan AEO csomag a végrehajtáshoz.",
   },
   {
     q: "Mennyi idő egy scan?",
-    a: "Az első audit általában 1 munkanapon belül kész. A Monitor csomagnál havonta automatikusan fut, és emailt kapsz.",
+    a: "Az első audit általában 1 munkanapon belül kész. A Monitor havonta automatikusan fut.",
+  },
+  {
+    q: "A riválisom már ott van az AI válaszban. Mit tegyek?",
+    a: "Először lásd a riportot: hol és miért említik őket. Utána lépésről lépésre javítunk.",
   },
   {
     q: "Kell technikai tudás a javításhoz?",
-    a: "A riport közérthető. A technikai lépéseket (schema, llms.txt) leírjuk; ha nincs rá kapacitásod, ügynökségi segítség is kérhető.",
+    a: "A riport közérthető. Ha nincs kapacitásod, ügynökségi segítség kérhető.",
   },
 ];
 
@@ -194,6 +203,9 @@ export default function Home() {
           <span className="text-[var(--at-signal)]">HU</span>
         </a>
         <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--at-muted)] md:flex">
+          <a href="#problems" className="hover:text-white">
+            Problémák
+          </a>
           <a href="#why" className="hover:text-white">
             Miért számít
           </a>
@@ -215,7 +227,7 @@ export default function Home() {
         </Link>
       </header>
 
-      {/* HERO — radar animation + fixed headline lines */}
+      {/* HERO — stock video + interactive AI scan */}
       <section className="at-radar relative isolate overflow-hidden">
         <div className="at-rings absolute inset-0" aria-hidden />
 
@@ -241,10 +253,10 @@ export default function Home() {
                 Első AI audit
               </Link>
               <a
-                href="#pricing"
+                href="#problems"
                 className="inline-flex rounded-md border border-[var(--at-line)] bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:border-[var(--at-signal)]"
               >
-                Árak
+                Ismerős a baj?
               </a>
             </div>
             <p className="at-rise at-rise-3 mt-4 text-sm text-[var(--at-muted)]">
@@ -252,44 +264,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="at-rise at-rise-2 relative min-w-0 w-full space-y-4">
-            <div className="at-anim-stage" aria-hidden>
-              <div className="at-anim-grid" />
-              <div className="at-anim-scope">
-                <div className="at-anim-beam" />
-                <span className="at-anim-blip at-anim-blip-1" />
-                <span className="at-anim-blip at-anim-blip-2" />
-                <span className="at-anim-blip at-anim-blip-3" />
-              </div>
-              <p className="at-anim-label">AI kereső radar</p>
-            </div>
-            <div className="rounded-xl border border-[var(--at-line)] bg-[var(--at-panel)] p-3 sm:p-4">
-              <div className="mb-2 flex items-center justify-between gap-2 text-xs">
-                <span className="text-white/70">„legjobb szerelő Debrecen”</span>
-                <span className="at-blink font-bold text-[var(--at-warn)]">
-                  Te: 0/4
-                </span>
-              </div>
-              {[
-                { name: "Kovács Klíma", ok: true },
-                { name: "Cool Service", ok: true },
-                { name: "A te céged", ok: false },
-              ].map((row) => (
-                <div
-                  key={row.name}
-                  className={`flex items-center justify-between rounded-md px-2 py-1.5 text-sm ${
-                    row.ok
-                      ? "text-white/80"
-                      : "bg-[var(--at-warn)]/20 text-[#ffc9a8]"
-                  }`}
-                >
-                  <span>{row.name}</span>
-                  <span className="text-[10px] font-bold uppercase tracking-wide">
-                    {row.ok ? "említve" : "hiányzol"}
-                  </span>
-                </div>
-              ))}
-            </div>
+          <div className="at-rise at-rise-2 relative min-w-0 w-full">
+            <HeroVisual />
           </div>
         </div>
       </section>
@@ -338,6 +314,65 @@ export default function Home() {
               Ki van a radaron, és ki esik ki.
             </figcaption>
           </figure>
+        </div>
+      </section>
+
+      {/* PROBLEMS — business pain Qs */}
+      <section id="problems" className="border-b border-[var(--at-line)] bg-[var(--at-panel)]">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--at-warn)]">
+            Ismerős kérdések
+          </p>
+          <h2 className="mt-3 max-w-3xl font-serif text-3xl font-bold tracking-tight text-white md:text-4xl">
+            Ezeket kérdezik a vállalkozók. Az AI Tracker ezekre ad választ.
+          </h2>
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {[
+              {
+                q: "Ha valaki a ChatGPT-t kérdezi, engem ajánl?",
+                a: "Ezt méri a Tracker. Platformonként, kulcsszónként. Tippelés helyett adat.",
+              },
+              {
+                q: "A riválisom miért jön elő az AI válaszban?",
+                a: "A riport megmutatja: kit említ, milyen forrásból. Utána tudsz javítani.",
+              },
+              {
+                q: "A Search Console mutatja az AI láthatóságot?",
+                a: "Nem. Nincs hivatalos AI Search Console. Ezért kell külön monitor.",
+              },
+              {
+                q: "Mi az a zero-click veszteség?",
+                a: "Az AI összefoglal és ajánl. A döntés a válaszban születik. Ha nincs a neved, nem jön lead.",
+              },
+              {
+                q: "SEO toolom van. Az nem elég?",
+                a: "A klasszikus SEO tool nem mondja meg, mit válaszol a ChatGPT vagy a Perplexity a kulcsszavadra.",
+              },
+              {
+                q: "Milyen magyar promptokat érdemes figyelni?",
+                a: "Szolgáltatás + város, „legjobb X”, „X ár”, „X ajánló”. Amit az ügyfeleid tényleg kérdeznek.",
+              },
+              {
+                q: "Mit csináljak, ha hiányzom az AI-ból?",
+                a: "A riport ad javítási listát. Ha kell, a TD-AI AEO csomaggal meg is csináljuk.",
+              },
+              {
+                q: "Mennyibe kerül először megnézni?",
+                a: "Egyszeri audit 14 900 Ft. Ha rendszeresen akarod, Monitor 19 900 Ft/hó.",
+              },
+            ].map((item) => (
+              <article
+                key={item.q}
+                className="rounded-xl border border-[var(--at-line)] bg-[var(--at-ink)] p-6 transition hover:border-[var(--at-signal)]/40"
+              >
+                <h3 className="text-lg font-semibold text-white">{item.q}</h3>
+                <p className="mt-3 leading-relaxed text-[var(--at-muted)]">
+                  <span className="font-semibold text-[var(--at-signal)]">Megoldás: </span>
+                  {item.a}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

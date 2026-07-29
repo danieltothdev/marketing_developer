@@ -309,17 +309,43 @@ body {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .cw-rise,
-  .cw-glow,
-  .cw-bubble,
-  .cw-hero-frame,
-  .cw-hero-img,
-  .cw-anim-orbit,
-  .cw-anim-bubble-a,
-  .cw-anim-bubble-b,
-  .cw-anim-bubble-c,
-  .cw-anim-pulse {
-    animation: none;
+.cw-typing-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cw-muted);
+  animation: cw-typing 1s ease-in-out infinite;
+}
+
+@keyframes cw-typing {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
   }
+  40% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes cw-msg-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cw-msg-in {
+  animation: cw-msg-in 0.35s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cw-rise, .cw-glow, .cw-bubble, .cw-hero-frame, .cw-hero-img, .cw-typing-dot, .cw-msg-in { animation: none !important; }
 }
