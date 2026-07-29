@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
 const PROMPTS = [
@@ -99,28 +100,37 @@ export function HeroVisual() {
 
   return (
     <div className="at-hero-stage relative w-full">
-      <div className="at-anim-stage at-hero-frame relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[var(--at-line)] shadow-[0_40px_100px_-28px_rgba(46,240,208,0.5)] sm:aspect-[16/12] lg:aspect-[16/11]">
-        {/* Animated radar — no video */}
-        <div className="at-anim-grid" aria-hidden />
-        <div className="at-anim-scope" aria-hidden>
-          <div className="at-anim-beam" aria-hidden />
-        </div>
-        <div className="at-anim-blip at-anim-blip-1" aria-hidden />
-        <div className="at-anim-blip at-anim-blip-2" aria-hidden />
-        <div className="at-anim-blip at-anim-blip-3" aria-hidden />
-        <p className="at-anim-label">AI scan · magyar promptok</p>
+      <div className="at-hero-frame relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[var(--at-line)] shadow-[0_48px_120px_-32px_rgba(46,240,208,0.35)] sm:aspect-[16/12] lg:aspect-[16/11]">
+        <Image
+          src="/images/aitracker-hero-bg.webp"
+          alt=""
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 560px"
+          className="at-hero-img object-cover object-center"
+          aria-hidden
+        />
 
-        <div className="absolute left-4 top-4 z-20 rounded-full border border-[var(--at-signal)]/35 bg-black/55 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--at-signal)] backdrop-blur-md">
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#060a12]/92 via-[#060a12]/35 to-[#060a12]/20"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-l from-[#060a12]/50 via-transparent to-transparent"
+          aria-hidden
+        />
+
+        <div className="absolute left-4 top-4 z-20 rounded-full border border-[var(--at-signal)]/35 bg-black/55 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--at-signal)] backdrop-blur-xl">
           Élő scan demo
         </div>
 
         <div className="absolute inset-x-4 bottom-4 z-20 sm:inset-x-5">
-          <div className="rounded-2xl border border-white/12 bg-[rgba(6,10,18,0.92)] p-4 shadow-2xl backdrop-blur-2xl">
+          <div className="rounded-2xl border border-white/12 bg-[rgba(6,10,18,0.9)] p-4 shadow-[0_24px_80px_-12px_rgba(0,0,0,0.75)] backdrop-blur-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--at-muted)]">
               Mit kérdez az ügyfél az AI-tól?
             </p>
 
-            <div className="mt-2 flex items-center gap-2 rounded-xl border border-[var(--at-signal)]/25 bg-black/40 px-3 py-2.5">
+            <div className="mt-2 flex items-center gap-2 rounded-xl border border-[var(--at-signal)]/25 bg-black/45 px-3 py-2.5">
               <span className="text-[var(--at-signal)]">⌕</span>
               <p className="min-h-[1.25rem] flex-1 font-mono text-sm text-white">
                 {typed}

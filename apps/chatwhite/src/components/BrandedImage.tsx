@@ -21,7 +21,7 @@ export function BrandedImage({
   fill,
   sizes,
   className = "object-cover",
-  badge = "ChatWhite",
+  badge,
   caption,
   priority,
 }: Props) {
@@ -31,7 +31,7 @@ export function BrandedImage({
       alt={alt}
       fill
       sizes={sizes}
-      className={`${className} transition duration-700 group-hover:scale-[1.02]`}
+      className={`${className} transition duration-700 group-hover:scale-[1.03]`}
       priority={priority}
     />
   ) : (
@@ -41,27 +41,23 @@ export function BrandedImage({
       width={width}
       height={height}
       sizes={sizes}
-      className={`h-auto w-full ${className} transition duration-700 group-hover:scale-[1.02]`}
+      className={`h-auto w-full ${className} transition duration-700 group-hover:scale-[1.03]`}
       priority={priority}
     />
   );
 
   return (
     <figure
-      className={`group relative overflow-hidden ${fill ? "h-full w-full" : "rounded-2xl border border-[var(--cw-line)] bg-[var(--cw-panel)]"}`}
+      className={`group relative overflow-hidden ${fill ? "h-full w-full" : "rounded-2xl border border-[var(--cw-line)] bg-[var(--cw-panel)] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)]"}`}
     >
       <div className={`relative ${fill ? "h-full min-h-[240px] w-full" : "w-full"}`}>
         {inner}
         <div
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--cw-ink)]/50 via-transparent to-transparent"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--cw-ink)]/35 via-transparent to-transparent"
           aria-hidden
         />
-        <div className="absolute left-4 top-4 rounded-xl border border-[var(--cw-lime)]/35 bg-[var(--cw-ink)]/85 px-3 py-1.5 text-sm font-bold backdrop-blur-md">
-          <span className="text-[var(--cw-lime)]">Chat</span>
-          <span className="text-white">White</span>
-        </div>
-        {badge && badge !== "ChatWhite" && (
-          <p className="absolute bottom-4 left-4 rounded-lg bg-[var(--cw-coral)] px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
+        {badge && (
+          <p className="absolute bottom-4 left-4 rounded-lg border border-white/10 bg-[var(--cw-ink)]/80 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white backdrop-blur-md">
             {badge}
           </p>
         )}

@@ -106,7 +106,7 @@ const jsonLd = {
       "@id": "https://chatwhite.hu/#organization",
       name: "ChatWhite",
       url: "https://chatwhite.hu",
-      logo: "https://chatwhite.hu/images/chatwhite-hero.webp",
+      logo: "https://chatwhite.hu/images/chatwhite-hero-bg.webp",
       parentOrganization: {
         "@type": "Organization",
         name: "TD-AI & Marketing",
@@ -378,13 +378,13 @@ export default function Home() {
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
             <BrandedImage
-              src="/images/chatwhite-hero.webp"
+              src="/images/chatwhite-hero-bg.webp"
               alt="ChatWhite: éjszakai lead értesítés és webchat a weboldalon"
               caption="Este is dolgozik a bot — te alszol, a lead megérkezik."
               priority
             />
             <BrandedImage
-              src="/images/chatwhite-phone.webp"
+              src="/images/chatwhite-phone-premium.webp"
               alt="ChatWhite lead értesítés okostelefonon — név, telefon, igény"
               caption="Azonnali értesítés: név, telefon, üzenet a zsebedben."
             />
@@ -507,7 +507,7 @@ export default function Home() {
           </div>
           <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-[var(--cw-line)]">
             <BrandedImage
-              src="/images/chatwhite-missed.webp"
+              src="/images/chatwhite-missed-premium.webp"
               alt="ChatWhite: elveszett esti megkeresések listája"
               fill
               sizes="(max-width: 1024px) 100vw, 520px"
@@ -523,7 +523,7 @@ export default function Home() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-2xl border border-[var(--cw-line)] lg:order-1">
               <BrandedImage
-                src="/images/chatwhite-dashboard.webp"
+                src="/images/chatwhite-dashboard-premium.webp"
                 alt="ChatWhite lead dashboard — esti lead számláló és válaszidő"
                 fill
                 sizes="(max-width: 1024px) 100vw, 480px"

@@ -31,7 +31,7 @@ export function BrandedImage({
       alt={alt}
       fill
       sizes={sizes}
-      className={`${className} transition duration-700 group-hover:scale-[1.02]`}
+      className={`${className} transition duration-700 group-hover:scale-[1.03]`}
       priority={priority}
     />
   ) : (
@@ -41,26 +41,23 @@ export function BrandedImage({
       width={width}
       height={height}
       sizes={sizes}
-      className={`h-auto w-full ${className} transition duration-700 group-hover:scale-[1.02]`}
+      className={`h-auto w-full ${className} transition duration-700 group-hover:scale-[1.03]`}
       priority={priority}
     />
   );
 
   return (
     <figure
-      className={`group relative overflow-hidden ${fill ? "h-full w-full" : "rounded-2xl border border-[var(--at-line)] bg-[var(--at-panel)]"}`}
+      className={`group relative overflow-hidden ${fill ? "h-full w-full" : "rounded-2xl border border-[var(--at-line)] bg-[var(--at-panel)] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)]"}`}
     >
       <div className={`relative ${fill ? "h-full min-h-[240px] w-full" : "w-full"}`}>
         {inner}
         <div
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--at-ink)]/55 via-transparent to-transparent"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--at-ink)]/35 via-transparent to-transparent"
           aria-hidden
         />
-        <div className="absolute left-4 top-4 rounded-xl border border-[var(--at-signal)]/35 bg-[var(--at-ink)]/85 px-3 py-1.5 text-sm font-bold backdrop-blur-md">
-          AI Tracker <span className="text-[var(--at-signal)]">HU</span>
-        </div>
         {badge && (
-          <p className="absolute bottom-4 left-4 rounded-lg bg-[var(--at-warn)]/90 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
+          <p className="absolute bottom-4 left-4 rounded-lg border border-white/10 bg-[var(--at-ink)]/80 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white backdrop-blur-md">
             {badge}
           </p>
         )}

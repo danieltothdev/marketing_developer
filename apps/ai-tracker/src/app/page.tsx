@@ -93,7 +93,7 @@ const jsonLd = {
       "@id": "https://aitracker.hu/#organization",
       name: "AI Tracker HU",
       url: "https://aitracker.hu",
-      logo: "https://aitracker.hu/images/aitracker-hero.webp",
+      logo: "https://aitracker.hu/images/aitracker-hero-bg.webp",
       parentOrganization: {
         "@type": "Organization",
         name: "TD-AI & Marketing",
@@ -333,13 +333,13 @@ export default function Home() {
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
             <BrandedImage
-              src="/images/aitracker-hero.webp"
+              src="/images/aitracker-hero-bg.webp"
               alt="AI Tracker HU radar: ki jelenik meg az AI válaszban"
               caption="Radar nézet: hol vagy látható az AI keresőben."
               priority
             />
             <BrandedImage
-              src="/images/aitracker-radar.webp"
+              src="/images/aitracker-radar-premium.webp"
               alt="AI Tracker platformonkénti versenytárs említések"
               caption="4 platform · versenytárs lista · hiányzás jelzés."
             />
@@ -459,7 +459,7 @@ export default function Home() {
           </div>
           <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-[var(--at-line)]">
             <BrandedImage
-              src="/images/aitracker-radar.webp"
+              src="/images/aitracker-radar-premium.webp"
               alt="AI Tracker versenytárs radar — ki említett az AI válaszban"
               fill
               sizes="(max-width: 1024px) 100vw, 520px"
@@ -527,7 +527,7 @@ export default function Home() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[var(--at-line)]">
             <BrandedImage
-              src="/images/aitracker-report.webp"
+              src="/images/aitracker-report-premium.webp"
               alt="AI Tracker HU PDF riport — említés, versenytárs, javítási terv"
               fill
               sizes="(max-width: 1024px) 100vw, 480px"

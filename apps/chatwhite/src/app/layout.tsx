@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/chatwhite-hero.webp",
+        url: "/images/chatwhite-hero-bg.webp",
         width: 1120,
         height: 700,
         alt: "ChatWhite AI chatbot éjszakai irodában",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "ChatWhite — Magyar AI chatbot KKV-knak",
     description:
       "24/7 lead gyűjtés a weboldalon. Magyar AI. 14 nap próba bankkártya nélkül.",
-    images: ["/images/chatwhite-hero.webp"],
+    images: ["/images/chatwhite-hero-bg.webp"],
   },
   robots: {
     index: true,

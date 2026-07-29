@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/aitracker-hero.webp",
+        url: "/images/aitracker-hero-bg.webp",
         width: 1120,
         height: 700,
         alt: "AI Tracker HU dashboard — AI kereső láthatóság",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     title: "AI Tracker HU — AI kereső láthatóság monitor",
     description:
       "Látod, kit ajánl a ChatGPT helyetted. Első scan 14 900 Ft.",
-    images: ["/images/aitracker-hero.webp"],
+    images: ["/images/aitracker-hero-bg.webp"],
   },
   robots: {
     index: true,
