@@ -330,3 +330,31 @@ nyelvi verziónként — technikailag zöld oldal NEM kész, ha a tartalma rossz
 - Felhasználó megadta a valódi Google Maps "Embed a map" iframe kódot -> cím dekódolva: Bärbyvägen, 423 73 Göteborg.
 - Lecserélve mindkét meglévő térkép-előfordulás (SV index.html, EN en/index.html) a valódi Google Maps embed pb= URL-re, nyelvi paraméter (hl) svédre/angolra állítva a hu helyett. A .map-wrap CSS reszponzívan kezeli a méretezést, nem kellett hozzányúlni.
 - Sandbox proxy blokkolja a google.com-ot -> nem tudtam vizuálisan renderelni itt, csak strukturálisan ellenőrizni (érvényes URL, 1 előfordulás/fájl, iframe attribútumok). Élesben normálisan be fog töltődni.
+
+## 2026-07-27 — AEO-mélyítés: táblázatok, HowTo séma, forráshivatkozások + /omraden optimalizálás
+
+### Blogcikkek AEO-javítása (a "bónusz" klaszter-összekötés kihagyva, ahogy kérve volt)
+1. VALÓDI <table> az áraknak (AI-motorok a szemantikus táblázatokat tudják kiemelni, a div/ul-t nehezebben):
+   - Új .price-table CSS mindkét stíluslapba (src + minified), márka sötét témához illesztve.
+   - 4 cikk kapott valódi <table>-t: blogg/dodsbo-pris-goteborg, en/blog/estate-clearance-cost-gothenburg,
+     blogg/tomma-hus-goteborg, en/blog/clearing-a-house-gothenburg. <caption>, <thead>, scope="row/col".
+2. HowTo séma a lépés-alapú tartalmakhoz (eddig SEHOL nem volt):
+   - blogg/tomma-hus-goteborg + en párja (7 lépés), tjanster/dodsbotomning-i-goteborg + en párja (5 lépés).
+   - FONTOS: a séma lépései SZÓ SZERINT a látható tartalmat tükrözik (ellenőrizve scripttel) - eltérő séma
+     spam-jelzés lenne. Az első körben az EN service-oldalnál kitalált fordítást használtam, javítva a valós
+     látható szövegre ("Empathetic first call", "Review of belongings" stb.).
+3. Hiteles kimenő hivatkozások (E-E-A-T): Skatteverket-linkek a bouppteckning/RUT állításokhoz
+   5 kulcsoldalon. Korábban 2 fájlban volt link, most 7-ben.
+
+### /omraden + en/areas teljes AEO/SEO optimalizálás
+- KRITIKUS AEO-hiba javítva: a 12 területlink JS-ből (data-area-grid, innerHTML=) töltődött, tehát a nyers
+  HTML-ben NEM volt benne -> a JS-t nem futtató AI-crawlerek ÜRES oldalt láttak. Most statikusan bent van a
+  HTML-ben, a JS ugyanazzal a markuppal írja felül (progressive enhancement, vizuálisan nulla változás).
+- ItemList séma a 12 területtel (mindkét nyelven) - strukturált lista az AI-nak.
+- BreadcrumbList séma hozzáadva (mindkét oldalon teljesen HIÁNYZOTT).
+- Meta description konkretizálva területnevekkel.
+- H1 a felhasználó kifejezett kérésére: "Tömning i hela Västra Göteborg". JELEZVE NEKI: kannibalizációs
+  kockázat a /omraden/vastra-goteborg aloldallal, ami ugyanerre a kulcsszóra megy. A lead bekezdést
+  kiegészítettem, hogy az oldal ne legyen félrevezető (a teljes régiót is megemlíti).
+- Ellenőrzés: minden JSON-LD érvényes, 0 törött link, Playwright: 12 area-card renderel, 0 JS-hiba,
+  táblázat helyesen jelenik meg a sötét témában.

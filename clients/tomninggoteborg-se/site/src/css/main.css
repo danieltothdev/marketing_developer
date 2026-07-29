@@ -2842,3 +2842,51 @@ body.has-mobile-cta .cookie-banner {
     display: none;
   }
 }
+
+/* Price / data tables (AEO: real semantic tables are extractable by AI answer engines) */
+.price-table-wrap {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+  background: var(--bg-card);
+}
+
+.price-table caption {
+  caption-side: top;
+  text-align: left;
+  padding: 0.9rem 1.1rem 0.4rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.price-table th,
+.price-table td {
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.price-table thead th {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.price-table tbody tr:last-child th,
+.price-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.price-table td:last-child {
+  font-weight: 700;
+  white-space: nowrap;
+}
