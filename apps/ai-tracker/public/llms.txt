@@ -15,5 +15,15 @@ Az AI Tracker HU megmutatja, megjelenik-e a márkád az AI válaszokban magyar k
 ## Fontos oldalak
 
 - [Kezdőlap](https://aitracker.hu/)
+- [Tudástár](https://aitracker.hu/#tudastar): AEO, zero-click, Search Console, magyar promptok, SEO vs AEO
 - [Árazás](https://aitracker.hu/#pricing): /pricing.md
 - [TD-AI Marketing](https://tdaimarketing.hu)
+
+## Tudástár cikkek (AEO)
+
+- Mi az az AEO (Answer Engine Optimization)?
+- Mi a zero-click veszteség az AI keresőben?
+- Mutatja-e a Search Console az AI láthatóságot?
+- Milyen magyar kulcsszavakat érdemes figyelni?
+- Elég a klasszikus SEO tool az AI láthatósághoz?
+- Mit tegyek, ha hiányzom az AI válaszból?
