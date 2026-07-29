@@ -2,29 +2,70 @@
 
 import { useEffect, useState } from "react";
 
-const DEMO = [
+type Msg = { role: "user" | "bot"; text: string };
+
+const SCRIPT: { pause: number; msg?: Msg; toast?: string }[] = [
+  { pause: 600 },
   {
-    user: "Szia! Klímaszerelés kellene holnap Debrecenben.",
-    bot: "Szia! Debrecenben és 30 km-en belül megyünk. 9–12 vagy 14–17 jobb?",
+    pause: 900,
+    msg: {
+      role: "user",
+      text: "Szia! Klímaszerelés kellene holnap Debrecenben.",
+    },
   },
   {
-    user: "14–17. Mennyibe kerül egy 3,5 kW split?",
-    bot: "Árajánlatot 1 órán belül küldünk. Hagyj telefont, visszahívunk.",
+    pause: 1400,
+    msg: {
+      role: "bot",
+      text: "Szia! Debrecenben és 30 km-en belül megyünk. 9–12 vagy 14–17 jobb?",
+    },
   },
   {
-    user: "06 30 123 4567 · Kovács Péter",
-    bot: "Lead mentve. Email elment a tulajdonosnak. 12 mp alatt.",
+    pause: 1000,
+    msg: { role: "user", text: "14–17. Mennyibe kerül egy 3,5 kW split?" },
   },
+  {
+    pause: 1300,
+    msg: {
+      role: "bot",
+      text: "Árajánlatot 1 órán belül küldünk. Hagyd a telefonod, visszahívunk.",
+    },
+  },
+  {
+    pause: 900,
+    msg: { role: "user", text: "06 30 123 4567 · Kovács Péter" },
+  },
+  {
+    pause: 1100,
+    msg: {
+      role: "bot",
+      text: "Lead mentve. Email elment a tulajdonosnak — 12 mp alatt.",
+    },
+    toast: "Új lead · Kovács Péter · Debrecen",
+  },
+  { pause: 2800 },
 ];
 
-type Phase = "typing" | "user" | "bot";
-
 export function HeroVisual() {
-  const [step, setStep] = useState(0);
-  const [phase, setPhase] = useState<Phase>("typing");
+  const [messages, setMessages] = useState<Msg[]>([]);
+  const [typing, setTyping] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
+  const [leads, setLeads] = useState(3);
+  const [clock, setClock] = useState("22:41");
+
+  useEffect(() => {
+    const tick = window.setInterval(() => {
+      const d = new Date();
+      setClock(
+        `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`,
+      );
+    }, 30_000);
+    return () => window.clearInterval(tick);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
+
     const wait = (ms: number) =>
       new Promise<void>((resolve) => {
         window.setTimeout(() => {
@@ -34,17 +75,24 @@ export function HeroVisual() {
 
     const loop = async () => {
       while (!cancelled) {
-        for (let i = 0; i < DEMO.length; i++) {
+        setMessages([]);
+        setToast(null);
+        setTyping(false);
+
+        for (const step of SCRIPT) {
           if (cancelled) return;
-          setStep(i);
-          setPhase("typing");
-          await wait(700);
-          if (cancelled) return;
-          setPhase("user");
-          await wait(900);
-          if (cancelled) return;
-          setPhase("bot");
-          await wait(2600);
+          if (step.msg) {
+            setTyping(true);
+            await wait(step.msg.role === "bot" ? 700 : 450);
+            if (cancelled) return;
+            setTyping(false);
+            setMessages((prev) => [...prev, step.msg!]);
+            if (step.toast) {
+              setToast(step.toast);
+              setLeads((n) => n + 1);
+            }
+          }
+          await wait(step.pause);
         }
       }
     };
@@ -55,80 +103,128 @@ export function HeroVisual() {
     };
   }, []);
 
-  const current = DEMO[step];
-
   return (
-    <div className="relative w-full overflow-hidden rounded-2xl border border-[var(--cw-line)] bg-[var(--cw-panel)] shadow-[0_40px_80px_-40px_rgba(200,255,61,0.35)]">
-      <div className="relative aspect-[16/11] w-full overflow-hidden bg-[var(--cw-ink)]">
+    <div className="cw-hero-stage relative w-full">
+      <div className="relative aspect-[5/6] w-full overflow-hidden rounded-2xl border border-[var(--cw-line)] bg-[var(--cw-ink)] shadow-[0_40px_100px_-30px_rgba(200,255,61,0.45)] sm:aspect-[16/12] lg:aspect-[16/13]">
         <video
-          className="absolute inset-0 h-full w-full scale-105 object-cover"
+          className="cw-hero-video absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop
           playsInline
-          poster="/images/chatwhite-hero.webp"
+          poster="/images/chatwhite-hero-poster.jpg"
         >
           <source src="/videos/hero-chat.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-tr from-[var(--cw-ink)] via-[var(--cw-ink)]/60 to-[var(--cw-ink)]/20" />
 
-        <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-white/15 bg-black/45 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-md">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--cw-lime)] opacity-70" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--cw-lime)]" />
-          </span>
-          Élő a weboldalon
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-[var(--cw-ink)] via-[var(--cw-ink)]/55 to-[var(--cw-ink)]/25"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-[var(--cw-ink)]/70 via-transparent to-[var(--cw-ink)]/30"
+          aria-hidden
+        />
+
+        {/* Top status row */}
+        <div className="absolute left-3 right-3 top-3 z-20 flex items-start justify-between gap-2 sm:left-4 sm:right-4 sm:top-4">
+          <div className="flex items-center gap-2 rounded-full border border-white/15 bg-black/50 px-3 py-1.5 text-[11px] font-semibold text-white backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--cw-lime)] opacity-70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--cw-lime)]" />
+            </span>
+            Élő a weboldalon · {clock}
+          </div>
+          <div className="rounded-full border border-[var(--cw-lime)]/30 bg-[var(--cw-lime)]/15 px-3 py-1.5 text-[11px] font-bold text-[var(--cw-lime)] backdrop-blur-md">
+            {leads} lead ma este
+          </div>
         </div>
 
-        <div className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-[min(100%,340px)]">
-          <div className="overflow-hidden rounded-xl border border-white/15 bg-[rgba(10,16,24,0.86)] shadow-2xl backdrop-blur-xl">
-            <div className="flex items-center justify-between border-b border-white/10 px-3 py-2.5">
-              <div className="flex items-center gap-2">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--cw-lime)] text-[10px] font-extrabold text-[var(--cw-ink)]">
+        {/* Floating toast */}
+        {toast && (
+          <div className="cw-toast absolute left-3 top-14 z-20 max-w-[85%] rounded-xl border border-[var(--cw-lime)]/35 bg-[rgba(10,16,24,0.92)] px-3 py-2.5 shadow-2xl backdrop-blur-xl sm:left-4 sm:top-16 sm:max-w-[260px]">
+            <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--cw-lime)]">
+              Email a tulajdonosnak
+            </p>
+            <p className="mt-1 text-sm font-semibold text-white">{toast}</p>
+            <p className="mt-0.5 text-[11px] text-[var(--cw-muted)]">
+              12 mp válaszidő · mentve
+            </p>
+          </div>
+        )}
+
+        {/* Phone chat mock */}
+        <div className="absolute bottom-3 left-3 right-3 z-20 sm:bottom-4 sm:left-auto sm:right-4 sm:w-[min(100%,360px)]">
+          <div className="overflow-hidden rounded-2xl border border-white/20 bg-[rgba(8,12,18,0.88)] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
+            <div className="flex items-center justify-between border-b border-white/10 px-3.5 py-3">
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--cw-lime)] text-[11px] font-extrabold text-[var(--cw-ink)] shadow-[0_0_24px_rgba(200,255,61,0.45)]">
                   CW
                 </span>
                 <div>
-                  <p className="text-xs font-semibold text-white">ChatWhite bot</p>
-                  <p className="text-[10px] text-[var(--cw-lime)]">Online · magyar AI</p>
+                  <p className="text-sm font-semibold text-white">
+                    Chat<span className="text-white">White</span> bot
+                  </p>
+                  <p className="text-[11px] text-[var(--cw-lime)]">
+                    Online · magyar AI · válaszol
+                  </p>
                 </div>
               </div>
-              <span className="text-[10px] text-white/40">demo</span>
+              <span className="rounded-md bg-white/5 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/45">
+                demo
+              </span>
             </div>
 
-            <div className="min-h-[150px] space-y-2 px-3 py-3 text-sm">
-              {(phase === "user" || phase === "bot") && (
-                <p
-                  key={`u-${step}`}
-                  className="cw-msg-in max-w-[92%] rounded-2xl rounded-tl-sm bg-white/10 px-3 py-2 text-white/90"
-                >
-                  {current.user}
+            <div className="flex min-h-[210px] flex-col justify-end gap-2 px-3.5 py-3 sm:min-h-[230px]">
+              {messages.length === 0 && !typing && (
+                <p className="px-1 text-xs text-[var(--cw-muted)]">
+                  Érdeklődő ír este 22:41-kor…
                 </p>
               )}
-              {phase === "bot" && (
+              {messages.map((m, i) => (
                 <p
-                  key={`b-${step}`}
-                  className="cw-msg-in ml-auto max-w-[92%] rounded-2xl rounded-tr-sm bg-[var(--cw-lime)]/20 px-3 py-2 text-[var(--cw-lime)]"
+                  key={`${i}-${m.text.slice(0, 12)}`}
+                  className={`cw-msg-in max-w-[92%] px-3 py-2 text-[13px] leading-snug sm:text-sm ${
+                    m.role === "user"
+                      ? "rounded-2xl rounded-tl-sm bg-white/10 text-white/92"
+                      : "ml-auto rounded-2xl rounded-tr-sm bg-[var(--cw-lime)]/20 text-[var(--cw-lime)]"
+                  }`}
                 >
-                  {current.bot}
+                  {m.text}
                 </p>
-              )}
-              {phase === "typing" && (
-                <p className="flex gap-1 px-1 pt-2 text-[var(--cw-muted)]">
+              ))}
+              {typing && (
+                <p className="flex gap-1.5 px-2 py-1">
                   <span className="cw-typing-dot" />
-                  <span className="cw-typing-dot" style={{ animationDelay: "0.15s" }} />
-                  <span className="cw-typing-dot" style={{ animationDelay: "0.3s" }} />
+                  <span
+                    className="cw-typing-dot"
+                    style={{ animationDelay: "0.15s" }}
+                  />
+                  <span
+                    className="cw-typing-dot"
+                    style={{ animationDelay: "0.3s" }}
+                  />
                 </p>
               )}
             </div>
 
-            <div className="border-t border-white/10 px-3 py-2">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--cw-lime)]">
-                Lead mentve · Email a tulajnak
-              </p>
+            <div className="flex items-center gap-2 border-t border-white/10 px-3.5 py-2.5">
+              <div className="flex-1 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[11px] text-white/35">
+                Írj üzenetet…
+              </div>
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--cw-lime)] text-xs font-bold text-[var(--cw-ink)]">
+                →
+              </span>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Ambient glow under stage */}
+      <div
+        className="pointer-events-none absolute -bottom-6 left-1/2 h-16 w-3/4 -translate-x-1/2 rounded-full bg-[var(--cw-lime)]/25 blur-3xl"
+        aria-hidden
+      />
     </div>
   );
 }

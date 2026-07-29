@@ -252,15 +252,19 @@ export default function Home() {
         </Link>
       </header>
 
-      {/* HERO — stock video + live chat demo */}
+      {/* HERO — stock video + live chat product demo */}
       <section className="cw-hero-wash relative isolate overflow-hidden">
         <div className="cw-noise pointer-events-none absolute inset-0" aria-hidden />
         <div
           className="cw-glow pointer-events-none absolute -left-20 top-24 h-72 w-72 rounded-full bg-[var(--cw-lime)]/20 blur-3xl"
           aria-hidden
         />
+        <div
+          className="pointer-events-none absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-[var(--cw-coral)]/10 blur-3xl"
+          aria-hidden
+        />
 
-        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 lg:pb-20">
+        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-14 lg:pb-24 lg:pt-12">
           <div className="min-w-0">
             <p className="cw-rise mb-4 text-sm font-bold uppercase tracking-[0.24em] text-[var(--cw-lime)]">
               <Brand className="text-sm tracking-[0.08em]" />
@@ -293,6 +297,18 @@ export default function Home() {
             <p className="cw-rise cw-rise-3 mt-4 text-sm text-[var(--cw-muted)]">
               Bankkártya nélkül · 1 sor kód · Bármikor leállítható
             </p>
+            <ul className="cw-rise cw-rise-3 mt-8 grid max-w-lg gap-2 text-sm text-[var(--cw-soft)]">
+              {[
+                "Ki válaszol este 22:40-kor a weboldalon?",
+                "Miért nincs ajánlatkérés a Google Ads után?",
+                "Hétvégén is elveszik a megkeresés?",
+              ].map((line) => (
+                <li key={line} className="flex gap-2">
+                  <span className="text-[var(--cw-coral)]">?</span>
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="cw-rise cw-rise-2 relative min-w-0 w-full">
@@ -338,27 +354,27 @@ export default function Home() {
           <figure className="overflow-hidden rounded-xl border border-[var(--cw-line)]">
             <Image
               src="/images/chatwhite-hero.webp"
-              alt="Éjszakai iroda laptoppal: a ChatWhite bot dolgozik helyetted"
+              alt="Érdeklődő este a telefonján: megkeresés, amikor te nem vagy elérhető"
               width={1120}
               height={700}
               sizes="(max-width: 768px) 100vw, 560px"
               className="h-auto w-full object-cover"
             />
             <figcaption className="px-4 py-3 text-sm text-[var(--cw-muted)]">
-              Este is fut a weboldalad. A bot is.
+              Este 22:40 — az ügyfél a telefonján ír. Te alszol.
             </figcaption>
           </figure>
           <figure className="overflow-hidden rounded-xl border border-[var(--cw-line)]">
             <Image
               src="/images/chatwhite-phone.webp"
-              alt="Telefonos chat: érdeklődő és ChatWhite beszélgetés"
+              alt="Vállalkozó okostelefonnal: ChatWhite lead értesítés a zsebében"
               width={900}
               height={700}
               sizes="(max-width: 768px) 100vw, 560px"
               className="h-auto w-full object-cover"
             />
             <figcaption className="px-4 py-3 text-sm text-[var(--cw-muted)]">
-              Lead a telefonodon: név, szám, üzenet.
+              Lead a telefonodon: név, szám, üzenet — azonnal.
             </figcaption>
           </figure>
         </div>
@@ -399,6 +415,30 @@ export default function Home() {
               {
                 q: "Messenger botom van. Az nem elég?",
                 a: "A hirdetésből érkező látogató a weboldalon van. Ott kell megszólítani, mielőtt bezárja a fület.",
+              },
+              {
+                q: "Az ügyfél 3 helyet is megkérdez. Miért engem választana?",
+                a: "Mert te válaszolsz először — ár, terület, időpont. A többiek még alszanak.",
+              },
+              {
+                q: "Telefonon nem birok mindent felvenni. Elvesznek a hívások?",
+                a: "A webchat leadet gyűjt, ha nem veszed fel. Név, szám, igény — reggel a dashboardon.",
+              },
+              {
+                q: "Szezonban zsúfolt vagyok. Ki szűri a komoly érdeklődőket?",
+                a: "A bot kérdez: szolgáltatás, város, időablak. Csak a kész lead megy tovább hozzád.",
+              },
+              {
+                q: "Facebookról jönnek, de a weboldalamon eltűnnek. Miért?",
+                a: "Nincs azonnali beszélgetés. A ChatWhite widget ott fogja meg őket, ahol a döntés születik.",
+              },
+              {
+                q: "Árajánlatot kérnek éjjel — én csak napközben küldök. Elbukom?",
+                a: "A bot rögzíti az igényt, te napközben küldöd az árat. A lead már nálad van, nem a konkurensnél.",
+              },
+              {
+                q: "Több telephelyem / szolgáltatási körzetem van. Bírja a bot?",
+                a: "Igen. Területek, árak, szolgáltatások külön taníthatók — magyarul, a te hangodon.",
               },
               {
                 q: "Honnan tudom, hogy megéri?",
@@ -456,12 +496,12 @@ export default function Home() {
           <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[var(--cw-line)]">
             <Image
               src="/images/chatwhite-missed.webp"
-              alt="Üres recepció este: kihagyott hívások és elveszett megkeresések"
+              alt="Telefonos értesítés: az ügyfél írt, amíg senki nem válaszolt"
               fill
               sizes="(max-width: 1024px) 100vw, 520px"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--cw-ink)]/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--cw-ink)]/55 to-transparent" />
             <p className="absolute bottom-4 left-4 rounded-md bg-[var(--cw-coral)] px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
               Este 22:41 · senki nem válaszol
             </p>

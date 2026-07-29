@@ -230,8 +230,12 @@ export default function Home() {
       {/* HERO — stock video + interactive AI scan */}
       <section className="at-radar relative isolate overflow-hidden">
         <div className="at-rings absolute inset-0" aria-hidden />
+        <div
+          className="pointer-events-none absolute -left-16 top-20 h-72 w-72 rounded-full bg-[var(--at-signal)]/15 blur-3xl"
+          aria-hidden
+        />
 
-        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 lg:pb-20">
+        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-14 lg:pb-24 lg:pt-12">
           <div className="min-w-0">
             <p className="at-rise mb-5 text-sm font-bold uppercase tracking-[0.22em] text-[var(--at-signal)]">
               AI Tracker HU
@@ -262,6 +266,18 @@ export default function Home() {
             <p className="at-rise at-rise-3 mt-4 text-sm text-[var(--at-muted)]">
               14 900 Ft · PDF riport · Javítási terv
             </p>
+            <ul className="at-rise at-rise-3 mt-8 grid max-w-lg gap-2 text-sm text-[var(--at-soft)]">
+              {[
+                "Ha a ChatGPT-t kérdezik, engem ajánl?",
+                "Miért a rivális jelenik meg az AI válaszban?",
+                "Van Search Console az AI keresőkre?",
+              ].map((line) => (
+                <li key={line} className="flex gap-2">
+                  <span className="text-[var(--at-warn)]">?</span>
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="at-rise at-rise-2 relative min-w-0 w-full">
@@ -291,27 +307,27 @@ export default function Home() {
           <figure className="overflow-hidden rounded-xl border border-[var(--at-line)]">
             <Image
               src="/images/aitracker-hero.webp"
-              alt="AI láthatóság dashboard: AI Tracker HU monitor"
+              alt="AI adatmátrix: AI Tracker HU láthatóság monitor"
               width={1120}
               height={700}
               sizes="(max-width: 768px) 100vw, 560px"
               className="h-auto w-full object-cover"
             />
             <figcaption className="px-4 py-3 text-sm text-[var(--at-muted)]">
-              Dashboard: platformonkénti említések.
+              Digitális radar: hol jelenik meg a márkád az AI-ban.
             </figcaption>
           </figure>
           <figure className="overflow-hidden rounded-xl border border-[var(--at-line)]">
             <Image
               src="/images/aitracker-radar.webp"
-              alt="Versenytárs radar: ki jelenik meg az AI válaszokban"
+              alt="Neurális háló / AI hálózat: említések és kapcsolatok a kereső válaszokban"
               width={1120}
               height={700}
               sizes="(max-width: 768px) 100vw, 560px"
               className="h-auto w-full object-cover"
             />
             <figcaption className="px-4 py-3 text-sm text-[var(--at-muted)]">
-              Ki van a radaron, és ki esik ki.
+              Ki van a hálóban — és ki esik ki belőle.
             </figcaption>
           </figure>
         </div>
@@ -351,6 +367,30 @@ export default function Home() {
               {
                 q: "Milyen magyar promptokat érdemes figyelni?",
                 a: "Szolgáltatás + város, „legjobb X”, „X ár”, „X ajánló”. Amit az ügyfeleid tényleg kérdeznek.",
+              },
+              {
+                q: "Google Ads-re kölök. Az AI válaszban is ott vagyok?",
+                a: "Nem feltétlenül. A hirdetés kattintást vesz. Az AI ajánlás organikus említés — ezt külön kell mérni.",
+              },
+              {
+                q: "Helyi vállalkozás vagyok. Engem is érint az AI kereső?",
+                a: "Igen. „legjobb fogorvos Debrecen” típusú kérdéseknél az AI neveket dob. Ha kimaradsz, a riválisé a telefon.",
+              },
+              {
+                q: "Honnan tudom, hogy romlik vagy javul a láthatóságom?",
+                a: "A Monitor havi trendet mutat: említés / hiányzás platformonként. Nem egyszeri tippelés.",
+              },
+              {
+                q: "Ügynökségként hogyan adom tovább az ügyfélnek?",
+                a: "Agency csomag: több domain, white-label PDF. Te prezentálod, te számlázol.",
+              },
+              {
+                q: "Mi van, ha a Perplexity említ, a ChatGPT nem?",
+                a: "Pont ezért scannelünk 4 platformot. Látod a különbséget, és hol kell erősíteni.",
+              },
+              {
+                q: "Értékeléseim jók a Google-on. Az AI akkor engem ajánl?",
+                a: "Segít, de nem garantál. Schema, tartalom, forráshelyek is számítanak — a riport ezeket is nézi.",
               },
               {
                 q: "Mit csináljak, ha hiányzom az AI-ból?",

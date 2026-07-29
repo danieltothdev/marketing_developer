@@ -346,6 +346,40 @@ body {
   animation: cw-msg-in 0.35s ease-out both;
 }
 
+.cw-hero-stage {
+  isolation: isolate;
+}
+
+.cw-hero-video {
+  animation: cw-kenburns 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes cw-toast {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.cw-toast {
+  animation: cw-toast 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .cw-rise, .cw-glow, .cw-bubble, .cw-hero-frame, .cw-hero-img, .cw-typing-dot, .cw-msg-in { animation: none !important; }
+  .cw-rise,
+  .cw-glow,
+  .cw-bubble,
+  .cw-hero-frame,
+  .cw-hero-img,
+  .cw-hero-video,
+  .cw-typing-dot,
+  .cw-msg-in,
+  .cw-toast {
+    animation: none !important;
+  }
 }
