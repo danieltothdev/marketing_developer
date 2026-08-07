@@ -1,6 +1,14 @@
 # Source clone used for conversion — not needed in repo
 claude-skills/
 
+# Secrets (HeyGen API key etc.) — never commit
+.env
+.env.local
+
+# HeyGen avatar identity files are generated per-workspace; keep the named
+# files but not the credential-bearing scratch output.
+*.mp4
+
 # SaaS apps
 apps/*/node_modules/
 apps/*/.next/

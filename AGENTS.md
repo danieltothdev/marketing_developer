@@ -58,6 +58,19 @@ When both libraries have a similar skill, prefer **marketingskills** (`.agents/s
 | Social poszt | `social-content` |
 | Ügyfélajánlat / SOW | `contract-and-proposal-writer` |
 | Schema markup | `schema-markup` |
+| Avatar (arc + hang) létrehozás | `heygen-avatar` |
+| Prezentáló (talking head) videó | `heygen-video` |
+| Videó szinkron / lokalizáció | `heygen-translate` |
+
+## HeyGen skills
+
+`.claude/skills/heygen-skills/` — avatar creation, presenter video generation, and
+video dubbing. Setup, transports, and cost: [`docs/HEYGEN-SETUP.md`](docs/HEYGEN-SETUP.md).
+
+Route to `heygen-avatar` **first** when no `AVATAR-<NAME>.md` exists at the repo
+root — `heygen-video` reads that file for `avatar_id` + `voice_id`. Use the
+`video` / `social` marketing skills for *strategy and script*; use the HeyGen
+skills for actual rendering.
 
 ## Language
 
