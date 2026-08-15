@@ -35,6 +35,14 @@ Minden marketing skill ezt olvassa automatikusan.
 | GA4/GTM setup | `analytics-tracking` |
 | Ügyfélajánlat | `contract-and-proposal-writer` |
 
+## Claude Code pluginek
+
+A `claude-code-skills` marketplace és 12 plugin (marketing, engineering, product, C-level, PM,
+finance, RA/QM, growth, Playwright, self-improving-agent, security-guidance) a
+`.claude/settings.json`-ben van bedrótozva — a repo megnyitásakor automatikusan települnek.
+
+Részletek és a `/plugin install` parancsok: [`docs/PLUGINS.md`](docs/PLUGINS.md)
+
 ## Cursor Skills
 
 Két marketing skill könyvtár telepítve — csak ebben a repóban aktív:
