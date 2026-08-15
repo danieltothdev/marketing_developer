@@ -1,0 +1,39 @@
+# AI Act audit — kiinduló célpontlista
+# Futtatás:  python3 chatbot_scan.py celpontok-seed.txt -o eredmeny.csv
+# Bővítsd a saját ügyfeleiddel, a partnereid ügyfeleivel és a Google Maps-ből
+# kimásolt domainekkel. 100 sor a cél.
+
+# --- A) AI chatbot / hangügynök szolgáltatók (szolgáltatói szerep) ---
+apexweb.hu
+agentcity.hu
+aisquad.hu
+matrixai.hu
+northflowpartner.com
+magyar-ai.hu
+leoai.hu
+aiboost.hu
+smartaichat.hu
+pandatalk.hu
+kangadesign.hu
+pageup.hu
+
+# --- B) Fejlesztő / tanácsadó cégek AI chatbot vonallal ---
+composite.hu
+arcadisconsulting.hu
+peakbit.tech
+
+# --- C) HR / toborzó AI (foglalkoztatási terület) ---
+hrgen.hu
+r-szoft.hu
+perbithr.hu
+hrfelho.eu
+aptinest.eu
+bap.hu
+
+# --- D) Partnerjelöltek — nem ügyfél, hanem disztribúció ---
+madarassy-legal.com
+szekhelypartner.hu
+szekhelycentrum.hu
+grossoffice.hu
+azar.hu
+socialpro.hu
