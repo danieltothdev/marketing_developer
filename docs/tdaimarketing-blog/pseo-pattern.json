@@ -1,0 +1,19 @@
+{
+  "template": "{szolgaltatas}-marketing-{varos}-2026",
+  "base_url": "https://tdaimarketing.hu/blog",
+  "variables": {
+    "szolgaltatas": [
+      "klimaszerelo",
+      "fogaszat",
+      "ugyved",
+      "epitoipar",
+      "szepsegipar"
+    ],
+    "varos": [
+      "debrecen",
+      "hajduboszormeny",
+      "hajduszoboszlo",
+      "nyiregyhaza"
+    ]
+  }
+}
