@@ -1,5 +1,12 @@
 # Telepítés a site-2 (tdaimarketing.hu) projektbe
 
+**A cikk NEM megy élesbe GitHub-commitból.** A tdaimarketing.hu Rackhoston fut. 404 = a HTML nincs a tárhelyen.
+
+Lépésről lépésre: **[RACKHOST-FELTOLTES.md](RACKHOST-FELTOLTES.md)**
+
+Kész csomag: `rackhost/` (cikk + kép + frissített `blog.html` + `sitemap.xml`).
+
+
 Ez a mappa egy **kész, másolható blogoldal** a site-2 HTML-struktúrájához.
 
 ## Fájlok
