@@ -271,6 +271,8 @@ h1.hero-title{font-size:clamp(31px,4.9vw,58px);margin:20px 0 18px;letter-spacing
 #gepezet{background:var(--black-2)}
 .build{position:relative;height:340vh}
 .build-stage{position:sticky;top:0;height:100svh;overflow:hidden}
+#buildMood{position:absolute;inset:0;pointer-events:none;z-index:1;transition:background 1.1s var(--ease);
+  background:radial-gradient(ellipse 70% 60% at 50% 45%,rgba(107,100,89,.10),transparent 70%)}
 #build-gl{position:absolute;inset:0;width:100%;height:100%;display:block}
 .build-fallback{position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;color:var(--muted)}
 .build-stage.gl-on .build-fallback{display:none}
@@ -487,6 +489,63 @@ footer a:hover{color:var(--gold-lt)}
 .wa:hover{transform:scale(1.08)}
 .wa svg{width:29px;height:29px;fill:#fff}
 
+/* ===== 21b. PRÉMIUM RÉTEG ===== */
+/* 10 · oldalbelépő „kameramozgás" */
+.layer{opacity:0;transform:scale(.985) translateY(12px);filter:blur(7px);
+  transition:opacity .9s var(--ease),transform 1.1s var(--ease),filter .9s var(--ease)}
+.layer.enter{opacity:1;transform:none;filter:none}
+
+/* 6 · csiszolt arany monogram a heróban */
+.monogram{position:absolute;left:44%;top:47%;width:158px;height:158px;margin:-79px 0 0 -79px;
+  border-radius:26px;transform:translateZ(-55px) rotateX(6deg);transform-style:preserve-3d;overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,.7),0 0 0 1px rgba(232,185,35,.5),inset 0 1px 0 rgba(255,247,214,.5)}
+.monogram i{position:absolute;inset:-60%;display:block;animation:spinMetal 9s linear infinite;
+  background:conic-gradient(#6d4f0d,#f7d774,#c8901a,#fff6d8,#8a660f,#f7d774,#a8781a,#fff3c4,#6d4f0d)}
+@keyframes spinMetal{to{transform:rotate(360deg)}}
+.monogram b{position:absolute;inset:0;display:grid;place-items:center;font-family:'Playfair Display',serif;
+  font-size:56px;font-weight:800;color:#171003;letter-spacing:-.03em;
+  text-shadow:0 1px 0 rgba(255,247,214,.55),0 -1px 0 rgba(0,0,0,.35)}
+.monogram::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 34%,rgba(255,255,255,.62) 48%,transparent 60%);
+  translate:-130% 0;animation:sheen 5.5s var(--ease) infinite}
+@keyframes sheen{0%,62%{translate:-130% 0}100%{translate:130% 0}}
+@media(max-width:560px){.monogram{width:112px;height:112px;margin:-56px 0 0 -56px}.monogram b{font-size:42px}}
+
+/* 7 · árkártyák Z-tengelyről érkeznek */
+.pfly{opacity:0;transform:translateZ(-280px) rotateX(11deg);
+  transition:opacity .85s var(--ease),transform .95s var(--ease)}
+.pfly.in{opacity:1;transform:none}
+.pfly:nth-child(2){transition-delay:.09s}.pfly:nth-child(3){transition-delay:.18s}
+.pfly:nth-child(4){transition-delay:.27s}.pfly:nth-child(5){transition-delay:.36s}.pfly:nth-child(6){transition-delay:.45s}
+
+/* 8 · előtte / utána osztott képernyő */
+.split{position:relative;height:230vh}
+.split-stage{position:sticky;top:0;height:100svh;display:grid;place-items:center;overflow:hidden}
+.split-panels{position:relative;width:min(1000px,92vw);height:min(520px,66svh);border-radius:20px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 34px 90px rgba(0,0,0,.65)}
+.side{position:absolute;inset:0;padding:clamp(22px,4vw,44px);display:flex;flex-direction:column;justify-content:center;gap:14px}
+.side.a{background:linear-gradient(160deg,#141010,#0c0908)}
+.side.b{background-color:#100d08;background-image:linear-gradient(160deg,rgba(232,185,35,.16),rgba(16,13,8,1));clip-path:inset(0 var(--x,100%) 0 0)}
+.side h3{font-size:clamp(18px,2.4vw,26px);margin-bottom:6px}
+.side .tag{font:800 10.5px/1 'Inter',sans-serif;letter-spacing:.22em;text-transform:uppercase;margin-bottom:12px}
+.side.a .tag{color:#ff8f8f}.side.b .tag{color:var(--gold)}
+.side.b .tag,.side.b>h3{text-align:right}
+.srow{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:11px 0;border-top:1px solid var(--line-soft);font-size:clamp(13px,1.5vw,15px)}
+.srow span:first-child{color:var(--muted)}
+.side.a .srow b{color:#ff8f8f;font-weight:700}
+.side.b .srow b{color:var(--gold-lt);font-weight:700}
+.split-line{position:absolute;top:0;bottom:0;left:calc(100% - var(--x,100%));width:2px;z-index:3;
+  background:linear-gradient(180deg,transparent,var(--gold),transparent);box-shadow:0 0 22px rgba(232,185,35,.8)}
+.split-line::after{content:'⇔';position:absolute;top:50%;left:50%;translate:-50% -50%;width:38px;height:38px;border-radius:50%;
+  display:grid;place-items:center;background:var(--gold-grad);color:#120d04;font-size:15px;box-shadow:0 8px 26px rgba(232,185,35,.5)}
+.split-hint{margin-top:20px;text-align:center;font-size:12.5px;color:var(--dim);letter-spacing:.06em}
+
+/* 12 · arany fólia hullám a záró címen */
+.foil{display:inline-block}
+.foil i{display:inline-block;font-style:normal;animation:foilWave 3.4s ease-in-out infinite;
+  background:linear-gradient(100deg,#c8901a,#fff3c4 45%,#d4a11e);-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes foilWave{0%,100%{transform:translateY(0) rotateX(0)}50%{transform:translateY(-6px) rotateX(16deg)}}
+
 /* ===== 22. REVEAL / REDUCED MOTION ===== */
 .rv{opacity:0;transform:translate3d(0,44px,0) rotateX(9deg);transform-origin:50% 100%;
   transition:opacity .9s var(--ease),transform .9s var(--ease)}
@@ -509,6 +568,15 @@ footer a:hover{color:var(--gold-lt)}
   .bstep h3{margin-bottom:6px}
   .map-3d{transform:none}
   #funnel{transform:none}
+  .layer{opacity:1;transform:none;filter:none}
+  .pfly{opacity:1;transform:none}
+  .monogram i,.monogram::after{animation:none}
+  .split{height:auto}.split-stage{position:static;height:auto;padding:20px 0}
+  .side.b{position:relative;clip-path:none;margin-top:16px;border-radius:16px}
+  .side.a{position:relative}
+  .split-panels{height:auto;border:0;box-shadow:none}
+  .split-line{display:none}
+  .foil i{animation:none}
 }
 </style>
 </head>
@@ -532,6 +600,7 @@ footer a:hover{color:var(--gold-lt)}
   <a href="#rendszer" data-l="A rendszer"></a>
   <a href="#gepezet" data-l="A gépezet"></a>
   <a href="#tolcser" data-l="Tölcsér"></a>
+  <a href="#szemben" data-l="Előtte / utána"></a>
   <a href="#arak" data-l="Árak"></a>
   <a href="#folyamat" data-l="Folyamat"></a>
   <a href="#helyi-seo" data-l="Helyi SEO"></a>
@@ -584,6 +653,7 @@ footer a:hover{color:var(--gold-lt)}
     </div>
     <div class="stack" id="stack" aria-hidden="true">
       <div class="orb"></div>
+      <div class="monogram"><i></i><b>TD</b></div>
       <div class="float-card fc1"><div class="ico">🎯</div><div class="t">Ajánlatkérés-fókusz</div><div class="d">Nem kattintásra optimalizálunk, hanem megkeresésre és bevételre.</div></div>
       <div class="float-card fc2"><div class="ico">🤖</div><div class="t">AI sebesség</div><div class="d">Gyorsabb kreatív tesztelés — kevesebb pénz megy rossz variánsokra.</div></div>
       <div class="float-card fc3"><div class="ico">📊</div><div class="t">Mérés az első naptól</div><div class="d">GA4 + konverziókövetés, hogy lásd, melyik forint mit hozott.</div></div>
@@ -594,9 +664,9 @@ footer a:hover{color:var(--gold-lt)}
 
 <section class="sec" style="padding-top:0">
   <div class="wrap"><div class="stats">
-    <div class="stat rv"><div class="v">80 000 Ft/hó-tól</div><div class="l">Start csomag ára</div></div>
-    <div class="stat rv d1"><div class="v">7–14 nap</div><div class="l">Az első jelekig</div></div>
-    <div class="stat rv d2"><div class="v">5 elem</div><div class="l">Egyetlen rendszerben</div></div>
+    <div class="stat rv"><div class="v" data-to="80000" data-suf=" Ft/hó-tól">80 000 Ft/hó-tól</div><div class="l">Start csomag ára</div></div>
+    <div class="stat rv d1"><div class="v" data-pre="7–" data-to="14" data-suf=" nap">7–14 nap</div><div class="l">Az első jelekig</div></div>
+    <div class="stat rv d2"><div class="v" data-to="5" data-suf=" elem">5 elem</div><div class="l">Egyetlen rendszerben</div></div>
     <div class="stat rv d3"><div class="v">0 Ft</div><div class="l">Az első konzultáció</div></div>
   </div></div>
 </section>
@@ -637,6 +707,7 @@ footer a:hover{color:var(--gold-lt)}
   <div class="build" id="build">
     <div class="build-stage" id="buildStage">
       <canvas id="build-gl" aria-hidden="true"></canvas>
+      <div id="buildMood" aria-hidden="true"></div>
       <div class="build-fallback">
         <p>A rendszer öt eleme: <strong>üzenet → landing oldal → hirdetés → mérés → utánkövetés</strong>, a végén a mérhető ajánlatkéréssel.</p>
       </div>
@@ -692,6 +763,43 @@ footer a:hover{color:var(--gold-lt)}
   </div>
 </section>
 
+<!-- ===== ELŐTTE / UTÁNA — görgetéssel mozgó választóvonal ===== -->
+<section id="szemben" aria-labelledby="szemben-cim">
+  <div class="wrap sec" style="padding-bottom:0">
+    <div class="sec-head rv">
+      <div class="eyebrow">Előtte / utána</div>
+      <h2 id="szemben-cim">Ugyanaz a négy kérdés — <span class="g">két különböző válasz</span></h2>
+      <p class="lead">Nem a hirdetés lesz más a rendszerrel, hanem az, hogy meg tudod-e válaszolni ezeket. Görgess, és told át a vonalat.</p>
+    </div>
+  </div>
+  <div class="split" id="split">
+    <div class="split-stage">
+      <div>
+        <div class="split-panels" id="splitPanels">
+          <div class="side a">
+            <div class="tag">✗ Mérés nélkül</div>
+            <h3>Találgatás</h3>
+            <div class="srow"><span>Melyik hirdetés hozta az ügyfelet?</span><b>???</b></div>
+            <div class="srow"><span>Mennyibe került egy ajánlatkérés?</span><b>???</b></div>
+            <div class="srow"><span>Melyik oldal veszíti el a látogatót?</span><b>???</b></div>
+            <div class="srow"><span>Mit kapcsolj le a jövő héten?</span><b>megérzés</b></div>
+          </div>
+          <div class="side b">
+            <div class="tag">✓ A rendszerrel</div>
+            <h3>Adat</h3>
+            <div class="srow"><span>Melyik hirdetés hozta az ügyfelet?</span><b>csatornánként látszik</b></div>
+            <div class="srow"><span>Mennyibe került egy ajánlatkérés?</span><b>forintra pontosan</b></div>
+            <div class="srow"><span>Melyik oldal veszíti el a látogatót?</span><b>oldalanként mérve</b></div>
+            <div class="srow"><span>Mit kapcsolj le a jövő héten?</span><b>a számok mondják meg</b></div>
+          </div>
+          <div class="split-line" aria-hidden="true"></div>
+        </div>
+        <div class="split-hint">A vonal a görgetéssel mozog — bal oldalon a mai állapotod, jobb oldalon a rendszer.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== ÁRAK ===== -->
 <section class="sec alt" id="arak" aria-labelledby="arak-cim">
   <div class="wrap">
@@ -706,22 +814,22 @@ footer a:hover{color:var(--gold-lt)}
       Az ügynökségi díj és a hirdetési keret két külön tétel — az első konzultáció ingyenes és kötelezettségmentes.
     </p>
     <div class="price-grid">
-      <div class="pcard hot rv"><div class="kind">Havidíjas</div><h3>Start csomag</h3>
+      <div class="pcard hot pfly"><div class="kind">Havidíjas</div><h3>Start csomag</h3>
         <div class="amt">80 000 Ft-tól</div><div class="per">/ hó · minimum 3 hónap</div>
         <ul><li>Google és/vagy Meta kampány kezelése</li><li>Konvertáló céloldal</li><li>GA4 + konverziómérés beállítás</li><li>Havi riport érthető nyelven</li><li>Ajándék weboldal (feltétellel)</li></ul></div>
-      <div class="pcard rv d1"><div class="kind">Havidíjas</div><h3>Növekedés csomag</h3>
+      <div class="pcard pfly"><div class="kind">Havidíjas</div><h3>Növekedés csomag</h3>
         <div class="amt">Egyedi ár</div><div class="per">személyre szabott, skálázáshoz</div>
         <ul><li>Több csatorna párhuzamosan</li><li>Folyamatos AI kreatív tesztelés</li><li>Mélyebb automatizáció, chatbot</li><li>Heti optimalizálás</li><li>Bevételi szintű riport</li></ul></div>
-      <div class="pcard rv d2"><div class="kind">Projekt</div><h3>Landing oldal</h3>
+      <div class="pcard pfly"><div class="kind">Projekt</div><h3>Landing oldal</h3>
         <div class="amt">90 000 Ft-tól</div><div class="per">egyszeri, átadással</div>
         <ul><li>Egy célra épített céloldal</li><li>Értékesítési szöveg</li><li>Mobilbarát, gyors betöltés</li><li>Méréssel együtt átadva</li></ul></div>
-      <div class="pcard rv"><div class="kind">Projekt</div><h3>Marketing audit</h3>
+      <div class="pcard pfly"><div class="kind">Projekt</div><h3>Marketing audit</h3>
         <div class="amt">69 000 Ft-tól</div><div class="per">egyszeri, írásos anyaggal</div>
         <ul><li>Kampányok és fiókok átvizsgálása</li><li>Céloldal és mérés ellenőrzése</li><li>Konkrét, priorizált teendőlista</li><li>Mi viszi a pénzt, mi hozná a leadet</li></ul></div>
-      <div class="pcard rv d1"><div class="kind">Helyi SEO</div><h3>Google Cégprofil</h3>
+      <div class="pcard pfly"><div class="kind">Helyi SEO</div><h3>Google Cégprofil</h3>
         <div class="amt">59 000 Ft-tól</div><div class="per">egyszeri beállítás</div>
         <ul><li>Cégprofil létrehozás / rendbetétel</li><li>Kategóriák, szolgáltatások, fotók</li><li>Helyi keresésre optimalizálás</li><li>Értékeléskezelési alapok</li></ul></div>
-      <div class="pcard rv d2"><div class="kind">Tartalom</div><h3>Blog / SEO cikk</h3>
+      <div class="pcard pfly"><div class="kind">Tartalom</div><h3>Blog / SEO cikk</h3>
         <div class="amt">35 000 Ft</div><div class="per">/ cikk</div>
         <ul><li>Kulcsszókutatásra épülő téma</li><li>Keresőre és AI keresőkre optimalizálva</li><li>Belső linkelés, meta adatok</li><li>Publikálásra kész formátum</li></ul></div>
     </div>
@@ -922,7 +1030,7 @@ footer a:hover{color:var(--gold-lt)}
 
 <section class="sec alt">
   <div class="wrap"><div class="callout rv">
-    <h3>Még mindig olvasol?</h3>
+    <h3 class="foil-target">Még mindig olvasol?</h3>
     <p>Akkor valószínűleg tényleg zavar, hogy a hirdetési pénz nem hoz ügyfelet. Egy beszélgetés ingyen van, és a végén akkor is okosabb leszel, ha nem dolgozunk együtt.</p>
     <div style="margin-top:24px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
       <a class="btn" href="#kapcsolat"><span>Töltsd ki a fenti űrlapot</span></a>
@@ -1206,6 +1314,102 @@ if(!reduce && matchMedia('(hover:hover)').matches){
 </script>
 
 <!-- =====================================================================
+     JS 1b/3 — prémium réteg: oldalbelépő, mágneses gombok, számlálók,
+     árkártya-berepülés, előtte/utána vonal, fólia-cím.
+     ===================================================================== -->
+<script>
+(function(){
+'use strict';
+var d=document, reduce=window.__reduce;
+
+/* 10 · oldalbelépő „kameramozgás" */
+var layer=d.querySelector('.layer');
+function enter(){ if(layer) layer.classList.add('enter'); }
+if(reduce){ enter(); } else { setTimeout(enter, 260); addEventListener('load',enter); }
+
+/* 7 · árkártyák Z-tengelyről + a térkép vonalrajza — közös megfigyelő */
+var flyers=[].slice.call(d.querySelectorAll('.pfly'));
+if('IntersectionObserver' in window && !reduce){
+  var io2=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io2.unobserve(e.target); } });
+  },{rootMargin:'0px 0px -10% 0px',threshold:.1});
+  flyers.forEach(function(el){io2.observe(el);});
+} else { flyers.forEach(function(el){el.classList.add('in');}); }
+
+/* 9 · számlálók (csak valós adatokon: 80 000 Ft, 14 nap, 5 elem) */
+function fmt(n){ return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'\u00a0'); }
+var counters=[].slice.call(d.querySelectorAll('[data-to]'));
+function runCount(el){
+  var to=+el.dataset.to, pre=el.dataset.pre||'', suf=el.dataset.suf||'', t0=performance.now(), dur=1250;
+  (function step(now){
+    var k=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-k,3);
+    el.textContent=pre+fmt(to*e)+suf;
+    if(k<1) requestAnimationFrame(step);
+  })(t0);
+}
+if('IntersectionObserver' in window && !reduce){
+  var io3=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ runCount(e.target); io3.unobserve(e.target); } });
+  },{threshold:.5});
+  counters.forEach(function(el){io3.observe(el);});
+}
+
+/* 11 · mágneses CTA gombok */
+if(!reduce && matchMedia('(hover:hover)').matches){
+  [].slice.call(d.querySelectorAll('.btn')).forEach(function(b){
+    b.addEventListener('pointermove',function(e){
+      var r=b.getBoundingClientRect();
+      var dx=(e.clientX-(r.left+r.width/2))/r.width, dy=(e.clientY-(r.top+r.height/2))/r.height;
+      b.style.transform='translate('+(dx*14).toFixed(1)+'px,'+(dy*8-2).toFixed(1)+'px)';
+    });
+    b.addEventListener('pointerleave',function(){ b.style.transform=''; });
+  });
+}
+
+/* 12 · arany fólia hullám — betűnként */
+[].slice.call(d.querySelectorAll('.foil-target')).forEach(function(h){
+  if(reduce) return;
+  var txt=h.textContent, frag=d.createDocumentFragment(), n=0;
+  h.textContent='';
+  var wrap=d.createElement('span'); wrap.className='foil';
+  txt.split('').forEach(function(ch){
+    if(ch===' '){ wrap.appendChild(d.createTextNode('\u00a0')); return; }
+    var i=d.createElement('i'); i.textContent=ch; i.style.animationDelay=(n++*60)+'ms'; wrap.appendChild(i);
+  });
+  frag.appendChild(wrap); h.appendChild(frag);
+});
+
+/* 8 · előtte / utána: a választóvonal a görgetéssel mozog */
+(function(){
+  var sec=d.getElementById('split'); if(!sec) return;
+  var panels=d.getElementById('splitPanels'), line=sec.querySelector('.split-line'), running=false;
+  function set(x){
+    panels.querySelector('.side.b').style.setProperty('--x',x+'%');
+    line.style.setProperty('--x',x+'%');
+  }
+  function tick(){
+    var r=sec.getBoundingClientRect(), total=r.height-innerHeight;
+    var p=Math.min(1,Math.max(0,-r.top/(total>0?total:1)));
+    /* a középső 70%-ban söpör át a vonal */
+    var k=Math.min(1,Math.max(0,(p-.15)/.7));
+    set((100-k*100).toFixed(1));
+    if(running) requestAnimationFrame(tick);
+  }
+  if(reduce){ set(0); return; }
+  set(100);
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting && !running){ running=true; tick(); }
+        else if(!e.isIntersecting){ running=false; }
+      });
+    },{threshold:0}).observe(sec);
+  } else { running=true; tick(); }
+})();
+})();
+</script>
+
+<!-- =====================================================================
      JS 2/3 — HERO háttér: NYERS WebGL (~4 KB), könyvtár nélkül.
      Ez tölt be azonnal, hogy az LCP-t semmi ne blokkolja.
      ===================================================================== -->
@@ -1333,14 +1537,23 @@ if (!window.__reduce) {
   const stage   = document.getElementById('buildStage');
   let started = false;
 
+  /* cam: szakaszonként más kameranyelv (eltolás + kameradőlés),
+     mood: a szekció háttérhangulata az adott elemhez */
   const NODES = [
-    {k:'0', n:'Kattintás',      x:-9,  y: 1.6, z: 0, grey:true},
-    {k:'1', n:'Üzenet',         x:-6,  y:-1.2, z: 1},
-    {k:'2', n:'Landing oldal',  x:-3,  y: 1.5, z:-1},
-    {k:'3', n:'Hirdetés',       x: 0,  y:-1.4, z: 1},
-    {k:'4', n:'Mérés',          x: 3,  y: 1.5, z:-1},
-    {k:'5', n:'Utánkövetés',    x: 6,  y:-1.2, z: 1},
-    {k:'→', n:'Ajánlatkérés',   x: 9,  y: 1.6, z: 0, win:true}
+    {k:'0', n:'Kattintás',      x:-9,  y: 1.6, z: 0, grey:true,
+     cam:{dx:0,   dy:.5,  dz:0,   roll:0},    mood:'rgba(107,100,89,.10)'},
+    {k:'1', n:'Üzenet',         x:-6,  y:-1.2, z: 1,
+     cam:{dx:-1.4,dy:.5,  dz:-.6, roll:-.035},mood:'rgba(232,185,35,.10)'},
+    {k:'2', n:'Landing oldal',  x:-3,  y: 1.5, z:-1,
+     cam:{dx:1.8, dy:.1,  dz:.4,  roll:.045}, mood:'rgba(247,215,116,.12)'},
+    {k:'3', n:'Hirdetés',       x: 0,  y:-1.4, z: 1,
+     cam:{dx:0,   dy:-1.5,dz:-.8, roll:0},    mood:'rgba(255,146,60,.10)'},
+    {k:'4', n:'Mérés',          x: 3,  y: 1.5, z:-1,
+     cam:{dx:-.8, dy:-1.1,dz:.3,  roll:-.05}, mood:'rgba(90,200,140,.10)'},
+    {k:'5', n:'Utánkövetés',    x: 6,  y:-1.2, z: 1,
+     cam:{dx:1.3, dy:.7,  dz:-.4, roll:.05},  mood:'rgba(140,180,255,.09)'},
+    {k:'→', n:'Ajánlatkérés',   x: 9,  y: 1.6, z: 0, win:true,
+     cam:{dx:0,   dy:.4,  dz:0,   roll:0},    mood:'rgba(232,185,35,.20)'}
   ];
 
   async function boot(){
@@ -1363,6 +1576,7 @@ if (!window.__reduce) {
     /* --- görbe a csomópontokon át --- */
     const pts = NODES.map(n=>new THREE.Vector3(n.x,n.y,n.z));
     const curve = new THREE.CatmullRomCurve3(pts, false, 'catmullrom', .4);
+    const tmpV = new THREE.Vector3();
 
     /* --- vezeték (fokozatosan rajzolódik ki) --- */
     const tubeGeo = new THREE.TubeGeometry(curve, 420, .035, 8, false);
@@ -1556,17 +1770,56 @@ if (!window.__reduce) {
       return m;
     });
 
-    /* --- áramló részecskék a görbén --- */
-    const FLOW = 160;
-    const fPos = new Float32Array(FLOW*3), fCol = new Float32Array(FLOW*3), fOff = new Float32Array(FLOW);
-    for (let i=0;i<FLOW;i++){ fOff[i] = Math.random(); }
-    const fGeo = new THREE.BufferGeometry();
-    fGeo.setAttribute('position', new THREE.BufferAttribute(fPos,3));
-    fGeo.setAttribute('color',    new THREE.BufferAttribute(fCol,3));
-    const flow = new THREE.Points(fGeo, new THREE.PointsMaterial({
-      size:.22, vertexColors:true, transparent:true, opacity:.95, depthWrite:false, blending:THREE.AdditiveBlending
-    }));
-    world.add(flow);
+    /* --- áramló részecskék: kattintás-pötty → mért adat-vonás ---
+       Két pontfelhő közös pozíciótömbön. Additív blendingnél a fekete szín
+       láthatatlan, így egyetlen színírással váltunk a két megjelenés között. */
+    function sprite(kind){
+      const c=document.createElement('canvas'); c.width=c.height=64; const x=c.getContext('2d');
+      if(kind==='dot'){
+        const rg=x.createRadialGradient(32,32,0,32,32,32);
+        rg.addColorStop(0,'rgba(255,255,255,1)'); rg.addColorStop(.45,'rgba(255,255,255,.55)'); rg.addColorStop(1,'rgba(255,255,255,0)');
+        x.fillStyle=rg; x.fillRect(0,0,64,64);
+      } else {                                   /* mért adat: rövid vonás */
+        const lg=x.createLinearGradient(6,0,58,0);
+        lg.addColorStop(0,'rgba(255,255,255,0)'); lg.addColorStop(.5,'rgba(255,255,255,1)'); lg.addColorStop(1,'rgba(255,255,255,0)');
+        x.fillStyle=lg; x.fillRect(6,27,52,10);
+      }
+      return new THREE.CanvasTexture(c);
+    }
+    const FLOW = 170;
+    const fPos = new Float32Array(FLOW*3), fOff = new Float32Array(FLOW);
+    const fLeak = new Float32Array(FLOW);       /* 0 = végigmegy, >0 = leszakadási pont */
+    for (let i=0;i<FLOW;i++){
+      fOff[i] = Math.random();
+      fLeak[i] = Math.random() < .34 ? .30 + Math.random()*.24 : 0;
+    }
+    const posAttr = new THREE.BufferAttribute(fPos,3);
+    const rawCol  = new Float32Array(FLOW*3), datCol = new Float32Array(FLOW*3);
+    const rawGeo = new THREE.BufferGeometry(), datGeo = new THREE.BufferGeometry();
+    rawGeo.setAttribute('position',posAttr); rawGeo.setAttribute('color',new THREE.BufferAttribute(rawCol,3));
+    datGeo.setAttribute('position',posAttr); datGeo.setAttribute('color',new THREE.BufferAttribute(datCol,3));
+    const rawPts = new THREE.Points(rawGeo, new THREE.PointsMaterial({
+      map:sprite('dot'), size:.24, vertexColors:true, transparent:true, opacity:.95,
+      depthWrite:false, blending:THREE.AdditiveBlending }));
+    const datPts = new THREE.Points(datGeo, new THREE.PointsMaterial({
+      map:sprite('dash'), size:.42, vertexColors:true, transparent:true, opacity:.95,
+      depthWrite:false, blending:THREE.AdditiveBlending }));
+    /* a pozíciók képkockánként változnak, a kezdeti bounding sphere hamis →
+       enélkül a kamera oldalra fordulásakor a frustum kivágná a részecskéket */
+    rawPts.frustumCulled = datPts.frustumCulled = false;
+    world.add(rawPts, datPts);
+
+    /* a csomópontok görbe menti pozíciója — ehhez villannak fel a modulok */
+    const nodeU = NODES.map(n=>{
+      let best=0, bd=1e9;
+      for(let i=0;i<=300;i++){
+        const u=i/300; curve.getPointAt(u,tmpV);
+        const dd=(tmpV.x-n.x)**2+(tmpV.y-n.y)**2+(tmpV.z-n.z)**2;
+        if(dd<bd){bd=dd;best=u;}
+      }
+      return best;
+    });
+    const flash = [0,0,0,0,0,0,0];   /* modulvillanás, képkockánként újraszámolva */
 
     /* --- feliratok (3D pontra vetítve) --- */
     const holder = document.getElementById('blabels');
@@ -1579,6 +1832,7 @@ if (!window.__reduce) {
 
     const bsteps = [].slice.call(document.querySelectorAll('.bstep'));
     const bprog  = [].slice.call(document.querySelectorAll('#bprog span'));
+    const mood   = document.getElementById('buildMood');
     const tmp = new THREE.Vector3();
     let w=0, h=0;
     function resize(){
@@ -1614,11 +1868,12 @@ if (!window.__reduce) {
         const m = mods[i];
         m.group.scale.setScalar(Math.max(.001, local));
         m.group.rotation.x = (1-local)*1.1;
-        fade(m.group, local);
-        m.tick(t, local, p);
+        const lit = local * (1 + (flash[i]||0)*.55);
+        fade(m.group, lit);
+        m.tick(t, lit, p);
       }
       mods[0].group.scale.setScalar(1 + Math.sin(t*1.6)*.05);
-      fade(mods[0].group, 1);
+      fade(mods[0].group, 1 + (flash[0]||0)*.4);
       mods[0].tick(t, 1, p);
       if (p > .93){ /* a végén felizzik az eredmény */
         const gEnd = ease((p-.93)/.07);
@@ -1633,22 +1888,46 @@ if (!window.__reduce) {
       loopMesh.visible = p > .70;
       if (loopMesh.visible) loopMesh.material.opacity = .32*ease((p-.70)/.12);
 
-      /* áramló részecskék */
-      const flowOn = clamp((p-.28)/.18, 0, 1);
-      const measured = p > .62;
-      const pa = fGeo.attributes.position.array, ca = fGeo.attributes.color.array;
+      /* áramló részecskék + leszakadó ág + modulvillanás */
+      const flowOn  = clamp((p-.28)/.18, 0, 1);
+      const measured = p > .62;                       /* a Mérés modul már áll */
+      const pa = posAttr.array;
+      for (let n=0;n<7;n++) flash[n]=0;
       for (let i=0;i<FLOW;i++){
         const u = ((fOff[i] + t*.055) % 1) * draw;
         curve.getPointAt(u, tmp);
+        /* mérés nélkül a részecskék egy része leszakad és lehullik */
+        const leakAt = fLeak[i];
+        const leaking = !measured && leakAt > 0 && u > leakAt*draw;
+        let a = 1;
+        if (leaking){
+          const f = (u - leakAt*draw) * 6;
+          tmp.y -= f*f*2.2;
+          tmp.x += f*.5;
+          a = Math.max(0, 1 - f*1.5);
+        }
         pa[i*3]=tmp.x; pa[i*3+1]=tmp.y; pa[i*3+2]=tmp.z;
-        const gold = measured && u > .58*draw + .04;
-        ca[i*3]   = gold ? .95 : .42;
-        ca[i*3+1] = gold ? .78 : .39;
-        ca[i*3+2] = gold ? .22 : .35;
+
+        const isData = measured && !leaking && u > nodeU[4]-.02;
+        if (isData){
+          datCol[i*3]=.95; datCol[i*3+1]=.80; datCol[i*3+2]=.26;
+          rawCol[i*3]=rawCol[i*3+1]=rawCol[i*3+2]=0;
+        } else {
+          datCol[i*3]=datCol[i*3+1]=datCol[i*3+2]=0;
+          if (leaking){ rawCol[i*3]=.85*a; rawCol[i*3+1]=.26*a; rawCol[i*3+2]=.26*a; }
+          else        { rawCol[i*3]=.45;   rawCol[i*3+1]=.42;   rawCol[i*3+2]=.38; }
+        }
+        /* felvillan a modul, amin épp áthalad egy részecske */
+        if (!leaking) for (let n=0;n<7;n++){
+          const dd = Math.abs(u - nodeU[n]);
+          if (dd < .012) flash[n] = Math.max(flash[n], 1 - dd/.012);
+        }
       }
-      fGeo.attributes.position.needsUpdate = true;
-      fGeo.attributes.color.needsUpdate = true;
-      flow.material.opacity = .95*flowOn;
+      posAttr.needsUpdate = true;
+      rawGeo.attributes.color.needsUpdate = true;
+      datGeo.attributes.color.needsUpdate = true;
+      rawPts.material.opacity = .95*flowOn;
+      datPts.material.opacity = .95*flowOn;
 
       /* kamera: követi az épülő elemet, a végén kihátrál */
       const focusI = clamp(p*6.6, 0, 6);
@@ -1664,9 +1943,14 @@ if (!window.__reduce) {
       }
       /* a bal oldali lépéslista elől kicsit jobbra toljuk a jelenetet */
       const shift = (w >= 900 ? 1.7 : 0) * (1 - gFin);
+      /* szakaszonként más kameranyelv: eltolás + finom kameradőlés */
+      const ci = clamp(p*6.6, 0, 6), c0 = NODES[Math.floor(ci)].cam, c1 = NODES[Math.min(6,Math.ceil(ci))].cam, cf = ci%1;
+      const cdx = lerp(c0.dx,c1.dx,cf)*(1-gFin), cdy = lerp(c0.dy,c1.dy,cf)*(1-gFin),
+            cdz = lerp(c0.dz,c1.dz,cf)*(1-gFin), croll = lerp(c0.roll,c1.roll,cf)*(1-gFin);
       world.position.y = liftY;
-      camera.position.set(fx + mx*1.6, .6 + my*1.1, camZ);
-      camera.lookAt(fx - shift, liftY*.4, 0);
+      camera.position.set(fx + cdx + mx*1.6, .6 + cdy + my*1.1, camZ + cdz);
+      camera.lookAt(fx - shift, liftY*.4 + cdy*.35, 0);
+      camera.rotation.z += croll;
       world.rotation.y = (p>.9 ? (p-.9)*1.4 : 0) + mx*.12;
 
       /* szöveg + oldalsó lista szinkron */
@@ -1675,6 +1959,7 @@ if (!window.__reduce) {
         lastStage = st;
         bsteps.forEach((s,i)=>s.classList.toggle('on', i===st));
         bprog.forEach((s,i)=>s.classList.toggle('on', i<=st));
+        mood.style.background = 'radial-gradient(ellipse 70% 60% at 50% 45%,'+NODES[st].mood+',transparent 70%)';
       }
 
       /* feliratok vetítése */

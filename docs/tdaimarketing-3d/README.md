@@ -75,7 +75,10 @@ A sok 3D pont a CWV ellen dolgozna, ezért:
 | **Kattintás → ajánlatkérés tölcsér** | 2D canvas részecskeszimuláció CSS 3D dőléssel; kapcsolóval „mérés nélkül / méréssel" nézet. Illusztráció, nem konkrét ügyfélszám. |
 | **3D Magyarország-térkép** | Extrudált SVG kontúr CSS 3D-ben, Debrecenből induló hullámokkal, 8 nagyvárossal — a helyi SEO szekció fejléce. |
 | **Interaktív mini-audit** | 3 kérdés → a rendszer 5 modulja 3D-ben kigyullad (zöld = van, piros = hiányzik, halvány = 3 kérdésből nem megítélhető), személyre szabott eredményszöveggel. Az eredmény rejtett mezőként az űrlappal is elmegy. |
-| **Prémium finish** | TD-monogram preloader (SVG stroke-dashoffset), szavankénti 3D címbelépés, folyékony arany fényfutás a CTA gombokon, kurzort követő fényfolt (`soft-light`), görgetés-sín 10 ponttal, 3D árkártyák, tilt kártyák, CSS 3D kocka a folyamatnál, GYIK ajtónyitás (`rotateY` + `backface-visibility`). |
+| **Szakasz-dramaturgia a gépezetben** | Minden elemnél más a **kameranyelv** (a kristálynál oldalra húzódó, a sugárzó toronynál alulról felnéző, a diagramnál rálátó szög, mindegyikhez finom kameradőléssel) és más a **háttérhangulat** (szürke → arany → narancs → zöldes-arany → hűvös kék → meleg arany). |
+| **Részecske-dramaturgia** | A kattintás-pöttyök a Mérés modul után **rövid vonásokká** válnak („mért adat", saját sprite-textúrával) · mérés nélkül a részecskék **34%-a leszakad és lehullik**, pirosan elhalványodva · minden modul **felvillan**, amikor részecske halad át rajta. |
+| **Előtte / utána osztott képernyő** | Sticky szekció, ahol a görgetés balról jobbra tolja a választóvonalat: ugyanaz a négy kérdés, de a válaszok „???"-ből valódi válaszokká fordulnak át. |
+| **Prémium finish** | Csiszolt arany **monogram-lap** a heróban (forgó conic-gradient „fém" + végigfutó fényvisszaverődés) · **oldalbelépő kameramozgás** (blur + scale feloldás a preloader után) · **mágneses CTA gombok** (a kurzor felé húznak) · **Z-tengelyről berepülő árkártyák** · **számláló** a stat sávon (csak valós adatokon: 80 000 Ft, 14 nap, 5 elem) · **arany fólia hullám** betűnként a záró címen · TD-monogram preloader, szavankénti 3D címbelépés, kurzort követő fényfolt, görgetés-sín, tilt kártyák, CSS 3D kocka, GYIK ajtónyitás. |
 
 ---
 
