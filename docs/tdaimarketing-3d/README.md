@@ -1,70 +1,123 @@
-# tdaimarketing.hu — 3D / WebGL főoldal
+# tdaimarketing.hu — 3D / WebGL főoldal (SEO + AEO átírással)
 
-Új, teljesen 3D-s főoldal a TD-AI & Marketing márkához: WebGL (three.js) arany
-részecskemező, CSS 3D perspektíva, görgetésvezérelt animációk és parallax.
-A tartalom a `.claude/product-marketing-context.md` és a `td-ai-marketing-brand`
-skill hivatalos adatait használja — kitalált szám, vélemény és ügyfélszám nincs benne.
+Prémium, teljesen 3D-s főoldal a TD-AI & Marketing márkához. Egyetlen HTML fájl + helyi assetek,
+külső CDN-hívás nélkül. A tartalom a `.claude/product-marketing-context.md` és a
+`td-ai-marketing-brand` skill hivatalos adataiból készült — **kitalált szám, vélemény,
+ügyfélszám és értékelés nincs benne**.
 
 ## Fájlok
 
 ```
 docs/tdaimarketing-3d/
 ├── index.html                     ← a teljes oldal (inline CSS + JS)
+├── llms.txt                       ← AI crawlereknek (ChatGPT, Perplexity, Claude…)
+├── robots.txt                     ← AI botok explicit engedélyezésével
+├── sitemap.xml
 └── assets/
-    ├── three.module.min.js        ← three.js r160 helyben (nincs CDN-függés)
-    └── THREE-LICENSE.txt          ← MIT licenc
+    ├── three.module.min.js        ← three.js r160 helyben (MIT), csak a Gépezet szekcióhoz
+    ├── THREE-LICENSE.txt
+    └── fonts/                     ← Inter + Playfair Display woff2, latin ÉS latin-ext (ő, ű)
 ```
 
-## Mi a 3D benne
+---
 
-| Réteg | Technika |
-|-------|----------|
-| Háttér részecskemező | WebGL / three.js — 2200 arany pont saját GLSL vertex + fragment shaderrel, additív blendinggel, canvasból generált sprite textúrával (nincs képfájl) |
-| Drótváz mag + gyűrűk | three.js `IcosahedronGeometry` wireframe + két `TorusGeometry` gyűrű |
-| Görgetés → kamera | A scroll pozíció forgatja a világot, viszi befelé a kamerát és halványítja a réteget, hogy a szöveg olvasható maradjon |
-| Hero kártyatorony | CSS `perspective` + `translateZ` rétegek, egérrel dőlő `rotateX/rotateY` |
-| Szolgáltatás kártyák | CSS 3D tilt egérpozíció szerint + fénycsóva (`radial-gradient` a kurzornál) |
-| Folyamat szekció | Valódi CSS 3D kocka (6 lap), amit a görgetés forgat; közben a lépéskártyák sorra aktiválódnak |
-| Kifogások | 3D flip kártyák (`rotateY(180deg)` + `backface-visibility`), hoverre és fókuszra is |
-| Parallax | Több réteg eltérő sebességgel, egyetlen `requestAnimationFrame` ciklusban |
-| Scroll reveal | `IntersectionObserver`, `translate3d` + `rotateX` belépéssel |
+## 1. SEO / AEO
 
-## Teljesítmény és hozzáférhetőség
+**Kulcsszó-struktúra.** A H1 most a fő kulcsszót viszi („Marketing ügynökség KKV-knak, ami
+ajánlatkérést hoz — nem csak kattintást"), a korábbi márkahook („Nem kattintást veszünk.
+Ügyfelet építünk.") közvetlenül alatta, nagy szedéssel maradt meg. A H2-k kulcsszavasak:
+*Mit tartalmaz az ügyfélszerző rendszer?* · *Mennyibe kerül egy marketing ügynökség?* ·
+*Hogyan dolgozunk?* · *Helyi SEO és Google Cégprofil Debrecenben* · *Gyakori kérdések*.
 
-- Minden görgetéshez kötött számítás **egy** rAF ciklusban fut (nincs layout thrash).
-- `devicePixelRatio` 2-re vágva, mobilon 900 részecske 2200 helyett.
-- Háttérfülön a render leáll (`visibilitychange`).
-- `prefers-reduced-motion: reduce` esetén a WebGL réteg **el sem indul**, és minden animáció kikapcsol — csak a statikus oldal marad.
-- Ha nincs WebGL vagy nem tölt be a three.js, automatikusan a CSS „aurora” háttér marad (kipróbálva: az oldal így is teljes értékű).
-- Nincs vízszintes görgetés 390px-től 1440px-ig ellenőrizve, valódi Chromiumban.
+**AEO — hogy az AI keresők idézzenek.** Négy eszköz:
 
-## Élesítés előtt — 2 teendő
+| Eszköz | Hol |
+|---|---|
+| **Answer-first bekezdés** — az első 40–60 szó önmagában is teljes, idézhető válasz, számmal az első mondatban | minden fő szekció elején (`.answer` blokk) |
+| **10 kérdéses GYIK** kérdés-formájú címekkel, a válasz a DOM-ban (nem `display:none`) | `#gyik` |
+| **Gyors adatlap** `<dl>` szemantikával — cég, székhely, szolgáltatások, árak, terület, elérhetőség | `#adatlap` |
+| **`llms.txt`** strukturált cégösszefoglaló AI crawlereknek | gyökér |
 
-1. **Make.com webhook**: az `index.html` végén a form JS-ében kommentben ott a `fetch(...)`
-   blokk. Cseréld ki a `https://hook.eu2.make.com/AZ_EN_WEBHOOK_AZONOSITOM` URL-t a saját
-   scenario URL-edre, vedd ki kommentből, és töröld alatta a demó `setTimeout` blokkot.
-2. **OG kép**: a meta blokk a `https://tdaimarketing.hu/assets/og-tdai-3d.jpg` képre hivatkozik —
-   töltsd fel, vagy írd át egy meglévő banner képre.
+**Schema.org.** ProfessionalService/MarketingAgency/LocalBusiness (`@graph`-ban) + Person
+(Tóth Dániel) + WebSite + BreadcrumbList + 5 külön Service entitás + OfferCatalog az árakkal,
+valamint egy önálló **FAQPage** blokk mind a 10 kérdéssel.
+`AggregateRating` és `Review` **szándékosan nincs** — valós értékelési adat hiányában
+hamis csillag lenne, amit a Google kézi büntetéssel sújt.
+
+**Person `sameAs` kiegészítendő**: a JSON-LD-ben a Tóth Dániel entitáshoz érdemes felvenni a
+LinkedIn / Facebook / Google Cégprofil URL-t (`"sameAs":[...]`) — enélkül az entitás-összekötés
+fele hatástalan.
+
+---
+
+## 2. Teljesítmény (Core Web Vitals)
+
+A sok 3D pont a CWV ellen dolgozna, ezért:
+
+- **A hero háttere nyers WebGL** (~4 KB inline shader), *nem* three.js — semmi nem blokkolja az LCP-t.
+- **A three.js (656 KB) csak lusta betöltésű**: `IntersectionObserver` indítja, amikor a látogató
+  a Gépezet szekció 400 px-es közelébe ér. Aki odáig nem görget, le sem tölti.
+- **Betűtípusok önhosztolva** (`assets/fonts/`) — nincs Google Fonts kérés: gyorsabb LCP és
+  GDPR-barát (nem megy IP a Google felé). A két kritikus fájl `<link rel="preload">`-dal.
+- **Favicon inline SVG data URI** — nulla extra kérés.
+- Minden görgetéshez kötött számítás **egyetlen `requestAnimationFrame` ciklusban**; a WebGL
+  háttérfülön és a nézeten kívül nem renderel; `devicePixelRatio` 2-re vágva; mobilon 900 részecske 2200 helyett.
+
+---
+
+## 3. A 3D elemek
+
+| Elem | Technika |
+|---|---|
+| **„A GÉPEZET" — sticky építő szekció** | 340vh scroll, three.js. A görgetés fokozatosan behozza az 5 modult, kirajzolja a vezetéket (`TubeGeometry` + `setDrawRange`), elindítja az áramló részecskéket a görbén, a **Mérés** modulnál szürkéről aranyra vált a részecskék színe, az 5. lépésnél megjelenik a visszacsatoló hurok, a végén a kamera kihátrál és felizzik az „Ajánlatkérés". A feliratok 3D pontokra vetített HTML elemek. Visszafelé görgetve visszabomlik. |
+| **Hero háttér** | Nyers WebGL: 2200 arany pont saját GLSL shaderrel, additív blending, 2 gyűrű `LINE_LOOP`-pal. A scroll forgatja, viszi befelé a kamerát és halványítja. |
+| **Kattintás → ajánlatkérés tölcsér** | 2D canvas részecskeszimuláció CSS 3D dőléssel; kapcsolóval „mérés nélkül / méréssel" nézet. Illusztráció, nem konkrét ügyfélszám. |
+| **3D Magyarország-térkép** | Extrudált SVG kontúr CSS 3D-ben, Debrecenből induló hullámokkal, 8 nagyvárossal — a helyi SEO szekció fejléce. |
+| **Interaktív mini-audit** | 3 kérdés → a rendszer 5 modulja 3D-ben kigyullad (zöld = van, piros = hiányzik, halvány = 3 kérdésből nem megítélhető), személyre szabott eredményszöveggel. Az eredmény rejtett mezőként az űrlappal is elmegy. |
+| **Prémium finish** | TD-monogram preloader (SVG stroke-dashoffset), szavankénti 3D címbelépés, folyékony arany fényfutás a CTA gombokon, kurzort követő fényfolt (`soft-light`), görgetés-sín 10 ponttal, 3D árkártyák, tilt kártyák, CSS 3D kocka a folyamatnál, GYIK ajtónyitás (`rotateY` + `backface-visibility`). |
+
+---
+
+## 4. Hozzáférhetőség és degradáció
+
+- `prefers-reduced-motion: reduce` esetén **a WebGL el sem indul**, a preloader kimarad, a sticky
+  építő szekció pedig sima, olvasható szöveglistává alakul — a tartalom mindkét módban a DOM-ban van.
+- Ha nincs WebGL vagy nem tölt be a three.js: a hero CSS „aurora" háttérre esik vissza, a Gépezet
+  szekció pedig szöveges összefoglalót mutat.
+- GYIK gombok `aria-expanded`-del, a modulállapot `aria-live` régióban.
+- Ellenőrizve valódi Chromiumban 390 px és 1440 px szélességen: nincs JS hiba, nincs vízszintes görgetés.
+
+---
+
+## 5. Élesítés előtt — teendők
+
+1. **Make.com webhook**: az `index.html` végén, a form JS-ében kommentben ott a `fetch(...)` blokk.
+   Cseréld a `https://hook.eu2.make.com/AZ_EN_WEBHOOK_AZONOSITOM` URL-t a saját scenario URL-edre,
+   vedd ki kommentből, és töröld alatta a demó `setTimeout` blokkot.
+2. **Képek**: az oldalon jelenleg nincs fotó. A brand-skill kimondja, hogy hero kép nélkül nem
+   épül landing — a 3D vizuál most ezt helyettesíti. Az **OG kép** (`assets/og-tdai-3d.jpg`,
+   1200×630) és egy **portré rólad** (E-E-A-T) viszont kellene.
+3. **`sameAs` linkek** a JSON-LD-be: LinkedIn, Facebook oldal, Google Cégprofil URL.
+4. **`llms.txt`, `robots.txt`, `sitemap.xml`** a domain gyökerébe kerül, nem almappába.
 
 ## Feltöltés (Rackhost)
 
-Töltsd fel a `public_html` alá:
-
 ```
-index.html          (vagy pl. 3d.html, ha nem a főoldalt cseréled)
-assets/three.module.min.js
+public_html/
+├── index.html
+├── llms.txt · robots.txt · sitemap.xml
+└── assets/  (three.module.min.js + fonts/)
 ```
 
 Az `assets/` mappának az `index.html` mellett kell lennie — relatív útvonalon hivatkozik rá.
-Ha csak tesztoldalként megy ki (pl. `/uj`), akkor a `<link rel="canonical">` sort is írd át.
+Ha nem a főoldalt cseréled, a `<link rel="canonical">` és a JSON-LD URL-eket is írd át.
 
 ## Helyi megnyitás
 
 A three.js ES modulként töltődik, ezért `file://`-ből nem indul el (CORS) — kis szerver kell:
 
 ```bash
-cd docs/tdaimarketing-3d && python3 -m http.server 8777
-# → http://localhost:8777
+cd docs/tdaimarketing-3d && python3 -m http.server 8777   # → http://localhost:8777
 ```
 
-`file://`-ből megnyitva is működik az oldal, csak a WebGL réteg helyett a CSS fallback fut.
+`file://`-ből is működik az oldal, csak a Gépezet szekció esik szöveges fallbackre.
