@@ -1379,22 +1379,181 @@ if (!window.__reduce) {
     const loopMesh = new THREE.Mesh(loopGeo, new THREE.MeshBasicMaterial({color:0xf7d774, transparent:true, opacity:.32}));
     loopMesh.visible = false; world.add(loopMesh);
 
-    /* --- modulok --- */
-    const mods = NODES.map((n,i)=>{
-      const g = new THREE.Group(); g.position.set(n.x,n.y,n.z);
-      if (i===0 || i===6){
-        const sph = new THREE.Mesh(new THREE.IcosahedronGeometry(.62,1),
-          new THREE.MeshBasicMaterial({color:n.win?0xf7d774:0x6b6459, wireframe:true, transparent:true, opacity:.85}));
-        g.add(sph); g.userData.core = sph;
-      } else {
-        const box = new THREE.BoxGeometry(1.5,1.5,1.5);
-        const solid = new THREE.Mesh(box, new THREE.MeshBasicMaterial({color:0x1a150e, transparent:true, opacity:.72}));
-        const edge  = new THREE.LineSegments(new THREE.EdgesGeometry(box),
-          new THREE.LineBasicMaterial({color:0xe8b923, transparent:true, opacity:.9}));
-        g.add(solid, edge); g.userData.core = edge; g.userData.solid = solid;
+    /* =================================================================
+       MODULOK — mindegyik saját, a szövegéhez illő 3D tárgy.
+       Nincs két egyforma elem: por-vesztő gömb → kristály → mini
+       landing panel → sugárzó torony → oszlopdiagram → chat + hurok
+       → arany boríték.
+       ================================================================= */
+    const LINE = (c,o)=>new THREE.LineBasicMaterial({color:c, transparent:true, opacity:o});
+    const FILL = (c,o)=>new THREE.MeshBasicMaterial({color:c, transparent:true, opacity:o, side:THREE.DoubleSide});
+    const edgesOf = (geo,c,o)=>new THREE.LineSegments(new THREE.EdgesGeometry(geo), LINE(c,o));
+    function roundedRect(w,h,r){
+      const s2=new THREE.Shape();
+      s2.moveTo(-w/2+r,-h/2);
+      s2.lineTo(w/2-r,-h/2); s2.quadraticCurveTo(w/2,-h/2,w/2,-h/2+r);
+      s2.lineTo(w/2,h/2-r);  s2.quadraticCurveTo(w/2,h/2,w/2-r,h/2);
+      s2.lineTo(-w/2+r,h/2); s2.quadraticCurveTo(-w/2,h/2,-w/2,h/2-r);
+      s2.lineTo(-w/2,-h/2+r);s2.quadraticCurveTo(-w/2,-h/2,-w/2+r,-h/2);
+      return s2;
+    }
+    function bake(g){ g.traverse(o=>{ if(o.material) o.material.userData.base=o.material.opacity; }); return g; }
+    function fade(g,k){ g.traverse(o=>{ if(o.material && o.material.userData.base!==undefined) o.material.opacity=o.material.userData.base*k; }); }
+
+    /* 0 · KATTINTÁS — szürke gömb, ami folyamatosan hullatja magából a port */
+    function mkClick(){
+      const g=new THREE.Group();
+      const sph=new THREE.Mesh(new THREE.IcosahedronGeometry(.62,1),
+        new THREE.MeshBasicMaterial({color:0x6b6459, wireframe:true, transparent:true, opacity:.8}));
+      g.add(sph);
+      const N=70, arr=new Float32Array(N*3), sd=[];
+      for(let i=0;i<N;i++) sd.push(Math.random());
+      const dg=new THREE.BufferGeometry(); dg.setAttribute('position',new THREE.BufferAttribute(arr,3));
+      const dust=new THREE.Points(dg,new THREE.PointsMaterial({size:.085,color:0x6b6459,transparent:true,opacity:.6,depthWrite:false}));
+      g.add(dust);
+      return {group:bake(g), tick(t){
+        sph.rotation.y=t*.3; sph.rotation.x=t*.12;
+        const a=dg.attributes.position.array;
+        for(let i=0;i<N;i++){
+          const f=(sd[i]+t*.2)%1, an=sd[i]*6.283;
+          a[i*3]=Math.cos(an)*.55*(1-f*.5); a[i*3+1]=-f*2.8; a[i*3+2]=Math.sin(an)*.55*(1-f*.5);
+        }
+        dg.attributes.position.needsUpdate=true;
+      }};
+    }
+
+    /* 1 · ÜZENET — élesre csiszolt kristály, körülötte szikrákkal */
+    function mkGem(){
+      const g=new THREE.Group(), geo=new THREE.OctahedronGeometry(.9,0);
+      const core=new THREE.Mesh(geo, FILL(0x2a2110,.5)), ed=edgesOf(geo,0xf7d774,.95);
+      const sparks=new THREE.Group();
+      for(let i=0;i<3;i++){
+        const sp=new THREE.Mesh(new THREE.SphereGeometry(.055,8,8), FILL(0xf7d774,.9));
+        sp.position.set(Math.cos(i*2.09)*1.3,0,Math.sin(i*2.09)*1.3); sparks.add(sp);
       }
-      g.scale.setScalar(i===0?1:.001);
-      world.add(g); return g;
+      sparks.rotation.x=.42;
+      g.add(core,ed,sparks);
+      return {group:bake(g), tick(t){
+        core.rotation.y=ed.rotation.y=t*.5;
+        core.rotation.z=ed.rotation.z=Math.sin(t*.4)*.22;
+        sparks.rotation.y=-t*.75;
+      }};
+    }
+
+    /* 2 · LANDING OLDAL — mini oldal, pulzáló CTA gombbal */
+    function mkPanel(){
+      const g=new THREE.Group();
+      const geo=new THREE.ExtrudeGeometry(roundedRect(1.55,2.0,.14),{depth:.07,bevelEnabled:false}); geo.center();
+      g.add(new THREE.Mesh(geo, FILL(0x15110c,.88)), edgesOf(geo,0xe8b923,.85));
+      const bar=(w,h,y,c,o)=>{ const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h), FILL(c,o)); m.position.set(0,y,.055); g.add(m); return m; };
+      bar(1.15,.15,.68,0xf7d774,.55); bar(1.05,.065,.42,0xb3aa9c,.4); bar(.88,.065,.28,0xb3aa9c,.32);
+      const cta=bar(.75,.24,-.06,0xe8b923,.95);
+      bar(1.05,.065,-.46,0xb3aa9c,.24); bar(.8,.065,-.6,0xb3aa9c,.2);
+      return {group:bake(g), tick(t,k){
+        g.rotation.y=Math.sin(t*.45)*.36;
+        cta.material.opacity=cta.material.userData.base*k*(.7+Math.sin(t*2.6)*.3);
+      }};
+    }
+
+    /* 3 · HIRDETÉS — sugárzó torony, terjedő hullámgyűrűkkel */
+    function mkBeacon(){
+      const g=new THREE.Group();
+      const cg=new THREE.ConeGeometry(.52,1.2,4);
+      const cone=new THREE.Mesh(cg, FILL(0x15110c,.6)), ce=edgesOf(cg,0xe8b923,.9);
+      cone.position.y=-.25; ce.position.y=-.25; g.add(cone,ce);
+      const rings=[];
+      for(let i=0;i<3;i++){
+        const r=new THREE.Mesh(new THREE.TorusGeometry(.6,.018,6,64), FILL(0xf7d774,.55));
+        r.rotation.x=1.16; g.add(r); rings.push(r);
+      }
+      return {group:bake(g), tick(t,k){
+        cone.rotation.y=ce.rotation.y=t*.4;
+        rings.forEach((r,i)=>{
+          const f=((t*.5+i/3)%1);
+          r.scale.setScalar(.45+f*2.3); r.position.y=.45+f*.65;
+          r.material.opacity=r.material.userData.base*k*(1-f);
+        });
+      }};
+    }
+
+    /* 4 · MÉRÉS — 3D oszlopdiagram emelkedő trendvonallal */
+    function mkChart(){
+      const g=new THREE.Group(), hs=[.42,.66,.54,1.0,1.35], bars=[];
+      hs.forEach((h,i)=>{
+        const bg=new THREE.BoxGeometry(.24,h,.24), x=(i-2)*.36;
+        const b=new THREE.Mesh(bg, FILL(0x2a2110,.6)), e=edgesOf(bg,0xe8b923,.95);
+        b.position.set(x,h/2-.62,0); e.position.copy(b.position);
+        g.add(b,e); bars.push({b,e,h});
+      });
+      const base=new THREE.Mesh(new THREE.PlaneGeometry(1.9,.025), FILL(0xe8b923,.55));
+      base.position.y=-.62; g.add(base);
+      const trend=new THREE.Line(new THREE.BufferGeometry().setFromPoints(
+        hs.map((h,i)=>new THREE.Vector3((i-2)*.36, h-.62+.1, .2))), LINE(0xf7d774,.9));
+      g.add(trend);
+      return {group:bake(g), tick(t){
+        bars.forEach(({b,e,h},i)=>{
+          const sc=.86+Math.sin(t*1.6+i*.8)*.14;
+          b.scale.y=e.scale.y=sc; b.position.y=e.position.y=(h*sc)/2-.62;
+        });
+      }};
+    }
+
+    /* 5 · UTÁNKÖVETÉS — chat buborék, körülötte futó automatizáció-gyűrű */
+    function mkChat(){
+      const g=new THREE.Group();
+      const geo=new THREE.ExtrudeGeometry(roundedRect(1.5,1.0,.26),{depth:.06,bevelEnabled:false}); geo.center();
+      g.add(new THREE.Mesh(geo, FILL(0x15110c,.88)), edgesOf(geo,0xe8b923,.85));
+      const tail=new THREE.Mesh(new THREE.CircleGeometry(.17,3), FILL(0xe8b923,.6));
+      tail.position.set(-.32,-.58,.02); tail.rotation.z=Math.PI*.5; g.add(tail);
+      const dots=[];
+      for(let i=0;i<3;i++){
+        const dt=new THREE.Mesh(new THREE.CircleGeometry(.08,14), FILL(0xf7d774,.9));
+        dt.position.set((i-1)*.32,0,.06); g.add(dt); dots.push(dt);
+      }
+      const ring=new THREE.Mesh(new THREE.TorusGeometry(1.1,.016,6,90), FILL(0xe8b923,.42));
+      ring.rotation.x=1.15; g.add(ring);
+      const sat=new THREE.Mesh(new THREE.SphereGeometry(.075,10,10), FILL(0xf7d774,.95)); g.add(sat);
+      return {group:bake(g), tick(t,k){
+        const a=t*1.4;
+        sat.position.set(Math.cos(a)*1.1, Math.sin(a)*1.1*Math.cos(1.15), Math.sin(a)*1.1*Math.sin(1.15));
+        dots.forEach((dt,i)=>{
+          dt.material.opacity=dt.material.userData.base*k*(.3+.7*Math.max(0,Math.sin(t*3-i*.75)));
+        });
+      }};
+    }
+
+    /* 6 · AJÁNLATKÉRÉS — arany boríték, ami a végén felizzik */
+    function mkEnvelope(){
+      const g=new THREE.Group(), inner=new THREE.Group(); g.add(inner);
+      const geo=new THREE.BoxGeometry(1.6,1.05,.1);
+      inner.add(new THREE.Mesh(geo, FILL(0x2a2110,.72)), edgesOf(geo,0xf7d774,1));
+      inner.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([
+        new THREE.Vector3(-.8,.52,.07), new THREE.Vector3(0,-.06,.07), new THREE.Vector3(.8,.52,.07)
+      ]), LINE(0xf7d774,1)));
+      const gc=document.createElement('canvas'); gc.width=gc.height=128;
+      const gx=gc.getContext('2d'), rg=gx.createRadialGradient(64,64,0,64,64,64);
+      rg.addColorStop(0,'rgba(247,215,116,.9)'); rg.addColorStop(.4,'rgba(232,185,35,.35)'); rg.addColorStop(1,'rgba(232,185,35,0)');
+      gx.fillStyle=rg; gx.fillRect(0,0,128,128);
+      const glow=new THREE.Sprite(new THREE.SpriteMaterial({
+        map:new THREE.CanvasTexture(gc), transparent:true, opacity:.5,
+        blending:THREE.AdditiveBlending, depthWrite:false}));
+      glow.scale.setScalar(4.2); glow.position.z=-.35; g.add(glow);
+      return {group:bake(g), tick(t,k,p){
+        inner.rotation.y=Math.sin(t*.5)*.3;
+        inner.position.y=Math.sin(t*1.2)*.06;
+        const hot=p>.88?(p-.88)/.12:0;
+        glow.material.opacity=glow.material.userData.base*k*hot*(.7+Math.sin(t*2.6)*.3);
+      }};
+    }
+
+    const BUILD = [mkClick, mkGem, mkPanel, mkBeacon, mkChart, mkChat, mkEnvelope];
+
+    const mods = NODES.map((n,i)=>{
+      const m = BUILD[i]();
+      m.group.position.set(n.x,n.y,n.z);
+      m.group.scale.setScalar(i===0?1:.001);
+      world.add(m.group);
+      return m;
     });
 
     /* --- áramló részecskék a görbén --- */
@@ -1449,20 +1608,21 @@ if (!window.__reduce) {
       const t = performance.now()/1000;
       mx += (tmx-mx)*.05; my += (tmy-my)*.05;
 
-      /* modulok megjelenése */
+      /* modulok megjelenése — mindegyik saját animációval */
       for (let i=1;i<=6;i++){
         const local = ease(clamp((p - i*0.125) / 0.10, 0, 1));
-        mods[i].scale.setScalar(Math.max(.001, local));
-        mods[i].rotation.y = (1-local)*2.2 + t*.12;
-        mods[i].rotation.x = (1-local)*1.4;
-        if (mods[i].userData.solid) mods[i].userData.solid.material.opacity = .72*local;
-        mods[i].userData.core.material.opacity = (i===6?.85:.9)*local;
+        const m = mods[i];
+        m.group.scale.setScalar(Math.max(.001, local));
+        m.group.rotation.x = (1-local)*1.1;
+        fade(m.group, local);
+        m.tick(t, local, p);
       }
-      mods[0].rotation.y = t*.3;
-      mods[0].scale.setScalar(1 + Math.sin(t*1.6)*.06);
+      mods[0].group.scale.setScalar(1 + Math.sin(t*1.6)*.05);
+      fade(mods[0].group, 1);
+      mods[0].tick(t, 1, p);
       if (p > .93){ /* a végén felizzik az eredmény */
-        const g = ease((p-.93)/.07);
-        mods[6].scale.setScalar(1 + g*.5 + Math.sin(t*3)*.05*g);
+        const gEnd = ease((p-.93)/.07);
+        mods[6].group.scale.setScalar(1 + gEnd*.45 + Math.sin(t*3)*.05*gEnd);
       }
 
       /* vezeték kirajzolása */
@@ -1522,10 +1682,13 @@ if (!window.__reduce) {
         tmp.set(NODES[i].x, NODES[i].y + 1.7, NODES[i].z);
         world.localToWorld(tmp);
         tmp.project(camera);
-        const vis = tmp.z < 1 && (i===0 || p > i*0.125);
+        const sx = (tmp.x*.5+.5)*w, sy2 = (-tmp.y*.5+.5)*h;
+        /* a bal oldali lépéslista mögé kerülő feliratot elrejtjük */
+        const behindPanel = w >= 900 && sx < 250 && sy2 > h*.30 && sy2 < h*.70;
+        const vis = tmp.z < 1 && !behindPanel && (i===0 || p > i*0.125);
         const el = labels[i];
         el.classList.toggle('on', vis);
-        if (vis) el.style.transform = 'translate(-50%,-50%) translate('+((tmp.x*.5+.5)*w)+'px,'+((-tmp.y*.5+.5)*h)+'px)';
+        if (vis) el.style.transform = 'translate(-50%,-50%) translate('+sx+'px,'+sy2+'px)';
       }
 
       renderer.render(scene, camera);
