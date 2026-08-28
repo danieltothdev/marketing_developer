@@ -50,6 +50,28 @@ fele hatástalan.
 
 ---
 
+## 1b. Konverzióoptimalizálás és 2026-os megfelelés
+
+| Elem | Mit csinál |
+|---|---|
+| **Hero: lead-költség kalkulátor** | A látogató két csúszkán megadja a havi hirdetési keretét és a megkeresései számát → megkapja, mennyibe kerül nála **egy megkeresés**, mennyi az éves költés, és mi lenne a lead ára 20%-kal több megkereséssel. A számítás a **saját adatain** fut, semmi kitalált szám; az eredmény rejtett mezőként az űrlappal is megy. |
+| **Valós határidő-visszaszámlálók** | Nem kamu scarcity: a ribbon és a megfelelőségi kártyák a tényleges jogszabályi dátumokig számolnak (eNyugta 2026. 09. 01., AI Act gépi jelölés 2026. 12. 02.). Lejárat után „a határidő elmúlt" állapotra vált. |
+| **AI Act szekció** | Az AI Act 50. cikk 2026. augusztus 2. óta hatályos átláthatósági kötelezettsége: chatbot-jelölés, AI-tartalom jelölés, bírságkeret. Külön kiemelve, hogy **marketingoldali kivitelezés, nem jogi tanácsadás**. |
+| **eNyugta szekció** | 2026. szeptember 1-i adatszolgáltatási kötelezettség, ~270 ezer érintett vállalkozás, 3 napos beküldés papírnyugtánál, pénztárgép-átállási dátumok + ingyenes ellenőrzőlista mint lead-mágnes. Kiírva, hogy **nem könyvelői tanácsadás**. |
+| **Kétlépcsős űrlap** | 1. lépés: egyetlen kérdés (6 kattintható válasz vagy szabad szöveg). 2. lépés: elérhetőség. Haladásjelző, „vissza" gomb, mikro-bizonyíték sorok a gomb alatt/fölött. |
+| **Exit-intent ajánlat** | Az egér kilépő mozdulatára egyszer (munkamenetenként) felajánlja a 2026-os határidő-ellenőrzőlistát e-mailért. |
+| **Sticky mobil CTA-sáv** | 900 px alatt: Hívás · WhatsApp · Ingyenes konzultáció, a hüvelykujj-zónában. |
+| **„Ezt halljuk a legtöbbször"** | Hat valós ügyfélmondat a `product-marketing-context.md`-ből, mindegyik alatt azzal, hogy a rendszer melyik eleme válaszol rá. |
+| **Ár-horgonyzás** | A csomagok alatt viszonyítás a hirdetési kerethez (a díj és a keret két külön tétel). |
+| **Szerző-blokk** | Név, székhely, adószám a heróban és az űrlapnál, fotóval (`assets/toth-daniel.jpg`) — a fájl hiányában automatikusan TD-monogramra vált. |
+| **GA4 / GTM események** | `dataLayer` push minden CTA-kattintásra, űrlaplépésre, beküldésre, kalkulátor-használatra, ellenőrzőlista-kérésre és 25/50/75/100%-os görgetési mélységre. A GTM konténer kódját a `<head>`-be kell beilleszteni. |
+
+> ⚠️ **A jogszabályi adatok ellenőrzendők publikálás előtt.** A dátumok és összegek másodlagos forrásokból (szakmai blogok, hírportálok) származnak; a NAV, illetve az AI Act hatályos szövegével vesd össze őket. A szekciókban ott a jogi/adózási felelősségkizárás, ezt ne töröld.
+
+> ⚠️ **Ügyfélvélemény nincs az oldalon**, mert valós adat nélkül kitalálni nem lehet. Ha küldesz 2–3 nevesített véleményt, beépítem — enélkül a konverzió plafonos.
+
+---
+
 ## 2. Teljesítmény (Core Web Vitals)
 
 A sok 3D pont a CWV ellen dolgozna, ezért:
@@ -99,7 +121,7 @@ A sok 3D pont a CWV ellen dolgozna, ezért:
 1. **Make.com webhook**: az `index.html` végén, a form JS-ében kommentben ott a `fetch(...)` blokk.
    Cseréld a `https://hook.eu2.make.com/AZ_EN_WEBHOOK_AZONOSITOM` URL-t a saját scenario URL-edre,
    vedd ki kommentből, és töröld alatta a demó `setTimeout` blokkot.
-2. **Képek**: az oldalon jelenleg nincs fotó. A brand-skill kimondja, hogy hero kép nélkül nem
+2. **Képek**: az oldalon jelenleg nincs fotó — a szerző-blokk `assets/toth-daniel.jpg`-t keres, és amíg nincs, TD-monogramot mutat. A brand-skill kimondja, hogy hero kép nélkül nem
    épül landing — a 3D vizuál most ezt helyettesíti. Az **OG kép** (`assets/og-tdai-3d.jpg`,
    1200×630) és egy **portré rólad** (E-E-A-T) viszont kellene.
 3. **`sameAs` linkek** a JSON-LD-be: LinkedIn, Facebook oldal, Google Cégprofil URL.
