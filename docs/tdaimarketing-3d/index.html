@@ -167,7 +167,7 @@ header.stuck{border-bottom-color:var(--line);background:rgba(10,8,6,.94)}
 header.stuck .nav{height:56px}
 .logo{display:flex;align-items:center;gap:10px;white-space:nowrap;font-family:'Playfair Display',serif;font-weight:800;font-size:19px;letter-spacing:-.02em}
 .logo-mark{width:32px;height:32px;border-radius:9px;background:var(--gold-grad);color:#120d04;display:grid;place-items:center;
-  font:800 13px/1 'Inter',sans-serif;box-shadow:0 6px 20px rgba(232,185,35,.28);transition:.35s var(--ease)}
+  box-shadow:0 6px 20px rgba(232,185,35,.28);transition:.35s var(--ease)}
 header.stuck .logo-mark{width:28px;height:28px}
 .nav-links{display:none;gap:22px;margin-left:auto;font-size:13.5px;font-weight:500;color:var(--muted)}
 .nav-links a{position:relative;padding:4px 0;transition:color .25s}
@@ -334,8 +334,8 @@ h1.hero-title{font-size:clamp(31px,4.9vw,58px);margin:20px 0 18px;letter-spacing
 .pcard .amt{font-family:'Playfair Display',serif;font-size:29px;font-weight:800;margin:14px 0 4px;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .pcard .per{font-size:12.5px;color:var(--dim);margin-bottom:16px}
 .pcard ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:9px}
-.pcard li{font-size:14px;color:var(--muted);display:flex;gap:9px}
-.pcard li::before{content:'✓';color:var(--green);font-weight:800;flex:0 0 auto}
+.pcard li{position:relative;display:block;padding-left:20px;font-size:14px;color:var(--muted);overflow-wrap:break-word}
+.pcard li::before{content:'✓';position:absolute;left:0;top:0;color:var(--green);font-weight:800}
 
 /* ===== 14. FOLYAMAT — kocka + idővonal ===== */
 .process{display:grid;gap:40px;align-items:start}
@@ -492,6 +492,93 @@ footer a:hover{color:var(--gold-lt)}
 .wa:hover{transform:scale(1.08)}
 .wa svg{width:29px;height:29px;fill:#fff}
 
+/* ===== 21y. INTERAKTÍV SZEKCIÓK ===== */
+/* szűrő-chipek */
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 auto 30px}
+.filters button{border:1px solid var(--line);background:rgba(232,185,35,.04);color:var(--muted);cursor:pointer;
+  font:700 12px/1 'Inter',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:11px 18px;border-radius:99px;
+  transition:.25s var(--ease)}
+.filters button:hover{border-color:var(--gold);color:var(--text);transform:translateY(-2px)}
+.filters button.on{background:var(--gold-grad);color:#120d04;border-color:transparent;box-shadow:0 8px 24px rgba(232,185,35,.28)}
+.hidden{display:none!important}
+
+/* rendszer-kártyák: kattintásra kiderül, mi történik, ha hiányzik */
+.card{cursor:pointer}
+.card .tap{margin-top:14px;font:700 11px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+  display:inline-flex;align-items:center;gap:7px;transition:.25s}
+.card .tap::after{content:'+';font-size:16px;line-height:1;transition:transform .35s var(--ease)}
+.card.open .tap::after{transform:rotate(45deg)}
+.card .miss{max-height:0;overflow:hidden;transition:max-height .5s var(--ease),margin .4s}
+.card.open .miss{max-height:260px;margin-top:14px}
+.card .miss div{padding:14px 15px;border-radius:11px;border:1px solid rgba(255,92,92,.3);background:rgba(255,92,92,.07);
+  font-size:13.8px;color:#ffc9c9;line-height:1.55}
+.card .miss b{color:#fff}
+.grid-3.picked .tilt-wrap:not(.sel) .card{opacity:.42}
+.grid-3.picked .tilt-wrap.sel .card{border-color:var(--gold);box-shadow:0 26px 60px rgba(0,0,0,.6)}
+
+/* idézetek: a válasz kattintásra derül ki */
+.quote{cursor:pointer}
+.quote .ansWrap{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+.quote.open .ansWrap{max-height:220px}
+.quote .rev{margin-top:6px;font:700 11px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.quote.open .rev{color:var(--dim)}
+
+/* önteszt-lista pontszámmal */
+.fit li{cursor:pointer;user-select:none;transition:.25s var(--ease)}
+.fit li.yes:hover{border-color:var(--line);transform:translateX(3px)}
+.fit li.yes .m{transition:.25s}
+.fit li.on{border-color:var(--green);background:rgba(51,209,122,.08)}
+.fit li.on .m{transform:scale(1.25)}
+.fit li.no{cursor:default}
+.fitbox{max-width:840px;margin:22px auto 0;padding:22px 24px;border-radius:14px;text-align:center;
+  border:1px solid var(--line);background:linear-gradient(120deg,rgba(232,185,35,.08),rgba(21,17,12,.7))}
+.fitbox .sc{font-family:'Playfair Display',serif;font-size:clamp(21px,3vw,28px);font-weight:800;
+  background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fitbox p{color:var(--muted);font-size:14.5px;margin:8px 0 0}
+.fitbox .cta{margin-top:16px;display:none}
+.fitbox.hot .cta{display:inline-block}
+
+/* ===== 21z. 3D ÉLETFA EMBLÉMA ===== */
+.emblem{position:relative;width:var(--es,168px);height:var(--es,168px);perspective:800px;flex:0 0 auto}
+.emblem .stage{position:relative;width:100%;height:100%;transform-style:preserve-3d;
+  transform:rotateX(var(--erx,10deg)) rotateY(var(--ery,-18deg));
+  transition:transform .6s var(--ease);animation:embSpin 18s ease-in-out infinite alternate}
+@keyframes embSpin{from{rotate:y -6deg}to{rotate:y 6deg}}
+.emblem .lay{position:absolute;inset:0;transform-style:preserve-3d}
+.emblem .lay svg,.emblem .lay img{width:100%;height:100%;display:block}
+.emblem .glow{position:absolute;inset:-22%;border-radius:50%;transform:translateZ(-26px);pointer-events:none;
+  background:radial-gradient(circle,rgba(232,185,35,.34),transparent 66%);filter:blur(14px);animation:pulse 7s ease-in-out infinite}
+.emb-ring{fill:none;stroke:currentColor;stroke-width:1.6}
+.emb-line{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.emb-dot{fill:currentColor}
+/* a hátsó rétegek sötétebb arany → valódi kiemelt fém hatás */
+.emblem .lay:nth-child(1){color:#5d430c;transform:translateZ(-9px)}
+.emblem .lay:nth-child(2){color:#6f5010;transform:translateZ(-7.5px)}
+.emblem .lay:nth-child(3){color:#845e13;transform:translateZ(-6px)}
+.emblem .lay:nth-child(4){color:#9a6f17;transform:translateZ(-4.5px)}
+.emblem .lay:nth-child(5){color:#b3821b;transform:translateZ(-3px)}
+.emblem .lay:nth-child(6){color:#cd9720;transform:translateZ(-1.5px)}
+.emblem .lay:nth-child(7){color:#e8b923;transform:translateZ(0)}
+.emblem .lay:nth-child(8){color:#f7d774;transform:translateZ(1.6px)}
+/* ha van saját logófájl, a rétegek fényereje adja a mélységet */
+.emblem .lay:nth-child(1) img{filter:brightness(.30)}
+.emblem .lay:nth-child(2) img{filter:brightness(.40)}
+.emblem .lay:nth-child(3) img{filter:brightness(.50)}
+.emblem .lay:nth-child(4) img{filter:brightness(.62)}
+.emblem .lay:nth-child(5) img{filter:brightness(.74)}
+.emblem .lay:nth-child(6) img{filter:brightness(.86)}
+.emblem .lay:nth-child(7) img{filter:none}
+.emblem .lay:nth-child(8) img{filter:brightness(1.12)}
+.emblem .sheen{position:absolute;inset:0;border-radius:50%;transform:translateZ(3px);pointer-events:none;overflow:hidden}
+.emblem .sheen::after{content:'';position:absolute;inset:-30%;
+  background:linear-gradient(112deg,transparent 40%,rgba(255,255,255,.5) 50%,transparent 60%);
+  translate:-130% 0;animation:sheen 6s var(--ease) infinite}
+/* a heróban lebegő pecsétként ül a kalkulátor fölött */
+.emb-hero{position:absolute;top:-88px;left:-54px;z-index:3;--es:158px}
+@media(min-width:1100px){.calc{margin-top:62px}}
+@media(max-width:1099px){.emb-hero{position:static;margin:0 auto 14px;--es:132px}}
+@media(max-width:560px){.emb-hero{--es:112px}}
+
 /* ===== 21a. CRO RÉTEG: kalkulátor, sürgetés, kétlépcsős űrlap, modal ===== */
 /* sürgősségi ribbon */
 .ribbon{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 18px}
@@ -583,8 +670,8 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .compcard h3{font-size:clamp(20px,2.5vw,25px);margin-bottom:12px}
 .compcard>p{color:var(--muted);font-size:14.8px;margin-bottom:16px}
 .compcard ul{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
-.compcard li{display:grid;grid-template-columns:14px minmax(0,1fr);gap:10px;font-size:14px;color:var(--muted);overflow-wrap:anywhere}
-.compcard li::before{content:'→';color:var(--gold);font-weight:800;flex:0 0 auto}
+.compcard li{position:relative;display:block;min-width:0;padding-left:22px;font-size:14px;color:var(--muted);overflow-wrap:break-word}
+.compcard li::before{content:'→';position:absolute;left:0;top:0;color:var(--gold);font-weight:800}
 .cdbox{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
 .cdbox div{min-width:0}
 .cdbox div{flex:1;text-align:center;padding:12px 6px;border-radius:11px;border:1px solid var(--line-soft);background:rgba(10,8,6,.5)}
@@ -707,13 +794,35 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 <body>
 <div id="pre" aria-hidden="true">
   <div>
-    <svg viewBox="0 0 100 100" role="img" aria-label="TD-AI &amp; Marketing"><title>TD-AI &amp; Marketing</title>
-      <path style="--len:180" d="M14 26h34M31 26v50"/>
-      <path class="p2" style="--len:200" d="M57 26h14a25 25 0 0 1 0 50H57V26z"/>
+    <svg viewBox="0 0 100 100" role="img" aria-label="TD-AI &amp; Marketing" style="color:var(--gold)"><title>TD-AI &amp; Marketing</title>
+      <use href="#tree"/>
     </svg>
     <div class="cap">TD-AI &amp; Marketing</div>
   </div>
 </div>
+<!-- ===== ÉLETFA SZIMBÓLUM — a márka jele, minden 3D réteg ezt használja =====
+     Ha felteszed a saját logódat `assets/logo.svg` (vagy .png) néven a fájl mellé,
+     az oldal automatikusan azt használja helyette, ugyanezzel a 3D kiemeléssel. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="tree">
+    <circle class="emb-ring" cx="50" cy="50" r="44"/>
+    <circle class="emb-ring" cx="50" cy="50" r="39" style="stroke-width:.7;opacity:.55"/>
+    <path class="emb-line" d="M50 82V52"/>
+    <path class="emb-line" d="M50 82c-6 3-10 5-16 5.6M50 82c6 3 10 5 16 5.6M50 84c-2.6 3.4-4 5.6-5 8.6M50 84c2.6 3.4 4 5.6 5 8.6"/>
+    <path class="emb-line" d="M50 64c-4.6-4-9.8-6-14.4-9.6M50 64c4.6-4 9.8-6 14.4-9.6"/>
+    <path class="emb-line" d="M50 54c-5.4-3.6-8.8-8-11.6-13.4M50 54c5.4-3.6 8.8-8 11.6-13.4"/>
+    <path class="emb-line" d="M50 52c-1.4-6.6-1.2-12.6 0-19M50 33c-3.4-3.4-5.6-6-7.8-9.6M50 33c3.4-3.4 5.6-6 7.8-9.6"/>
+    <path class="emb-line" d="M50 44c-6.2-2.4-10.4-5.4-14.6-9.6M50 44c6.2-2.4 10.4-5.4 14.6-9.6" style="opacity:.85"/>
+    <path class="emb-line" d="M50 24c-2.2-2.6-3.4-4.6-4.6-7.4M50 24c2.2-2.6 3.4-4.6 4.6-7.4" style="opacity:.7"/>
+    <circle class="emb-dot" cx="34.4" cy="53.4" r="2.4"/><circle class="emb-dot" cx="65.6" cy="53.4" r="2.4"/>
+    <circle class="emb-dot" cx="37.6" cy="39.4" r="2.1"/><circle class="emb-dot" cx="62.4" cy="39.4" r="2.1"/>
+    <circle class="emb-dot" cx="41.6" cy="22.8" r="2.1"/><circle class="emb-dot" cx="58.4" cy="22.8" r="2.1"/>
+    <circle class="emb-dot" cx="50" cy="31" r="2.6"/>
+    <circle class="emb-dot" cx="34.6" cy="33.8" r="1.8"/><circle class="emb-dot" cx="65.4" cy="33.8" r="1.8"/>
+    <circle class="emb-dot" cx="44.8" cy="15.9" r="1.6"/><circle class="emb-dot" cx="55.2" cy="15.9" r="1.6"/>
+  </g>
+</defs></svg>
+
 <div id="progress"></div>
 <div id="aurora"></div>
 <canvas id="hero-gl" aria-hidden="true"></canvas>
@@ -743,7 +852,7 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 
 <header id="hdr">
   <div class="wrap-wide nav">
-    <a class="logo" href="#top"><span class="logo-mark">TD</span> TD-AI <span class="amp" style="color:var(--dim);font-weight:400">&amp;</span> Marketing</a>
+    <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 100 100" style="width:20px;height:20px;color:#120d04"><use href="#tree"/></svg></span> TD-AI <span class="amp" style="color:var(--dim);font-weight:400">&amp;</span> Marketing</a>
     <nav class="nav-links" aria-label="Fő navigáció">
       <a href="#rendszer">A rendszer</a><a href="#gepezet">A gépezet</a><a href="#megfeleles">2026-os határidők</a><a href="#arak">Árak</a>
       <a href="#folyamat">Folyamat</a><a href="#helyi-seo">Helyi SEO</a><a href="#audit">Mini-audit</a><a href="#gyik">GYIK</a>
@@ -780,8 +889,23 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
         <span>A jelentkezéshez töltsd ki a <b>lenti űrlapot</b> — 2 perc az egész, kötelezettség nélkül.</span>
       </div>
     </div>
-    <div>
-      <div class="calc" id="calc">
+    <div style="position:relative">
+      <div class="emblem emb-hero" id="emblem" aria-hidden="true">
+        <div class="glow"></div>
+        <div class="stage">
+          <div class="lay"><svg viewBox="0 0 100 100"><use href="#tree"/></svg></div>
+          <div class="lay"><svg viewBox="0 0 100 100"><use href="#tree"/></svg></div>
+          <div class="lay"><svg viewBox="0 0 100 100"><use href="#tree"/></svg></div>
+          <div class="lay"><svg viewBox="0 0 100 100"><use href="#tree"/></svg></div>
+          <div class="lay"><svg viewBox="0 0 100 100"><use href="#tree"/></svg></div>
+          <div class="lay"><svg viewBox="0 0 100 100"><use href="#tree"/></svg></div>
+          <div class="lay"><svg viewBox="0 0 100 100"><use href="#tree"/></svg></div>
+          <div class="lay"><svg viewBox="0 0 100 100"><use href="#tree"/></svg></div>
+          <div class="sheen"></div>
+        </div>
+      </div>
+
+      <div class="calc" id="calc" style="position:relative">
         <div class="ctitle">30 másodperces számolás</div>
         <h2>Mennyibe kerül <span class="g">most</span> egy megkeresésed?</h2>
 
@@ -832,12 +956,12 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
       <p class="lead">Ezek a mondatok indítják nálunk a beszélgetések többségét. Mindegyik alatt ott van, hogy a rendszer melyik eleme válaszol rá.</p>
     </div>
     <div class="quotes">
-      <div class="quote rv"><p>„Sok a kattintás, de nem jön ügyfél.”</p><div class="ans">A hirdetés forgalmat hoz, nem ügyfelet. <b>Céloldal + mérés</b> nélkül a kattintás ott is marad.</div></div>
-      <div class="quote rv d1"><p>„Elviszem a pénzt a Facebookra, de nem tudom, megéri-e.”</p><div class="ans">Amíg nincs konverziós esemény, ez tényleg nem eldönthető. <b>GA4 + konverziókövetés</b> az első hét feladata.</div></div>
-      <div class="quote rv d2"><p>„A weboldalam nem hoz ajánlatkérést.”</p><div class="ans">A weboldal sok célt szolgál. Hirdetés mögé <b>dedikált landing oldal</b> való, egyetlen művelettel.</div></div>
-      <div class="quote rv"><p>„Már volt ügynökségem, riportot küldött eredmény helyett.”</p><div class="ans">Ezért mérünk <b>ajánlatkérést</b>, nem kattintást. Az első jelek 7–14 napon belül látszanak.</div></div>
-      <div class="quote rv d1"><p>„Kellene több megkeresés, de nem tudom, hol kezdjem.”</p><div class="ans">Az <b>üzenettel</b>. Előbb az legyen kész, miért téged válasszanak — utána jön a költés.</div></div>
-      <div class="quote rv d2"><p>„Egy kreatívval elindítottam, nem működött, hagytam.”</p><div class="ans">Egy variáns nem teszt. <b>AI-támogatott kreatív tesztelés</b>: hamarabb derül ki, melyik üzenet viszi.</div></div>
+      <div class="quote rv"><p>„Sok a kattintás, de nem jön ügyfél.”</p><div class="rev">Mi a válaszunk? +</div><div class="ansWrap"><div class="ans">A hirdetés forgalmat hoz, nem ügyfelet. <b>Céloldal + mérés</b> nélkül a kattintás ott is marad.</div></div></div>
+      <div class="quote rv d1"><p>„Elviszem a pénzt a Facebookra, de nem tudom, megéri-e.”</p><div class="rev">Mi a válaszunk? +</div><div class="ansWrap"><div class="ans">Amíg nincs konverziós esemény, ez tényleg nem eldönthető. <b>GA4 + konverziókövetés</b> az első hét feladata.</div></div></div>
+      <div class="quote rv d2"><p>„A weboldalam nem hoz ajánlatkérést.”</p><div class="rev">Mi a válaszunk? +</div><div class="ansWrap"><div class="ans">A weboldal sok célt szolgál. Hirdetés mögé <b>dedikált landing oldal</b> való, egyetlen művelettel.</div></div></div>
+      <div class="quote rv"><p>„Már volt ügynökségem, riportot küldött eredmény helyett.”</p><div class="rev">Mi a válaszunk? +</div><div class="ansWrap"><div class="ans">Ezért mérünk <b>ajánlatkérést</b>, nem kattintást. Az első jelek 7–14 napon belül látszanak.</div></div></div>
+      <div class="quote rv d1"><p>„Kellene több megkeresés, de nem tudom, hol kezdjem.”</p><div class="rev">Mi a válaszunk? +</div><div class="ansWrap"><div class="ans">Az <b>üzenettel</b>. Előbb az legyen kész, miért téged válasszanak — utána jön a költés.</div></div></div>
+      <div class="quote rv d2"><p>„Egy kreatívval elindítottam, nem működött, hagytam.”</p><div class="rev">Mi a válaszunk? +</div><div class="ansWrap"><div class="ans">Egy variáns nem teszt. <b>AI-támogatott kreatív tesztelés</b>: hamarabb derül ki, melyik üzenet viszi.</div></div></div>
     </div>
   </div>
 </section>
@@ -856,11 +980,11 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
       A leggyakoribb hiba nem a rossz kampány, hanem a <b>hiányzó rendszer a kampány körül</b>.
     </p>
     <div class="grid-3">
-      <div class="tilt-wrap rv"><div class="card"><div class="shine"></div><div class="num">01 — ÜZENET</div><h3>Pozicionálás és ajánlat</h3><p>Előbb az üzenet, utána a költés. Megfogalmazzuk, miért téged válasszanak — a te ügyfeleid szavaival, nem marketing-dumával.</p></div></div>
-      <div class="tilt-wrap rv d1"><div class="card"><div class="shine"></div><div class="num">02 — LANDING</div><h3>Landing oldal készítés</h3><p>A hirdetés mögé dedikált céloldal való: egyetlen célra épül, nincs rajta zavaró menü, és ajánlatkérést kér. 90 000 Ft-tól.</p></div></div>
-      <div class="tilt-wrap rv d2"><div class="card"><div class="shine"></div><div class="num">03 — HIRDETÉS</div><h3>Google Ads és Meta hirdetés</h3><p>Keresési és közösségi kampányok AI-támogatott kreatív teszteléssel. A nyertes variáns gyorsabban derül ki, így kevesebb pénz vész el.</p></div></div>
-      <div class="tilt-wrap rv"><div class="card"><div class="shine"></div><div class="num">04 — MÉRÉS</div><h3>GA4 konverziómérés</h3><p>Google Analytics 4 és Tag Manager: űrlap, hívás és üzenet mint konverziós esemény, visszakapcsolva a hirdetési fiókokba.</p></div></div>
-      <div class="tilt-wrap rv d1"><div class="card"><div class="shine"></div><div class="num">05 — UTÁNKÖVETÉS</div><h3>AI chatbot és automatizáció</h3><p>Az érdeklődő nem hűl ki: a chatbot azonnal válaszol, az automatizáció pedig utánakérdez helyetted.</p></div></div>
+      <div class="tilt-wrap rv"><div class="card"><div class="shine"></div><div class="num">01 — ÜZENET</div><h3>Pozicionálás és ajánlat</h3><p>Előbb az üzenet, utána a költés. Megfogalmazzuk, miért téged válasszanak — a te ügyfeleid szavaival, nem marketing-dumával.</p><div class="tap">Mi történik, ha hiányzik?</div><div class="miss"><div>Üzenet nélkül a legjobb kampány is <b>üresen szól</b>: a látogató nem érti, miért pont téged válasszon, és továbbkattint a következő ajánlatra.</div></div></div></div>
+      <div class="tilt-wrap rv d1"><div class="card"><div class="shine"></div><div class="num">02 — LANDING</div><h3>Landing oldal készítés</h3><p>A hirdetés mögé dedikált céloldal való: egyetlen célra épül, nincs rajta zavaró menü, és ajánlatkérést kér. 90 000 Ft-tól.</p><div class="tap">Mi történik, ha hiányzik?</div><div class="miss"><div>Céloldal nélkül a forgalom a főoldalra érkezik, ahol <b>elveszik a menüben</b> — fizettél a kattintásért, de nem lett belőle megkeresés.</div></div></div></div>
+      <div class="tilt-wrap rv d2"><div class="card"><div class="shine"></div><div class="num">03 — HIRDETÉS</div><h3>Google Ads és Meta hirdetés</h3><p>Keresési és közösségi kampányok AI-támogatott kreatív teszteléssel. A nyertes variáns gyorsabban derül ki, így kevesebb pénz vész el.</p><div class="tap">Mi történik, ha hiányzik?</div><div class="miss"><div>Hirdetés nélkül a rendszer többi eleme kihasználatlan: <b>nincs mit mérni és mit optimalizálni</b>, a jó céloldalra sem érkezik senki.</div></div></div></div>
+      <div class="tilt-wrap rv"><div class="card"><div class="shine"></div><div class="num">04 — MÉRÉS</div><h3>GA4 konverziómérés</h3><p>Google Analytics 4 és Tag Manager: űrlap, hívás és üzenet mint konverziós esemény, visszakapcsolva a hirdetési fiókokba.</p><div class="tap">Mi történik, ha hiányzik?</div><div class="miss"><div>Mérés nélkül <b>találgatsz</b>: nem tudod, melyik hirdetés hozta az ügyfelet, tehát nem tudod, mit erősíts és mit kapcsolj le.</div></div></div></div>
+      <div class="tilt-wrap rv d1"><div class="card"><div class="shine"></div><div class="num">05 — UTÁNKÖVETÉS</div><h3>AI chatbot és automatizáció</h3><p>Az érdeklődő nem hűl ki: a chatbot azonnal válaszol, az automatizáció pedig utánakérdez helyetted.</p><div class="tap">Mi történik, ha hiányzik?</div><div class="miss"><div>Utánkövetés nélkül a megszerzett érdeklődő <b>kihűl</b>: aki nem kap választ órákon belül, jellemzően a következő szolgáltatónál köt ki.</div></div></div></div>
       <div class="tilt-wrap rv d2"><div class="card" style="border-color:var(--gold)"><div class="shine"></div><div class="num">→ EREDMÉNY</div><h3>Kiszámítható megkeresés</h3><p>Ugyanabból vagy kisebb keretből több minőségi ajánlatkérés — és végre látod a számok mögötti okot.</p></div></div>
     </div>
   </div>
@@ -1041,23 +1165,28 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
       <b>Google Cégprofil beállítás 59 000 Ft-tól</b>, <b>SEO cikk 35 000 Ft/cikk</b>.
       Az ügynökségi díj és a hirdetési keret két külön tétel — az első konzultáció ingyenes és kötelezettségmentes.
     </p>
-    <div class="price-grid">
-      <div class="pcard hot pfly"><div class="kind">Havidíjas</div><h3>Start csomag</h3>
+    <div class="filters" id="priceFilter" role="group" aria-label="Árak szűrése">
+      <button type="button" class="on" data-f="mind">Mind</button>
+      <button type="button" data-f="havi">Havidíjas rendszer</button>
+      <button type="button" data-f="projekt">Egyszeri projekt</button>
+    </div>
+    <div class="price-grid" id="priceGrid">
+      <div class="pcard hot pfly" data-k="havi"><div class="kind">Havidíjas</div><h3>Start csomag</h3>
         <div class="amt">80 000 Ft-tól</div><div class="per">/ hó · minimum 3 hónap</div>
         <ul><li>Google és/vagy Meta kampány kezelése</li><li>Konvertáló céloldal</li><li>GA4 + konverziómérés beállítás</li><li>Havi riport érthető nyelven</li><li>Ajándék weboldal (feltétellel)</li></ul></div>
-      <div class="pcard pfly"><div class="kind">Havidíjas</div><h3>Növekedés csomag</h3>
+      <div class="pcard pfly" data-k="havi"><div class="kind">Havidíjas</div><h3>Növekedés csomag</h3>
         <div class="amt">Egyedi ár</div><div class="per">személyre szabott, skálázáshoz</div>
         <ul><li>Több csatorna párhuzamosan</li><li>Folyamatos AI kreatív tesztelés</li><li>Mélyebb automatizáció, chatbot</li><li>Heti optimalizálás</li><li>Bevételi szintű riport</li></ul></div>
-      <div class="pcard pfly"><div class="kind">Projekt</div><h3>Landing oldal</h3>
+      <div class="pcard pfly" data-k="projekt"><div class="kind">Projekt</div><h3>Landing oldal</h3>
         <div class="amt">90 000 Ft-tól</div><div class="per">egyszeri, átadással</div>
         <ul><li>Egy célra épített céloldal</li><li>Értékesítési szöveg</li><li>Mobilbarát, gyors betöltés</li><li>Méréssel együtt átadva</li></ul></div>
-      <div class="pcard pfly"><div class="kind">Projekt</div><h3>Marketing audit</h3>
+      <div class="pcard pfly" data-k="projekt"><div class="kind">Projekt</div><h3>Marketing audit</h3>
         <div class="amt">69 000 Ft-tól</div><div class="per">egyszeri, írásos anyaggal</div>
         <ul><li>Kampányok és fiókok átvizsgálása</li><li>Céloldal és mérés ellenőrzése</li><li>Konkrét, priorizált teendőlista</li><li>Mi viszi a pénzt, mi hozná a leadet</li></ul></div>
-      <div class="pcard pfly"><div class="kind">Helyi SEO</div><h3>Google Cégprofil</h3>
+      <div class="pcard pfly" data-k="projekt"><div class="kind">Helyi SEO</div><h3>Google Cégprofil</h3>
         <div class="amt">59 000 Ft-tól</div><div class="per">egyszeri beállítás</div>
         <ul><li>Cégprofil létrehozás / rendbetétel</li><li>Kategóriák, szolgáltatások, fotók</li><li>Helyi keresésre optimalizálás</li><li>Értékeléskezelési alapok</li></ul></div>
-      <div class="pcard pfly"><div class="kind">Tartalom</div><h3>Blog / SEO cikk</h3>
+      <div class="pcard pfly" data-k="projekt"><div class="kind">Tartalom</div><h3>Blog / SEO cikk</h3>
         <div class="amt">35 000 Ft</div><div class="per">/ cikk</div>
         <ul><li>Kulcsszókutatásra épülő téma</li><li>Keresőre és AI keresőkre optimalizálva</li><li>Belső linkelés, meta adatok</li><li>Publikálásra kész formátum</li></ul></div>
     </div>
@@ -1177,7 +1306,7 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 <!-- ===== KINEK VALÓ ===== -->
 <section class="sec alt" id="kinek">
   <div class="wrap">
-    <div class="sec-head rv"><div class="eyebrow">Őszintén</div><h2>Neked való, ha…</h2></div>
+    <div class="sec-head rv"><div class="eyebrow">Őszintén</div><h2>Neked való, ha…</h2><p class="lead">Kattints azokra a sorokra, amik igazak rád — a végén megmondjuk, mit jelent.</p></div>
     <ul class="fit">
       <li class="yes rv"><span class="m">✓</span><span>Magyar KKV-t vezetsz, és <b>több minőségi megkeresést</b> akarsz ugyanabból vagy kisebb hirdetési keretből.</span></li>
       <li class="yes rv"><span class="m">✓</span><span>Már költöttél hirdetésre, de <b>nem tudod megmondani, melyik forint mit hozott</b>.</span></li>
@@ -1186,6 +1315,11 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
       <li class="yes rv"><span class="m">✓</span><span>Elfogadod, hogy <b>a rendszer nem 3 nap alatt épül</b> — de az első jelek 7–14 napon belül látszanak.</span></li>
       <li class="no rv"><span class="m">✗</span><span><b>Nem neked való, ha</b> csak „olcsó kattintást” keresel minőség helyett, vagy mérés nélküli brand awareness kampányt akarsz. Ilyet szándékosan nem vállalunk.</span></li>
     </ul>
+    <div class="fitbox rv" id="fitbox">
+      <div class="sc" id="fitScore">Jelöld be, ami igaz rád</div>
+      <p id="fitMsg">Öt állítás — kattints azokra, amik ráillenek a vállalkozásodra.</p>
+      <a class="btn cta" href="#kapcsolat" data-cta="onteszt"><span>Beszéljük át ingyen</span></a>
+    </div>
   </div>
 </section>
 
@@ -1193,19 +1327,26 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 <section class="sec" id="gyik" aria-labelledby="gyik-cim">
   <div class="wrap">
     <div class="sec-head rv"><div class="eyebrow">GYIK</div><h2 id="gyik-cim">Gyakori kérdések a <span class="g">marketing ügynökségről</span></h2></div>
+    <div class="filters" id="faqFilter" role="group" aria-label="Kérdések szűrése">
+      <button type="button" class="on" data-t="mind">Mind</button>
+      <button type="button" data-t="ar">Ár</button>
+      <button type="button" data-t="ido">Idő</button>
+      <button type="button" data-t="meres">Mérés</button>
+      <button type="button" data-t="megfeleles">2026-os megfelelés</button>
+    </div>
     <div class="faq" id="faq">
-      <div class="faq-item"><h3><button class="faq-q" type="button">Mennyibe kerül egy marketing ügynökség egy magyar KKV-nak?</button></h3><div class="faq-a"><div>A TD-AI &amp; Marketingnél a havidíjas Start csomag 80 000 Ft/hó-tól indul, minimum 3 hónapos együttműködéssel. Egyszeri projektként landing oldal 90 000 Ft-tól, marketing audit 69 000 Ft-tól, Google Cégprofil beállítás 59 000 Ft-tól, SEO cikk 35 000 Ft/cikk. Az első konzultáció ingyenes és kötelezettségmentes.</div></div></div>
-      <div class="faq-item"><h3><button class="faq-q" type="button">Mennyi idő alatt hoz eredményt egy Google Ads kampány?</button></h3><div class="faq-a"><div>Az első jelek — megjelenések, kattintások, az első ajánlatkérések — jellemzően 7–14 napon belül láthatók, ha a mérés az induláskor be van állítva. A megbízható optimalizáláshoz viszont legalább 3 hónap adat kell, ezért dolgozunk minimum 3 hónapos együttműködésben.</div></div></div>
-      <div class="faq-item"><h3><button class="faq-q" type="button">Mi az az ügyfélszerző rendszer?</button></h3><div class="faq-a"><div>Öt elem együttese: üzenet (pozicionálás és ajánlat), konvertáló landing oldal, célzott hirdetés Google és Meta felületen, konverziómérés (GA4), valamint utánkövetés chatbottal és automatizációval. Külön-külön mindegyik gyenge; együtt viszont kiszámíthatóan hoz ajánlatkérést.</div></div></div>
-      <div class="faq-item"><h3><button class="faq-q" type="button">Miért nem elég önmagában hirdetni?</button></h3><div class="faq-a"><div>Mert a hirdetés csak forgalmat hoz. Ha a forgalom nem dedikált céloldalra érkezik, nincs mérés, és nincs utánkövetés, akkor a kattintásból nem lesz ajánlatkérés. A leggyakoribb hiba nem a rossz kampány, hanem a hiányzó rendszer a kampány körül.</div></div></div>
-      <div class="faq-item"><h3><button class="faq-q" type="button">Hogyan mérhető, hogy a hirdetés hozott-e tényleg ügyfelet?</button></h3><div class="faq-a"><div>Google Analytics 4 és Google Tag Manager segítségével konverziós eseményeket állítunk be: űrlapbeküldés, telefonhívás, üzenetküldés. Ezek visszakapcsolódnak a Google Ads és Meta fiókba, így csatornánként látszik, melyik hirdetés hozta a megkeresést — nem csak a kattintás száma.</div></div></div>
-      <div class="faq-item"><h3><button class="faq-q" type="button">Mennyi hirdetési keret kell az induláshoz?</button></h3><div class="faq-a"><div>Nincs egységes minimum: a szükséges keret a piacodtól, a szolgáltatásod árától és a versenytől függ. Az ingyenes konzultáción a te számaid alapján mondunk reális keretet, mielőtt bármit elköltenél. Fontos, hogy az ügynökségi díj és a hirdetési keret két külön tétel.</div></div></div>
-      <div class="faq-item"><h3><button class="faq-q" type="button">Egy debreceni ügynökség tud országosan dolgozni?</button></h3><div class="faq-a"><div>Igen. A székhelyünk Debrecen, a helyi SEO és Google Cégprofil Hajdú-Bihar vármegyében az erősségünk, de a hirdetéskezelés, a landing oldal és a mérés online zajlik, így az ország bármely pontján lévő KKV-val dolgozunk.</div></div></div>
-      <div class="faq-item"><h3><button class="faq-q" type="button">Mi a különbség a landing oldal és a weboldal között?</button></h3><div class="faq-a"><div>A weboldal sok célt szolgál: bemutat, tájékoztat, navigál. A landing oldal egyetlen célra épül — hogy a látogató elvégezzen egy műveletet, jellemzően ajánlatot kérjen. Ezért nincs rajta zavaró menü, és minden eleme egy irányba tereli az olvasót. Hirdetés mögé mindig landing oldal való.</div></div></div>
-      <div class="faq-item"><h3><button class="faq-q" type="button">Mit csinál másképp egy AI-támogatott marketing ügynökség?</button></h3><div class="faq-a"><div>Az AI a kreatívok és szövegvariánsok előállítását és tesztelését gyorsítja fel, így hamarabb derül ki, melyik üzenet működik — kevesebb pénz megy el rossz variánsokra. A stratégiai döntéseket és a kampányok felügyeletét ettől függetlenül ember végzi.</div></div></div>
-      <div class="faq-item"><h3><button class="faq-q" type="button">Kell jelölnöm, hogy a weboldalamon AI chatbot válaszol?</button></h3><div class="faq-a"><div>Igen. Az EU AI Act 50. cikkének átláthatósági kötelezettsége 2026. augusztus 2. óta hatályos: az AI chatbotnak és virtuális asszisztensnek már az első interakciónál egyértelművé kell tennie, hogy a felhasználó nem emberrel beszél, az AI-val generált kép-, hang- és videótartalmat pedig jelölni kell. A bírság felső határa 15 millió euró vagy a globális éves árbevétel 3%-a, KKV-nál az arányosság enyhíthet. A 2026. augusztus 2. előtt piacra került generatív rendszereknél a gépi olvasható jelölésre 2026. december 2-ig van türelmi idő. Ez tájékoztatás, nem jogi tanácsadás.</div></div></div>
-      <div class="faq-item"><h3><button class="faq-q" type="button">Mit jelent az eNyugta 2026. szeptember 1-től?</button></h3><div class="faq-a"><div>2026. szeptember 1-től annak is elektronikusan kell adatot szolgáltatnia a nyugtáiról, aki eddig nem pénztárgéppel nyugtázott — ez mintegy 270 ezer vállalkozást érint. Nem az e-nyugta használata kötelező, hanem a nyugtaadatok beküldése: papíralapú nyugtánál 3 naptári napon belül. Online pénztárgép 2026. december 31-ig helyezhető üzembe és 2028. július 1-ig használható. Nem vagyunk könyvelők — a részletekért fordulj a könyvelődhöz és ellenőrizd a NAV hatályos tájékoztatóját.</div></div></div>
-      <div class="faq-item"><h3><button class="faq-q" type="button">Meddig kell szerződni?</button></h3><div class="faq-a"><div>A havidíjas Start csomag minimum 3 hónap, mert ennyi idő alatt gyűlik össze annyi adat, amiből érdemi optimalizálási döntés hozható. Az egyszeri projektek (landing oldal, audit, Google Cégprofil, SEO cikk) egyedi megrendelések, azoknál nincs hűségidő.</div></div></div>
+      <div class="faq-item" data-t="ar"><h3><button class="faq-q" type="button">Mennyibe kerül egy marketing ügynökség egy magyar KKV-nak?</button></h3><div class="faq-a"><div>A TD-AI &amp; Marketingnél a havidíjas Start csomag 80 000 Ft/hó-tól indul, minimum 3 hónapos együttműködéssel. Egyszeri projektként landing oldal 90 000 Ft-tól, marketing audit 69 000 Ft-tól, Google Cégprofil beállítás 59 000 Ft-tól, SEO cikk 35 000 Ft/cikk. Az első konzultáció ingyenes és kötelezettségmentes.</div></div></div>
+      <div class="faq-item" data-t="ido"><h3><button class="faq-q" type="button">Mennyi idő alatt hoz eredményt egy Google Ads kampány?</button></h3><div class="faq-a"><div>Az első jelek — megjelenések, kattintások, az első ajánlatkérések — jellemzően 7–14 napon belül láthatók, ha a mérés az induláskor be van állítva. A megbízható optimalizáláshoz viszont legalább 3 hónap adat kell, ezért dolgozunk minimum 3 hónapos együttműködésben.</div></div></div>
+      <div class="faq-item" data-t="meres"><h3><button class="faq-q" type="button">Mi az az ügyfélszerző rendszer?</button></h3><div class="faq-a"><div>Öt elem együttese: üzenet (pozicionálás és ajánlat), konvertáló landing oldal, célzott hirdetés Google és Meta felületen, konverziómérés (GA4), valamint utánkövetés chatbottal és automatizációval. Külön-külön mindegyik gyenge; együtt viszont kiszámíthatóan hoz ajánlatkérést.</div></div></div>
+      <div class="faq-item" data-t="meres"><h3><button class="faq-q" type="button">Miért nem elég önmagában hirdetni?</button></h3><div class="faq-a"><div>Mert a hirdetés csak forgalmat hoz. Ha a forgalom nem dedikált céloldalra érkezik, nincs mérés, és nincs utánkövetés, akkor a kattintásból nem lesz ajánlatkérés. A leggyakoribb hiba nem a rossz kampány, hanem a hiányzó rendszer a kampány körül.</div></div></div>
+      <div class="faq-item" data-t="meres"><h3><button class="faq-q" type="button">Hogyan mérhető, hogy a hirdetés hozott-e tényleg ügyfelet?</button></h3><div class="faq-a"><div>Google Analytics 4 és Google Tag Manager segítségével konverziós eseményeket állítunk be: űrlapbeküldés, telefonhívás, üzenetküldés. Ezek visszakapcsolódnak a Google Ads és Meta fiókba, így csatornánként látszik, melyik hirdetés hozta a megkeresést — nem csak a kattintás száma.</div></div></div>
+      <div class="faq-item" data-t="ar"><h3><button class="faq-q" type="button">Mennyi hirdetési keret kell az induláshoz?</button></h3><div class="faq-a"><div>Nincs egységes minimum: a szükséges keret a piacodtól, a szolgáltatásod árától és a versenytől függ. Az ingyenes konzultáción a te számaid alapján mondunk reális keretet, mielőtt bármit elköltenél. Fontos, hogy az ügynökségi díj és a hirdetési keret két külön tétel.</div></div></div>
+      <div class="faq-item" data-t="ido"><h3><button class="faq-q" type="button">Egy debreceni ügynökség tud országosan dolgozni?</button></h3><div class="faq-a"><div>Igen. A székhelyünk Debrecen, a helyi SEO és Google Cégprofil Hajdú-Bihar vármegyében az erősségünk, de a hirdetéskezelés, a landing oldal és a mérés online zajlik, így az ország bármely pontján lévő KKV-val dolgozunk.</div></div></div>
+      <div class="faq-item" data-t="meres"><h3><button class="faq-q" type="button">Mi a különbség a landing oldal és a weboldal között?</button></h3><div class="faq-a"><div>A weboldal sok célt szolgál: bemutat, tájékoztat, navigál. A landing oldal egyetlen célra épül — hogy a látogató elvégezzen egy műveletet, jellemzően ajánlatot kérjen. Ezért nincs rajta zavaró menü, és minden eleme egy irányba tereli az olvasót. Hirdetés mögé mindig landing oldal való.</div></div></div>
+      <div class="faq-item" data-t="ido"><h3><button class="faq-q" type="button">Mit csinál másképp egy AI-támogatott marketing ügynökség?</button></h3><div class="faq-a"><div>Az AI a kreatívok és szövegvariánsok előállítását és tesztelését gyorsítja fel, így hamarabb derül ki, melyik üzenet működik — kevesebb pénz megy el rossz variánsokra. A stratégiai döntéseket és a kampányok felügyeletét ettől függetlenül ember végzi.</div></div></div>
+      <div class="faq-item" data-t="megfeleles"><h3><button class="faq-q" type="button">Kell jelölnöm, hogy a weboldalamon AI chatbot válaszol?</button></h3><div class="faq-a"><div>Igen. Az EU AI Act 50. cikkének átláthatósági kötelezettsége 2026. augusztus 2. óta hatályos: az AI chatbotnak és virtuális asszisztensnek már az első interakciónál egyértelművé kell tennie, hogy a felhasználó nem emberrel beszél, az AI-val generált kép-, hang- és videótartalmat pedig jelölni kell. A bírság felső határa 15 millió euró vagy a globális éves árbevétel 3%-a, KKV-nál az arányosság enyhíthet. A 2026. augusztus 2. előtt piacra került generatív rendszereknél a gépi olvasható jelölésre 2026. december 2-ig van türelmi idő. Ez tájékoztatás, nem jogi tanácsadás.</div></div></div>
+      <div class="faq-item" data-t="megfeleles"><h3><button class="faq-q" type="button">Mit jelent az eNyugta 2026. szeptember 1-től?</button></h3><div class="faq-a"><div>2026. szeptember 1-től annak is elektronikusan kell adatot szolgáltatnia a nyugtáiról, aki eddig nem pénztárgéppel nyugtázott — ez mintegy 270 ezer vállalkozást érint. Nem az e-nyugta használata kötelező, hanem a nyugtaadatok beküldése: papíralapú nyugtánál 3 naptári napon belül. Online pénztárgép 2026. december 31-ig helyezhető üzembe és 2028. július 1-ig használható. Nem vagyunk könyvelők — a részletekért fordulj a könyvelődhöz és ellenőrizd a NAV hatályos tájékoztatóját.</div></div></div>
+      <div class="faq-item" data-t="ar"><h3><button class="faq-q" type="button">Meddig kell szerződni?</button></h3><div class="faq-a"><div>A havidíjas Start csomag minimum 3 hónap, mert ennyi idő alatt gyűlik össze annyi adat, amiből érdemi optimalizálási döntés hozható. Az egyszeri projektek (landing oldal, audit, Google Cégprofil, SEO cikk) egyedi megrendelések, azoknál nincs hűségidő.</div></div></div>
     </div>
   </div>
 </section>
@@ -1868,6 +2009,111 @@ renderBoxes(); setInterval(renderBoxes, 30000);
     m.querySelector('.modal-in').innerHTML='<h3>Megvan — küldjük!</h3><p style="margin-bottom:0">'
       +'Az ellenőrzőlistát a megadott címre küldjük. Ha sürgős: <a href="tel:+36303527975" style="color:var(--gold-lt)">+36 30 352 7975</a></p>';
     setTimeout(close,2600);
+  });
+})();
+
+/* ---------- saját logó átvétele, ha ott a fájl ---------- */
+(function(){
+  ['assets/logo.svg','assets/logo.png'].forEach(function(src,i){
+    var im=new Image();
+    im.onload=function(){
+      if(d.body.dataset.logoDone) return; d.body.dataset.logoDone='1';
+      [].slice.call(d.querySelectorAll('.emblem .lay')).forEach(function(l){
+        l.innerHTML='<img src="'+src+'" alt="" width="100" height="100">';
+      });
+      var hm=d.querySelector('.logo-mark');
+      if(hm) hm.innerHTML='<img src="'+src+'" alt="" style="width:22px;height:22px;object-fit:contain">';
+    };
+    im.src=src;
+  });
+})();
+
+/* ---------- INTERAKTÍV SZEKCIÓK ---------- */
+/* 1 · rendszer-kártyák: mi történik, ha hiányzik */
+(function(){
+  var grid=d.querySelector('#rendszer .grid-3'); if(!grid) return;
+  [].slice.call(grid.querySelectorAll('.tilt-wrap')).forEach(function(w){
+    var card=w.querySelector('.card'); if(!card.querySelector('.miss')) return;
+    card.setAttribute('tabindex','0'); card.setAttribute('role','button');
+    function toggle(){
+      var open=!card.classList.contains('open');
+      grid.querySelectorAll('.card.open').forEach(function(c){ c.classList.remove('open'); });
+      grid.querySelectorAll('.tilt-wrap.sel').forEach(function(x){ x.classList.remove('sel'); });
+      card.classList.toggle('open',open); w.classList.toggle('sel',open);
+      grid.classList.toggle('picked',open);
+      if(open) track('rendszer_elem_nyit',{elem:(card.querySelector('h3')||{}).textContent});
+    }
+    card.addEventListener('click',toggle);
+    card.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
+  });
+})();
+
+/* 2 · idézetek: a válasz kattintásra derül ki */
+[].slice.call(d.querySelectorAll('.quote')).forEach(function(q){
+  q.setAttribute('tabindex','0'); q.setAttribute('role','button');
+  var rev=q.querySelector('.rev');
+  function t(){
+    var open=q.classList.toggle('open');
+    if(rev) rev.textContent = open ? 'Bezárás −' : 'Mi a válaszunk? +';
+    if(open) track('idezet_nyit');
+  }
+  q.addEventListener('click',t);
+  q.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); t(); } });
+});
+
+/* 3 · árszűrő */
+(function(){
+  var f=d.getElementById('priceFilter'), g=d.getElementById('priceGrid'); if(!f||!g) return;
+  f.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    [].slice.call(f.children).forEach(function(x){x.classList.remove('on');});
+    b.classList.add('on');
+    var k=b.dataset.f;
+    [].slice.call(g.children).forEach(function(c){ c.classList.toggle('hidden', k!=='mind' && c.dataset.k!==k); });
+    track('ar_szuro',{szuro:k});
+  });
+})();
+
+/* 4 · GYIK téma-szűrő */
+(function(){
+  var f=d.getElementById('faqFilter'), g=d.getElementById('faq'); if(!f||!g) return;
+  f.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    [].slice.call(f.children).forEach(function(x){x.classList.remove('on');});
+    b.classList.add('on');
+    var t2=b.dataset.t;
+    [].slice.call(g.children).forEach(function(c){ c.classList.toggle('hidden', t2!=='mind' && c.dataset.t!==t2); });
+    track('gyik_szuro',{tema:t2});
+  });
+})();
+
+/* 5 · „Neked való, ha…" önteszt pontszámmal */
+(function(){
+  var rows=[].slice.call(d.querySelectorAll('#kinek .fit li.yes')),
+      box=d.getElementById('fitbox'), sc=d.getElementById('fitScore'), msg=d.getElementById('fitMsg');
+  if(!rows.length||!box) return;
+  var M=[
+    'Öt állítás — kattints azokra, amik ráillenek a vállalkozásodra.',
+    'Egy is elég ok arra, hogy átnézzük a számaidat. A konzultáció ingyenes.',
+    'Két ponton is szorít a cipő — ezek pont a rendszer hiányzó elemei.',
+    'Három találat: nálad nem a hirdetéssel van a baj, hanem a körülötte hiányzó rendszerrel.',
+    'Négy találat: gyakorlatilag a teljes tünetegyüttes megvan. Ezt egy beszélgetés alatt átlátjuk.',
+    'Mind az öt igaz rád. Ez a rendszer pontosan erre a helyzetre készült — beszéljünk.'
+  ];
+  rows.forEach(function(li){
+    li.setAttribute('tabindex','0'); li.setAttribute('role','checkbox'); li.setAttribute('aria-checked','false');
+    function t(){
+      var on=li.classList.toggle('on');
+      li.setAttribute('aria-checked',on?'true':'false');
+      li.querySelector('.m').textContent = on ? '✓' : '✓';
+      var n=d.querySelectorAll('#kinek .fit li.on').length;
+      sc.textContent = n===0 ? 'Jelöld be, ami igaz rád' : n+' / '+rows.length+' igaz rád';
+      msg.textContent = M[n];
+      box.classList.toggle('hot', n>=1);
+      track('onteszt',{talalat:n});
+    }
+    li.addEventListener('click',t);
+    li.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); t(); } });
   });
 })();
 

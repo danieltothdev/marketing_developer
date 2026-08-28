@@ -50,6 +50,24 @@ fele hatástalan.
 
 ---
 
+## 1a. Márkajel és interaktivitás
+
+**3D életfa embléma.** A heróban a kalkulátor fölött pecsétként ül egy életfa-embléma, amit **8 egymás mögé rétegzett SVG** ad ki: a hátsó rétegek sötétebb aranyak, az elsők világosabbak, így valódi kiemelt fém hatása van. Lassan billeg, egérre dől, végigfut rajta egy fényvisszaverődés. Ugyanez a jel került a fejléc logójába és a preloaderbe.
+
+> **A saját logód átveszi a helyét.** Tedd be a fájlt `assets/logo.svg` (vagy `assets/logo.png`) néven az `index.html` mellé — az oldal betöltéskor megkeresi, és ha megtalálja, minden helyen (embléma, fejléc) automatikusan arra vált, ugyanezzel a 3D rétegzéssel. A jelenlegi életfa egy általam rajzolt, ideiglenes jel; nem a te logód.
+
+**Az „unalmas" szekciók interaktívak lettek** — a szöveg nagy része most felfedezhető, nem egyszerre ömlik a képernyőre:
+
+| Szekció | Interakció |
+|---|---|
+| A rendszer 5 eleme | Kattintásra kinyílik, **mi történik, ha az az elem hiányzik** (piros következmény-doboz), a többi kártya elhalványul |
+| „Ezt halljuk a legtöbbször" | Az idézet látszik, a **válasz kattintásra derül ki** |
+| Árak | Szűrő: Mind · Havidíjas rendszer · Egyszeri projekt — így egyszerre kevesebb szöveg van a képernyőn |
+| GYIK | Téma-szűrő: Ár · Idő · Mérés · 2026-os megfelelés |
+| „Neked való, ha…" | **Önteszt**: bejelölöd, ami igaz rád, és pontszámot + személyre szabott üzenetet kapsz, a végén CTA-val |
+
+Mind billentyűzettel is használható (`tabindex`, `role`, Enter/Space), és minden interakció GA4 eseményt küld.
+
 ## 1b. Konverzióoptimalizálás és 2026-os megfelelés
 
 | Elem | Mit csinál |
