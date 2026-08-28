@@ -1,0 +1,48 @@
+{
+ "slug": "ai-act-chatbot-szoveg-generator",
+ "navTitle": "Chatbot szöveg-generátor",
+ "nav": "eszk",
+ "priority": "0.8",
+ "cta": false,
+ "title": "AI Act chatbot jelölés szöveg-generátor — ingyenes | TD-AI & Marketing",
+ "desc": "Írd be a céged nevét és elérhetőségét, és megkapod a kimásolható, AI Act-megfelelő chatbot-jelölést magyarul. Ingyenes, regisztráció nélkül.",
+ "keywords": "AI Act chatbot szöveg, chatbot jelölés minta, AI tájékoztató szöveg, mesterséges intelligencia jelölés minta",
+ "h1": "Chatbot-jelölés generátor az AI Acthez",
+ "eyebrow": "Ingyenes eszköz",
+ "lead": "2026. augusztus 2. óta a chatbotnak az első interakciónál jeleznie kell, hogy nem ember. Írd be az adataidat, és másold ki a kész szöveget.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "html",
+     "html": "<div class=\"tool\">\n  <div class=\"field\"><label for=\"g1\">Céged neve</label><input id=\"g1\" type=\"text\" placeholder=\"Példa Kft.\" value=\"\"></div>\n  <div class=\"field\"><label for=\"g2\">Telefonszám vagy e-mail, ahol embert lehet elérni</label><input id=\"g2\" type=\"text\" placeholder=\"+36 30 123 4567\"></div>\n  <div class=\"field\"><label for=\"g3\">Hangnem</label>\n    <select id=\"g3\"><option value=\"te\">Tegeződő</option><option value=\"on\">Magázódó</option></select></div>\n  <div class=\"field\"><label for=\"g4\">Hol jelenik meg?</label>\n    <select id=\"g4\"><option value=\"chat\">Chatbot első üzenete</option><option value=\"kep\">AI-val generált kép / videó jelölése</option><option value=\"jog\">Adatvédelmi tájékoztató bekezdés</option></select></div>\n  <div class=\"gen-out\" id=\"genOut\">…</div>\n  <button class=\"btn copy-btn\" type=\"button\" id=\"copyBtn\" data-cta=\"generator-masol\"><span>Szöveg másolása</span></button><span class=\"copied\" id=\"copied\" style=\"display:none\">Kimásolva ✓</span>\n  <p class=\"note\">A generált szöveg tájékoztató minta, nem jogi tanácsadás. A saját helyzeted megítéléséhez kérd ügyvéd véleményét, és ellenőrizd a hatályos jogszabályszöveget.</p>\n</div>"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Beépítsük a chatbotodba?",
+     "text": "Ha nem csak a szöveg kell, hanem működő, betanított chatbot is — azt is megcsináljuk, jelöléssel együtt.",
+     "btn": "Nézzük át a chatbotomat",
+     "id": "generator-cta"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "ai-act-chatbot-megfeleles",
+      "ai-chatbot",
+      "megfeleles-2026"
+     ]
+    }
+   ]
+  }
+ ],
+ "extraJs": "<script>\n(function(){\nvar el=function(i){return document.getElementById(i)};\nfunction gen(){\n var c=el('g1').value.trim()||'a cégünk', k=el('g2').value.trim()||'a kapcsolat oldalon megadott elérhetőségen',\n     t=el('g3').value==='te', mode=el('g4').value, s='';\n if(mode==='chat'){\n   s = t\n    ? 'Szia! '+c+' automata asszisztense vagyok — mesterséges intelligencia válaszol, nem élő munkatárs.\\n'\n      +'Segítek a gyakori kérdésekben, és ha kell, továbbadom az ügyed egy kollégának.\\n'\n      +'Ha inkább emberrel beszélnél: '+k+'.'\n    : 'Üdvözöljük! Ön '+c+' automata asszisztensével beszél — a válaszokat mesterséges intelligencia adja, nem élő munkatárs.\\n'\n      +'Az asszisztens a gyakori kérdésekben segít; összetettebb ügyben kollégánkhoz továbbítjuk a megkeresést.\\n'\n      +'Munkatársunk elérhetősége: '+k+'.';\n } else if(mode==='kep'){\n   s = 'A tartalmat mesterséges intelligencia készítette. Készítő: '+c+'.\\n\\n'\n     + 'Rövid változat bejegyzéshez: „AI-val készült kép.\"\\n'\n     + 'Videóhoz: „A videó mesterséges intelligenciával készült vagy azzal módosított elemeket tartalmaz.\"';\n } else {\n   s = 'Mesterséges intelligencia használata\\n\\n'\n     + c + ' a weboldalán automata asszisztenst (chatbotot) üzemeltet, amely mesterséges intelligencia '\n     + 'segítségével válaszol. A látogató a beszélgetés megkezdésekor tájékoztatást kap arról, hogy nem élő '\n     + 'munkatárssal beszél. A beszélgetés során megadott adatokat kapcsolatfelvétel céljából kezeljük; '\n     + 'élő munkatárs a következő elérhetőségen érhető el: ' + k + '. '\n     + 'Az AI-val generált vagy módosított kép-, hang- és videótartalmakat megjelöljük.';\n }\n el('genOut').textContent=s;\n}\n['g1','g2','g3','g4'].forEach(function(i){el(i).addEventListener('input',gen);el(i).addEventListener('change',gen)});\ngen();\nel('copyBtn').addEventListener('click',function(){\n var txt=el('genOut').textContent;\n var done=function(){el('copied').style.display='inline';setTimeout(function(){el('copied').style.display='none'},2500);\n   if(window.tdTrack)window.tdTrack('generator_masolas');};\n if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,done);}\n else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();\n   try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}\n});\n})();</script>"
+}

@@ -1,0 +1,132 @@
+{
+ "slug": "marketing-audit",
+ "navTitle": "Marketing audit",
+ "short": "Kampány, céloldal és mérés átvilágítása priorizált teendőlistával.",
+ "nav": "szolg",
+ "title": "Marketing audit 69 000 Ft-tól — kampány, oldal és mérés átvilágítás | TD-AI & Marketing",
+ "desc": "Marketing audit KKV-knak: Google Ads és Meta fiók, céloldal és konverziómérés átvizsgálása, priorizált teendőlistával. 69 000 Ft-tól, egyszeri díjjal.",
+ "keywords": "marketing audit, Google Ads audit, weboldal audit, konverzió audit, marketing átvilágítás ár",
+ "h1": "Marketing audit — mi viszi a pénzt és mi hozná a leadet",
+ "eyebrow": "Átvilágítás",
+ "lead": "Egy írásos anyag arról, hol szivárog el a pénzed — és milyen sorrendben érdemes javítani.",
+ "price": "69 000 Ft-tól · egyszeri, hűségidő nélkül",
+ "priceValue": "69000",
+ "service": "Marketing audit",
+ "priority": "0.9",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "A marketing audit <b>69 000 Ft-tól</b> indul, egyszeri díjjal. Átnézzük a hirdetési fiókjaidat, a céloldaladat és a mérésedet, majd kapsz egy <b>priorizált teendőlistát</b>: mi az, ami azonnal pénzt spórol, mi az, ami bevételt hozhat, és mi az, amihez most ne nyúlj. Az anyag akkor is a tiéd, ha utána nem dolgozunk együtt — más ügynökséggel is végrehajtható."
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Mit nézünk át",
+     "cols": 3,
+     "items": [
+      {
+       "k": "01",
+       "h": "Hirdetési fiókok",
+       "p": "Kampányszerkezet, kulcsszavak, kizárások, licitstratégia, költéseloszlás. Hol megy el a pénz eredmény nélkül?"
+      },
+      {
+       "k": "02",
+       "h": "Céloldal",
+       "p": "Hova érkezik a forgalom, mit lát elsőre, mennyi kattintásra van az ajánlatkérés, mi tereli el."
+      },
+      {
+       "k": "03",
+       "h": "Mérés",
+       "p": "Van-e GA4, jó-e a konverziós esemény, visszakapcsolódik-e a hirdetési fiókba. A leggyakoribb hiba itt van."
+      },
+      {
+       "k": "04",
+       "h": "Üzenet és ajánlat",
+       "p": "Egyértelmű-e, miért téged válasszanak, és van-e ok most cselekedni."
+      },
+      {
+       "k": "05",
+       "h": "Helyi láthatóság",
+       "p": "Google Cégprofil, NAP-konzisztencia, értékelések — ha helyi szolgáltató vagy."
+      },
+      {
+       "k": "06",
+       "h": "Teendőlista",
+       "p": "Számozott lista hatás és ráfordítás szerint. Nem 40 oldalas PDF, hanem amit tényleg meg lehet csinálni."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "ticks",
+     "title": "Neked való, ha…",
+     "items": [
+      "Költesz hirdetésre, de <strong>nem tudod, mi térül meg</strong>.",
+      "Ügynökséget váltanál, és szeretnél <strong>független véleményt</strong> előtte.",
+      "Magad csinálod, és elakadtál — kellene egy külső szem.",
+      "Nagyobb költésbe kezdenél, és előtte biztosra mennél.",
+      {
+       "x": true,
+       "t": "<strong>Nem éri meg, ha</strong> még egyáltalán nem hirdettél és nincs mérhető adat — akkor inkább rendszerépítéssel kezdjünk."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "faq",
+     "title": "Gyakori kérdések",
+     "items": [
+      {
+       "q": "Mennyi idő alatt készül el az audit?",
+       "a": "A hozzáférések megérkezésétől számítva jellemzően 5–10 munkanap, a fiókok méretétől függően."
+      },
+      {
+       "q": "Mit kell adnom hozzá?",
+       "a": "Olvasói hozzáférést a hirdetési fiókokhoz és a GA4-hez, plusz a weboldal címét. Ha valami hiányzik, azt is jelezzük — sokszor már ez is eredmény."
+      },
+      {
+       "q": "Kötelező utána együtt dolgoznunk?",
+       "a": "Nem. Az audit önálló szolgáltatás, az anyag a tiéd, és bárkivel végrehajtathatod."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "google-ads-kezeles",
+      "landing-oldal-keszites",
+      "google-cegprofil-helyi-seo"
+     ]
+    }
+   ]
+  }
+ ]
+}

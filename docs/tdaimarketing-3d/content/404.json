@@ -1,0 +1,40 @@
+{
+ "slug": "404",
+ "navTitle": "Az oldal nem található",
+ "noindex": true,
+ "cta": false,
+ "title": "Az oldal nem található | TD-AI & Marketing",
+ "desc": "A keresett oldal nem található.",
+ "h1": "Ez az oldal nincs meg",
+ "eyebrow": "404",
+ "lead": "Vagy elírás történt, vagy áthelyeztük. Alább megtalálod a leggyakrabban keresett oldalakat.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "related",
+     "title": "Hova indulnál?",
+     "items": [
+      "szolgaltatasok",
+      "arak",
+      "megfeleles-2026",
+      "eszkozok",
+      "ingyenes-konzultacio",
+      "blog"
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  }
+ ]
+}

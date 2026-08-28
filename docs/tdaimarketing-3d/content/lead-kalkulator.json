@@ -1,0 +1,63 @@
+{
+ "slug": "lead-kalkulator",
+ "navTitle": "Lead-kalkulátor",
+ "nav": "eszk",
+ "priority": "0.8",
+ "cta": false,
+ "title": "Lead-kalkulátor: mennyibe kerül nálad egy megkeresés? | TD-AI & Marketing",
+ "desc": "Ingyenes kalkulátor: add meg a havi hirdetési kereted és a megkereséseid számát, és megmutatjuk, mennyibe kerül nálad egy ajánlatkérés. Regisztráció nélkül.",
+ "keywords": "lead kalkulátor, CPL számítás, megkeresés költsége, hirdetési költség kalkulátor, marketing ROI",
+ "h1": "Mennyibe kerül nálad egy megkeresés?",
+ "eyebrow": "Ingyenes eszköz",
+ "lead": "Két szám kell hozzá: mennyit költesz havonta hirdetésre, és hány megkeresés jön belőle. A számítás a te adataidon fut, semmit nem küldünk el belőle.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "html",
+     "html": "<div class=\"tool\">\n  <div class=\"crow\"><label class=\"lab\" for=\"k1\">Havi hirdetési keret <b id=\"v1\">300 000 Ft</b></label>\n    <input id=\"k1\" type=\"range\" min=\"0\" max=\"2000000\" step=\"10000\" value=\"300000\"></div>\n  <div class=\"crow\"><label class=\"lab\" for=\"k2\">Havi megkeresés (űrlap, hívás, üzenet) <b id=\"v2\">12 db</b></label>\n    <input id=\"k2\" type=\"range\" min=\"0\" max=\"200\" step=\"1\" value=\"12\"></div>\n  <div class=\"crow\"><label class=\"lab\" for=\"k3\">Ebből hány lesz ügyfél? <b id=\"v3\">25%</b></label>\n    <input id=\"k3\" type=\"range\" min=\"0\" max=\"100\" step=\"1\" value=\"25\"></div>\n  <div class=\"crow\"><label class=\"lab\" for=\"k4\">Egy ügyfél átlagos értéke <b id=\"v4\">150 000 Ft</b></label>\n    <input id=\"k4\" type=\"range\" min=\"0\" max=\"3000000\" step=\"10000\" value=\"150000\"></div>\n  <div class=\"out\"><div class=\"k\">1 megkeresés ára</div><div class=\"big\" id=\"cpl\">25 000 Ft</div>\n    <div class=\"sub\" id=\"cac\">Egy ügyfél megszerzése: <b>100 000 Ft</b></div></div>\n  <div class=\"out\" style=\"margin-top:14px\"><div class=\"k\">Havi eredmény a hirdetésből</div><div class=\"big\" id=\"roi\">+ 150 000 Ft</div>\n    <div class=\"sub\" id=\"roiSub\">3 ügyfél × 150 000 Ft − 300 000 Ft keret</div></div>\n  <p class=\"note\">A számítás a te adataidon fut, kizárólag a böngésződben. Ez nem ígéret és nem becslés a jövőre — egyszerű osztás azon, amit ma tudsz.</p>\n  <div style=\"text-align:center;margin-top:20px\"><a class=\"btn\" href=\"ingyenes-konzultacio.html\" data-cta=\"kalkulator\"><span>Nézzük meg, mi javítható</span></a></div>\n</div>"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Mit kezdj a számmal?",
+     "cols": 3,
+     "items": [
+      {
+       "k": "Ha nincs megkeresés",
+       "h": "Nem drága — mérhetetlen",
+       "p": "Ha 0 mért megkeresésed van, a lead ára nem számolható. Ez nem árprobléma, hanem mérési probléma: először a GA4-et és a konverziókövetést kell beállítani."
+      },
+      {
+       "k": "Ha magas a lead ár",
+       "h": "Ritkán a hirdetés a hibás",
+       "p": "A leggyakoribb ok, hogy a forgalom a főoldalra érkezik, nem dedikált céloldalra — vagy hogy a rossz kereséseket is fizeted kizárás nélkül."
+      },
+      {
+       "k": "Ha jó a lead ár",
+       "h": "Akkor a skálázás a kérdés",
+       "p": "Ilyenkor nem a rendszert kell újraépíteni, hanem óvatosan emelni a keretet és bővíteni a kreatívokat, hogy ne romoljon el, ami működik."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "hirdetesi-keret-kalkulator",
+      "marketing-onteszt",
+      "marketing-audit"
+     ]
+    }
+   ]
+  }
+ ],
+ "extraJs": "<script>\n(function(){var el=function(i){return document.getElementById(i)};\nvar f=function(n){return String(Math.round(n)).replace(/\\B(?=(\\d{3})+(?!\\d))/g,'\\u00a0')};\nvar ids=['k1','k2','k3','k4'];\nfunction fill(x){x.style.setProperty('--fill',((x.value-x.min)/(x.max-x.min)*100)+'%')}\nfunction upd(){\n  var K=+el('k1').value,L=+el('k2').value,R=+el('k3').value,V=+el('k4').value;\n  ids.forEach(function(i){fill(el(i))});\n  el('v1').textContent=f(K)+' Ft';el('v2').textContent=L+' db';el('v3').textContent=R+'%';el('v4').textContent=f(V)+' Ft';\n  var cpl=L>0?K/L:0, ugyfel=L*R/100, cac=ugyfel>0?K/ugyfel:0, bev=ugyfel*V, ered=bev-K;\n  el('cpl').textContent=L>0&&K>0?f(cpl)+' Ft':'nem mérhető';\n  el('cac').innerHTML=ugyfel>0?'Egy ügyfél megszerzése: <b>'+f(cac)+' Ft</b>':'Mért megkeresés nélkül ez nem számolható.';\n  el('roi').textContent=(ered>=0?'+ ':'− ')+f(Math.abs(ered))+' Ft';\n  el('roiSub').innerHTML=ugyfel.toFixed(1).replace('.0','')+' ügyfél × '+f(V)+' Ft − '+f(K)+' Ft keret';\n}\nids.forEach(function(i){el(i).addEventListener('input',upd)});upd();\n})();</script>"
+}

@@ -1,0 +1,161 @@
+{
+ "slug": "arak",
+ "navTitle": "Árak",
+ "nav": "arak",
+ "priority": "0.9",
+ "title": "Marketing ügynökség árak 2026 — mennyibe kerül egy KKV-nak? | TD-AI & Marketing",
+ "desc": "Nyílt árlista: Start csomag 80 000 Ft/hó-tól, landing oldal 90 000 Ft-tól, marketing audit 69 000 Ft-tól, Google Cégprofil 59 000 Ft-tól, SEO cikk 35 000 Ft/cikk.",
+ "keywords": "marketing ügynökség árak, marketing árlista 2026, Google Ads kezelés ára, landing oldal ár, marketing audit ár",
+ "h1": "Mennyibe kerül egy marketing ügynökség egy KKV-nak?",
+ "eyebrow": "Árak 2026",
+ "lead": "Nyílt árak, rejtett tételek nélkül. Az ügynökségi díj és a hirdetési keret két külön dolog — a keretet te határozod meg.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "A havidíjas <b>Start csomag 80 000 Ft/hó-tól</b> indul, minimum 3 hónapos együttműködéssel. Egyszeri projektként <b>landing oldal 90 000 Ft-tól</b>, <b>marketing audit 69 000 Ft-tól</b>, <b>Google Cégprofil beállítás 59 000 Ft-tól</b>, <b>SEO cikk 35 000 Ft/cikk</b>. A Növekedés csomag ára személyre szabott. Az első konzultáció ingyenes és kötelezettségmentes."
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "table",
+     "title": "Árlista",
+     "head": [
+      "Szolgáltatás",
+      "Típus",
+      "Ár",
+      "Megjegyzés"
+     ],
+     "rows": [
+      [
+       "<strong>Start csomag</strong>",
+       "havidíjas",
+       "80 000 Ft/hó-tól",
+       "min. 3 hónap · ajándék weboldal feltétellel"
+      ],
+      [
+       "<strong>Növekedés csomag</strong>",
+       "havidíjas",
+       "egyedi ár",
+       "több csatorna, skálázás"
+      ],
+      [
+       "Landing oldal készítés",
+       "projekt",
+       "90 000 Ft-tól",
+       "hűségidő nélkül"
+      ],
+      [
+       "Marketing audit",
+       "projekt",
+       "69 000 Ft-tól",
+       "írásos anyag, a tiéd marad"
+      ],
+      [
+       "Google Cégprofil / helyi SEO",
+       "projekt",
+       "59 000 Ft-tól",
+       "egyszeri beállítás"
+      ],
+      [
+       "Blog / SEO cikk",
+       "tartalom",
+       "35 000 Ft / cikk",
+       "kulcsszókutatással"
+      ],
+      [
+       "Ingyenes konzultáció",
+       "—",
+       "0 Ft",
+       "kötelezettség nélkül, hétvégén is"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "<b>Viszonyítás:</b> a Start csomag havidíja egy 300 000 Ft-os havi hirdetési keret 27%-a. Ha ebből a keretből csak 20% megy el rossz kreatívra vagy rossz céloldalra, az havi 60 000 Ft — nagyjából a csomag ára. Ezért nem a díjat érdemes nézni, hanem azt, mennyi keret <b>nem</b> vész el."
+    },
+    {
+     "type": "ticks",
+     "title": "Mi NINCS az árban",
+     "items": [
+      {
+       "x": true,
+       "t": "<strong>A hirdetési keret.</strong> Azt közvetlenül a Google-nek és a Metának fizeted, a saját kártyádról, a saját fiókodból."
+      },
+      {
+       "x": true,
+       "t": "<strong>Domain és tárhely.</strong> Ha nincs, segítünk választani, de nem árulunk ilyet."
+      },
+      {
+       "x": true,
+       "t": "<strong>Fizetős fotó- vagy videóprodukció.</strong> Ha kell, külön ajánlatot adunk rá."
+      },
+      {
+       "x": true,
+       "t": "<strong>Jogi és adózási tanácsadás.</strong> Nem vagyunk ügyvédek és nem vagyunk könyvelők."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "faq",
+     "title": "Gyakori kérdések az árakról",
+     "items": [
+      {
+       "q": "Miért minimum 3 hónap a havidíjas csomag?",
+       "a": "Mert ennyi idő alatt gyűlik össze annyi adat, amiből érdemi optimalizálási döntés hozható. Az első jelek 7–14 napon belül látszanak, de egy-két hét adatára nem lehet kampányt átépíteni. Az egyszeri projekteknél nincs hűségidő."
+      },
+      {
+       "q": "Van szerződés?",
+       "a": "Igen, írásos megállapodás készül a vállalt feladatokról, a díjról és a felmondás feltételeiről. Az ingyenes konzultáció ettől független, ahhoz semmit nem kell aláírnod."
+      },
+      {
+       "q": "Mennyi hirdetési keretet javasoltok?",
+       "a": "Nincs egységes szám: a piacod, a szolgáltatásod ára és a verseny határozza meg. A konzultáción a te adataid alapján mondunk reális keretet, mielőtt bármit elköltenél."
+      },
+      {
+       "q": "Kérhetek részletfizetést?",
+       "a": "Az egyszeri projekteknél jellemzően megbontható a díj — erről a konzultáción egyeztetünk."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "szolgaltatasok",
+      "lead-kalkulator",
+      "hogyan-dolgozunk"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "slug": "hogyan-dolgozunk",
+ "navTitle": "Hogyan dolgozunk",
+ "priority": "0.8",
+ "title": "Hogyan dolgozunk — 3 lépés az első mérhető ajánlatkérésig | TD-AI & Marketing",
+ "desc": "Feltérképezés, rendszerépítés, skálázás. Végigvezetjük, mi történik az első héttől, mit kérünk tőled, és mikor mit várhatsz. Az első jelek 7–14 napon belül látszanak.",
+ "keywords": "hogyan dolgozik egy marketing ügynökség, marketing folyamat, onboarding, kampányindítás lépései",
+ "h1": "Így dolgozunk — az első héttől a skálázásig",
+ "eyebrow": "Folyamat",
+ "lead": "Nincs hónapokig tartó „stratégiai fázis”. Az első hét után már épül valami, ami ügyfelet hozhat.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "Az első jelek — megjelenések, kattintások, az első ajánlatkérések — jellemzően <b>7–14 napon belül</b> láthatók, ha a mérés az induláskor be van állítva. A megbízható optimalizáláshoz viszont legalább <b>3 hónap adat</b> kell, ezért dolgozunk minimum 3 hónapos együttműködésben."
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "steps",
+     "title": "A három szakasz",
+     "items": [
+      {
+       "h": "0. hét — Ingyenes konzultáció és feltérképezés",
+       "p": "Megnézzük, honnan jön most a megkeresésed, mire költesz és hol szivárog el a pénz. Ha van fiókod és oldalad, előtte ránézek. A végén őszinte véleményt kapsz akkor is, ha nem dolgozunk együtt."
+      },
+      {
+       "h": "1–3. hét — Rendszerépítés",
+       "p": "Összerakjuk az üzenetet, a céloldalt, a kampányokat és a mérést. Beállítjuk, mi számít leadnek — innentől nem becslés, hanem adat. Ekkor kérek tőled hozzáféréseket és pár alapinformációt."
+      },
+      {
+       "h": "Folyamatosan — Skálázás és optimalizálás",
+       "p": "AI-támogatott kreatív tesztelés, heti optimalizálás, havi riport érthető nyelven. Amit hoz a rendszer, azt erősítjük; ami viszi a pénzt, azt levágjuk."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Mit kérek tőled, és mit adok én",
+     "items": [
+      {
+       "k": "Tőled",
+       "h": "Amit meg kell adnod",
+       "p": "Hozzáférés a hirdetési fiókokhoz és a GA4-hez (meghívóval, a fiók a tiéd marad), a weboldalad elérése, pár mondat a legjobb ügyfeleidről, és havi 30 perc a közös átbeszélésre."
+      },
+      {
+       "k": "Tőlem",
+       "h": "Amit én adok",
+       "p": "Kampánykezelés, céloldal, mérés, chatbot és automatizáció beállítás, havi riport magyarul, valamint 24 órán belüli válasz minden kérdésre — hétvégén is."
+      }
+     ]
+    },
+    {
+     "type": "ticks",
+     "title": "Amit nem csinálunk",
+     "items": [
+      {
+       "x": true,
+       "t": "<strong>Nem ígérünk garantált ügyfélszámot vagy Google-pozíciót.</strong> Ezt senki nem tudja garantálni."
+      },
+      {
+       "x": true,
+       "t": "<strong>Nem vállalunk mérés nélküli brand awareness kampányt.</strong> Abból nem derül ki, megérte-e."
+      },
+      {
+       "x": true,
+       "t": "<strong>Nem adunk jogi és adótanácsot.</strong> Az AI Act és az eNyugta kapcsán is csak a marketingoldali kivitelezést vállaljuk."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "faq",
+     "title": "Gyakori kérdések a folyamatról",
+     "items": [
+      {
+       "q": "Mennyi időt vesz el tőlem?",
+       "a": "Az induláskor 1–2 óra összesen (hozzáférések, alapinformációk), utána havi 30 perc a riport átbeszélésére. Ha többet szeretnél benne lenni, arra is van mód."
+      },
+      {
+       "q": "Mi történik, ha nem működik?",
+       "a": "Az adat 4–6 hét után megmutatja, mi nem működik. Ilyenkor nem folytatjuk ugyanazt: vagy az üzenetet, vagy a céloldalt, vagy a célzást változtatjuk. Ha kiderül, hogy a piacod nem alkalmas erre a csatornára, azt is megmondom."
+      },
+      {
+       "q": "Felmondható?",
+       "a": "A havidíjas csomag minimum 3 hónap, azon túl felmondható. Az egyszeri projektek egyedi megrendelések, azoknál nincs hűségidő."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "rolam",
+      "arak",
+      "ingyenes-konzultacio"
+     ]
+    }
+   ]
+  }
+ ]
+}

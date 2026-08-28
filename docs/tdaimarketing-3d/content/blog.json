@@ -1,0 +1,36 @@
+{
+ "slug": "blog",
+ "navTitle": "Blog",
+ "nav": "blog",
+ "priority": "0.7",
+ "title": "KKV marketing blog — mérés, hirdetés, helyi SEO | TD-AI & Marketing",
+ "desc": "Gyakorlati cikkek magyar KKV-knak: konverziómérés, Google Ads, helyi SEO, AI a marketingben. Nem elmélet — végrehajtható lépések.",
+ "keywords": "KKV marketing blog, marketing cikkek magyar, konverziómérés cikk, helyi SEO tippek",
+ "h1": "KKV marketing blog",
+ "eyebrow": "Blog",
+ "lead": "Gyakorlati cikkek, amiket végre lehet hajtani. Nincs elmélet és nincs „10 tipp” lista tartalom nélkül.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "html",
+     "html": "<div class=\"cards c3\">\n  <a class=\"card rv\" href=\"blog-konverziomeres-kkv-ajanlatkeres-2026.html\">\n    <div class=\"k\">Mérés · 2026</div><h3>Konverziómérés KKV-knak: honnan tudod, mi hoz ügyfelet?</h3>\n    <p>7 lépéses mérési setup: GA4, űrlap, telefonhívás és üzenet mérése, plusz mit NE mérj. Debreceni klímaszerelő példával.</p>\n    <div class=\"price\">Cikk elolvasása →</div></a>\n</div>\n<p class=\"prose rv\" style=\"margin-top:26px\">További cikkek készülnek. Ha van olyan kérdésed, amiről szívesen olvasnál, írd meg — jó eséllyel másokat is érdekel.</p>"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "title": "Amíg nincs több cikk",
+     "items": [
+      "eszkozok",
+      "megfeleles-2026",
+      "szolgaltatasok"
+     ]
+    }
+   ]
+  }
+ ]
+}

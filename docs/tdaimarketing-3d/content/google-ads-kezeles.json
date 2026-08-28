@@ -1,0 +1,137 @@
+{
+ "slug": "google-ads-kezeles",
+ "navTitle": "Google Ads kezelés",
+ "short": "Keresési kampányok, amiket ajánlatkérésre optimalizálunk, nem kattintásra.",
+ "nav": "szolg",
+ "title": "Google Ads kezelés Debrecenben és országosan | TD-AI & Marketing",
+ "desc": "Google Ads kampányok tervezése és kezelése magyar KKV-knak: keresési és display kampányok, konverziómérés, AI-támogatott kreatív tesztelés. Havidíjas csomag 80 000 Ft/hó-tól.",
+ "keywords": "Google Ads kezelés, Google hirdetés KKV, PPC ügynökség Debrecen, keresési kampány, Google Ads árak",
+ "h1": "Google Ads kezelés KKV-knak — ajánlatkérésre optimalizálva",
+ "eyebrow": "Fizetett keresés",
+ "lead": "A Google Ads akkor éri meg, ha a kattintásból ajánlatkérés lesz. Ehhez nem elég a kampány: kell mögé céloldal és mérés. Mi hármat együtt kezeljük.",
+ "price": "Start csomag 80 000 Ft/hó-tól · min. 3 hónap",
+ "priceValue": "80000",
+ "service": "Google Ads kezelés",
+ "priority": "0.9",
+ "changefreq": "monthly",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "A Google Ads kezelés nálunk <b>80 000 Ft/hó-tól</b> indul a Start csomag részeként, minimum 3 hónapos együttműködéssel. Ebben benne van a kampányépítés, a konverziómérés beállítása, a heti optimalizálás és a havi riport. A hirdetési keret ettől külön tétel, és azt te határozod meg. Az első jelek — megjelenés, kattintás, első ajánlatkérések — jellemzően <b>7–14 napon belül</b> látszanak."
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Mit csinálunk a fiókodban",
+     "cols": 3,
+     "items": [
+      {
+       "k": "01",
+       "h": "Fiók- és kampányaudit",
+       "p": "Ha van már fiókod, először megnézzük: mire megy el a pénz, mi konvertál, és mi az, amit azonnal le kell kapcsolni."
+      },
+      {
+       "k": "02",
+       "h": "Kulcsszó és szándék",
+       "p": "Nem a legnagyobb volumenre megyünk, hanem arra, ahol vásárlási szándék van. Kizáró kulcsszavakkal védjük a keretet."
+      },
+      {
+       "k": "03",
+       "h": "Hirdetésszöveg tesztelés",
+       "p": "AI-támogatott variánsgyártás, majd valódi tesztelés. A nyertes üzenet hamarabb derül ki, kevesebb pénz megy rossz variánsra."
+      },
+      {
+       "k": "04",
+       "h": "Céloldal a hirdetés mögé",
+       "p": "A forgalom dedikált landing oldalra érkezik, nem a főoldalra — különben a látogató elveszik a menüben."
+      },
+      {
+       "k": "05",
+       "h": "Konverziómérés",
+       "p": "GA4 + Google Tag Manager: űrlap, telefonhívás, üzenet mint konverzió, visszakapcsolva a Google Ads fiókba."
+      },
+      {
+       "k": "06",
+       "h": "Heti optimalizálás, havi riport",
+       "p": "Ami hoz, azt erősítjük; ami viszi a pénzt, azt levágjuk. A riport magyarul van, nem szakzsargonban."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "ticks",
+     "title": "Neked való, ha…",
+     "items": [
+      "Már költesz Google Ads-re, de <strong>nem tudod megmondani, melyik kampány hozott ügyfelet</strong>.",
+      "Van szolgáltatásod, amire <strong>keresnek</strong> — nem kell keresletet teremteni, csak megtalálni.",
+      "Elfogadod, hogy a hirdetési keret és az ügynökségi díj <strong>két külön tétel</strong>.",
+      "Van vagy lesz dedikált céloldalad, ahová a forgalom érkezik.",
+      {
+       "x": true,
+       "t": "<strong>Nem neked való, ha</strong> mérés nélkül akarsz „olcsó kattintást\" — abból nem lesz ügyfél, csak számla."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "faq",
+     "title": "Gyakori kérdések",
+     "items": [
+      {
+       "q": "Mennyi hirdetési keret kell a Google Ads-hez?",
+       "a": "Nincs egységes minimum: a piacod, a szolgáltatásod ára és a verseny határozza meg. Az ingyenes konzultáción a te számaid alapján mondunk reális keretet, mielőtt bármit elköltenél."
+      },
+      {
+       "q": "Mennyi idő alatt hoz eredményt?",
+       "a": "Az első jelek jellemzően 7–14 napon belül láthatók, ha a mérés az induláskor be van állítva. A megbízható optimalizáláshoz legalább 3 hónap adat kell."
+      },
+      {
+       "q": "Hozzáférés kell a fiókomhoz?",
+       "a": "Igen, de a fiók a tiéd marad. Meghívóval dolgozunk, így az együttműködés végén is nálad marad minden adat és kampány."
+      },
+      {
+       "q": "Mi van, ha már van fiókom, ami rosszul megy?",
+       "a": "Ilyenkor auditálással kezdünk: megnézzük, mi menthető és mit érdemes újraépíteni. A marketing audit önállóan is megrendelhető 69 000 Ft-tól."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "landing-oldal-keszites",
+      "meta-hirdetes",
+      "marketing-audit"
+     ]
+    }
+   ]
+  }
+ ]
+}

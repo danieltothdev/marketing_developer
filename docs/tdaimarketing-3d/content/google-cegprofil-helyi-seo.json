@@ -1,0 +1,132 @@
+{
+ "slug": "google-cegprofil-helyi-seo",
+ "navTitle": "Helyi SEO & Cégprofil",
+ "short": "Cégprofil-optimalizálás és helyi keresési láthatóság Debrecenben.",
+ "nav": "szolg",
+ "title": "Google Cégprofil beállítás és helyi SEO 59 000 Ft-tól | TD-AI & Marketing",
+ "desc": "Google Cégprofil optimalizálás és helyi keresési láthatóság Debrecenben és Hajdú-Bihar vármegyében. Kategóriák, szolgáltatások, fotók, értékeléskezelés. 59 000 Ft-tól.",
+ "keywords": "Google Cégprofil, helyi SEO Debrecen, Google Térkép megjelenés, cégprofil optimalizálás, helyi keresés",
+ "h1": "Google Cégprofil és helyi SEO Debrecenben",
+ "eyebrow": "Helyi láthatóság",
+ "lead": "Ha a közeledben keresnek, ott legyél az első háromban. Ez sokszor olcsóbb ügyfélszerzés, mint a hirdetés.",
+ "price": "59 000 Ft-tól · egyszeri beállítás",
+ "priceValue": "59000",
+ "service": "Helyi SEO és Google Cégprofil",
+ "priority": "0.9",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "A Google Cégprofil beállítása <b>59 000 Ft-tól</b> indul, egyszeri díjjal. Helyi szolgáltatónál ez gyakran a <b>legolcsóbb ügyfélszerzési csatorna</b>: aki „szolgáltatás + Debrecen\" típusú kifejezésre keres, már vásárlási szándékkal érkezik. Székhelyünk Debrecen, a helyi SEO Hajdú-Bihar vármegyében az erősségünk — de a munka online zajlik, így országosan is dolgozunk."
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Mit csinálunk",
+     "cols": 3,
+     "items": [
+      {
+       "k": "01",
+       "h": "Profil rendbetétele",
+       "p": "Kategóriák, szolgáltatáslista, nyitvatartás, leírás, kiszolgálási terület — a legtöbb profilon ezek hiányosak."
+      },
+      {
+       "k": "02",
+       "h": "NAP-konzisztencia",
+       "p": "A cégnév, cím és telefonszám mindenhol pontosan ugyanúgy szerepeljen. A Google ezt összeveti."
+      },
+      {
+       "k": "03",
+       "h": "Fotók és bejegyzések",
+       "p": "Valódi képek a munkáidról és rendszeres bejegyzés — ez mozgatja a profilt."
+      },
+      {
+       "k": "04",
+       "h": "Értékeléskezelés",
+       "p": "Rendszer arra, hogy az elégedett ügyfelekből tényleg legyen értékelés, és válasz érkezzen mindegyikre."
+      },
+      {
+       "k": "05",
+       "h": "Helyi kulcsszavak az oldalon",
+       "p": "„Szolgáltatás + város\" kifejezések, környező települések, vármegyei kifejezések — spam nélkül."
+      },
+      {
+       "k": "06",
+       "h": "Mérés",
+       "p": "Látszódjon, hány hívás és útvonalkérés jött a profilból, és mennyi lett belőle ügyfél."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "ticks",
+     "title": "Neked való, ha…",
+     "items": [
+      "Helyhez kötött a szolgáltatásod (szerelő, szépségipar, egészségügy, kivitelezés).",
+      "Debrecenben vagy Hajdú-Biharban dolgozol — de jó, ha az ország más pontján is.",
+      "Van már cégprofilod, de <strong>évek óta nem nyúltál hozzá</strong>.",
+      "Kevés vagy régi értékelésed van.",
+      {
+       "x": true,
+       "t": "<strong>Kevésbé hasznos, ha</strong> tisztán online, országos B2B szolgáltató vagy — ott a keresési hirdetés és a tartalom hoz többet."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "faq",
+     "title": "Gyakori kérdések",
+     "items": [
+      {
+       "q": "Mennyi idő alatt látszik az eredmény?",
+       "a": "A profil rendbetétele után jellemzően hetek kérdése, hogy a megjelenések és a profilról indított hívások száma mozduljon. A helyi találati sorrend viszont sok tényezős, ezért nem ígérünk konkrét pozíciót."
+      },
+      {
+       "q": "Garantáljátok az első helyet a Google Térképen?",
+       "a": "Nem. Aki ezt garantálja, nem mond igazat: a helyi sorrendet a Google többek között a keresés helyétől függően számolja. Amit tudunk: rendbe tesszük mindazt, ami a te oldaladon múlik."
+      },
+      {
+       "q": "Az eNyugta-változás érint engem?",
+       "a": "Ha nyugtát adsz, valószínűleg igen: 2026. szeptember 1-től annak is elektronikusan kell adatot szolgáltatnia a nyugtáiról, aki eddig nem pénztárgéppel nyugtázott. Készítettünk hozzá ingyenes ellenőrzőlistát — de a részletekben a könyvelőd az illetékes."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "marketing-audit",
+      "enyugta-2026-ellenorzolista",
+      "landing-oldal-keszites"
+     ]
+    }
+   ]
+  }
+ ]
+}

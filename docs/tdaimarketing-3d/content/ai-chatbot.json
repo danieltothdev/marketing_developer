@@ -1,0 +1,131 @@
+{
+ "slug": "ai-chatbot",
+ "navTitle": "AI chatbot",
+ "short": "Azonnal válaszoló chatbot, kötelező AI-jelöléssel telepítve.",
+ "nav": "szolg",
+ "title": "AI chatbot weboldalra, AI Act-megfelelő jelöléssel | TD-AI & Marketing",
+ "desc": "AI chatbot telepítése és betanítása magyar KKV-knak, az EU AI Act 50. cikke szerinti kötelező jelöléssel. Azonnali válasz az érdeklődőknek, éjjel-nappal.",
+ "keywords": "AI chatbot weboldalra, chatbot KKV, AI Act chatbot jelölés, ügyfélszolgálati chatbot magyar",
+ "h1": "AI chatbot a weboldaladra — AI Act-megfelelő jelöléssel",
+ "eyebrow": "Utánkövetés",
+ "lead": "Az érdeklődő nem vár. Aki nem kap választ órákon belül, jellemzően a következő szolgáltatónál köt ki.",
+ "price": "A Start és Növekedés csomag része",
+ "priceValue": "",
+ "service": "AI chatbot telepítés és megfelelőség",
+ "priority": "0.9",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "Az AI chatbot a beérkező érdeklődőt <b>azonnal</b> megszólítja, megválaszolja a tipikus kérdéseket, és összegyűjti az elérhetőségét, amíg te dolgozol. Fontos: <b>2026. augusztus 2. óta</b> az EU AI Act 50. cikke szerint a chatbotnak <b>már az első interakciónál</b> jeleznie kell, hogy nem emberrel beszélsz — mi ezzel a jelöléssel együtt telepítjük. Ez tájékoztatás, nem jogi tanácsadás."
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Mit kapsz",
+     "cols": 3,
+     "items": [
+      {
+       "k": "01",
+       "h": "Betanítás a te adataidra",
+       "p": "Szolgáltatások, árak, nyitvatartás, gyakori kérdések — a bot azt mondja, amit te mondanál."
+      },
+      {
+       "k": "02",
+       "h": "AI Act-megfelelő jelölés",
+       "p": "Az első üzenetben egyértelmű tájékoztatás, hogy AI válaszol, és hogy mikor kerül emberhez az ügy."
+      },
+      {
+       "k": "03",
+       "h": "Lead-átadás",
+       "p": "Az összegyűjtött adat e-mailben vagy a rendszeredbe kerül — nem vész el a beszélgetésben."
+      },
+      {
+       "k": "04",
+       "h": "Emberi átvétel",
+       "p": "Ha a kérdés túlmutat a boton, felajánlja a telefonszámot vagy az űrlapot."
+      },
+      {
+       "k": "05",
+       "h": "Mérés",
+       "p": "Látod, hány beszélgetés indult, hány végződött megkereséssel, és min akadnak el a látogatók."
+      },
+      {
+       "k": "06",
+       "h": "Karbantartás",
+       "p": "A tudásbázis frissítése, ahogy változnak az áraid és a szolgáltatásaid."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "ticks",
+     "title": "Mire jó, és mire nem",
+     "items": [
+      "Azonnali válasz <strong>munkaidőn kívül</strong> is — ekkor jön a megkeresések jó része.",
+      "A tipikus kérdések leszűrése, hogy csak a valódi érdeklődő vegye el az idődet.",
+      "Lead-adatok gyűjtése akkor is, ha épp nem tudsz telefont venni.",
+      {
+       "x": true,
+       "t": "<strong>Nem helyettesíti az embert</strong> összetett, egyedi ügyekben — és nem is állítjuk ennek ellenkezőjét, mert az jogszabályba is ütközne."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "faq",
+     "title": "Gyakori kérdések",
+     "items": [
+      {
+       "q": "Kötelező jelölni, hogy AI válaszol?",
+       "a": "Igen. Az EU AI Act 50. cikkének átláthatósági kötelezettsége 2026. augusztus 2. óta hatályos: a chatbotnak már az első interakciónál egyértelművé kell tennie, hogy a felhasználó nem emberrel beszél. A bírság felső határa 15 millió euró vagy a globális éves árbevétel 3%-a, KKV-nál az arányosság enyhíthet. Ez tájékoztatás, nem jogi tanácsadás."
+      },
+      {
+       "q": "Mennyibe kerül?",
+       "a": "A chatbot a havidíjas Start és Növekedés csomag része; önálló telepítésről az ingyenes konzultáción egyeztetünk, mert a bot mérete és a tudásbázis mennyisége határozza meg."
+      },
+      {
+       "q": "Milyen adatot kezel a bot?",
+       "a": "Csak azt, amit a látogató megad, és amit a te tudásbázisod tartalmaz. Az adatkezelés részleteit az adatvédelmi tájékoztatóban is fel kell tüntetni — ebben segítünk."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "ai-act-chatbot-megfeleles",
+      "marketing-automatizacio",
+      "meta-hirdetes"
+     ]
+    }
+   ]
+  }
+ ]
+}

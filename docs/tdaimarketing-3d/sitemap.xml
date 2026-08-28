@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://tdaimarketing.hu/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://tdaimarketing.hu/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tdaimarketing.hu/adatvedelem</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
-  <url><loc>https://tdaimarketing.hu/aszf</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://tdaimarketing.hu/adatvedelem.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tdaimarketing.hu/ai-act-chatbot-megfeleles.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tdaimarketing.hu/ai-act-chatbot-szoveg-generator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tdaimarketing.hu/ai-chatbot.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tdaimarketing.hu/arak.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tdaimarketing.hu/aszf.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tdaimarketing.hu/blog.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tdaimarketing.hu/cookie-tajekoztato.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tdaimarketing.hu/enyugta-2026-ellenorzolista.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tdaimarketing.hu/eszkozok.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tdaimarketing.hu/google-ads-kezeles.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tdaimarketing.hu/google-cegprofil-helyi-seo.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tdaimarketing.hu/hirdetesi-keret-kalkulator.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tdaimarketing.hu/hogyan-dolgozunk.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tdaimarketing.hu/impresszum.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tdaimarketing.hu/ingyenes-konzultacio.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tdaimarketing.hu/landing-oldal-keszites.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tdaimarketing.hu/lead-kalkulator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tdaimarketing.hu/marketing-audit.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tdaimarketing.hu/marketing-automatizacio.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tdaimarketing.hu/marketing-onteszt.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tdaimarketing.hu/marketing-ugynokseg-debrecen.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tdaimarketing.hu/megfeleles-2026.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tdaimarketing.hu/meta-hirdetes.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tdaimarketing.hu/rolam.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tdaimarketing.hu/szolgaltatasok.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 </urlset>

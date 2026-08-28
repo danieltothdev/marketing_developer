@@ -145,14 +145,77 @@ A sok 3D pont a CWV ellen dolgozna, ezért:
 3. **`sameAs` linkek** a JSON-LD-be: LinkedIn, Facebook oldal, Google Cégprofil URL.
 4. **`llms.txt`, `robots.txt`, `sitemap.xml`** a domain gyökerébe kerül, nem almappába.
 
+## 6. Aloldalak és a statikus generátor
+
+A főoldal (`index.html`) továbbra is kézzel karbantartott, mert egyedi 3D-t futtat.
+**A többi 28 oldal generált** — így egy fejléc-javítást egyszer kell átvezetni, nem 28-szor.
+
+```
+templates/base.html      ← fejléc, lábléc, cookie-sáv, schema-váz, embléma
+content/*.json           ← oldalanként a tartalom (blokkokból)
+scripts/build-site.js    ← generátor
+assets/site.css          ← közös stílus (egyszer töltődik le, utána cache-ből jön)
+assets/site.js           ← közös JS: reveal, GYIK, űrlap, Consent Mode, GA4
+```
+
+**Új oldal létrehozása:** másolj egy `content/*.json`-t, írd át, futtasd:
+
+```bash
+cd docs/tdaimarketing-3d && node scripts/build-site.js
+```
+
+A generátor magától elkészíti a `<title>`-t, a meta blokkot, a canonicalt, a
+JSON-LD-t (WebPage + BreadcrumbList + Service + FAQPage), és újraírja a `sitemap.xml`-t.
+Blokktípusok: `answer`, `prose`, `cards`, `ticks`, `steps`, `table`, `faq`, `cta`,
+`form`, `related`, `html`. A `"draft": true` mezővel egy oldal kimarad a generálásból.
+
+### Az elkészült oldalak
+
+| Csoport | Oldalak |
+|---|---|
+| **Szolgáltatás** | `google-ads-kezeles` · `meta-hirdetes` · `landing-oldal-keszites` · `marketing-audit` · `google-cegprofil-helyi-seo` · `ai-chatbot` · `marketing-automatizacio` · `szolgaltatasok` (hub) |
+| **Konverzió** | `arak` · `ingyenes-konzultacio` (hirdetési landing, navigáció nélküli fókusszal) · `koszonjuk` (noindex, ide irányít az űrlap) |
+| **2026-os megfelelés** | `megfeleles-2026` (hub) · `ai-act-chatbot-megfeleles` · `enyugta-2026-ellenorzolista` |
+| **Eszközök** | `lead-kalkulator` · `hirdetesi-keret-kalkulator` · `marketing-onteszt` (10 kérdés) · `ai-act-chatbot-szoveg-generator` (kimásolható jelölés-szöveg) · `eszkozok` (hub) |
+| **Bizalom** | `rolam` · `hogyan-dolgozunk` · `marketing-ugynokseg-debrecen` |
+| **Kötelező** | `impresszum` · `adatvedelem` · `aszf` · `cookie-tajekoztato` · `404` |
+| **Blog** | `blog` (hub) + az átemelt konverziómérés-cikk |
+
+> ⚠️ **A jogi oldalak vázlatok.** Sablon alapján készültek, a tényleges adatkezelési
+> gyakorlatod ismerete nélkül. Minden ilyen oldal tetején ott a figyelmeztetés —
+> **éles használat előtt nézesd át jogásszal**, és egészítsd ki a valóban használt
+> szolgáltatókkal (tárhely, e-mail, pixel, chatbot). Enélkül a Google Ads is
+> elutasíthatja a landinget.
+
+> ⚠️ **`esettanulmanyok.json` draft állapotban van** — sablonként ott a fájl, de
+> valós ügyféladat nélkül nem generálódik le. Küldj adatokat, és élesítem.
+
+### Cookie-sáv és Consent Mode v2
+
+Minden oldalon (a főoldalon is) ott a cookie-sáv. A mérési és hirdetési tárolás
+**alapértelmezetten tiltott**, és csak az „Elfogadom" után vált engedélyezettre.
+A GTM konténer kódját a `<head>`-be kell beilleszteni — onnantól a `dataLayer`
+események (CTA, űrlap, kalkulátor, önteszt, görgetés) automatikusan mennek.
+
+### URL-ek
+
+Az oldalak lapos `.html` fájlok, a canonical is ilyen (`/arak.html`). A mellékelt
+`.htaccess` ezen felül a `.html` nélküli címeket is kiszolgálja, beállítja a 404-et,
+a tömörítést és a cache-t.
+
 ## Feltöltés (Rackhost)
 
 ```
 public_html/
-├── index.html
+├── index.html            ← a 3D főoldal
+├── *.html                ← a 28 generált aloldal + a blogcikk
+├── .htaccess             ← 404, tömörítés, cache, .html nélküli URL-ek
 ├── llms.txt · robots.txt · sitemap.xml
-└── assets/  (three.module.min.js + fonts/)
+└── assets/               ← site.css, site.js, three.module.min.js, fonts/, képek
 ```
+
+A `templates/`, `content/` és `scripts/` mappát **nem kell feltölteni** — azok a
+forrásfájlok, amikből a generátor dolgozik.
 
 Az `assets/` mappának az `index.html` mellett kell lennie — relatív útvonalon hivatkozik rá.
 Ha nem a főoldalt cseréled, a `<link rel="canonical">` és a JSON-LD URL-eket is írd át.

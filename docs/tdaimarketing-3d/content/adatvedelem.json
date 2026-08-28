@@ -1,0 +1,26 @@
+{
+ "slug": "adatvedelem",
+ "navTitle": "Adatvédelmi tájékoztató",
+ "noindex": false,
+ "cta": false,
+ "priority": "0.3",
+ "title": "Adatvédelmi tájékoztató | TD-AI & Marketing",
+ "desc": "A TD-AI & Marketing (Tóth Dániel István e.v.) adatkezelési tájékoztatója: milyen adatot kezelünk, milyen célból, meddig, és milyen jogaid vannak.",
+ "h1": "Adatvédelmi tájékoztató",
+ "eyebrow": "GDPR",
+ "lead": "Ez a tájékoztató azt írja le, milyen személyes adatot kezelünk a weboldalon keresztül, milyen célból és meddig.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "html",
+     "html": "<div class=\"answer\" style=\"border-left-color:var(--red)\"><b>Figyelem — ellenőrizendő vázlat.</b> Ezt a dokumentumot sablon alapján készítettük, a te tényleges adatkezelési gyakorlatod ismerete nélkül. <b>Éles használat előtt nézesd át jogásszal</b>, és egészítsd ki a ténylegesen használt eszközökkel (hirdetési pixelek, hírlevélrendszer, chatbot-szolgáltató, tárhely). A hiányos vagy valótlan tájékoztatás hatósági kockázat.</div>"
+    },
+    {
+     "type": "prose",
+     "html": "\n<h2>1. Az adatkezelő</h2>\n<ul><li><strong>Név:</strong> Tóth Dániel István e.v. (TD-AI &amp; Marketing Ügynökség)</li>\n<li><strong>Székhely:</strong> 4030 Debrecen, Híd Köz 3.</li>\n<li><strong>Adószám:</strong> 91905103-1-51</li>\n<li><strong>E-mail:</strong> <a href=\"mailto:admin@tdaimarketing.com\">admin@tdaimarketing.com</a> · <strong>Telefon:</strong> <a href=\"tel:+36303527975\">+36 30 352 7975</a></li></ul>\n\n<h2>2. Milyen adatot kezelünk, milyen célból és milyen jogalapon?</h2>\n<h3>2.1 Kapcsolatfelvételi és ajánlatkérő űrlap</h3>\n<p><strong>Kezelt adatok:</strong> név, cégnév, e-mail-cím, telefonszám, weboldal címe, az üzenetben megadott információk, továbbá az űrlapon megadott marketinges adatok (pl. havi hirdetési keret, választott téma).</p>\n<p><strong>Cél:</strong> a megkeresés megválaszolása, ajánlatadás, kapcsolatfelvétel.<br>\n<strong>Jogalap:</strong> az érintett hozzájárulása (GDPR 6. cikk (1) a) pont), illetve szerződéskötést megelőző lépések (6. cikk (1) b) pont).<br>\n<strong>Megőrzés:</strong> a megkereséstől számított legfeljebb 24 hónap, illetve a hozzájárulás visszavonásáig; szerződéskötés esetén a szerződéses és számviteli megőrzési idő szerint.</p>\n\n<h3>2.2 Ellenőrzőlista- és anyagigénylés</h3>\n<p><strong>Kezelt adatok:</strong> e-mail-cím.<br>\n<strong>Cél:</strong> az igényelt anyag megküldése.<br>\n<strong>Jogalap:</strong> hozzájárulás.<br>\n<strong>Megőrzés:</strong> a hozzájárulás visszavonásáig, de legfeljebb 24 hónap.</p>\n\n<h3>2.3 Weboldal működése és mérés (sütik)</h3>\n<p>A weboldal a működéshez szükséges sütiket használ. Mérési és hirdetési célú sütiket <strong>kizárólag a látogató hozzájárulása esetén</strong> helyezünk el, a Consent Mode alapértelmezetten tiltott állapotából indulva. Részletek a <a href=\"cookie-tajekoztato.html\">cookie-tájékoztatóban</a>.</p>\n<p><strong>Kezelt adatok:</strong> IP-cím (rövidítve), böngésző- és eszközadatok, oldalhasználati események.<br>\n<strong>Jogalap:</strong> hozzájárulás (mérés, hirdetés), illetve jogos érdek a működéshez feltétlenül szükséges sütiknél.</p>\n\n<h3>2.4 AI chatbot (ha aktív az oldalon)</h3>\n<p>Amennyiben a weboldalon automata asszisztens működik, a látogató a beszélgetés megkezdésekor tájékoztatást kap arról, hogy mesterséges intelligencia válaszol. A beszélgetésben önként megadott adatokat kapcsolatfelvétel céljából kezeljük, a 2.1 pont szerinti feltételekkel.</p>\n\n<h2>3. Adatfeldolgozók</h2>\n<p>Az adatkezelés során az alábbi típusú szolgáltatókat vesszük igénybe: tárhelyszolgáltató, e-mail-szolgáltató, automatizációs és űrlapfeldolgozó szolgáltatás, webanalitikai szolgáltatás, hirdetési platformok. <em>Az itt felsorolt konkrét szolgáltatók nevét és székhelyét a tényleges eszközök alapján ki kell egészíteni.</em></p>\n\n<h2>4. Adattovábbítás harmadik országba</h2>\n<p>Egyes szolgáltatók székhelye az Európai Gazdasági Térségen kívül lehet. Ilyen esetben az adattovábbítás megfelelő garanciák (pl. az Európai Bizottság megfelelőségi határozata vagy általános szerződési feltételek) mellett történik.</p>\n\n<h2>5. Az érintett jogai</h2>\n<ul>\n<li>tájékoztatáshoz és hozzáféréshez való jog</li>\n<li>helyesbítéshez való jog</li>\n<li>törléshez való jog („elfeledtetéshez való jog”)</li>\n<li>az adatkezelés korlátozásához való jog</li>\n<li>adathordozhatósághoz való jog</li>\n<li>tiltakozáshoz való jog</li>\n<li>a hozzájárulás bármikor, díjmentesen történő visszavonása</li>\n</ul>\n<p>A jogok gyakorlásához írj az <a href=\"mailto:admin@tdaimarketing.com\">admin@tdaimarketing.com</a> címre. A megkeresésre legfeljebb 30 napon belül válaszolunk.</p>\n\n<h2>6. Jogorvoslat</h2>\n<p>Panasszal a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (NAIH) fordulhatsz, illetve bírósághoz. A NAIH elérhetőségei a hatóság honlapján találhatók.</p>\n\n<h2>7. Adatbiztonság</h2>\n<p>Az adatokat jelszóval védett, korlátozott hozzáférésű rendszerekben tároljuk, és csak az adatkezelő fér hozzájuk. Az adattovábbítás titkosított kapcsolaton (HTTPS) történik.</p>\n\n<h2>8. A tájékoztató módosítása</h2>\n<p>A tájékoztatót időről időre frissítjük. A mindenkori hatályos változat ezen az oldalon érhető el.</p>"
+    }
+   ]
+  }
+ ]
+}

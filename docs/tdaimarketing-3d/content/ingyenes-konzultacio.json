@@ -1,0 +1,92 @@
+{
+ "slug": "ingyenes-konzultacio",
+ "navTitle": "Ingyenes konzultáció",
+ "priority": "0.9",
+ "cta": false,
+ "title": "Ingyenes marketing konzultáció KKV-knak | TD-AI & Marketing",
+ "desc": "Kötelezettségmentes, ingyenes marketing konzultáció magyar KKV-knak. 30 perc, konkrét véleménnyel arról, mi viszi a hirdetési pénzedet és mi hozna ajánlatkérést.",
+ "keywords": "ingyenes marketing konzultáció, marketing tanácsadás KKV, Google Ads konzultáció Debrecen",
+ "h1": "Ingyenes konzultáció — 30 perc, konkrét válaszokkal",
+ "eyebrow": "Kötelezettség nélkül",
+ "lead": "Megnézzük, honnan jön most a megkeresésed, mire költesz, és hol szivárog el a pénz. Őszinte véleményt kapsz akkor is, ha a végén nem dolgozunk együtt.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Töltsd ki — 2 perc az egész",
+     "text": "24 órán belül válaszolok a megadott elérhetőségen. Hétvégén is.",
+     "tema": "konzultacio"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "steps",
+     "title": "Mi történik, miután elküldted?",
+     "items": [
+      {
+       "h": "24 órán belül jelentkezem",
+       "p": "E-mailben vagy telefonon — ahogy neked kényelmesebb. Nem call centerből hívnak, hanem én."
+      },
+      {
+       "h": "30 perc beszélgetés",
+       "p": "Átnézzük a számaidat és a jelenlegi rendszeredet. Ha van oldalad és fiókod, előtte ránézek."
+      },
+      {
+       "h": "Írásos összefoglaló",
+       "p": "Küldök egy rövid összefoglalót arról, mit javaslok — akkor is, ha nem velem csinálod meg."
+      }
+     ]
+    },
+    {
+     "type": "ticks",
+     "title": "Amit garantálok",
+     "items": [
+      "<strong>Nincs kötelezettség</strong> és nincs aláírandó papír a konzultációhoz.",
+      "<strong>Nem sablonos PDF-et</strong> kapsz, hanem a te helyzetedre adott választ.",
+      "Ha úgy látom, hogy <strong>most nem érdemes</strong> hirdetned, azt fogom mondani.",
+      "Az adataidat nem adom tovább és nem küldök spamet."
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "faq",
+     "title": "Gyakori kérdések",
+     "items": [
+      {
+       "q": "Tényleg ingyenes?",
+       "a": "Igen. Az első konzultáció díjmentes és kötelezettségmentes. Nem azért csinálom, mert jó ember vagyok, hanem mert így derül ki mindkettőnk számára, van-e értelme együtt dolgozni."
+      },
+      {
+       "q": "Mit kell előkészítenem?",
+       "a": "Semmit kötelezően. Ha van, jó, ha kéznél van a havi hirdetési kereted, a jelenlegi megkeresésszámod és a weboldalad címe."
+      },
+      {
+       "q": "Mennyi ideig tart?",
+       "a": "Jellemzően 30 perc. Ha többet igényel a helyzet, szólok előre."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "arak",
+      "hogyan-dolgozunk",
+      "rolam"
+     ]
+    }
+   ]
+  }
+ ]
+}

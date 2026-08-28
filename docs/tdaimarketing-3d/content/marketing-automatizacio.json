@@ -1,0 +1,132 @@
+{
+ "slug": "marketing-automatizacio",
+ "navTitle": "Automatizáció",
+ "short": "Lead-értesítés, utánkövetés és riport, ami magától fut.",
+ "nav": "szolg",
+ "title": "Marketing automatizáció KKV-knak — lead utánkövetés | TD-AI & Marketing",
+ "desc": "Marketing automatizáció magyar KKV-knak: lead-értesítés, automatikus utánkövetés, emlékeztetők, riport. A Start és Növekedés csomag része.",
+ "keywords": "marketing automatizáció, lead utánkövetés, Make.com automatizálás, CRM KKV, email automatizáció",
+ "h1": "Marketing automatizáció — az érdeklődő ne hűljön ki",
+ "eyebrow": "Rendszer",
+ "lead": "A legtöbb elveszett ügyfél nem azért megy el, mert drága vagy — hanem mert nem szóltak hozzá időben.",
+ "price": "A Start és Növekedés csomag része",
+ "priceValue": "",
+ "service": "Marketing automatizáció",
+ "priority": "0.9",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "Az automatizáció azt csinálja meg helyetted, amit egyébként elfelejtenél: <b>azonnal szól, ha megkeresés érkezett</b>, visszaigazolást küld az érdeklődőnek, emlékeztet a második megkeresésre, és összeszedi a havi számokat. Nem varázslat és nem robotarc — pár jól beállított lépés, ami a meglévő eszközeidre épül."
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Tipikus folyamatok",
+     "cols": 3,
+     "items": [
+      {
+       "k": "01",
+       "h": "Azonnali lead-értesítés",
+       "p": "Új űrlapkitöltés → e-mail vagy üzenet neked, a lényeggel: ki, mit kér, honnan jött."
+      },
+      {
+       "k": "02",
+       "h": "Visszaigazolás az érdeklődőnek",
+       "p": "Azonnali, személyre szóló válasz — ez önmagában sokat javít az elérési arányon."
+      },
+      {
+       "k": "03",
+       "h": "Utánkövetési emlékeztető",
+       "p": "Ha 2 napon belül nem történt semmi, szól. A második megkeresés hozza az ügyfelek nagy részét."
+      },
+      {
+       "k": "04",
+       "h": "Adatok egy helyen",
+       "p": "Táblázat vagy CRM, ahol látod, honnan jött a megkeresés és mi lett a sorsa."
+      },
+      {
+       "k": "05",
+       "h": "Havi riport összeállítás",
+       "p": "A számok automatikusan összeállnak, nem kézzel kell exportálgatni."
+      },
+      {
+       "k": "06",
+       "h": "Értékelés-kérés",
+       "p": "Lezárt munka után automatikus kérés a Google-értékelésre — ez visszahat a helyi SEO-ra."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "ticks",
+     "title": "Neked való, ha…",
+     "items": [
+      "Van megkeresésed, de <strong>elkallódik</strong> a levelek és üzenetek között.",
+      "Egyedül vagy pár fős csapattal dolgozol, és nincs, aki utánakérdezzen.",
+      "Nem tudod megmondani, <strong>hány megkeresésből lett munka</strong> a múlt hónapban.",
+      "Több csatornán érkeznek a leadek (űrlap, telefon, Messenger, WhatsApp).",
+      {
+       "x": true,
+       "t": "<strong>Nem ezzel kell kezdeni, ha</strong> még egyáltalán nincs megkeresésed — akkor előbb a hirdetés és a céloldal jön."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "faq",
+     "title": "Gyakori kérdések",
+     "items": [
+      {
+       "q": "Milyen eszközökkel dolgoztok?",
+       "a": "Azzal, ami nálad már megvan vagy a legkisebb súrlódással bevezethető — jellemzően űrlap, e-mail, táblázat vagy egyszerű CRM, és egy automatizációs réteg. Nem kötelezünk drága rendszerre."
+      },
+      {
+       "q": "Kell hozzá programozónak lennem?",
+       "a": "Nem. Beállítjuk és átadjuk, plusz leírjuk egy oldalban, mi hol történik, ha bele akarsz nyúlni."
+      },
+      {
+       "q": "Mi van a GDPR-ral?",
+       "a": "Az automatizált levelekhez is kell jogalap és tájékoztatás. Az űrlapokba beépítjük a hozzájárulást, és jelezzük, mit kell az adatvédelmi tájékoztatódban szerepeltetni."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "ai-chatbot",
+      "google-ads-kezeles",
+      "hogyan-dolgozunk"
+     ]
+    }
+   ]
+  }
+ ]
+}

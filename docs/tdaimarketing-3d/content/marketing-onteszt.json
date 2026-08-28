@@ -1,0 +1,37 @@
+{
+ "slug": "marketing-onteszt",
+ "navTitle": "Marketing önteszt",
+ "nav": "eszk",
+ "priority": "0.8",
+ "cta": false,
+ "title": "Marketing önteszt KKV-knak — 10 kérdés, azonnali eredmény | TD-AI & Marketing",
+ "desc": "10 kérdéses ingyenes önteszt: megmutatja, hol szakad meg az ügyfélszerző rendszered — hirdetés, céloldal, mérés, utánkövetés. Regisztráció nélkül, azonnali eredménnyel.",
+ "keywords": "marketing önteszt, marketing check, ügyfélszerzés teszt, marketing felmérés KKV",
+ "h1": "10 kérdés: hol szakad meg a láncod?",
+ "eyebrow": "Ingyenes önteszt",
+ "lead": "Nincs regisztráció és nem kérünk e-mailt. A végén megmondjuk, melyik elem hiányzik, és mit érdemes először megcsinálni.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "html",
+     "html": "<div class=\"tool\"><div id=\"qs\"><div class=\"qrow\"><p><strong>1.</strong> Futtatsz most fizetett hirdetést (Google vagy Meta)?</p><div class=\"qb\" data-q=\"ads\"><button type=\"button\" data-v=\"1\">Igen</button><button type=\"button\" class=\"no\" data-v=\"0\">Nem</button></div></div><div class=\"qrow\"><p><strong>2.</strong> A hirdetés dedikált landing oldalra érkezik, nem a főoldalra?</p><div class=\"qb\" data-q=\"lp\"><button type=\"button\" data-v=\"1\">Igen</button><button type=\"button\" class=\"no\" data-v=\"0\">Nem</button></div></div><div class=\"qrow\"><p><strong>3.</strong> Be van állítva a GA4 és a konverziómérés (űrlap, hívás)?</p><div class=\"qb\" data-q=\"meres\"><button type=\"button\" data-v=\"1\">Igen</button><button type=\"button\" class=\"no\" data-v=\"0\">Nem</button></div></div><div class=\"qrow\"><p><strong>4.</strong> Meg tudod mondani, mennyibe kerül nálad egy megkeresés?</p><div class=\"qb\" data-q=\"cpl\"><button type=\"button\" data-v=\"1\">Igen</button><button type=\"button\" class=\"no\" data-v=\"0\">Nem</button></div></div><div class=\"qrow\"><p><strong>5.</strong> Tudod, hány megkeresésből lett ügyfél az elmúlt hónapban?</p><div class=\"qb\" data-q=\"zaras\"><button type=\"button\" data-v=\"1\">Igen</button><button type=\"button\" class=\"no\" data-v=\"0\">Nem</button></div></div><div class=\"qrow\"><p><strong>6.</strong> Van írásba foglalt üzeneted arról, miért téged válasszanak?</p><div class=\"qb\" data-q=\"uzenet\"><button type=\"button\" data-v=\"1\">Igen</button><button type=\"button\" class=\"no\" data-v=\"0\">Nem</button></div></div><div class=\"qrow\"><p><strong>7.</strong> Kap az érdeklődő automatikus visszaigazolást a jelentkezés után?</p><div class=\"qb\" data-q=\"auto\"><button type=\"button\" data-v=\"1\">Igen</button><button type=\"button\" class=\"no\" data-v=\"0\">Nem</button></div></div><div class=\"qrow\"><p><strong>8.</strong> Van rendszered arra, hogy 2 nap múlva utánakérdezz?</p><div class=\"qb\" data-q=\"utan\"><button type=\"button\" data-v=\"1\">Igen</button><button type=\"button\" class=\"no\" data-v=\"0\">Nem</button></div></div><div class=\"qrow\"><p><strong>9.</strong> Rendben van és friss a Google Cégprofilod?</p><div class=\"qb\" data-q=\"gcp\"><button type=\"button\" data-v=\"1\">Igen</button><button type=\"button\" class=\"no\" data-v=\"0\">Nem</button></div></div><div class=\"qrow\"><p><strong>10.</strong> Ha van chatbotod: ki van írva, hogy AI válaszol?</p><div class=\"qb\" data-q=\"aiact\"><button type=\"button\" data-v=\"1\">Igen</button><button type=\"button\" class=\"no\" data-v=\"0\">Nem</button></div></div></div><div class=\"out\" id=\"res\" style=\"display:none\"><div class=\"k\">Eredmény</div><div class=\"big\" id=\"score\">—</div><div class=\"sub\" id=\"msg\"></div><div style=\"margin-top:18px\"><a class=\"btn\" href=\"ingyenes-konzultacio.html\" data-cta=\"onteszt\"><span>Beszéljük át ingyen</span></a></div></div><p class=\"note\">Az eredmény kizárólag a böngésződben számolódik — semmit nem küldünk el belőle.</p></div>"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "lead-kalkulator",
+      "marketing-audit",
+      "szolgaltatasok"
+     ]
+    }
+   ]
+  }
+ ],
+ "extraJs": "<script>\n(function(){var A={},T=10;\ndocument.querySelectorAll('.qb').forEach(function(g){g.addEventListener('click',function(e){\n var b=e.target.closest('button');if(!b)return;\n [].slice.call(g.children).forEach(function(x){x.classList.remove('on')});\n b.classList.add('on');A[g.dataset.q]=b.dataset.v==='1';render();});});\nfunction render(){var n=Object.keys(A).length;if(n<T)return;\n var y=Object.keys(A).filter(function(k){return A[k]}).length;\n var res=document.getElementById('res');res.style.display='block';\n document.getElementById('score').textContent=y+' / '+T;\n var m;\n if(y<=3)m='A rendszered nagy része hiányzik. Ez rossz hír rövid távon, de jó hír hosszú távon: a legtöbb javulás a legolcsóbb lépésektől jön — mérés és céloldal.';\n else if(y<=6)m='Az alapok egy része megvan, de a lánc megszakad. Jellemzően a mérés és az utánkövetés a hiányzó láncszem — ezek nélkül a hirdetés pénze szivárog.';\n else if(y<=8)m='Jó úton vagy. Innen már nem újraépítés kell, hanem finomhangolás: kreatív tesztelés, üzenet-élesítés, utánkövetés.';\n else m='Gyakorlatilag minden elem megvan. Ilyenkor a skálázás és a hatékonyság a kérdés — érdemes megnézni, hol lehet olcsóbb a megkeresés.';\n document.getElementById('msg').textContent=m;\n if(window.tdTrack)window.tdTrack('onteszt_kesz',{pont:y});\n res.scrollIntoView({behavior:'smooth',block:'center'});}\n})();</script>"
+}

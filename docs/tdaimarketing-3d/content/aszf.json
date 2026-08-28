@@ -1,0 +1,25 @@
+{
+ "slug": "aszf",
+ "navTitle": "ÁSZF",
+ "cta": false,
+ "priority": "0.3",
+ "title": "Általános Szerződési Feltételek | TD-AI & Marketing",
+ "desc": "A TD-AI & Marketing (Tóth Dániel István e.v.) általános szerződési feltételei: a szolgáltatások tartalma, díjazás, felmondás, felelősség.",
+ "h1": "Általános Szerződési Feltételek",
+ "eyebrow": "ÁSZF",
+ "lead": "A TD-AI & Marketing szolgáltatásaira vonatkozó általános feltételek.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "html",
+     "html": "<div class=\"answer\" style=\"border-left-color:var(--red)\"><b>Figyelem — ellenőrizendő vázlat.</b> Ezt a dokumentumot sablon alapján készítettük, a te tényleges adatkezelési gyakorlatod ismerete nélkül. <b>Éles használat előtt nézesd át jogásszal</b>, és egészítsd ki a ténylegesen használt eszközökkel (hirdetési pixelek, hírlevélrendszer, chatbot-szolgáltató, tárhely). A hiányos vagy valótlan tájékoztatás hatósági kockázat.</div>"
+    },
+    {
+     "type": "prose",
+     "html": "\n<h2>1. A szolgáltató</h2>\n<p>Tóth Dániel István e.v. (TD-AI &amp; Marketing Ügynökség), székhely: 4030 Debrecen, Híd Köz 3., adószám: 91905103-1-51, e-mail: admin@tdaimarketing.com, telefon: +36 30 352 7975.</p>\n\n<h2>2. A szolgáltatások tárgya</h2>\n<p>Online marketing szolgáltatások, különösen: keresési és közösségi hirdetéskezelés (Google Ads, Meta), landing oldal készítése, marketing audit, helyi keresőoptimalizálás és Google Cégprofil beállítás, AI chatbot telepítése és beállítása, marketing automatizáció, tartalomkészítés, valamint webanalitika és konverziómérés beállítása.</p>\n\n<h2>3. Megrendelés és a szerződés létrejötte</h2>\n<p>A szerződés a felek írásbeli megállapodásával (e-mailben történő visszaigazolással is) jön létre. Az ingyenes konzultáció nem keletkeztet szerződéses kötelezettséget egyik fél számára sem.</p>\n\n<h2>4. Díjazás és fizetési feltételek</h2>\n<ul>\n<li>A havidíjas csomagok díja havonta, előre esedékes; a havidíjas együttműködés minimális időtartama 3 hónap.</li>\n<li>Az egyszeri projektek díja a megállapodás szerint, jellemzően előleg és végszámla bontásban esedékes; ezekre hűségidő nem vonatkozik.</li>\n<li><strong>A hirdetési keret nem része a szolgáltatási díjnak.</strong> A hirdetési költséget a megrendelő közvetlenül a hirdetési platform felé fizeti, saját fiókjából.</li>\n<li>A weboldalon feltüntetett árak tájékoztató jellegűek, „-tól” árak; a végleges díjat egyedi ajánlat rögzíti.</li>\n</ul>\n\n<h2>5. A felek együttműködése</h2>\n<p>A megrendelő vállalja, hogy a szolgáltatás teljesítéséhez szükséges hozzáféréseket, információkat és anyagokat határidőben biztosítja. A hozzáférések késedelmes megadásából eredő csúszásért a szolgáltató nem felel.</p>\n\n<h2>6. Fiókok és tulajdonjog</h2>\n<p>A megrendelő hirdetési és analitikai fiókjai a megrendelő tulajdonában maradnak; a szolgáltató meghívott hozzáféréssel dolgozik. Az együttműködés megszűnése esetén a szolgáltató hozzáférése megszüntethető, az adatok a megrendelőnél maradnak.</p>\n\n<h2>7. Felelősség és korlátozások</h2>\n<ul>\n<li>A szolgáltató nem vállal garanciát konkrét ügyfélszámra, bevételre, keresési pozícióra vagy hirdetési platformon elért helyezésre, mivel ezek harmadik felek algoritmusaitól és piaci körülményektől függnek.</li>\n<li>A szolgáltató nem nyújt jogi, adó- vagy könyvviteli tanácsadást. Az AI Act és az elektronikus bizonylatolás (eNyugta) kapcsán nyújtott tájékoztatás nem minősül jogi vagy adótanácsadásnak.</li>\n<li>A hirdetési platformok döntéseiért (fiókfelfüggesztés, hirdetéselutasítás) a szolgáltató nem felel, de a helyreállításban közreműködik.</li>\n</ul>\n\n<h2>8. Titoktartás</h2>\n<p>A felek a másik félről az együttműködés során tudomásukra jutott üzleti információkat bizalmasan kezelik, azokat harmadik félnek nem adják ki, kivéve jogszabályi kötelezettség esetén.</p>\n\n<h2>9. Referenciahasználat</h2>\n<p>A szolgáltató a megrendelő nevét és a munkát referenciaként kizárólag a megrendelő előzetes, írásbeli hozzájárulásával használhatja fel.</p>\n\n<h2>10. Felmondás</h2>\n<p>A havidíjas együttműködés a 3 hónapos minimális időtartam letelte után, a hónap végére, írásban felmondható. Súlyos szerződésszegés esetén bármelyik fél azonnali hatállyal felmondhat.</p>\n\n<h2>11. Panaszkezelés és irányadó jog</h2>\n<p>Panasszal az admin@tdaimarketing.com címen lehet élni, amelyre 30 napon belül válaszolunk. A szerződésre a magyar jog az irányadó.</p>"
+    }
+   ]
+  }
+ ]
+}

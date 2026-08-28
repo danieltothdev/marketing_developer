@@ -1,0 +1,138 @@
+{
+ "slug": "ai-act-chatbot-megfeleles",
+ "navTitle": "AI Act megfelelés",
+ "nav": "megf",
+ "priority": "0.9",
+ "service": "AI Act megfelelés marketingoldalon",
+ "title": "AI Act chatbot jelölés 2026 — mit kell kiírni a weboldaladon? | TD-AI & Marketing",
+ "desc": "Az EU AI Act 50. cikke 2026. augusztus 2. óta hatályos: a chatbotnak jeleznie kell, hogy nem ember. Mit kell kiírni, kire vonatkozik, mekkora a bírság — gyakorlati összefoglaló KKV-knak.",
+ "keywords": "AI Act chatbot jelölés, AI Act 50. cikk, AI tartalom jelölése 2026, mesterséges intelligencia jelölés kötelező",
+ "h1": "AI Act: mit kell kiírnia a chatbotodnak 2026-tól?",
+ "eyebrow": "Már hatályos",
+ "lead": "Ha van chatbot az oldaladon vagy AI-val készült kreatív a hirdetéseidben, ez rád is vonatkozik — akkor is, ha nem te fejlesztetted.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "Az EU AI Act 50. cikkének átláthatósági kötelezettsége <b>2026. augusztus 2. óta hatályos</b>. Ez azt jelenti, hogy minden AI chatbotnak és virtuális asszisztensnek <b>már az első interakciónál</b> egyértelművé kell tennie, hogy a felhasználó nem emberrel beszél, az AI-val generált kép-, hang- és videótartalmat pedig jelölni kell. A bírság felső határa <b>15 millió euró vagy a globális éves árbevétel 3%-a</b>, KKV-nál az arányosság enyhíthet. A 2026. augusztus 2. előtt piacra került generatív rendszereknél a gépi olvasható jelölésre <b>2026. december 2-ig</b> van türelmi idő."
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "steps",
+     "title": "Négy lépés, amivel rendben leszel",
+     "items": [
+      {
+       "h": "Vedd számba, hol használsz AI-t",
+       "p": "Chatbot az oldalon, AI-val generált hirdetésképek és szövegek, AI-val készült videó vagy hang, automatikus e-mail-válaszok. Írd össze, mi van élesben."
+      },
+      {
+       "h": "Írasd ki a chatbotra, hogy AI",
+       "p": "Az első üzenetben, egyértelműen, nem apróbetűben. Alább adunk kimásolható példaszöveget."
+      },
+      {
+       "h": "Jelöld az AI-val generált tartalmat",
+       "p": "A kreatívokon és a közösségi posztokban is. A platformok saját jelölő funkciója segít, de a felelősség a hirdetőé."
+      },
+      {
+       "h": "Írd le, mit csináltál",
+       "p": "Egy egyoldalas belső feljegyzés arról, mi hol van jelölve. Ellenőrzés esetén ez az első, amit kérni fognak."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Kimásolható példaszövegek",
+     "cols": 3,
+     "items": [
+      {
+       "k": "Chatbot — első üzenet",
+       "h": "Rövid változat",
+       "p": "„Szia! Automata asszisztens vagyok, mesterséges intelligenciával válaszolok. Ha inkább kollégával beszélnél, írd be: <em>ember</em>.\""
+      },
+      {
+       "k": "Chatbot — bővebb",
+       "h": "Részletes változat",
+       "p": "„Üdv! Ez egy AI-alapú asszisztens, nem élő munkatárs. A válaszok tájékoztató jellegűek. Kollégánk munkaidőben a +36 30 352 7975 számon érhető el.\""
+      },
+      {
+       "k": "AI-tartalom",
+       "h": "Kreatív jelölése",
+       "p": "„A képet mesterséges intelligencia készítette.\" — bejegyzésnél a szöveg elején vagy a kép sarkában, jól láthatóan."
+      }
+     ]
+    },
+    {
+     "type": "cta",
+     "title": "Generáld ki a saját szövegedet",
+     "text": "Beírod a céged nevét és az elérhetőségedet, és megkapod a kimásolható chatbot-jelölést — regisztráció nélkül.",
+     "btn": "Chatbot szöveg-generátor",
+     "href": "ai-act-chatbot-szoveg-generator.html",
+     "id": "aiact-generator"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "faq",
+     "title": "Gyakori kérdések",
+     "items": [
+      {
+       "q": "Rám is vonatkozik, ha csak egy kész chatbot-modult raktam be?",
+       "a": "Az átláthatósági kötelezettség célja, hogy a felhasználó tudja: nem emberrel beszél. Az, hogy nem te fejlesztetted a rendszert, önmagában nem mentesít az alól, hogy a te weboldaladon megjelenő bot megfelelően tájékoztasson. A saját szereped pontos megítéléséhez kérd ügyvéd véleményét."
+      },
+      {
+       "q": "Elég, ha az adatvédelmi tájékoztatóban benne van?",
+       "a": "Nem. A tájékoztatásnak legkésőbb az első interakciónál meg kell történnie, tehát ott, ahol a beszélgetés zajlik — nem egy külön aloldalon elrejtve."
+      },
+      {
+       "q": "Mi számít AI-val generált tartalomnak?",
+       "a": "A mesterségesen előállított vagy manipulált kép, hang és videó. A gyakorlatban: ha AI készítette vagy érdemben átalakította, jelöld."
+      },
+      {
+       "q": "Mennyi a bírság?",
+       "a": "Az átláthatósági előírások megsértése esetén a bírság elérheti a 15 millió eurót, illetve vállalkozásoknál az előző pénzügyi év teljes világpiaci éves árbevételének 3 százalékát. A szankció meghatározásakor a vállalkozás mérete és az arányosság szempontja is figyelembe vehető."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "html",
+     "html": "<p class=\"prose\" style=\"font-size:13px\">Ez tájékoztatás, nem jogi tanácsadás. A teljes körű jogi megfelelés megítéléséhez fordulj ügyvédhez; mi a marketingoldali kivitelezést vállaljuk. Ellenőrizd a hatályos jogszabályszöveget.</p>"
+    },
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "ai-chatbot",
+      "ai-act-chatbot-szoveg-generator",
+      "megfeleles-2026"
+     ]
+    }
+   ]
+  }
+ ]
+}

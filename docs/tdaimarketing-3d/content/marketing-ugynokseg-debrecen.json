@@ -1,0 +1,104 @@
+{
+ "slug": "marketing-ugynokseg-debrecen",
+ "navTitle": "Marketing ügynökség Debrecen",
+ "priority": "0.8",
+ "title": "Marketing ügynökség Debrecen — KKV-knak, mérhető ajánlatkérésért | TD-AI & Marketing",
+ "desc": "Debreceni marketing ügynökség KKV-knak: Google Ads, Meta hirdetés, landing oldal, helyi SEO és konverziómérés. Székhely 4030 Debrecen, Híd Köz 3. Ingyenes konzultáció.",
+ "keywords": "marketing ügynökség Debrecen, online marketing Debrecen, Google Ads Debrecen, helyi SEO Hajdú-Bihar, hirdetés kezelés Debrecen",
+ "h1": "Marketing ügynökség Debrecenben — helyben, de nem csak helyben",
+ "eyebrow": "Debrecen & Hajdú-Bihar",
+ "lead": "A székhelyünk Debrecen, a helyi SEO és a Google Cégprofil Hajdú-Biharban az erősségünk. A hirdetéskezelés és a mérés viszont online zajlik, így országosan is dolgozunk.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "A TD-AI &amp; Marketing székhelye <b>4030 Debrecen, Híd Köz 3.</b> Debreceni és Hajdú-Bihar vármegyei KKV-knak azt adjuk, amit egy budapesti nagyügynökség jellemzően nem: <b>elérhető árat</b> (Start csomag 80 000 Ft/hó-tól), <b>egy embert</b>, akivel végig beszélsz, és <b>helyi ismeretet</b> — tudjuk, mit jelent, ha egy szerelő a Nagyerdőn és Józsán is dolgozik, de a Böszörményi útra nem megy ki."
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Amit helyi vállalkozásnak csinálunk",
+     "cols": 3,
+     "items": [
+      {
+       "k": "Térkép",
+       "h": "Google Cégprofil",
+       "p": "A helyi keresés belépője. Kategóriák, szolgáltatások, fotók, értékeléskezelés — 59 000 Ft-tól.",
+       "price": "59 000 Ft-tól"
+      },
+      {
+       "k": "Hirdetés",
+       "h": "Földrajzilag szűkített kampány",
+       "p": "Ne fizess olyan kattintásért, ami 80 km-re van tőled. Sugár- és településszintű célzás."
+      },
+      {
+       "k": "Oldal",
+       "h": "Helyi landing oldal",
+       "p": "„Szolgáltatás + Debrecen” kifejezésekre épített céloldal, valódi helyi tartalommal — nem városnév-cserével."
+      }
+     ]
+    },
+    {
+     "type": "ticks",
+     "title": "Kiszolgált terület",
+     "items": [
+      "<strong>Debrecen</strong> és agglomerációja — helyi SEO és Cégprofil erősség.",
+      "<strong>Hajdú-Bihar vármegye</strong>: Hajdúböszörmény, Hajdúszoboszló, Balmazújváros, Berettyóújfalu és környéke.",
+      "<strong>Országosan</strong>: a hirdetéskezelés, a landing oldal és a mérés online zajlik, ehhez nem kell személyes jelenlét.",
+      "Személyes találkozó Debrecenben előre egyeztetett időpontban — de az ügyfeleink többségével online dolgozunk."
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "faq",
+     "title": "Gyakori kérdések",
+     "items": [
+      {
+       "q": "Egy debreceni ügynökség tud országosan dolgozni?",
+       "a": "Igen. A székhelyünk Debrecen, a helyi SEO és Google Cégprofil Hajdú-Bihar vármegyében az erősségünk, de a hirdetéskezelés, a landing oldal és a mérés online zajlik, így az ország bármely pontján lévő KKV-val dolgozunk."
+      },
+      {
+       "q": "Kell személyesen találkoznunk?",
+       "a": "Nem kötelező. Ha Debrecenben vagy és szeretnél, szívesen — de az ügyfeleink többségével online dolgozunk, és ez semmit nem von le az eredményből."
+      },
+      {
+       "q": "Mennyibe kerül egy debreceni KKV-nak?",
+       "a": "Ugyanannyiba, mint bárhol máshol: a Start csomag 80 000 Ft/hó-tól indul, a landing oldal 90 000 Ft-tól, a marketing audit 69 000 Ft-tól, a Google Cégprofil beállítás 59 000 Ft-tól."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "google-cegprofil-helyi-seo",
+      "enyugta-2026-ellenorzolista",
+      "arak"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "slug": "meta-hirdetes",
+ "navTitle": "Meta hirdetés",
+ "short": "Facebook és Instagram kampányok kreatív-teszteléssel, mérésre kötve.",
+ "nav": "szolg",
+ "title": "Meta hirdetés — Facebook és Instagram kampány KKV-knak | TD-AI & Marketing",
+ "desc": "Facebook és Instagram kampányok magyar KKV-knak: célzás, AI-támogatott kreatív tesztelés, konverziómérés. Havidíjas csomag 80 000 Ft/hó-tól.",
+ "keywords": "Meta hirdetés, Facebook hirdetés KKV, Instagram hirdetés, közösségi média kampány Debrecen",
+ "h1": "Meta (Facebook, Instagram) hirdetés KKV-knak",
+ "eyebrow": "Közösségi hirdetés",
+ "lead": "A Facebookon nem keresnek téged — megzavarod őket. Ezért itt a kreatív és az üzenet dönt, nem a kulcsszó.",
+ "price": "Start csomag 80 000 Ft/hó-tól · min. 3 hónap",
+ "priceValue": "80000",
+ "service": "Meta hirdetés",
+ "priority": "0.9",
+ "changefreq": "monthly",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "A Meta kampánykezelés a <b>80 000 Ft/hó-tól</b> induló Start csomag része. A leggyakoribb hiba, amit látunk: a vállalkozó <b>egy kreatívval, egy célzással, egy szöveggel</b> elindít egy kampányt, majd amikor nem hoz, kimondja, hogy „a Facebook nem működik\". Egy variáns nem teszt. Mi több változatot futtatunk párhuzamosan, és az adat dönt."
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Mit csinálunk",
+     "cols": 3,
+     "items": [
+      {
+       "k": "01",
+       "h": "Üzenet és ajánlat",
+       "p": "Görgetés közben 2 másodperced van. Előbb az üzenet legyen kész, utána jöhet a költés."
+      },
+      {
+       "k": "02",
+       "h": "Kreatív-sorozat, nem egy kép",
+       "p": "AI-támogatott variánsgyártás: több vizuál, több szöveg, több forma — így derül ki gyorsan, mi viszi."
+      },
+      {
+       "k": "03",
+       "h": "Célzás és kizárás",
+       "p": "Érdeklődés, hasonmás és remarketing közönségek, plusz a meglévő ügyfelek kizárása, hogy ne rájuk költs."
+      },
+      {
+       "k": "04",
+       "h": "Landing oldal",
+       "p": "A Meta-forgalomnak más a hőfoka, mint a keresésnek — más céloldal kell mögé."
+      },
+      {
+       "k": "05",
+       "h": "Mérés",
+       "p": "Konverziós események beállítása, hogy lásd: melyik kreatív hozta a megkeresést, nem csak a lájkot."
+      },
+      {
+       "k": "06",
+       "h": "Skálázás",
+       "p": "Ami működik, azt fokozatosan emeljük — nem egyik napról a másikra, mert azzal a tanulást lövöd szét."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "ticks",
+     "title": "Neked való, ha…",
+     "items": [
+      "Vizuálisan bemutatható a szolgáltatásod (előtte-utána, munkafolyamat, helyszín).",
+      "Helyi szolgáltató vagy, és <strong>földrajzilag szűkíteni</strong> akarsz.",
+      "Már próbáltad, de <strong>egy kreatívval</strong> — és nem működött.",
+      "Van kapacitásod fogadni a megkereséseket, ha beindul.",
+      {
+       "x": true,
+       "t": "<strong>Nem neked való, ha</strong> csak lájkokat és követőket akarsz mérhető ajánlatkérés helyett."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "faq",
+     "title": "Gyakori kérdések",
+     "items": [
+      {
+       "q": "Melyik jobb: Google vagy Meta?",
+       "a": "Más a szerepük. A Google keresést fog be — ott már van szándék. A Meta figyelmet szerez olyanoknál, akik még nem keresnek. A legtöbb KKV-nál a kettő együtt működik a legjobban, de ha szűk a keret, azzal kezdünk, ahol van kereslet."
+      },
+      {
+       "q": "Mennyi kreatív kell az induláshoz?",
+       "a": "Jellemzően 3–6 változat, hogy legyen mit összehasonlítani. A gyártásban az AI segít, de a döntést az adat hozza."
+      },
+      {
+       "q": "Kell hozzá Facebook-oldal?",
+       "a": "Igen, kell egy rendezett céges oldal és egy Business Manager fiók. Ha nincs, a beállításban segítünk."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "google-ads-kezeles",
+      "landing-oldal-keszites",
+      "ai-chatbot"
+     ]
+    }
+   ]
+  }
+ ]
+}

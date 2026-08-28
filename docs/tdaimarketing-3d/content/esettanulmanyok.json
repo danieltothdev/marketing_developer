@@ -1,0 +1,28 @@
+{
+ "slug": "esettanulmanyok",
+ "navTitle": "Esettanulmányok",
+ "draft": true,
+ "priority": "0.8",
+ "title": "Esettanulmányok — valós ügyfélpéldák | TD-AI & Marketing",
+ "desc": "Valós ügyfélpéldák: kiindulási helyzet, elvégzett munka, mérhető eredmény.",
+ "h1": "Esettanulmányok",
+ "eyebrow": "Eredmények",
+ "lead": "SABLON — ez az oldal draft állapotban van, és csak akkor generálódik le, ha valós adatokkal töltöd fel.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Sablon (töltsd ki valós adattal)",
+     "items": [
+      {
+       "k": "IPARÁG · IDŐSZAK",
+       "h": "Ügyfél neve vagy anonimizált megnevezés",
+       "p": "KIINDULÁS: mi volt a helyzet (költés, megkeresésszám, mérés állapota). MUNKA: mit csináltunk. EREDMÉNY: mérhető változás, forrás megjelölésével (GA4, Ads fiók)."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

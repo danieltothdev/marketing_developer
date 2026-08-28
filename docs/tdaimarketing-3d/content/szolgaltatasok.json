@@ -1,0 +1,122 @@
+{
+ "slug": "szolgaltatasok",
+ "navTitle": "Szolgáltatások",
+ "nav": "szolg",
+ "priority": "0.9",
+ "title": "Szolgáltatások és árak — marketing ügynökség KKV-knak | TD-AI & Marketing",
+ "desc": "Google Ads, Meta hirdetés, landing oldal, marketing audit, helyi SEO, AI chatbot és automatizáció magyar KKV-knak. Nyílt árak, ingyenes konzultáció.",
+ "keywords": "marketing szolgáltatások, online marketing ügynökség, KKV marketing csomag, marketing árak",
+ "h1": "Szolgáltatások — a rendszer elemei külön-külön is",
+ "eyebrow": "Amit csinálunk",
+ "lead": "Egy kampány nem rendszer. Az elemek külön is megrendelhetők, de a legtöbb eredményt akkor hozzák, ha egymásra épülnek.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "Az ügyfélszerző rendszer <b>öt elem együttese</b>: üzenet, konvertáló landing oldal, célzott hirdetés Google és Meta felületen, konverziómérés GA4-gyel, és utánkövetés chatbottal, automatizációval. Külön-külön mindegyik gyenge; együtt viszont kiszámíthatóan hoz ajánlatkérést. A havidíjas <b>Start csomag 80 000 Ft/hó-tól</b> indul, az egyszeri projektek 35 000 Ft-tól."
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Havidíjas rendszerépítés",
+     "items": [
+      {
+       "k": "Start csomag",
+       "h": "80 000 Ft/hó-tól",
+       "p": "Kampány, céloldal, mérés és havi riport egy csomagban. Minimum 3 hónap, mert ennyi adat kell egy érdemi döntéshez. Ajándék weboldal feltétellel.",
+       "price": "min. 3 hónap"
+      },
+      {
+       "k": "Növekedés csomag",
+       "h": "Egyedi ár",
+       "p": "Több csatorna, folyamatos AI kreatív tesztelés, mélyebb automatizáció, heti optimalizálás. Akkor jön, ha a rendszer már hoz és skálázni akarsz.",
+       "price": "személyre szabott"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Egyszeri projektek és elemek",
+     "cols": 3,
+     "items": [
+      {
+       "k": "Hirdetés",
+       "h": "Google Ads kezelés",
+       "p": "Keresési kampányok konverzióra optimalizálva, méréssel összekötve.",
+       "price": "a Start csomag része"
+      },
+      {
+       "k": "Hirdetés",
+       "h": "Meta hirdetés",
+       "p": "Facebook és Instagram kampányok kreatív-teszteléssel.",
+       "price": "a Start csomag része"
+      },
+      {
+       "k": "Projekt",
+       "h": "Landing oldal készítés",
+       "p": "Egyetlen célra épített céloldal, szöveggel és méréssel átadva.",
+       "price": "90 000 Ft-tól"
+      },
+      {
+       "k": "Projekt",
+       "h": "Marketing audit",
+       "p": "Kampány, céloldal és mérés átvilágítása priorizált teendőlistával.",
+       "price": "69 000 Ft-tól"
+      },
+      {
+       "k": "Helyi SEO",
+       "h": "Google Cégprofil",
+       "p": "Profil rendbetétele, helyi kulcsszavak, értékeléskezelés.",
+       "price": "59 000 Ft-tól"
+      },
+      {
+       "k": "Tartalom",
+       "h": "Blog / SEO cikk",
+       "p": "Keresőre és AI keresőkre optimalizált szakmai cikk.",
+       "price": "35 000 Ft / cikk"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "title": "Nézd meg részletesen",
+     "items": [
+      "google-ads-kezeles",
+      "meta-hirdetes",
+      "landing-oldal-keszites",
+      "marketing-audit",
+      "google-cegprofil-helyi-seo",
+      "ai-chatbot",
+      "marketing-automatizacio",
+      "arak",
+      "hogyan-dolgozunk"
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  }
+ ]
+}

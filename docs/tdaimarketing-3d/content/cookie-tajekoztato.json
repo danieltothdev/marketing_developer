@@ -1,0 +1,25 @@
+{
+ "slug": "cookie-tajekoztato",
+ "navTitle": "Cookie-tájékoztató",
+ "cta": false,
+ "priority": "0.3",
+ "title": "Cookie-tájékoztató | TD-AI & Marketing",
+ "desc": "Milyen sütiket használ a tdaimarketing.hu, mire valók, és hogyan módosíthatod a hozzájárulásodat.",
+ "h1": "Cookie-tájékoztató",
+ "eyebrow": "Sütik",
+ "lead": "Mérési és hirdetési sütit csak a hozzájárulásoddal helyezünk el. A beállításodat bármikor módosíthatod.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "html",
+     "html": "<div class=\"answer\" style=\"border-left-color:var(--red)\"><b>Figyelem — ellenőrizendő vázlat.</b> Ezt a dokumentumot sablon alapján készítettük, a te tényleges adatkezelési gyakorlatod ismerete nélkül. <b>Éles használat előtt nézesd át jogásszal</b>, és egészítsd ki a ténylegesen használt eszközökkel (hirdetési pixelek, hírlevélrendszer, chatbot-szolgáltató, tárhely). A hiányos vagy valótlan tájékoztatás hatósági kockázat.</div>"
+    },
+    {
+     "type": "prose",
+     "html": "\n<h2>Mi az a süti?</h2>\n<p>A süti (cookie) kis adatfájl, amelyet a böngésződ tárol. Segítségével a weboldal felismeri a visszatérő látogatót, illetve mérni tudja, hogyan használják az oldalt.</p>\n\n<h2>Milyen sütiket használunk?</h2>\n<h3>1. Feltétlenül szükséges sütik</h3>\n<p>Az oldal alapvető működéséhez kellenek (pl. a cookie-választásod megjegyzése). Ezek hozzájárulás nélkül is elhelyezhetők.</p>\n<h3>2. Statisztikai (analitikai) sütik</h3>\n<p>Azt mérik, hány látogató érkezik, mely oldalakat nézik meg, és hol lépnek ki. Ezeket <strong>kizárólag a hozzájárulásoddal</strong> aktiváljuk.</p>\n<h3>3. Hirdetési (marketing) sütik</h3>\n<p>Lehetővé teszik, hogy a hirdetéseink relevánsabbak legyenek, és mérni tudjuk a kampányok eredményét. Ezeket is <strong>kizárólag a hozzájárulásoddal</strong> aktiváljuk.</p>\n\n<h2>Consent Mode</h2>\n<p>Az oldal a Google Consent Mode v2 logikáját követi: alapértelmezetten minden mérési és hirdetési tárolás <strong>tiltott</strong>, és csak akkor vált engedélyezettre, ha az „Elfogadom” gombra kattintasz.</p>\n\n<h2>Hogyan módosíthatod a döntésedet?</h2>\n<p>A böngésződ beállításaiban törölheted a tárolt adatokat, ezután az oldal újra megkérdez. Böngészőszinten a sütik teljesen le is tilthatók, de ekkor az oldal egyes funkciói nem működnek megfelelően.</p>\n\n<h2>Kiegészítendő</h2>\n<p><em>Ide kerül a ténylegesen használt sütik táblázata (név, szolgáltató, cél, élettartam), amint a mérési és hirdetési eszközök élesednek.</em></p>"
+    }
+   ]
+  }
+ ]
+}

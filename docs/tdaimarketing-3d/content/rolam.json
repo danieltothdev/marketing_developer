@@ -1,0 +1,60 @@
+{
+ "slug": "rolam",
+ "navTitle": "Rólam",
+ "nav": "rolam",
+ "priority": "0.8",
+ "title": "Rólam — Tóth Dániel István, TD-AI & Marketing, Debrecen",
+ "desc": "Tóth Dániel István vagyok, a TD-AI & Marketing alapítója. AI-támogatott ügyfélszerző rendszert építek magyar KKV-knak Debrecenből, országosan.",
+ "keywords": "Tóth Dániel marketing, TD-AI Marketing alapító, marketing szakértő Debrecen",
+ "h1": "Tóth Dániel István vagyok",
+ "eyebrow": "Rólam",
+ "lead": "Egyszemélyes ügynökséget viszek Debrecenből. Ez azt jelenti, hogy akivel a konzultáción beszélsz, ugyanaz, aki utána a kampányodat is kezeli.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "prose",
+     "html": "<h2>Miért csinálom így</h2>\n<p>A legtöbb KKV-tulajdonos, akivel beszélek, ugyanazt mondja: <em>„sok a kattintás, de nem jön ügyfél”</em>. Nem azért, mert rosszak a hirdetései, hanem mert a hirdetés magában áll — nincs mögötte céloldal, mérés és utánkövetés. Ezért nem kampányt „tartok életben”, hanem rendszert építek.</p>\n<p>Egyedül dolgozom, AI-eszközökkel felgyorsítva. Ennek két következménye van, és mindkettőt fontos előre tudnod. Az egyik jó: nincs account manager, nincs kiszervezett csapat, velem beszélsz és én is csinálom. A másik korlát: <strong>egyszerre kevés ügyféllel tudok dolgozni</strong>, ezért nem vállalok el mindent.</p>\n<h2>Amiben hiszek</h2>\n<ul>\n<li><strong>Ajánlatkérést mérünk, nem kattintást.</strong> A kattintás költség, nem eredmény.</li>\n<li><strong>Előbb mérés, utána költés.</strong> Amit nem mérsz, azt nem is tudod javítani.</li>\n<li><strong>Nem ígérek pozíciót vagy garantált ügyfélszámot.</strong> Aki ilyet ígér, nem mond igazat.</li>\n<li><strong>Ha nem éri meg, megmondom.</strong> Volt már, hogy azt javasoltam, most ne hirdessen az illető.</li>\n</ul>\n<h2>Adatok</h2>\n<ul>\n<li>Tóth Dániel István e.v. — TD-AI &amp; Marketing Ügynökség</li>\n<li>Adószám: 91905103-1-51</li>\n<li>Székhely: 4030 Debrecen, Híd Köz 3.</li>\n<li>Telefon: <a href=\"tel:+36303527975\">+36 30 352 7975</a> · E-mail: <a href=\"mailto:admin@tdaimarketing.com\">admin@tdaimarketing.com</a></li>\n<li>Munkaterület: Debrecen és Hajdú-Bihar vármegye (helyi SEO), Magyarország egész területe (online kampányok)</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "ticks",
+     "title": "Mire számíthatsz, ha együtt dolgozunk",
+     "items": [
+      "<strong>24 órán belül válaszolok</strong> — hétvégén is, mert a legtöbb megkeresés akkor jön.",
+      "<strong>Magyarul írt riportot kapsz</strong>, nem exportált táblázatot szakzsargonnal.",
+      "<strong>A fiókjaid a tiéd maradnak.</strong> Meghívóval dolgozom, így az együttműködés végén nálad marad minden.",
+      "<strong>Nincs hűségidő az egyszeri projekteknél</strong>, a havidíjas csomag pedig minimum 3 hónap — mert ennyi adat kell egy döntéshez."
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "hogyan-dolgozunk",
+      "szolgaltatasok",
+      "ingyenes-konzultacio"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "slug": "eszkozok",
+ "navTitle": "Eszközök",
+ "nav": "eszk",
+ "priority": "0.7",
+ "title": "Ingyenes marketing eszközök KKV-knak | TD-AI & Marketing",
+ "desc": "Ingyenes kalkulátorok és önteszt magyar KKV-knak: lead-költség, hirdetési keret, 10 kérdéses marketing önteszt és AI Act chatbot szöveg-generátor. Regisztráció nélkül.",
+ "keywords": "ingyenes marketing eszköz, marketing kalkulátor, lead kalkulátor, marketing önteszt",
+ "h1": "Ingyenes eszközök — regisztráció nélkül",
+ "eyebrow": "Eszközök",
+ "lead": "Mind a négy a böngésződben fut, semmilyen adatot nem küldünk el belőle. Használd nyugodtan akkor is, ha sosem dolgozunk együtt.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "related",
+     "title": "Válassz eszközt",
+     "items": [
+      "lead-kalkulator",
+      "hirdetesi-keret-kalkulator",
+      "marketing-onteszt",
+      "ai-act-chatbot-szoveg-generator"
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  }
+ ]
+}

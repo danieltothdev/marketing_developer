@@ -1,0 +1,57 @@
+{
+ "slug": "koszonjuk",
+ "navTitle": "Köszönjük",
+ "noindex": true,
+ "cta": false,
+ "title": "Köszönjük a megkeresést | TD-AI & Marketing",
+ "desc": "Megkaptuk a jelentkezésedet. 24 órán belül keresünk a megadott elérhetőségen.",
+ "h1": "Köszönjük — megkaptuk!",
+ "eyebrow": "Sikeres beküldés",
+ "lead": "24 órán belül keresünk a megadott elérhetőségen. Ha sürgős, hívj bátran: +36 30 352 7975.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "steps",
+     "title": "Mi történik most?",
+     "items": [
+      {
+       "h": "Ránézek az oldaladra",
+       "p": "Ha megadtad a weboldalad, a beszélgetés előtt átnézem, hogy ne az alapokkal menjen el az idő."
+      },
+      {
+       "h": "Jelentkezem 24 órán belül",
+       "p": "E-mailben vagy telefonon. Ha hétvége van, akkor is."
+      },
+      {
+       "h": "Egyeztetünk egy időpontot",
+       "p": "30 perc, online vagy telefonon — ahogy neked jó."
+      }
+     ]
+    },
+    {
+     "type": "cta",
+     "title": "Amíg vársz",
+     "text": "Nézd meg, hogyan épül fel az ügyfélszerző rendszer, vagy számold ki, mennyibe kerül nálad most egy megkeresés.",
+     "btn": "Lead-kalkulátor",
+     "href": "lead-kalkulator.html",
+     "id": "koszonjuk"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "hogyan-dolgozunk",
+      "megfeleles-2026",
+      "blog"
+     ]
+    }
+   ]
+  }
+ ],
+ "extraJs": "<script>if(window.tdTrack)window.tdTrack('lead_koszonooldal');</script>"
+}

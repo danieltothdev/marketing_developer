@@ -1,0 +1,137 @@
+{
+ "slug": "landing-oldal-keszites",
+ "navTitle": "Landing oldal készítés",
+ "short": "Egyetlen célra épített céloldal, szöveggel és méréssel együtt átadva.",
+ "nav": "szolg",
+ "title": "Landing oldal készítés 90 000 Ft-tól | TD-AI & Marketing",
+ "desc": "Konverzióra tervezett landing oldal készítés magyar KKV-knak: értékesítési szöveg, mobilbarát felépítés, méréssel együtt átadva. 90 000 Ft-tól.",
+ "keywords": "landing oldal készítés, céloldal, konverzió optimalizált weboldal, landing page ár",
+ "h1": "Landing oldal készítés — egyetlen célra: ajánlatkérésre",
+ "eyebrow": "Céloldal",
+ "lead": "A weboldal bemutat. A landing oldal elad. Hirdetés mögé mindig az utóbbi való.",
+ "price": "90 000 Ft-tól · egyszeri, hűségidő nélkül",
+ "priceValue": "90000",
+ "service": "Landing oldal készítés",
+ "priority": "0.9",
+ "changefreq": "monthly",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "answer",
+     "html": "A landing oldal <b>90 000 Ft-tól</b> készül, egyszeri díjjal és hűségidő nélkül. A weboldaltól az különbözteti meg, hogy <b>egyetlen célra épül</b>: hogy a látogató elvégezzen egy műveletet — jellemzően ajánlatot kérjen. Ezért nincs rajta zavaró menü, és minden eleme egy irányba terel. Méréssel együtt adjuk át, hogy az első naptól látszódjon, mi történik rajta."
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "cards",
+     "title": "Mit tartalmaz",
+     "cols": 3,
+     "items": [
+      {
+       "k": "01",
+       "h": "Üzenet és struktúra",
+       "p": "Előbb az érv, utána a design. Végigvesszük, mi a fő ígéret, mik az ellenvetések, és milyen sorrendben kell rájuk válaszolni."
+      },
+      {
+       "k": "02",
+       "h": "Értékesítési szöveg",
+       "p": "A te ügyfeleid szavaival, nem marketing-dumával. Konkrét, mérhető ígéretek, kifogáskezeléssel."
+      },
+      {
+       "k": "03",
+       "h": "Mobilbarát, gyors",
+       "p": "A forgalom többsége mobilról jön. Gyors betöltés, hüvelykujj-baráton elhelyezett gombok."
+      },
+      {
+       "k": "04",
+       "h": "Űrlap, ami kitöltődik",
+       "p": "Kevesebb mező, lépésekre bontva, mikro-bizonyítékokkal a gomb körül."
+      },
+      {
+       "k": "05",
+       "h": "Mérés beépítve",
+       "p": "GA4 esemény minden fontos műveletre: gombkattintás, űrlaplépés, beküldés."
+      },
+      {
+       "k": "06",
+       "h": "Átadás",
+       "p": "A kész oldal a tiéd. Feltöltjük a saját tárhelyedre, és megmutatjuk, hol mit tudsz módosítani."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "ticks",
+     "title": "Mikor van rá szükséged?",
+     "items": [
+      "Hirdetést indítanál, és most a <strong>főoldalra</strong> vinnéd a forgalmat.",
+      "Van egy konkrét szolgáltatásod vagy akciód, amit ki akarsz emelni.",
+      "A weboldalad szép, de <strong>nem hoz ajánlatkérést</strong>.",
+      "Több szolgáltatásod van, és mindegyikhez külön üzenet kellene.",
+      {
+       "x": true,
+       "t": "<strong>Nem ezt keresed, ha</strong> teljes, sokoldalas céges weboldalt szeretnél — az más projekt, arról beszéljünk külön."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "faq",
+     "title": "Gyakori kérdések",
+     "items": [
+      {
+       "q": "Mi a különbség a landing oldal és a weboldal között?",
+       "a": "A weboldal sok célt szolgál: bemutat, tájékoztat, navigál. A landing oldal egyetlen célra épül — hogy a látogató elvégezzen egy műveletet, jellemzően ajánlatot kérjen. Ezért nincs rajta zavaró menü, és minden eleme egy irányba tereli az olvasót."
+      },
+      {
+       "q": "Mennyi idő alatt készül el?",
+       "a": "A tartalomtól és a visszajelzések ütemétől függ; jellemzően 1–3 hét, ha a szükséges információk rendelkezésre állnak."
+      },
+      {
+       "q": "Kell hozzá tárhely és domain?",
+       "a": "Igen, de nem kell újat venned, ha már van. Ha nincs, segítünk kiválasztani — nem kötünk semmilyen szolgáltatóhoz."
+      },
+      {
+       "q": "Módosíthatom később magam?",
+       "a": "Igen. Átadáskor megmutatjuk, mit hol tudsz átírni. Ha inkább ránk bíznád, azt is meg tudjuk oldani."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "cta",
+     "title": "Nézzük meg a te számaidat",
+     "text": "Az első konzultáció ingyenes és kötelezettségmentes. 24 órán belül válaszolok, hétvégén is.",
+     "btn": "Kérem az ingyenes konzultációt"
+    }
+   ]
+  },
+  {
+   "alt": true,
+   "blocks": [
+    {
+     "type": "related",
+     "items": [
+      "google-ads-kezeles",
+      "meta-hirdetes",
+      "marketing-audit"
+     ]
+    }
+   ]
+  }
+ ]
+}

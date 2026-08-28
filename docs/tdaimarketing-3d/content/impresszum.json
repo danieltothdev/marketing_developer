@@ -1,0 +1,21 @@
+{
+ "slug": "impresszum",
+ "navTitle": "Impresszum",
+ "cta": false,
+ "priority": "0.3",
+ "title": "Impresszum | TD-AI & Marketing",
+ "desc": "A tdaimarketing.hu üzemeltetőjének adatai: Tóth Dániel István e.v., 4030 Debrecen, Híd Köz 3., adószám 91905103-1-51.",
+ "h1": "Impresszum",
+ "eyebrow": "Üzemeltető",
+ "lead": "A weboldal üzemeltetőjének adatai.",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "prose",
+     "html": "\n<h2>Üzemeltető</h2>\n<ul>\n<li><strong>Név:</strong> Tóth Dániel István egyéni vállalkozó</li>\n<li><strong>Márkanév:</strong> TD-AI &amp; Marketing Ügynökség</li>\n<li><strong>Székhely:</strong> 4030 Debrecen, Híd Köz 3., Magyarország</li>\n<li><strong>Adószám:</strong> 91905103-1-51</li>\n<li><strong>E-mail:</strong> <a href=\"mailto:admin@tdaimarketing.com\">admin@tdaimarketing.com</a></li>\n<li><strong>Telefon:</strong> <a href=\"tel:+36303527975\">+36 30 352 7975</a></li>\n<li><strong>Weboldal:</strong> tdaimarketing.hu</li>\n</ul>\n<h2>Tárhelyszolgáltató</h2>\n<p><em>Kiegészítendő a tényleges tárhelyszolgáltató nevével, székhelyével és elérhetőségével.</em></p>\n<h2>Szerzői jog</h2>\n<p>A weboldalon megjelenő tartalmak (szöveg, grafika, forráskód) szerzői jogi védelem alatt állnak. Felhasználásuk kizárólag az üzemeltető előzetes írásbeli engedélyével lehetséges.</p>\n<h2>Jogi tájékoztatás</h2>\n<p>A weboldalon közölt információk — ideértve az AI Act és az elektronikus bizonylatolás kapcsán közölt összefoglalókat — tájékoztató jellegűek, nem minősülnek jogi vagy adótanácsadásnak. A hatályos jogszabályok és a NAV tájékoztatói az irányadók.</p>"
+    }
+   ]
+  }
+ ]
+}
