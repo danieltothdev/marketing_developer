@@ -1,0 +1,16 @@
+TD-AI & Marketing — mozgásréteg (motion.css / motion.js)
+
+A benne használt animációs technikák a HeyGen HyperFrames nyílt katalógusának
+receptjei alapján készültek:
+
+  https://github.com/heygen-com/hyperframes  (Apache License 2.0)
+  docs/catalog/components/*.mdx
+
+A kód nem másolat: minden hatás saját implementáció, a TD-AI & Marketing
+márka színeihez, tipográfiájához és tokenjeihez igazítva. Az eredeti
+katalógus HTML→MP4 videórendereléshez készült; itt böngészőben,
+görgetésvezérelten futnak ugyanezek a mechanizmusok.
+
+Felhasznált receptek: outline-draw, tracing-beam, hw-underline, blur-in,
+soft-blur-in, per-word-rise, conic-progress-ring, perspective-marquee,
+press-ripple, success-check, spotlight-card, text-shimmer, vignette, grain-field.

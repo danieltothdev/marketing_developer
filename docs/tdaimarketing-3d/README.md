@@ -145,6 +145,36 @@ A sok 3D pont a CWV ellen dolgozna, ezért:
 3. **`sameAs` linkek** a JSON-LD-be: LinkedIn, Facebook oldal, Google Cégprofil URL.
 4. **`llms.txt`, `robots.txt`, `sitemap.xml`** a domain gyökerébe kerül, nem almappába.
 
+## 5b. Mozgásréteg (`assets/motion.css` + `assets/motion.js`)
+
+Egy közös animációs réteg, ami **a főoldalon és mind a 28 aloldalon** fut. A technikák a
+[HeyGen HyperFrames](https://github.com/heygen-com/hyperframes) nyílt katalógusának
+(Apache-2.0) receptjeiből származnak — **saját implementációban**, a márkához igazítva.
+A HyperFrames maga HTML→MP4 videó-renderelő keretrendszer, nem böngésző-animációs
+könyvtár; amit átvettünk, az a `docs/catalog/components` alatti CSS-technikák logikája.
+
+| Hatás | Recept | Hol |
+|---|---|---|
+| **Outline draw** | `outline-draw` — `@property` + conic-gradient + `mask-composite:exclude` | A kiemelt kártyák (CTA-doboz, megfelelőségi kártyák, űrlap, eszközök) kerete belépéskor körberajzolódik |
+| **Tracing beam** | `tracing-beam` | A lépéslisták mellett arany fénysáv követi a görgetést |
+| **Marker highlight** | `hw-underline` | Az answer-first blokkok félkövér kiemelései kézzel húzott aláhúzást kapnak, balról jobbra rajzolódva |
+| **Blur-in belépés** | `blur-in` / `soft-blur-in` | Minden reveal életlenből élesedik |
+| **Szavankénti emelkedés** | `per-word-rise` | A H1 és H2 címek szavanként fordulnak a helyükre |
+| **Conic progress ring** | `conic-progress-ring` | A 10 kérdéses önteszt eredménygyűrűje |
+| **Perspektivikus marquee** | `perspective-marquee` | Teljes szélességű, döntött kulcsszó-sáv szekcióhatárként |
+| **Press ripple** | `press-ripple` | Minden gomb kattintásra hullámot vet |
+| **Success check** | `success-check` | Animált pipa a köszönő állapotban |
+| **Spotlight card** | `spotlight-card` | A kártyák a kurzor alatt világosodnak |
+| **Text shimmer** | `text-shimmer` | Az arany gradiens szövegeken lassú fénymozgás |
+| **Vignette + grain** | `vignette` / `grain-field` | Filmes keret és szemcse minden oldalon |
+
+Minden hatás kikapcsol `prefers-reduced-motion: reduce` mellett, és egyetlen
+`IntersectionObserver` gyújtja meg őket, tehát nincs plusz scroll-figyelő.
+
+> A HyperFrames egyébként arra való, hogy **HTML-ből MP4-et rendereljen** — ezzel a
+> hiányzó hero-videót és a hirdetéskreatívokat is le lehetne gyártani ugyanebből a
+> márkastílusból (`npx hyperframes`). Ha kell, ezt külön körben megcsinálom.
+
 ## 6. Aloldalak és a statikus generátor
 
 A főoldal (`index.html`) továbbra is kézzel karbantartott, mert egyedi 3D-t futtat.
@@ -211,7 +241,7 @@ public_html/
 ├── *.html                ← a 28 generált aloldal + a blogcikk
 ├── .htaccess             ← 404, tömörítés, cache, .html nélküli URL-ek
 ├── llms.txt · robots.txt · sitemap.xml
-└── assets/               ← site.css, site.js, three.module.min.js, fonts/, képek
+└── assets/               ← site.css, site.js, motion.css, motion.js, three.module.min.js, fonts/, képek
 ```
 
 A `templates/`, `content/` és `scripts/` mappát **nem kell feltölteni** — azok a

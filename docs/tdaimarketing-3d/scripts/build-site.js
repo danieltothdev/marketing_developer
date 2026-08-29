@@ -55,6 +55,8 @@ const B = {
       return p ? `<a class="rv" href="${s}.html"><div class="t">${p.navTitle || p.h1}</div><div class="d">${p.short || strip(p.desc).slice(0, 90)}</div></a>` : '';
     }).join('')}</div>`,
 
+  marquee: b => `<div class="mq" aria-hidden="true"><div class="mq-track" data-items="${b.items.join('|')}"></div></div>`,
+
   form: b => `<div class="form-card rv" id="formCard">
     <h2>${b.title || 'Kérj ingyenes konzultációt'}</h2>
     <p class="sub">${b.text || 'Kötelezettség nélkül, 24 órán belül válaszolunk. 2 perc az egész.'}</p>

@@ -235,7 +235,7 @@ h1.hero-title{font-size:clamp(31px,4.9vw,58px);margin:20px 0 18px;letter-spacing
 @media(max-width:560px){.stack{height:430px}.float-card{padding:14px 15px}.fc1{width:200px}.fc2{width:190px}.fc3{width:196px;left:0}.fc4{width:186px;right:0}.float-card .d{font-size:12px}}
 
 /* ===== 8. SZEKCIÓ ALAP ===== */
-.sec{padding:clamp(76px,10vw,128px) 0}
+.sec{padding:clamp(76px,10vw,128px) 0;overflow-x:clip}   /* clip: nem hoz létre görgetőkonténert, a sticky marad */
 .sec.alt{background:var(--black-2)}
 .sec::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(232,185,35,.11),transparent 70%)}
 .sec-head{max-width:800px;margin:0 auto 50px;text-align:center}
@@ -248,8 +248,8 @@ h1.hero-title{font-size:clamp(31px,4.9vw,58px);margin:20px 0 18px;letter-spacing
 
 /* ===== 9. 3D TILT KÁRTYÁK ===== */
 .grid-3{display:grid;gap:20px;grid-template-columns:1fr}
-@media(min-width:760px){.grid-3{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1100px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:760px){.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1100px){.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .tilt-wrap{perspective:900px}
 .card{position:relative;height:100%;padding:28px 26px 30px;border-radius:14px;background:linear-gradient(160deg,var(--card-2),var(--card));
   border:1px solid var(--line);transform-style:preserve-3d;transition:transform .3s var(--ease),border-color .3s,box-shadow .3s}
@@ -264,8 +264,8 @@ h1.hero-title{font-size:clamp(31px,4.9vw,58px);margin:20px 0 18px;letter-spacing
 .card:hover .shine{opacity:1}
 
 /* ===== 10. STAT SÁV ===== */
-.stats{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
-@media(min-width:900px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stats{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:900px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .stat{padding:24px 20px;border-radius:14px;border:1px solid var(--line);background:rgba(21,17,12,.6);text-align:center}
 .stat .v{font-family:'Playfair Display',serif;font-size:clamp(22px,3.2vw,32px);font-weight:800;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat .l{font-size:12.5px;color:var(--dim);margin-top:6px}
@@ -320,8 +320,8 @@ h1.hero-title{font-size:clamp(31px,4.9vw,58px);margin:20px 0 18px;letter-spacing
 
 /* ===== 13. ÁRAK — 3D kártyák ===== */
 .price-grid{display:grid;gap:20px;grid-template-columns:1fr;perspective:1200px}
-@media(min-width:760px){.price-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1100px){.price-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:760px){.price-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1100px){.price-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .pcard{position:relative;padding:30px 26px 32px;border-radius:16px;border:1px solid var(--line);
   background:linear-gradient(160deg,var(--card-2),var(--card));transform-style:preserve-3d;
   transition:transform .45s var(--ease),box-shadow .45s,border-color .3s}
@@ -397,8 +397,8 @@ h1.hero-title{font-size:clamp(31px,4.9vw,58px);margin:20px 0 18px;letter-spacing
 .q-btns button:hover{border-color:var(--gold);color:var(--text)}
 .q-btns button.on{background:var(--gold-grad);color:#120d04;border-color:transparent}
 .q-btns button.no.on{background:linear-gradient(135deg,#7a2222,#c14444);color:#fff}
-.modules{display:grid;gap:12px;grid-template-columns:repeat(2,1fr);perspective:900px;margin-bottom:22px}
-@media(min-width:820px){.modules{grid-template-columns:repeat(5,1fr)}}
+.modules{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));perspective:900px;margin-bottom:22px}
+@media(min-width:820px){.modules{grid-template-columns:repeat(5,minmax(0,1fr))}}
 .mod{padding:18px 14px;border-radius:12px;text-align:center;border:1px solid var(--line-soft);
   background:linear-gradient(160deg,rgba(26,21,14,.7),rgba(21,17,12,.7));transform-style:preserve-3d;
   transition:transform .5s var(--ease),border-color .4s,box-shadow .4s,opacity .4s;opacity:.45}
@@ -482,7 +482,7 @@ input:focus,select:focus,textarea:focus{outline:0;border-color:var(--gold);box-s
 /* ===== 21. FOOTER ===== */
 footer{background:#070503;border-top:1px solid var(--line);padding:56px 0 30px;position:relative;z-index:2}
 .f-grid{display:grid;gap:34px;grid-template-columns:1fr}
-@media(min-width:760px){.f-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:760px){.f-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 footer h3{font-size:17px;margin-bottom:14px;color:var(--gold-lt)}
 footer p,footer a{font-size:14px;color:var(--muted);line-height:1.9}
 footer a:hover{color:var(--gold-lt)}
@@ -647,8 +647,8 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 
 /* idézet-szekció */
 .quotes{display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
-@media(min-width:760px){.quotes{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1100px){.quotes{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:760px){.quotes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1100px){.quotes{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .quote{position:relative;min-width:0;overflow:hidden;padding:26px 24px 22px;border-radius:14px;border:1px solid var(--line-soft);
   background:linear-gradient(160deg,var(--card-2),var(--card));transition:.3s var(--ease)}
 .quote:hover{border-color:var(--line);transform:translateY(-3px)}
@@ -660,7 +660,7 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 
 /* megfelelőségi kártyák */
 .comp{display:grid;gap:20px;grid-template-columns:minmax(0,1fr)}
-@media(min-width:900px){.comp{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.comp{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .compcard{position:relative;min-width:0;padding:30px 28px;border-radius:18px;border:1px solid var(--line);
   background:linear-gradient(160deg,var(--card-2),var(--card));box-shadow:0 26px 70px rgba(0,0,0,.5)}
 .compcard .st{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border-radius:99px;
@@ -790,6 +790,7 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
   .foil i{animation:none}
 }
 </style>
+<link rel="stylesheet" href="assets/motion.css">
 </head>
 <body>
 <div id="pre" aria-hidden="true">
@@ -2826,5 +2827,6 @@ if (!window.__reduce) {
   } else { boot(); }
 }
 </script>
+<script src="assets/motion.js" defer></script>
 </body>
 </html>
