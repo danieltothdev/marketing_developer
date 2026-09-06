@@ -1,0 +1,77 @@
+name: Deploy tomninggoteborg.se
+
+# Automatikus FTP-deploy a Hostinger tárhelyre.
+#
+# Mikor fut:
+#   - Ha a TDAI_Clients ágra push érkezik, ÉS a site/ mappában változott fájl.
+#   - Kézzel is indíthato: Actions -> Deploy tomninggoteborg.se -> Run workflow.
+#     Ott a "dry_run" alapból BE van kapcsolva, tehát csak megmutatja mit tenne.
+#
+# Szükséges GitHub Secrets (Settings -> Secrets and variables -> Actions):
+#   HOSTINGER_FTP_HOST  pl. ftp.tomninggoteborg.se
+#   HOSTINGER_FTP_USER  a Hostinger FTP-felhasználó
+#   HOSTINGER_FTP_PASS  a Hostinger FTP-jelszó
+
+on:
+  push:
+    branches: [TDAI_Clients]
+    paths:
+      - 'clients/tomninggoteborg-se/site/**'
+      - '.github/workflows/deploy-tomninggoteborg.yml'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Csak próba (semmit nem ír a szerverre)'
+        type: boolean
+        default: true
+
+concurrency:
+  group: deploy-tomninggoteborg
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Biztonsagi halo: ne menjen ki olyan fajl a publikus tarhelyre,
+      # aminek nem ott a helye (SQL, build-scriptek, forrasfajlok).
+      - name: Ellenorzes - nincs erzekeny fajl a feltoltendo halmazban
+        run: |
+          set -euo pipefail
+          cd clients/tomninggoteborg-se/site
+          bad=$(find . \
+            -path ./src -prune -o \
+            -path ./supabase -prune -o \
+            -path ./scripts -prune -o \
+            -path './minta-oldalak-forrás' -prune -o \
+            \( -name '*.sql' -o -name '*.mjs' -o -name '.env*' -o -name '*.toml' \) -print)
+          if [ -n "$bad" ]; then
+            echo "::error::Nem publikus fajl a deploy halmazban:"; echo "$bad"; exit 1
+          fi
+          echo "OK - nincs erzekeny fajl."
+
+      - name: FTP deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_FTP_HOST }}
+          username: ${{ secrets.HOSTINGER_FTP_USER }}
+          password: ${{ secrets.HOSTINGER_FTP_PASS }}
+          protocol: ftps
+          port: 21
+          local-dir: ./clients/tomninggoteborg-se/site/
+          server-dir: /public_html/
+          dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+          # Nem torlunk semmit, amit nem mi tettunk fel.
+          dangerous-clean-slate: false
+          log-level: standard
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            src/**
+            supabase/**
+            scripts/**
+            minta-oldalak-forrás/**
+            **/*.md
