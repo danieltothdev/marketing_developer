@@ -1,0 +1,76 @@
+name: Monitor tomninggoteborg.se
+
+# Eles oldal figyelese. Azert kell, mert az assets mappa 2026-08-08 utan
+# eltunt a tarhelyrol, es kb. negy hetig eszrevetlen maradt: a repo vegig
+# hibatlan volt, csak a szerverrol hianyoztak a fajlok.
+#
+# Ez a workflow a VALODI oldalt kerdezi le, nem a repot. Ha barmelyik
+# kulcs-URL vagy kep nem 200-zal ter vissza, a futas elbukik, es a GitHub
+# emailt kuld a repo tulajdonosanak.
+#
+# Kezzel is inditható: Actions -> Monitor tomninggoteborg.se -> Run workflow.
+
+on:
+  schedule:
+    - cron: '17 6 * * *'   # minden nap 06:17 UTC
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Eles oldal ellenorzese
+        run: |
+          set -uo pipefail
+          BASE="https://tomninggoteborg.se"
+          fail=0
+
+          check() {   # $1 = utvonal, $2 = elvart minimum meret byte-ban (0 = mindegy)
+            url="$BASE$1"
+            out=$(curl -sS -o /tmp/body -w '%{http_code} %{size_download}' \
+                       -m 30 -L -A 'AlfaTomning-Monitor/1.0' "$url" 2>/dev/null) || out="000 0"
+            code=${out%% *}; size=${out##* }
+            if [ "$code" != "200" ]; then
+              echo "::error title=$1::HTTP $code (200 helyett) - $url"
+              fail=1
+            elif [ "$2" -gt 0 ] && [ "$size" -lt "$2" ]; then
+              echo "::error title=$1::csak $size byte jott vissza (min $2) - $url"
+              fail=1
+            else
+              printf '  ok  %-52s %s (%s byte)\n' "$1" "$code" "$size"
+            fi
+          }
+
+          echo "--- Kulcsoldalak ---"
+          for p in / /priser /omraden /kontakt /offert /blogg /faq \
+                   /tjanster/tomning-i-goteborg /tjanster/dodsbotomning-i-goteborg \
+                   /en/ /sitemap.xml /robots.txt /llms.txt; do
+            check "$p" 500
+          done
+
+          echo "--- Kepek (ezek tuntek el augusztusban) ---"
+          # Minden oldalon szerepel:
+          for i in logo.png favicon-32.png favicon-192.png apple-touch-icon.png; do
+            check "/assets/$i" 1000
+          done
+          # A leggyakrabban hivatkozott tartalmi kepek:
+          for i in goteborg-hero.jpg foto-lagenhet-bortforsling.jpg \
+                   foto-transport-lastbil.jpg foto-transport-lada.jpg \
+                   dodsbo.jpg villa.jpg lagenhet.jpg bortforsling.jpg; do
+            check "/assets/images/$i" 5000
+          done
+
+          echo "--- CSS / JS ---"
+          for p in /css/main.css /js/main.js /js/config.js /js/form-mount.js; do
+            check "$p" 300
+          done
+
+          if [ "$fail" -ne 0 ]; then
+            echo ""
+            echo "BUKOTT - az eles oldalon hianyzik vagy hibas valamelyik fajl."
+            exit 1
+          fi
+          echo ""
+          echo "RENDBEN - minden ellenorzott URL 200-zal valaszolt."
