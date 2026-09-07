@@ -1,0 +1,237 @@
+Tárgy: tomninggoteborg.se – néhány kérdés, mielőtt nekikezdek
+
+
+Szia Tamás!
+
+Köszönöm a részletes összefoglalót, végigmentem rajta. Jó anyag, sok mindenben
+egyetértek veled – főleg abban, hogy ne legyenek automatikusan generált,
+egymásról másolt városoldalak, és hogy előbb mérjük fel a meglévő állapotot.
+
+Két dolgot szeretnék előre jelezni.
+
+Az első: felmértem a jelenlegi oldalt, mind a 87 aloldalt. A 9. pontban
+felsorolt technikai hibák nagy része már nem áll fenn – jelenleg nincs hiányzó
+title, hiányzó vagy duplikált meta description, hiányzó canonical, rossz H1,
+hibás strukturált adat vagy 300 szó alatti oldal. Ezeket az elmúlt hónapokban
+javítottuk. Erről készült egy rögzített pillanatkép is, így minden további
+módosításnál bizonyítható lesz, hogy a meglévő pozíciók nem sérültek.
+
+A második: közben találtam egy valós hibát. A képfájlok augusztus eleje óta
+hiányoztak a tárhelyről, ezért a látogatók kép nélküli oldalakat láttak –
+körülbelül négy héten át. Ezt ma visszaállítottam, a képek újra látszanak.
+Beállítottam egy napi automatikus ellenőrzést is, hogy ha ilyesmi újra
+előfordul, azonnal tudjunk róla, ne hetekkel később.
+
+Ez egyben a legfőbb érvem amellett, hogy a stabilitást tegyük az első helyre az
+új aloldalak előtt. Egy négyhetes kiesés többet visz el a forgalomból és a
+megkeresésekből, mint amennyit ugyanennyi idő alatt új oldalakkal nyerni
+lehetne.
+
+Most jönnek a kérdések. Azért kérdezem meg ezeket előre, mert nem szeretnék
+feltételezésekre építeni – ha valamit rosszul találok el, azt utólag sokkal
+drágább javítani, mint most tisztázni. Elég, ha pontonként válaszolsz, akár
+egy-két mondatban.
+
+
+1. ÉRTÉKBECSLÉS (värdering)
+
+Az anyagban két helyen ellentmondás van. A tiltott állítások között szerepel a
+"kostnadsfri värdering" és a "vi värderar dödsbon", viszont a fő szolgáltatások
+felsorolásában ott van a "värdering és uppköp, ahol releváns", és a dödsbo
+listában is szerepel az "återbruk och värdering vid dödsbotömning".
+
+Melyik legyen érvényes? Konkrétan: végeztek bármilyen formában értékbecslést
+vagy felvásárlást, vagy csak annyi történik, hogy a használható tárgyakat
+beszámítjátok az ajánlatba? Ez határozza meg, hogyan fogalmazok az egész
+dödsbo szekcióban.
+
+
+2. HÁZHOZ MENETEL ÉS FIX ÁR
+
+A jelenlegi oldalon nyolc helyen szerepel az, hogy "kostnadsfritt hembesök",
+és negyvenegy oldalon a "fast pris" – ez utóbbi többnyire "fast pris efter
+besiktning" formában.
+
+A tiltólistád alapján ezeket módosítanom kell, de előbb tudnom kell, mi az
+igazság:
+
+- Mentek ki ingyen felmérni, vagy ez nem működik így?
+- Adtok fix árat felmérés vagy fotók után, vagy ez sem mindig?
+
+Ha kimentek, de nem minden esetben, akkor megfogalmazom pontosan – nem kell
+teljesen kivenni, csak igazzá tenni.
+
+
+3. MEDDIG ÉRI MEG KIMENNI
+
+Az anyagban két különböző városlista szerepel, más sorrenddel. Az egyik szerint
+Halland (Varberg, Falkenberg, Halmstad) a következő irány, a másik szerint
+Västra Götaland (Stenungsund, Alingsås, Trollhättan, Uddevalla, Vänersborg,
+Borås), és ott Halland nem is szerepel.
+
+Ezt nem SEO alapján kellene eldönteni, hanem az alapján, hogy hol éri meg
+dolgozni. Göteborgtól Halmstad körülbelül 145 km – egy kisebb munkára ez
+valószínűleg nem kifizetődő.
+
+Ezért kérdezem:
+
+- Hány kilométeres távolságig mentek ki?
+- Van olyan összeghatár, ami alatt nem éri meg elindulni?
+- Van olyan település, ahová biztosan nem mentek?
+
+Ha egy városra kihozzuk az oldalt a keresésben, onnantól jönnek onnan a
+megkeresések. Ha azokat vissza kell utasítani, az mindenkinek rossz.
+
+
+4. RUT-AVDRAG
+
+Ezt szeretném pontosan megírni, mert jogilag érzékeny. Amit én látok a
+Skatteverket szabályai alapján:
+
+- A haláleset után végzett dödsbotömning és dödsbostädning általában nem
+  jogosít RUT-ra.
+- A grovsopor elszállítása szintén nem.
+- Viszont a saját bútor elszállítása jogosít 25% RUT-ra, ha az árut olyan
+  helyre viszitek, ami eladásra vagy újrahasználatra veszi át (loppis,
+  aukció, second hand).
+
+Kérdésem: ti hova viszitek a használható holmit? Van olyan átvevő partner,
+ahol továbbértékesítik? Ha igen, akkor a harmadik pont valós előny, és arról
+tudok írni – de csak akkor, ha a gyakorlat tényleg ilyen.
+
+Ha bizonytalan, inkább hagyjuk ki. Egy téves RUT-állítás sokkal többe kerül,
+mint amennyit hoz.
+
+
+5. REFERENCIÁK ÉS ESETTANULMÁNYOK
+
+Kérted a "Referenser / Utförda arbeten" oldalt és 5-8 esettanulmányt. Egyetértek,
+ez erős lenne. Viszont te magad írtad, hogy kitalált referencia nem lehet – és
+ezzel teljesen egyetértek.
+
+Ezért ehhez tőletek kell anyag. Ami elég lenne egy esethez:
+
+- milyen ingatlan volt (típus, körülbelüli méret, melyik környék)
+- mi volt a feladat
+- mennyi ideig tartott
+- mi lett a holmival
+- fotó előtte és utána, ha van
+
+Nem kell tökéletes, telefonos kép is jó. Öt-hat ilyen eset már elég egy erős
+oldalhoz. Ha nincsenek fotóitok korábbi munkákról, a következő néhány
+alkalommal érdemes lenne készíteni.
+
+
+6. "OM OSS" OLDAL
+
+Ez fontosabb, mint amilyennek látszik – a Google és az AI keresők is nézik,
+hogy valós cég és valós ember áll-e az oldal mögött.
+
+Ehhez kérnék:
+
+- ki vezeti a céget, mióta
+- rövid háttér, hogyan indult
+- egy fotó rólad vagy a csapatról, akár a munkakocsi mellett
+- cégadatok: szervezetszám, F-skatt, biztosítás
+- ha van bármilyen engedély vagy tanúsítvány (pl. hulladékszállítás), az is
+
+
+7. GOOGLE CÉGEM PROFIL
+
+Ez az anyagban nem szerepelt, pedig a "tömning göteborg" típusú kereséseknél a
+kattintások jelentős részét a térképes találati blokk viszi el – nem az
+organikus lista.
+
+Kérdéseim:
+
+- Van beállítva Google Cégem (Google Business Profile) profil?
+- Hány értékelés van rajta?
+- Kapok hozzá hozzáférést?
+
+Őszintén: egy jól feltöltött, aktív, sok értékeléssel rendelkező profil több
+megkeresést hozhat, mint húsz új városoldal – és sokkal gyorsabban. Ha ez
+elhanyagolt, ezzel kezdenék.
+
+
+8. AJÁNLATKÉRŐ ŰRLAP
+
+A felsorolt tizennégy mező sok. A jelenlegi űrlapon már most hét kötelező mező
+van, köztük az utca, házszám és irányítószám – aki csak árat szeretne kérni,
+az ezt mobilon nem tölti ki, hanem továbbmegy.
+
+Amit javaslok helyette: kétlépcsős űrlap.
+
+Első lépés: név, telefon, település. Ennyi, és már el is küldhető – így a
+megkeresés megvan.
+
+Második lépés, a küldés után, opcionálisan: cím, méret, emelet, lift,
+fotók, részletek.
+
+Így aki félbehagyja, azt sem veszítitek el. Aki végigmegy, attól viszont több
+adatot kaptok, mint most. Rendben van így?
+
+Ehhez két apró kérdés:
+
+- Az e-mail cím legyen kötelező, vagy elég a telefonszám?
+- A feltöltött fotókat meddig őrizzük? Egy elhunyt lakásáról készült kép
+  érzékeny adat, javaslom a 90 nap utáni automatikus törlést.
+
+
+9. SZOLGÁLTATÁSI OLDALAK
+
+Tizenkilenc külön szolgáltatási oldalt kértél. Végignéztem őket, és néhány
+egymást fedi – például a kontorstömning, företagstömning, lokaltömning és
+kontorsröjning svédül jórészt ugyanarra a keresésre megy rá, ahogy a
+"tömning av lägenhet" és a "lägenhetstömning" is gyakorlatilag ugyanaz a szó.
+
+Ha mindegyiket külön oldalként építjük meg, a Google kiválaszt egyet, a többit
+pedig vékony másolatnak fogja látni – pont azt okoznánk, amit el akarunk
+kerülni.
+
+Amit javaslok: minden szolgáltatásnál megnézem a valós keresési adatokat, és
+ahol két kifejezés ugyanazt a találati oldalt hozza, azokat összevonom egy
+erősebb oldalba. Így a tizenkilencből várhatóan tizenkettő-tizennégy önálló
+oldal marad, de mindegyik erősebb. Rendben van ez így?
+
+
+10. ANGOL VERZIÓ
+
+Jelenleg negyvenhárom angol aloldal van, ami az oldal felét teszi ki. Ha a svéd
+rész száz oldalra bővül, az angol pedig marad negyvenhárom, akkor a két nyelv
+közötti összerendelés nagy részén el fog törni.
+
+Kérdésem: érkezik egyáltalán angol nyelvű megkeresés? Ha alig, akkor azt
+javaslom, hogy az angol részt szűkítsük le hat-nyolc oldalra – főoldal, a
+legfontosabb szolgáltatások, kapcsolat, ajánlatkérés. Így tisztább lesz a
+szerkezet, és a svéd rész kapja a hangsúlyt.
+
+
+11. TÁRHELY-HOZZÁFÉRÉS
+
+Ez a mai hibából jött. A képfájlok nem törlődnek maguktól. Kérdésem: rajtatok
+és rajtam kívül van még valakinek FTP- vagy adminhozzáférése a tárhelyhez?
+
+Nem keresek felelőst – csak tudnom kell, hány helyről lehet módosítani a
+kiszolgálót, hogy be tudjam állítani a védelmet.
+
+
+12. KERESZT-LINKELÉS
+
+A dodsbojourengoteborg.se oldal elkészült már és él? Ha igen, megnézem, és
+kidolgozom, hol linkeljen természetesen a három oldal egymásra – ahogy írtad,
+nem tömegesen, hanem ott, ahol a látogatónak tényleg segít.
+
+
+Ennyi. Tudom, hogy sok kérdés, de ezek pont azok, amiket nem szeretnék
+kitalálni magamtól – főleg az árazásra, a lefedett területre és a RUT-ra
+vonatkozók.
+
+Amíg válaszolsz, elkezdem azt a részt, ami senkitől nem függ: beállítom a
+mérést, hogy pontosan lássuk, melyik oldal hoz megkeresést és melyik nem.
+Jelenleg ugyanis csak a látogatószám mérhető, az nem, hogy hányan küldenek
+ajánlatkérést vagy hívnak telefonon. E nélkül nem lehet megmondani, mi éri meg.
+
+Ha valamelyik kérdés nem elég világos, hívj nyugodtan.
+
+Üdv,
+Dániel
