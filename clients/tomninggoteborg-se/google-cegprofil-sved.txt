@@ -1,0 +1,161 @@
+GOOGLE FÖRETAGSPROFIL – ALFA TÖMNING GÖTEBORG
+Svéd szövegek a Google Cégem profilhoz (Google Business Profile)
+
+Minden szöveg megfelel Tamás tiltólistájának:
+nincs "kostnadsfri värdering", nincs "vi värderar/köper dödsbon",
+nincs "kostnadsfritt hembesök", nincs "billigast/bäst", nincs kitalált
+telephely, és az árazás a jóváhagyott megfogalmazást használja
+("pris efter omfattning", "tydlig prisuppgift före arbetets start").
+
+
+==========================================================
+1. FŐ LEÍRÁS – ide másold: Företagsprofil → Om → Beskrivning
+   (Google limit: 750 karakter)
+==========================================================
+
+Alfa Tömning Göteborg hjälper privatpersoner, företag och fastighetsägare med tömning, röjning och bortforsling i Göteborg med omnejd.
+
+Vi tömmer lägenheter, villor, radhus, förråd, källare, vindar och garage. Vid dödsbotömning arbetar vi lugnt och varsamt, med hänsyn till både anhöriga och det som lämnas kvar. För företag, BRF:er och fastighetsägare utför vi kontorsröjning, fastighetsröjning och hämtning av grovsopor.
+
+Det som går att återanvända sorterar vi ut och lämnar till återbruk. Resten körs till återvinning enligt gällande regler.
+
+Du får en tydlig prisuppgift innan arbetet börjar – pris efter omfattning. Skicka gärna några bilder, så återkommer vi med en offert.
+
+Vi utgår från Göteborg.
+
+
+==========================================================
+2. RÖVID VÁLTOZAT – katalógusokhoz, Facebook "Rólunk",
+   Hitta.se, Eniro, Merinfo stb.
+==========================================================
+
+Alfa Tömning Göteborg utför tömning, röjning och bortforsling i Göteborg
+med omnejd – lägenheter, villor, förråd, källare, vindar, garage och
+lokaler. Vi hjälper även till med dödsbotömning, kontorsröjning och
+hämtning av grovsopor. Det som kan återanvändas går till återbruk,
+resten till återvinning. Tydlig prisuppgift innan arbetet börjar –
+pris efter omfattning.
+
+
+==========================================================
+3. EGY MONDATOS VÁLTOZAT – ahol nagyon kevés hely van
+==========================================================
+
+Tömning, röjning och bortforsling i Göteborg med omnejd – lägenheter,
+villor, förråd och lokaler, samt dödsbotömning med varsam hantering.
+
+
+==========================================================
+4. SZOLGÁLTATÁSOK – Google: Företagsprofil → Tjänster
+   Vedd fel mindet külön tételként. Ez azért fontos, mert a Google
+   ezekre a szavakra is meg tudja jeleníteni a profilt.
+==========================================================
+
+Tömning
+Dödsbotömning
+Lägenhetstömning
+Villatömning
+Radhustömning
+Förrådstömning
+Källartömning
+Vindstömning
+Garagetömning
+Kontorstömning
+Företagstömning
+Fastighetstömning
+Kontorsröjning
+Fastighetsröjning
+Bortforsling
+Möbelbortforsling
+Hämtning av grovsopor
+Röjning och sortering
+Akut tömning
+Återbruk och återvinning
+
+
+==========================================================
+5. SZOLGÁLTATÁS-LEÍRÁSOK – a Google minden tjänst alá enged
+   egy rövid szöveget. Ez a hat a legfontosabb.
+==========================================================
+
+Dödsbotömning
+Vi tömmer dödsbon i Göteborg med omnejd. Vi går igenom bohaget
+tillsammans med er, sorterar ut det som ska sparas, och forslar bort
+resten. Det som går att återanvända lämnas till återbruk.
+
+Lägenhetstömning
+Tömning av lägenhet inför flytt, försäljning eller uthyrning. Vi tar
+hand om möbler, vitvaror och lösöre, oavsett våningsplan och
+hisstillgång.
+
+Villatömning
+Tömning av villa eller radhus, inklusive förråd, källare, vind och
+garage. Vi sorterar på plats och kör bort allt i ett svep.
+
+Bortforsling
+Hämtning och bortforsling av möbler, vitvaror och grovsopor. Vi lastar,
+kör och lämnar till återvinning eller återbruk.
+
+Kontorsröjning
+Röjning och tömning av kontor och lokaler. Vi hanterar möbler, teknik
+och dokument, och kan anpassa arbetet efter era öppettider.
+
+Akut tömning
+När det är bråttom – vid kort varsel inför visning, tillträde eller
+avflyttning. Ring så ser vi vad vi kan lösa.
+
+
+==========================================================
+6. GOOGLE KATEGÓRIÁK – amit be kell állítani
+==========================================================
+
+Huvudkategori (fő kategória, ez a legfontosabb):
+   Sophämtningstjänst
+   (angolul: Garbage collection service)
+
+Ytterligare kategorier (további kategóriák):
+   Flyttfirma           (Moving company)
+   Städfirma            (House cleaning service)
+   Återvinningscentral  (Recycling center)
+
+Megjegyzés: a fő kategória dönti el a legtöbbet abban, hogy milyen
+keresésre jelenik meg a profil. Ha csak egyet állíthatsz be jól,
+ez legyen az.
+
+
+==========================================================
+7. KISZOLGÁLT TERÜLETEK – Företagsprofil → Serviceområden
+==========================================================
+
+FONTOS: a Google Cégemben ne adjatok meg olyan várost, ahová valójában
+nem mentek ki. Rontja a profilt, és felesleges megkeresést hoz.
+
+Az oldalon jelenleg ezek a területek szerepelnek – ezeket vedd fel:
+
+   Göteborg
+   Mölndal
+   Partille
+   Kungälv
+   Lerum
+   Kungsbacka
+   Mölnlycke
+   Landvetter
+
+Ha Tamás megadja a valós kiszállási sugarat, ezt a listát pontosítjuk.
+
+
+==========================================================
+8. AMIT MÉG BE KELL ÁLLÍTANI A PROFILON
+==========================================================
+
+- Telefonszám:  070 729 39 86
+- Weboldal:     https://tomninggoteborg.se
+- E-mail:       info@tomninggoteborg.se
+- Nyitvatartás: ki kell tölteni (üres nyitvatartás rontja a helyezést)
+- Fotók:        legalább 10 valós munkakép – kocsi, csapat, előtte/utána
+- Cím:          ha nincs ügyfélfogadás, állítsd "serviceområde"-ra,
+                és rejtsd el a pontos címet
+
+Egy dolog, ami mindennél többet ér: az értékelések. Minden befejezett
+munka után kérjetek egyet. Egy 20-30 értékeléses profil többet hoz a
+térképes találatokban, mint bármelyik új aloldal.
