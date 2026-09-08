@@ -1,0 +1,176 @@
+Tárgy: tomninggoteborg.se – az ajánlatkérő űrlapról
+
+
+Szia Tamás!
+
+Átnéztem az ajánlatkérő űrlapot mind a 87 aloldalon, és szeretném elmondani,
+mit találtam. Kezdem a jóval, mert abból több van, mint gondolnád.
+
+
+AMI MÁR JÓL MŰKÖDIK
+
+Az űrlap a 87 oldalból 85-ön ott van, és a szolgáltatásoldalakon nem a lap
+alján, hanem rögtön a tetején, körülbelül a tizedénél. Ez jó – aki rákeres a
+"dödsbotömning"-re, az nem görget végig, hogy megtalálja.
+
+Minden szolgáltatásoldalon előre ki van töltve a szolgáltatás neve. Aki a
+villatömning oldalról ír, annál már ott áll, hogy villatömning – nem kell
+kiválasztania, és ti is látjátok, honnan jött.
+
+A telefonszám-, e-mail- és irányítószám-mezők mobilon a megfelelő
+billentyűzetet hozzák elő, és a böngésző automatikus kitöltése is működik.
+
+A hibakezelés is rendben van: ha valami elakad küldéskor, az űrlap nem hazudik
+sikert, hanem szól. Ez fontosabb, mint amilyennek hangzik – sok oldal ezt
+elrontja, és a megkeresés csendben elvész.
+
+Szóval az alapok megvannak. A gond máshol van.
+
+
+A FŐ PROBLÉMA: HÉT KÖTELEZŐ MEZŐ
+
+Jelenleg ezeket kell kitölteni, mielőtt bárki el tudná küldeni az űrlapot:
+
+  1. Név
+  2. Utca és házszám
+  3. Település
+  4. Irányítószám
+  5. Telefonszám
+  6. E-mail cím
+  7. Egy pipa, hogy "nem vagyok robot"
+
+Képzeld el a helyzetet. Valaki az édesanyja lakásában áll, aki nemrég hunyt el.
+Telefonon keres rá, hogy mennyibe kerülhet a kiürítés. Rátalál az oldalatokra,
+és mielőtt egyáltalán megtudná, hogy nagyjából mennyiről van szó, be kell
+gépelnie az utcát, a házszámot, az irányítószámot, az e-mail címét, és
+kipipálnia egy dobozt.
+
+A legtöbben itt kilépnek. És ami a legrosszabb: erről most nem is tudtok.
+Nem látszik semmi – nincs félbehagyott űrlap, nincs jelzés. Egyszerűen csak
+kevesebb megkeresés jön, mint amennyi jöhetne.
+
+
+AMIT ERRE VÁLASZOLNI SZOKTAK
+
+Számítok rá, hogy azt mondod: "de nekem kell a cím, mert anélkül nem tudok
+árat mondani."
+
+Igazad van. Csak nem a beszélgetés elindításához kell.
+
+A címre és az emeletre akkor van szükséged, amikor konkrét ajánlatot adsz. Ahhoz
+viszont, hogy valaki egyáltalán megkeressen, elég a neve és a telefonszáma.
+A többit megkérdezheted, amikor visszahívod – vagy megadja ő maga, két
+perccel később.
+
+
+A JAVASLATOM: KÉT LÉPÉS EGY HELYETT
+
+ELSŐ LÉPÉS – ennyi látszik elsőre, és már el is küldhető:
+
+  Név
+  Telefonszám
+  Település
+
+  [ Kérek ajánlatot ]
+
+Három mező. Aki ezt kitölti, az már megkeresés – a nevével és a telefonjával.
+Vissza tudod hívni.
+
+MÁSODIK LÉPÉS – ez a küldés UTÁN jelenik meg, és opcionális:
+
+  "Köszönjük, megkaptuk. Hamarosan keresünk.
+   Ha gyorsabb és pontosabb ajánlatot szeretne, töltsön fel néhány képet:"
+
+  Fotók feltöltése
+  Cím és irányítószám
+  Ingatlan típusa és körülbelüli mérete
+  Emelet, van-e lift
+  Pince, padlás, garázs
+  Parkolási és cipelési távolság
+  Kívánt időpont
+  Megjegyzés
+
+A lényeg ebben: aki a második lépésnél abbahagyja, azt sem veszítitek el.
+A megkeresés már megvan. Ma ugyanez az ember nyomtalanul eltűnik.
+
+Aki pedig végigmegy, attól többet kaptok, mint amennyit a mostani űrlap
+egyáltalán kér.
+
+Vagyis nem kevesebb adatot kaptok, hanem ugyanannyit vagy többet – plusz azokat
+a megkereséseket, amik most elvesznek.
+
+
+A KÉPFELTÖLTÉS – EZ A LEGFONTOSABB
+
+Írtad az anyagodban, és teljesen egyetértek. Szerintem ez a legértékesebb tétel
+az egész fejlesztésben.
+
+A kiürítésnél a legnagyobb akadály az, hogy látni kell, mennyi holmi van. Ezért
+kell kimenni, ezért csúszik az ajánlat, ezért telik el napok az első kapcsolat
+és a konkrét ár között.
+
+Néhány fotó ezt kiváltja. Az ügyfél lefényképezi a szobát, ti megnézitek, és
+aznap tudtok árat mondani – kiszállás nélkül.
+
+Ez két dolgot ad:
+  – az ügyfél gyorsabban kap választ, tehát kisebb eséllyel keres mást
+  – nektek nem megy el a fél napotok olyan felmérésre, amiből nem lesz munka
+
+Egy dolgot viszont tisztázni kell hozzá. Egy elhunyt lakásáról készült fotó
+érzékeny anyag. Javaslom, hogy 90 nap után automatikusan törlődjön, és ez ki is
+legyen írva az űrlapnál. Ez nemcsak jogi kérdés – bizalmat is épít.
+
+
+AMI MÉG HIÁNYZIK
+
+1. Nem mérünk semmit.
+
+Ez a legnagyobb baj, és nem is az űrlapról szól. Az oldalon fut a Google
+Analytics, és méri, hányan jönnek. De azt nem méri, hogy hányan küldenek
+ajánlatkérést, és hányan nyomnak rá a telefonszámra.
+
+Vagyis most nem lehet megmondani, hogy melyik oldal hoz munkát és melyik nem.
+Ha e nélkül kezdenénk el új aloldalakat gyártani, fél év múlva sem tudnánk,
+megérte-e.
+
+Ezt állítom be elsőként, mert ez nem függ senkitől, és nem változtat semmit az
+oldalon – csak elkezdi mérni, ami eddig nem látszott.
+
+2. Nincs külön köszönőoldal.
+
+Most küldés után csak egy szöveg jelenik meg. Egy külön "köszönjük" oldal
+tisztább visszajelzést ad az ügyfélnek, és pontosabban mérhető is.
+
+3. Nincs adatkezelési elfogadás.
+
+A mostani pipa csak spamszűrésre való, nem GDPR-hozzájárulás. Ezt pótolni kell,
+és a képfeltöltés miatt különösen fontos.
+
+4. Az árlistás oldalon rossz helyen van az űrlap.
+
+Ez konkrét hiba. A többi oldalon az űrlap a lap tetején van, a "priser" oldalon
+viszont a lap 79 százalékánál, gyakorlatilag legalul. Pedig ez az az oldal,
+ahol az ember a legközelebb áll a döntéshez – megnézte az árakat, épp azon
+gondolkodik, hogy megkérdezi. Ezt előrehozom.
+
+
+AMIT KÉRDEZNI SZERETNÉK
+
+  – Az e-mail cím legyen kötelező, vagy elég a telefonszám? Én azt javaslom,
+    hogy elég a telefon. A ti üzletetekben úgyis telefonon dől el minden.
+
+  – Rendben van a 90 napos fotó-megőrzés, vagy mást szeretnél?
+
+  – Az ajánlatkérésekről kapjatok azonnali e-mail értesítést? Most az adatok
+    az adatbázisba mennek. Ha nem jön róla e-mail, könnyű lemaradni egyről.
+
+
+Összefoglalva: az űrlap nincs elrontva, csak túl sokat kér túl korán. Három
+mezőre csökkentjük az első lépést, a többit utána kérjük el, és beteszünk egy
+képfeltöltést. Közben beállítjuk a mérést, hogy pontosan lássuk, mit hozott a
+változtatás – ne érzésre kelljen megítélni.
+
+Ha ezzel egyetértesz, nekiállok.
+
+Üdv,
+Dániel
