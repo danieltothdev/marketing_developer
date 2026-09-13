@@ -2890,3 +2890,4 @@ body.has-mobile-cta .cookie-banner {
   font-weight: 700;
   white-space: nowrap;
 }
+.lead-note{margin:1.5rem 0;padding:1rem 1.25rem;border-left:3px solid var(--accent,#c8ff00);background:rgba(255,255,255,.04);border-radius:0 8px 8px 0;font-size:1.02rem}
